@@ -1473,5 +1473,20 @@ $(document).ready(function() {
 		callPlayer('videoContainer','stopVideo');
 	});
 
-	
+	var pricingItem = document.querySelectorAll('.pricing__item');
+	pricingItem.forEach(function(item) {
+		item.addEventListener('mouseover', function() {
+			this.classList.value.indexOf('pricing__item--active') < 0 && this.classList.add('pricing__item--hover');
+		});
+		item.addEventListener('mouseout', function() {
+			this.classList.value.indexOf('pricing__item--active') < 0 && this.classList.remove('pricing__item--hover');
+		})
+		item.addEventListener('click', function() {
+			this.classList.value.indexOf('pricing__item--active') < 0 && this.classList.add('pricing__item--active');
+			var target = this.getAttribute('data-target');
+			$('html, body').animate({
+				scrollTop: $(target).offset().top - 100
+			}, 400)
+		})
+	})
 });

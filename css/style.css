@@ -1,4 +1,71 @@
 @font-face {
+  font-family: 'Ubuntu Bold Italic';
+  src: url('./font/Ubuntu-BoldItalic.eot');
+  src: url('./font/Ubuntu-BoldItalic.eot?#iefix') format('embedded-opentype'),
+      url('./font/Ubuntu-BoldItalic.woff') format('woff'),
+      url('./font/Ubuntu-BoldItalic.ttf') format('truetype'),
+      url('./font/Ubuntu-BoldItalic.svg#Ubuntu-BoldItalic') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu Regular Italic';
+  src: url('./font/Ubuntu-Italic.eot');
+  src: url('./font/Ubuntu-Italic.eot?#iefix') format('embedded-opentype'),
+      url('./font/Ubuntu-Italic.woff') format('woff'),
+      url('./font/Ubuntu-Italic.ttf') format('truetype'),
+      url('./font/Ubuntu-Italic.svg#Ubuntu-Italic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu Bold';
+  src: url('./font/Ubuntu-Bold.eot');
+  src: url('./font/Ubuntu-Bold.eot?#iefix') format('embedded-opentype'),
+      url('./font/Ubuntu-Bold.woff') format('woff'),
+      url('./font/Ubuntu-Bold.ttf') format('truetype'),
+      url('./font/Ubuntu-Bold.svg#Ubuntu-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu Light';
+  src: url('./font/Ubuntu-Light.eot');
+  src: url('./font/Ubuntu-Light.eot?#iefix') format('embedded-opentype'),
+      url('./font/Ubuntu-Light.woff') format('woff'),
+      url('./font/Ubuntu-Light.ttf') format('truetype'),
+      url('./font/Ubuntu-Light.svg#Ubuntu-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu Regular';
+  src: url('./font/Ubuntu-Regular.eot');
+  src: url('./font/Ubuntu-Regular.eot?#iefix') format('embedded-opentype'),
+      url('./font/Ubuntu-Regular.woff') format('woff'),
+      url('./font/Ubuntu-Regular.ttf') format('truetype'),
+      url('./font/Ubuntu-Regular.svg#Ubuntu-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu Light Italic';
+  src: url('./font/Ubuntu-LightItalic.eot');
+  src: url('./font/Ubuntu-LightItalic.eot?#iefix') format('embedded-opentype'),
+      url('./font/Ubuntu-LightItalic.woff') format('woff'),
+      url('./font/Ubuntu-LightItalic.ttf') format('truetype'),
+      url('./font/Ubuntu-LightItalic.svg#Ubuntu-LightItalic') format('svg');
+  font-weight: 300;
+  font-style: italic;
+}
+
+
+@font-face {
   font-family: FontAwesome;
   font-weight: 400;
   font-style: normal;
@@ -3445,11 +3512,11 @@ template {
 }
 b,
 strong {
-  font-family: "Roboto Condensed Bold", sans-serif !important;
+  font-family: "Ubuntu Bold", sans-serif !important;
   font-weight: 700;
 }
 dfn {
-  font-family: "Roboto Condensed Italic", sans-serif !important;
+  font-family: "Ubuntu Regular Italic", sans-serif !important;
   font-style: italic;
 }
 h1 {
@@ -3647,6 +3714,20 @@ textarea {
 a {
   text-decoration: none;
   color: #329fd9;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #329fd9;
+}
+a::before {
+  content: '+';
+  padding-right: 5px;
+}
+header a, .btn {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+header a::before, a.btn::before {
+  content: '';
+  padding-right: 0;
 }
 figure {
   margin: 0;
@@ -4703,7 +4784,7 @@ textarea.input-lg {
   vertical-align: middle;
   white-space: nowrap;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 10px;
   background-image: none;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
@@ -8652,7 +8733,7 @@ img.tp-slider-alternative-image {
   border-bottom: 1px dotted #eaeaea;
 }
 .cbp-caption-expand .cbp-caption-defaultWrap {
-  font: 500 15px/23px Roboto, sans-serif;
+  font: 500 15px/23px 'Ubuntu Regular', sans-serif;
   padding: 12px 0 11px 0;
   cursor: pointer;
   color: #474747;
@@ -8672,7 +8753,7 @@ img.tp-slider-alternative-image {
   text-align: center;
 }
 .cbp-caption-expand .cbp-l-caption-body {
-  font: 400 13px/21px Roboto, sans-serif;
+  font: 400 13px/21px 'Ubuntu Regular', sans-serif;
   padding: 0 0 20px 26px;
   color: #888;
 }
@@ -8920,7 +9001,7 @@ img.tp-slider-alternative-image {
   text-align: center;
 }
 .cbp-l-filters-buttonCenter .cbp-filter-item {
-  font: 400 12px/32px Roboto, sans-serif;
+  font: 400 12px/32px 'Ubuntu Regular', sans-serif;
   position: relative;
   display: inline-block;
   overflow: visible;
@@ -8942,7 +9023,7 @@ img.tp-slider-alternative-image {
   border-color: #8cd2e5;
 }
 .cbp-l-filters-buttonCenter .cbp-filter-counter {
-  font: 400 11px/18px Roboto, sans-serif;
+  font: 400 11px/18px 'Ubuntu Regular', sans-serif;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -8994,7 +9075,7 @@ img.tp-slider-alternative-image {
   background: #3288c4;
 }
 .cbp-l-filters-dropdownHeader {
-  font: 400 12px/38px "Roboto Condensed Light", sans-serif;
+  font: 400 12px/38px "Ubuntu Light", sans-serif;
   position: relative;
   margin: 0 17px;
   cursor: default;
@@ -9032,7 +9113,7 @@ img.tp-slider-alternative-image {
   margin: 0;
 }
 .cbp-l-filters-dropdownList .cbp-filter-item {
-  font: 400 12px/40px "Roboto Condensed Light", sans-serif;
+  font: 400 12px/40px "Ubuntu Light", sans-serif;
   width: 100%;
   margin: 0;
   padding: 0 17px;
@@ -9143,7 +9224,7 @@ img.tp-slider-alternative-image {
   text-align: center;
 }
 .cbp-l-filters-big .cbp-filter-item {
-  font: 400 15px/22px Roboto, sans-serif;
+  font: 400 15px/22px 'Ubuntu Regular', sans-serif;
   position: relative;
   display: inline-block;
   margin: 10px 15px 0 0;
@@ -11448,7 +11529,7 @@ img.tp-slider-alternative-image {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 .cbp-l-grid-work-title {
-  font: 400 17px/25px "Roboto Condensed", sans-serif;
+  font: 400 17px/25px "Ubuntu Regular", sans-serif;
   display: block;
   margin-top: 17px;
   text-align: center;
@@ -11501,7 +11582,7 @@ img.tp-slider-alternative-image {
   height: 180px;
 }
 .cbp-l-clients-title-block {
-  font: 400 32px/53px Roboto, sans-serif;
+  font: 400 32px/53px 'Ubuntu Regular', sans-serif;
   margin-bottom: 40px;
   text-align: center;
   color: #666464;
@@ -11529,14 +11610,14 @@ img.tp-slider-alternative-image {
   background-color: #252424;
 }
 .cbp-l-grid-masonry-projects-title {
-  font: 500 15px/22px Roboto, sans-serif;
+  font: 500 15px/22px 'Ubuntu Regular', sans-serif;
   display: block;
   margin-top: 12px;
   text-align: center;
   color: #59a3b6;
 }
 .cbp-l-grid-masonry-projects-desc {
-  font: 400 12px/18px Roboto, sans-serif;
+  font: 400 12px/18px 'Ubuntu Regular', sans-serif;
   text-align: center;
   color: #b2b2b2;
 }
@@ -11563,7 +11644,7 @@ img.tp-slider-alternative-image {
   border-bottom: 1px solid #cdcdcd;
 }
 .cbp-l-slider-title-block div {
-  font: 15px/21px Roboto, sans-serif;
+  font: 15px/21px 'Ubuntu Regular', sans-serif;
   display: inline-block;
   margin-bottom: -1px;
   padding: 0 2px 6px 0;
@@ -11571,18 +11652,18 @@ img.tp-slider-alternative-image {
   border-bottom: 1px solid #a9a5a5;
 }
 .cbp-l-grid-slider-team-name {
-  font: 20px/30px Roboto, sans-serif;
+  font: 20px/30px 'Ubuntu Regular', sans-serif;
   float: left;
   margin-top: 16px;
   color: #494949;
 }
 .cbp-l-grid-slider-team-position {
-  font: 14px/21px Roboto, sans-serif;
+  font: 14px/21px 'Ubuntu Regular', sans-serif;
   clear: both;
   color: #a6a6a6;
 }
 .cbp-l-grid-slider-team-desc {
-  font: 13px/20px Roboto, sans-serif;
+  font: 13px/20px 'Ubuntu Regular', sans-serif;
   margin-top: 15px;
   color: #969696;
 }
@@ -11614,7 +11695,7 @@ img.tp-slider-alternative-image {
   color: #424242;
 }
 .cbp-l-grid-slider-testimonials-footer {
-  font: 12px/19px Roboto, sans-serif;
+  font: 12px/19px 'Ubuntu Regular', sans-serif;
   margin-top: 30px;
   margin-bottom: 10px;
   text-align: center;
@@ -11633,7 +11714,7 @@ img.tp-slider-alternative-image {
   color: #5a5a5a;
 }
 .cbp-l-testimonials-title-block {
-  font: 26px/36px Roboto, sans-serif;
+  font: 26px/36px 'Ubuntu Regular', sans-serif;
   position: relative;
   margin-bottom: 60px;
   text-align: center;
@@ -11663,7 +11744,7 @@ img.tp-slider-alternative-image {
   color: #e7e7e7;
 }
 .cbp-l-grid-testimonials-footer {
-  font: 12px/19px Roboto, sans-serif;
+  font: 12px/19px 'Ubuntu Regular', sans-serif;
   margin-top: 35px;
   margin-bottom: 40px;
   text-align: center;
@@ -12042,9 +12123,8 @@ label {
   padding: 11px 26px 9px 26px;
 }
 .btn.btn-xlg {
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Bold", sans-serif !important;
   font-size: 20px;
-  font-weight: 400;
   padding: 12px 44px 10px 44px !important;
 }
 .btn.c-btn-border-2x {
@@ -12067,7 +12147,7 @@ label {
   padding: 10px 20px 8px 20px;
 }
 .c-btn-bold {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-weight: 700;
 }
 .c-btn-square {
@@ -12297,7 +12377,7 @@ label {
   }
 }
 .cbp-panel {
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Regular", sans-serif !important;
   width: 100%;
   max-width: auto;
   margin: 0 auto;
@@ -12329,14 +12409,14 @@ label {
   background: #f6f7f8;
 }
 .cbp-l-grid-projects-title {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 18px;
   font-weight: 600;
   white-space: normal;
   color: #3f444a;
 }
 .cbp-l-grid-projects-desc {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 14px;
   white-space: normal;
   color: #7a838e;
@@ -12449,68 +12529,9 @@ label {
   text-decoration: none;
   background-color: #eee;
 }
-@font-face {
-  font-family: "Roboto Condensed";
-  src: url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Regular.eot);
-  src: url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Regular.eot?#iefix)
-      format("embedded-opentype"),
-    url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Regular.woff) format("woff"),
-    url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Regular.ttf) format("truetype"),
-    url("assets/base/css/font/RobotoCondensed-Regular.svg#Roboto Condensed")
-      format("svg");
-}
-@font-face {
-  font-family: "Roboto Condensed Italic";
-  src: url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Italic.eot);
-  src: url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Italic.eot?#iefix)
-      format("embedded-opentype"),
-    url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Italic.woff) format("woff"),
-    url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Italic.ttf) format("truetype"),
-    url("assets/base/css/font/RobotoCondensed-Italic.svg#Roboto Condensed Italic")
-      format("svg");
-}
-@font-face {
-  font-family: "Roboto Condensed Bold";
-  src: url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Bold.eot);
-  src: url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Bold.eot?#iefix)
-      format("embedded-opentype"),
-    url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Bold.woff) format("woff"),
-    url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Bold.ttf) format("truetype"),
-    url("assets/base/css/font/RobotoCondensed-Bold.svg#Roboto Condensed Bold")
-      format("svg");
-}
-@font-face {
-  font-family: "Roboto Condensed Bold Italic";
-  src: url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-BoldItalic.eot);
-  src: url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-BoldItalic.eot?#iefix)
-      format("embedded-opentype"),
-    url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-BoldItalic.woff) format("woff"),
-    url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-BoldItalic.ttf) format("truetype"),
-    url("assets/base/css/font/RobotoCondensed-BoldItalic.svg#Roboto Condensed Bold Italic")
-      format("svg");
-}
-@font-face {
-  font-family: "Roboto Condensed Light";
-  src: url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Light.eot);
-  src: url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Light.eot?#iefix)
-      format("embedded-opentype"),
-    url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Light.woff) format("woff"),
-    url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-Light.ttf) format("truetype"),
-    url("assets/base/css/font/RobotoCondensed-Light.svg#Roboto Condensed Light")
-      format("svg");
-}
-@font-face {
-  font-family: "Roboto Condensed Light Italic";
-  src: url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-LightItalic.eot);
-  src: url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-LightItalic.eot?#iefix)
-      format("embedded-opentype"),
-    url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-LightItalic.woff) format("woff"),
-    url(https://www.comm100.com/wp-content/themes/comm100/assets/base/css/font/RobotoCondensed-LightItalic.ttf) format("truetype"),
-    url("assets/base/css/font/RobotoCondensed-LightItalic.svg#Roboto Condensed Light Italic")
-      format("svg");
-}
+
 body {
-  font-family: "Roboto Condensed Light", sans-serif;
+  font-family: "Ubuntu Light", sans-serif;
   font-size: 17px;
   font-weight: 300;
   margin: 0 !important;
@@ -12527,7 +12548,7 @@ a {
 a:active,
 a:focus,
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
   outline: 0 !important;
 }
 img {
@@ -12586,10 +12607,15 @@ h2 {
   color: #3f444a;
 }
 h1 {
-  font-family: "Roboto Condensed Bold", sans-serif;
-  font-size: 36px;
-  margin: 5px 0 40px;
+  font-family: "Ubuntu Bold", sans-serif;
+  font-size: 28px;
+  margin: 0 0 10px;
   color: #3f444a;
+  text-align: center;
+}
+.subtitle {
+  font-size: 42px;
+  text-align: center;
 }
 .c-reset {
   margin: 0;
@@ -12779,23 +12805,23 @@ h1 {
   text-align: right;
 }
 .c-font-thin {
-  font-family: "Roboto Condensed Light", sans-serif !important;
+  font-family: "Ubuntu Light", sans-serif !important;
   font-weight: 300 !important;
 }
 .c-font-slim {
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Regular", sans-serif !important;
   font-weight: 400 !important;
 }
 .c-font-sbold {
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Bold", sans-serif !important;
   font-weight: 500 !important;
 }
 .c-font-bold {
-  font-family: "Roboto Condensed Bold", sans-serif !important;
+  font-family: "Ubuntu Bold", sans-serif !important;
   font-weight: 600 !important;
 }
 .c-font-bolder {
-  font-family: "Roboto Condensed Bold", sans-serif !important;
+  font-family: "Ubuntu Bold", sans-serif !important;
   font-weight: 700 !important;
 }
 .c-font-uppercase {
@@ -13025,7 +13051,7 @@ h1 {
   transition: all 0.2s;
 }
 .c-layout-header .c-brand .c-menu-title {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
@@ -13080,7 +13106,7 @@ h1 {
   transition: all 0.2s;
 }
 .c-layout-header .c-quick-search > .form-control {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 22px;
   font-weight: 400;
   display: block;
@@ -13379,7 +13405,7 @@ h1 {
     position: relative;
   }
   .c-layout-header .c-navbar .c-mega-menu > .nav.navbar-nav > li > .c-link {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Ubuntu Regular", sans-serif;
     font-size: 16px;
     font-style: normal;
     padding: 17px 9px 17px 9px;
@@ -13553,7 +13579,7 @@ h1 {
     > .nav.navbar-nav
     > li
     > a {
-    font-family: "Roboto Condensed Bold", sans-serif;
+    font-family: "Ubuntu Bold", sans-serif;
     font-weight: 600;
   }
   .c-layout-header
@@ -13564,7 +13590,7 @@ h1 {
     .dropdown-menu
     > li
     > a {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Ubuntu Regular", sans-serif;
     font-weight: 500;
   }
 }
@@ -13809,7 +13835,7 @@ h1 {
     > .nav.navbar-nav
     > li
     > .c-link {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Ubuntu Regular", sans-serif;
     font-weight: 400;
   }
   .c-layout-header
@@ -13820,7 +13846,7 @@ h1 {
     .dropdown-menu
     > li
     > a {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Ubuntu Regular", sans-serif;
     font-weight: 400;
   }
 }
@@ -14102,7 +14128,7 @@ h1 {
     > li
     > a {
     color: #969696;
-    font-family: "Roboto Condensed Light", sans-serif;
+    font-family: "Ubuntu Light", sans-serif;
   }
   .c-layout-header.c-layout-header-2
     .c-navbar
@@ -14737,13 +14763,13 @@ h1 {
   > .nav.navbar-nav
   > li.menu-item-btn
   > .c-link {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 14px;
   font-weight: 500;
   display: inline-block;
   min-height: auto;
-  margin: 12px 0 10px 20px;
-  padding: 4px 12px 2px 12px;
+  margin: 10px 0 10px 20px;
+  padding: 6px 12px 6px 12px;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
@@ -14774,9 +14800,10 @@ h1 {
   > .nav.navbar-nav
   > li.menu-item-btn-bgwhite
   > .c-link {
-  color: #329fd9;
+  color: #fff;
   border-width: 1px;
-  background: #fff;
+  background: #329fd9;
+  border-radius: 6px;
 }
 .c-page-on-scroll
   .c-layout-header.c-layout-header-2
@@ -15006,7 +15033,7 @@ h1 {
   float: left;
 }
 .c-layout-breadcrumbs-1 .c-page-title h3 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 18px;
   font-weight: 500;
   margin: 10px 0 6px 0;
@@ -15014,7 +15041,7 @@ h1 {
   color: #000;
 }
 .c-layout-breadcrumbs-1 .c-page-title h4 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 15px;
   font-weight: 500;
   margin: 5px 0 5px 0;
@@ -15386,7 +15413,7 @@ h1 {
   list-style: none;
 }
 .c-content-pagination > li > a {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 17px;
   font-weight: 400;
   display: inline-block;
@@ -15528,7 +15555,7 @@ h1 {
   color: #329fd9;
 }
 .c-sidebar .cat-item a {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-weight: 400;
   color: #329fd9;
 }
@@ -15597,7 +15624,7 @@ h1 {
   margin: 0 0 30px auto;
 }
 .c-content-title-1 > h3 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 28px;
   font-weight: 500;
   margin: 0 0 30px 0;
@@ -15629,7 +15656,7 @@ h1 {
   color: #fff;
 }
 .c-content-testimonials-1 .c-testimonial > h3 {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-size: 14px;
   font-weight: 600;
   margin: 0 0 20px 0;
@@ -15639,7 +15666,7 @@ h1 {
   color: #fff;
 }
 .c-content-testimonials-1 .c-testimonial > h3 > span {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-weight: 600;
 }
 .c-content-testimonials-1.c-option-2 .c-testimonial > p {
@@ -15831,7 +15858,7 @@ h1 {
   text-align: center;
 }
 .c-content-bar-1 > h3 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 30px;
   font-weight: 500;
   margin-top: 10px;
@@ -15852,7 +15879,7 @@ h1 {
   padding: 0;
 }
 .c-content-bar-3 .c-content-title-1 > h3 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-weight: 500;
   margin: 0 0 25px 0;
   padding: 0;
@@ -15870,7 +15897,7 @@ h1 {
   text-align: center;
 }
 .c-content-bar-4 > h3 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 40px;
   font-weight: 500;
   line-height: 50px;
@@ -15921,7 +15948,7 @@ h1 {
   margin-top: 40px;
 }
 .c-content-pricing-1 > .c-tile-container > .c-tile .c-price {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-size: 60px;
   font-weight: 700;
   line-height: 1.2;
@@ -16002,7 +16029,7 @@ h1 {
   padding: 0 0 0 50px;
 }
 .c-content-product-1 .row .c-body > .c-row > li > h4 {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -16062,7 +16089,7 @@ h1 {
 }
 .c-post-list-h1 {
   margin-right: 40px;
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 50px;
@@ -16087,7 +16114,7 @@ h1 {
   padding: 20px 0;
 }
 .c-content-blog-post-card-1 .c-body .c-title {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 19px;
   font-weight: 500;
   margin-bottom: 10px;
@@ -16101,7 +16128,7 @@ h1 {
   color: #329fd9;
 }
 .c-content-blog-post-card-1 .c-body .c-author {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 10px;
@@ -16181,7 +16208,7 @@ h1 {
   color: #5c6873;
 }
 .c-content-feature-1 > h3 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 30px;
   font-weight: 500;
   margin: 30px 0 25px 0;
@@ -16209,7 +16236,7 @@ h1 {
   height: 60px;
 }
 .c-content-feature-2 .c-title {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 20px;
   font-weight: 500;
   margin-top: 0;
@@ -16252,7 +16279,7 @@ h1 {
   text-align: center;
 }
 .c-content-feature-3-grid > .c-title {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 40px;
   font-weight: 500;
   display: inline-block;
@@ -16942,7 +16969,7 @@ h1 {
   text-align: center;
 }
 .pagenotfound h1 {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-size: 50px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -16975,14 +17002,14 @@ h1 {
   padding-left: 120px;
 }
 .c-article .authorsure-author-box h4 {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-size: 24px;
 }
 .featurelist-header-container {
   position: absolute;
 }
 .featurelist-header {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 20px;
   font-weight: 400;
   width: 100%;
@@ -17063,7 +17090,7 @@ h1 {
   background: #f7f7f7;
 }
 .featurelist ul.ul-title li.option-title {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 20px;
   font-weight: 400;
   padding: 20px 0 20px 20px;
@@ -17551,7 +17578,7 @@ h1 {
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #f5f5f5;
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Regular", sans-serif !important;
   font-weight: 400 !important;
   font-size: 20px !important;
 }
@@ -17561,12 +17588,12 @@ h1 {
   border: 1px solid #ede0b1;
   background: #fef7dd;
   margin-bottom: 35px !important;
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Regular", sans-serif !important;
   font-weight: 400 !important;
   font-size: 20px !important;
 }
 .table-select th {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-weight: 400;
   height: 50px;
   padding: 15px 28px;
@@ -17622,7 +17649,7 @@ h1 {
   border-radius: 4px;
   background: #d0efff;
   font-size: 20px;
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Regular", sans-serif !important;
   font-weight: 400 !important;
 }
 .chat:before {
@@ -17638,7 +17665,7 @@ h1 {
   border-right-color: #d0efff;
 }
 .c-article {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
 }
 .c-article h4,
 .c-article h5,
@@ -17646,20 +17673,20 @@ h1 {
   color: #333;
 }
 .c-article h4 {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-size: 30px;
   margin-top: 50px;
   margin-bottom: 25px;
 }
 .c-article h5 {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-size: 25px;
   margin-top: 35px;
   margin-bottom: 15px;
   margin-left: 20px;
 }
 .c-article h6 {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-size: 20px;
   margin-top: 25px;
   margin-bottom: 15px;
@@ -17669,7 +17696,7 @@ h1 {
   font-size: 13px !important;
 }
 .c-article .table-fornumbersOfCols th {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
 }
 .c-article .table-fornumbersOfCols td,
 .c-article .table-fornumbersOfCols th {
@@ -17698,11 +17725,11 @@ h1 {
 .c-article ul {
   margin-bottom: 35px !important;
   font-size: 20px;
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Regular", sans-serif !important;
 }
 .c-article li p {
   font-size: 20px !important;
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Regular", sans-serif !important;
   font-weight: 400 !important;
 }
 .c-article .c-content-list-1 > li {
@@ -17711,7 +17738,7 @@ h1 {
 .c-article .tweet-box {
   position: relative;
   text-align: center;
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Regular", sans-serif !important;
   font-weight: 400 !important;
 }
 .c-article .tweet-box .tweet-box-link {
@@ -17736,12 +17763,12 @@ h1 {
   display: block;
 }
 .c-article .tweet-box p {
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-size: 20px;
 }
 .c-article .c-content-bar-1.c-bordered {
   margin-bottom: 40px;
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Regular", sans-serif !important;
   font-weight: 400 !important;
 }
 .c-article .c-content-bar-1 {
@@ -17751,7 +17778,7 @@ h1 {
 .c-article table {
   font-size: 20px !important;
   margin-bottom: 40px;
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Regular", sans-serif !important;
   font-weight: 400 !important;
 }
 .c-article .btn {
@@ -17761,7 +17788,7 @@ h1 {
   border: 1px solid #329fd9;
   padding: 25px 30px;
   margin-bottom: 35px;
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: "Ubuntu Regular", sans-serif !important;
   font-weight: 400 !important;
 }
 .c-article .c-font-25 {
@@ -17963,10 +17990,10 @@ fieldset[disabled] .c-theme-btn.btn:not(.btn-no-focus):focus {
 }
 .c-theme-btn.c-btn-border-2x {
   color: #329fd9;
-  border-width: 2px;
-  border-color: #329fd9;
+  border-width: 3px;
   border-color: #329fd9;
   background: 0;
+  border-radius: 10px;
 }
 .c-theme-btn.c-btn-border-2x:active,
 .c-theme-btn.c-btn-border-2x:hover {
@@ -18469,7 +18496,7 @@ fieldset[disabled] .c-theme-btn.btn:not(.btn-no-focus):focus {
     border-bottom: 1px solid #329fd9;
     margin-top: 35px;
     margin-bottom: 35px !important;
-    font-family: "Roboto Condensed", sans-serif !important;
+    font-family: "Ubuntu Regular", sans-serif !important;
     font-weight: 400 !important;
   }
 }
@@ -18479,7 +18506,7 @@ fieldset[disabled] .c-theme-btn.btn:not(.btn-no-focus):focus {
 }
 .quote .quote-signature {
   text-align: right;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   color: #000;
   font-style: italic;
 }
@@ -18768,7 +18795,7 @@ button.btn-video-close span {
 .c-article__sharebuttonText {
   font-size: 21px;
   margin-bottom: 15px;
-  font-family: "Roboto Condensed Bold", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
 }
 .resourceItem img {
   width: 100%;
@@ -18899,13 +18926,19 @@ button.btn-video-close span {
     height: 48px;
     width: 48px;
     font-size: 18px;
-    font-weight: 700;
+    font-family: "Ubuntu Bold";
 }
 .product-item__tag--small {
     line-height: 36px;
     height: 36px;
     width: 36px;
     font-size: 15px;
+}
+.product-item__tag--large {
+  line-height: 2.667em;
+  height: 2.667em;
+  width: 2.667em;
+  font-size: 24px;
 }
 .product-item__tagBlue {
     color: #38a3da;
@@ -18926,6 +18959,7 @@ button.btn-video-close span {
     margin-top: 20px;
     margin-bottom: 5px;
     line-height: 1.42857143;
+    font-family: "Ubuntu Bold";
 }
 .menu-item__list {
     margin: 0;
@@ -19025,4 +19059,153 @@ button.btn-video-close span {
 }
 .socicon .socicon-btn {
     background-color: #dcdcdc;
+}
+.pricing {
+  margin-top: 80px;
+}
+.pricing__item {
+  position: relative;
+  text-align: center;
+  width: calc(33.333333% - 10px);
+  float: left;
+  background: #f4f7fc;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  padding: 40px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.pricing__item--active {
+  box-shadow: none;
+  cursor: default;
+}
+.pricing__item--active:after {
+  content: '';
+  position: absolute;
+  left:0;
+  display: block;
+  width: 100%;
+  height: 120px;
+  bottom: -120px;
+  background: #f4f7fc;
+}
+.pricing__item:last-child {
+  margin-right: 0;
+}
+.pricing__item .product-item__tag {
+  margin: 0 auto;
+}
+.pricing__item h3 {
+  font-family: "Ubuntu Bold";
+  font-size: 30px;
+  margin: 30px 0 25px;
+}
+.pricing__item .product-item__desc {
+  font-size: 22px;
+  height: 124px;
+}
+.pricing__item .pricing__link {
+  margin-top: 60px;
+}
+.pricing__item--hover:not(.pricing__item--active) {
+  background: #38a3da;
+  color: #fff;
+}
+.pricing__item:nth-child(1).pricing__item--hover:not(.pricing__item--active) {
+  background: #38a3da;
+}
+.pricing__item:nth-child(2).pricing__item--hover:not(.pricing__item--active) {
+  background: #0094d4;
+}
+.pricing__item:nth-child(3).pricing__item--hover:not(.pricing__item--active) {
+  background: #afdd09;
+}
+.pricing__item--hover:not(.pricing__item--active) .product-item__tag {
+  border-color: #fff;
+  color: #fff;
+}
+.pricing__item--hover:not(.pricing__item--active) h3 {
+  color: #fff;
+}
+.pricing__item--hover:not(.pricing__item--active) a {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.pricingDetails {
+  margin-top: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #f4f7fc;
+}
+.pricingDetails__col {
+  background: #f4f7fc;
+}
+.pricingDetails__col:first-child {
+  padding-left: 0;
+}
+.pricingDetails__col:last-child {
+  padding-right: 0;
+}
+.pricingDetails__title {
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+}
+.pricingDetails--lc .pricingDetails__title {
+  background: #38a3da
+}
+.pricingDetails__price {
+  margin: 30px auto 0;
+  width: 155px;
+}
+.pricingDetails__col:last-child .pricingDetails__price {
+  height: 57px;
+  line-height: 57px;
+}
+.pricingDetails__priceNum {
+  font-size: 40px;
+}
+.pricingDetails__col:last-child .pricingDetails__priceNum {
+  font-size: 22px;
+}
+.pricingDetails__priceUnit {
+  text-transform: uppercase;
+  font-size: 13px;
+  float: right;
+  margin-top: 12px;
+}
+.pricingDetails__featurelist {
+  padding-left: 60px;
+  padding-right: 60px;
+  line-height: 35px;
+  margin-top: 30px;
+  height: 245px;
+}
+.pricingDetails__featurelist li:before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background: #5c6873;
+  margin-right: 40px;
+  display: block;
+  float: left;
+  margin-top: 16px;
+}
+.pricingDetails__action {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+.pricingDetails__plusTitle {
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-top: 60px;
+}
+.pricingDetails__moreLink {
+  text-align: center;
+  margin-top: 80px;
 }
