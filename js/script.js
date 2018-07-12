@@ -1489,4 +1489,23 @@ $(document).ready(function() {
 			}, 400)
 		})
 	})
+
+	
 });
+
+window.onload = function() {
+	(function(){
+		var cardItems = document.querySelectorAll('.card-item');
+		cardItems.forEach(function(item) {
+			item.addEventListener('mouseover', function() {
+				this.classList.add('card-item--hover');
+			});
+			item.addEventListener('mouseout', function() {
+				this.classList.remove('card-item--hover');
+			})
+			item.addEventListener('click', function() {
+				window.location.href = this.getAttribute('data-link');
+			})
+		})
+	}());
+}
