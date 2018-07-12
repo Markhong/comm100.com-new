@@ -19213,6 +19213,9 @@ button.btn-video-close span {
 .card-col-2 .card-item {
   width: calc(50% - 8px);
 }
+.card-col-3 .card-item {
+  width: calc(33.333333% - 10px);
+}
 .card-item h3 {
   display: inline-block;
 }
@@ -19270,7 +19273,7 @@ button.btn-video-close span {
   display: inline-block;
   margin-right: 15px;
   margin-bottom: 30px;
-  width: 272px;
+  width: 265px;
   height: 80px;
   line-height: 80px;
   padding-left: 30px;
