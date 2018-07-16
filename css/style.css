@@ -19216,6 +19216,9 @@ button.btn-video-close span {
 .card-col-2 .card-item {
   width: calc(50% - 8px);
 }
+.card-col-3 .card-item {
+  width: calc(33.333333% - 10px);
+}
 .card-item h3 {
   display: inline-block;
 }
