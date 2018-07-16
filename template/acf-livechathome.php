@@ -103,6 +103,97 @@ Template Name:acf live chat home
   </div>
 </header>
 <div class="c-layout-page c-layout-page-fixed">
+    <?php
+        // check if the flexible content field has rows of data
+        if( have_rows('page_flexible_content') ):
+
+            // loop through the rows of data
+        while ( have_rows('page_flexible_content') ) : the_row();
+
+            // check current row layout
+            if( get_row_layout() == 'banner_group' ):
+                
+                $banner_align = get_sub_field('banner_align');
+                $banner_icon = get_sub_field('banner_icon');
+                // $page_tag = get_sub_field('page_tag');
+                $banner_headline = get_sub_field('banner_headline');
+                $banner_slogan = get_sub_field('banner_slogan');
+                $banner_description = get_sub_field('banner_description');
+                $banner_background_image = get_sub_field('banner_background_image');
+                $banner_cta = get_sub_field('banner_cta');
+
+                echo '<div class="c-content-box c-size-md banner banner--' . $banner_align . '" style="background-image: url(' . $banner_background_image['url'] . ')">';
+                echo '<div class="container">';
+                echo '<div class="col-sm-12">';
+
+                if ($banner_icon):
+                    echo '<div class="banner_icon">' .
+                            '<img src="' . $banner_icon['url'] . '" alt="' . $banner_icon['alt'] . '" width="64" height="64" />' . 
+                        '</div>';
+                endif;
+                if ($banner_headline):
+                    echo '<h1>' .
+                            $banner_headline .
+                        '</h1>';
+                endif;
+                if ($banner_slogan):
+                    echo '<p class="subtitle">' .
+                            $banner_slogan .
+                        '</p>';
+                endif;
+                if ($banner_description):
+                    echo '<div class="desc">' .
+                            $banner_description .
+                        '</div>';
+                endif;
+                
+                if ($banner_cta):
+
+                    while ( have_rows('banner_cta') ) : the_row();
+                        $banner_cta_link_type = get_sub_field('banner_cta_link_type');
+                        $banner_cta_link = get_sub_field('banner_cta_link');
+                        if ($banner_cta_link):
+                            switch ($banner_cta_link_type) {
+                                case 'green' :
+                                        echo '<a class="banner_cta_link btn btn-xlg btn-link--green" href="' . $banner_cta_link['url'] . '" target="' . $banner_cta_link['target'] . '">' .
+                                                $banner_cta_link['title'] .
+                                            '</a>';
+                                        break;
+                                case 'blue' :
+                                        echo '<a class="banner_cta_link btn btn-xlg c-theme-btn">' .
+                                                $banner_description .
+                                            '</a>';
+                                        break;
+                                case 'white' :
+                                        echo '<a class="banner_cta_link btn btn-xlg c-btn-border-2x c-theme-btn">' .
+                                                $banner_description .
+                                            '</a>';
+                                        break;
+                                case 'link' :
+                                        echo '<a class="banner_cta_link">' .
+                                                $banner_description .
+                                            '</a>';
+                                        break;
+                                default: break;
+                            }
+                        endif;
+                    endwhile;
+                    
+                    
+                endif;
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            endif;    
+
+        endwhile;
+
+        else :
+
+        // no layouts found
+
+        endif;
+    ?>
     <div class="c-content-box c-size-md">
         <div class="container">
             <div class="row">
@@ -114,36 +205,79 @@ Template Name:acf live chat home
 
                         // loop through the rows of data
                     while ( have_rows('page_flexible_content') ) : the_row();
-                         
+                         // check current row layout
+                        if( get_row_layout() == 'head_group' ):
+                            
+                            $header_align = get_sub_field('header_align');
+                            $header_icon = get_sub_field('header_icon');
+                            // $page_tag = get_sub_field('page_tag');
+                            $header_headline = get_sub_field('header_headline');
+                            $header_slogan = get_sub_field('header_slogan');
+                            $header_description = get_sub_field('header_description');
+                            $header_background_image = get_sub_field('header_background_image');
+                            $header_cta = get_sub_field('header_cta');
 
-                        // check current row layout
-                        if( get_row_layout() == 'page_title_group' ):
+                            echo '<div class="header header--' . $header_align . '">';
+                            echo '<div class="container">';
                             echo '<div class="col-sm-12">';
-                            $page_tag = get_sub_field('page_tag');
-                            $page_h1 = get_sub_field('page_h1');
-                            $page_subtitle = get_sub_field('page_subtitle');
-                            $page_description = get_sub_field('page_description');
 
-                            if ($page_tag):
-                                echo '<div class="product-item__tag product-item__tag--large product-item__tagBlue c-margin0auto c-margin-b-20">' .
-                                        $page_tag .
+                            if ($header_icon):
+                                echo '<div class="header_icon">' .
+                                        '<img src="' . $header_icon['url'] . '" alt="' . $header_icon['alt'] . '" width="64" height="64" />' . 
                                     '</div>';
                             endif;
-                            if ($page_h1):
+                            if ($header_headline):
                                 echo '<h1>' .
-                                        $page_h1 .
+                                        $header_headline .
                                     '</h1>';
                             endif;
-                            if ($page_subtitle):
+                            if ($header_slogan):
                                 echo '<p class="subtitle">' .
-                                        $page_subtitle .
+                                        $header_slogan .
                                     '</p>';
                             endif;
-                            if ($page_description):
-                                echo '<p class="desc">' .
-                                        $page_description .
-                                    '</p>';
+                            if ($header_description):
+                                echo '<div class="desc">' .
+                                        $header_description .
+                                    '</div>';
                             endif;
+                            
+                            if ($header_cta):
+
+                                while ( have_rows('header_cta') ) : the_row();
+                                    $header_cta_link_type = get_sub_field('header_cta_link_type');
+                                    $header_cta_link = get_sub_field('header_cta_link');
+                                    if ($header_cta_link):
+                                        switch ($header_cta_link_type) {
+                                            case 'green' :
+                                                    echo '<a class="header_cta_link btn btn-xlg btn-link--green" href="' . $header_cta_link['url'] . '" target="' . $header_cta_link['target'] . '">' .
+                                                            $header_cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'blue' :
+                                                    echo '<a class="header_cta_link btn btn-xlg c-theme-btn">' .
+                                                            $header_description .
+                                                        '</a>';
+                                                    break;
+                                            case 'white' :
+                                                    echo '<a class="header_cta_link btn btn-xlg c-btn-border-2x c-theme-btn">' .
+                                                            $header_description .
+                                                        '</a>';
+                                                    break;
+                                            case 'link' :
+                                                    echo '<a class="header_cta_link">' .
+                                                            $header_description .
+                                                        '</a>';
+                                                    break;
+                                            default: break;
+                                        }
+                                    endif;
+                                endwhile;
+                                
+                                
+                            endif;
+                            echo '</div>';
+                            echo '</div>';
                             echo '</div>';
                         endif;    
 
@@ -260,13 +394,17 @@ Template Name:acf live chat home
                 
             // check current row layout
             if( get_row_layout() == 'call_to_action' ):
-                echo '<div class="c-content-box c-size-md">';
-                echo '<div class="container">';
-                echo '<div class="row">';
-                echo '<div class="col-sm-12 callToAction">';
+                
+                $calltoaction_type = get_sub_field('calltoaction_type');
                 $calltoaction_title = get_sub_field('calltoaction_title');
                 $calltoaction_subtitle = get_sub_field('calltoaction_subtitle');
                 $calltoaction_link = get_sub_field('calltoaction_link');
+                $calltoaction_bg = get_sub_field('calltoaction_bg');
+
+                echo '<div class="c-content-box c-size-md" style="background-image: url(' . $calltoaction_bg['url'] . ')">';
+                echo '<div class="container">';
+                echo '<div class="row">';
+                echo '<div class="col-sm-12 callToAction callToAction--' . $calltoaction_type . '">';
 
                 if ($calltoaction_title):
                     echo '<h3>' .
@@ -286,6 +424,52 @@ Template Name:acf live chat home
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
+            endif;    
+
+        endwhile;
+
+        else :
+
+        // no layouts found
+
+        endif;
+    ?>
+    <?php
+        // check if the flexible content field has rows of data
+        if( have_rows('page_flexible_content') ):
+
+            // loop through the rows of data
+        while ( have_rows('page_flexible_content') ) : the_row();
+                
+            // check current row layout
+            if( get_row_layout() == 'customer_logo_carousel' ):
+                
+                $custom_logo_repeater = get_sub_field('custom_logo_repeater');
+                // check if the nested repeater field has rows of data
+                if( have_rows('custom_logo_repeater') ):
+                    
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="c-content-client-logos-slider-1  c-bordered" data-slider="owl" data-items="6" data-desktop-items="6" data-desktop-small-items="3" data-tablet-items="3" data-mobile-small-items="1" data-auto-play="5000">';
+                    echo '<div class="owl-carousel owl-theme c-theme owl-bordered1">';            
+                        // loop through the rows of data
+                    while ( have_rows('custom_logo_repeater') ) : the_row();
+
+                        $custom_logo_image = get_sub_field('custom_logo_image');
+
+                        echo    '<div class="item">' .
+                                    '<img src="' . $custom_logo_image['url'] . '" alt="' . $custom_logo_image['alt'] . '" width="180" height="140" />' .
+                                '</div>';
+                    endwhile;
+
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+
+                endif;
+                
+                
             endif;    
 
         endwhile;
