@@ -3734,11 +3734,11 @@ a:not(.btn-link)::before {
   content: '+';
   padding-right: 5px;
 }
-header a, .btn {
+header a, footer a, .btn {
   padding-bottom: 0;
   border-bottom: none;
 }
-header a::before, a.btn::before {
+header a::before, a.btn::before, footer a::before {
   content: ''!important;
   padding-right: 0!important;
 }
@@ -19210,6 +19210,9 @@ button.btn-video-close span {
 .card-item:last-child {
   margin-right: 0;
 }
+.card-col-1 .card-item {
+  width: 100%;
+}
 .card-col-2 .card-item {
   width: calc(50% - 8px);
 }
@@ -19270,8 +19273,6 @@ button.btn-video-close span {
   display: inline-block;
   margin-right: 15px;
   margin-bottom: 30px;
-  width: 272px;
-  height: 80px;
   line-height: 80px;
   padding-left: 30px;
   padding-right: 30px;
@@ -19282,6 +19283,10 @@ button.btn-video-close span {
   border-bottom: none;
   font-family: "Ubuntu Regular", sans-serif;
   text-align: left;
+}
+.btn-link--medium {
+  width: 270px;
+  height: 80px;
 }
 
 .btn-link:after {
@@ -19298,13 +19303,9 @@ button.btn-video-close span {
   transition: box-shadow 200ms ease-in-out;
 }
 .callToAction {
-  position: relative;
+  text-align: center;
 }
-.callToAction .subtitle {
-  text-align: left;
-}
+
 .callToAction .btn {
-  position: absolute;
-  right: 0;
-  top: 10px;
+  margin-top: 20px;
 }
