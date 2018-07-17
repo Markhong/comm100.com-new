@@ -3802,9 +3802,9 @@ h4 {
 }
 h3 {
   font-size: 32px;
-  margin: 10px 0;
+  margin: 10px 0 20px;
   color: #3f444a;
-  font-family: "Ubuntu Bold", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
 }
 h2 {
   font-size: 20px;
