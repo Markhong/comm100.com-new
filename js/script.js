@@ -1482,6 +1482,7 @@ $(document).ready(function() {
 			this.classList.value.indexOf('pricing__item--active') < 0 && this.classList.remove('pricing__item--hover');
 		})
 		item.addEventListener('click', function() {
+			$(this).siblings('.pricing__item--active').removeClass('pricing__item--active');
 			this.classList.value.indexOf('pricing__item--active') < 0 && this.classList.add('pricing__item--active');
 			var target = this.getAttribute('data-target');
 			$('html, body').animate({

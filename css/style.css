@@ -19308,10 +19308,50 @@ button.btn-video-close span {
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
   transition: box-shadow 200ms ease-in-out;
 }
+.btn-link--green {
+  background: #afdd09;
+  color: #fff;
+}
 .callToAction {
   text-align: center;
 }
 
 .callToAction .btn {
   margin-top: 20px;
+}
+
+.callToAction--freetrial .subtitle {
+  font-size: 24px;
+}
+
+.banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner--left .banner_icon,
+.banner--left h1,
+.banner--left .subtitle {
+  text-align: left;
+}
+.banner--center .banner_icon,
+.banner--center h1,
+.banner--center .subtitle,
+.header--center .header_icon {
+  text-align: center;
+}
+.banner--right .banner_icon,
+.banner--right h1,
+.banner--right .subtitle {
+  text-align: right;
+}
+.banner_icon, .header_icon {
+  margin-bottom: 20px;
 }
