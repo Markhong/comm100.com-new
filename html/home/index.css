@@ -55,7 +55,9 @@
     filter: grayscale(1);
 }
 .c-quote {
-    font-size: 30px; 
+    font-size: 30px;
+    position: relative;
+    margin-top: 30px;
 }
 .c-quote:before {
     content: ' ';
@@ -64,7 +66,7 @@
     width: 131px;
     height: 77px;
     position: absolute;
-    left: 0;
+    left: -50px;
     top: -50px;
 }
 .c-quote:after {
@@ -74,8 +76,11 @@
     width: 131px;
     height: 77px;
     position: absolute;
-    bottom: 0;
+    bottom: 50px;
     right: -50px;
+}
+.c-quote__signature {
+    margin-top: 10px;
 }
 .highlight {
     border-bottom-style: solid;
@@ -84,14 +89,33 @@
 .highlight--blue {
     border-bottom-color: #3dc4ff;
 }
-.c-name {
+.c-quote__name {
     font-size: 24px;
     font-family: "Ubuntu Bold", sans-serif;
 }
-.quote-bottomLeft__link {
+.c-quote__link {
     font-size: 20px;
+    font-family: "Ubuntu Regular", sans-serif;
     text-align: right;
 }
 .card-item--hover .product-item__tag {
     color: #ffffff;
+}
+.c-banner__slogan {
+    font-size: 48px;
+}
+.card-item__link {
+    font-size: 20px;
+    font-family: "Ubuntu Regular", sans-serif;
+}
+.c-green-btn.btn {
+    color: #fff;
+    border-color: #aedd09;
+    background: #aedd09;
+}
+.c-green-btn.btn:active,
+.c-green-btn.btn:hover {
+    color: #fff;
+    border-color: #beef11;
+    background: #beef11;
 }
