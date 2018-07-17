@@ -18929,6 +18929,9 @@ button.btn-video-close span {
 .product-item__tagLightBlue {
     color: #0094d4;
 }
+.product-item__tagBrightBlue {
+    color: #3dc4ff;
+}
 .product-item__tagGreen {
     color: #afdd09;
 }
