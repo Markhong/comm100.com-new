@@ -501,9 +501,9 @@ Template Name:acf live chat home
                 echo '<div class="row">';
                 echo '<div class="col-sm-6">';
 
-                if ($promotion_headline):
+                if ($headline):
                     echo '<div class="promotion_headline">' .
-                            $promotion_headline .
+                            $headline .
                         '</div>';
                 endif;
                 if ($slogan):
