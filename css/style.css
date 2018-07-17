@@ -19352,3 +19352,23 @@ button.btn-video-close span {
 .banner_icon, .header_icon {
   margin-bottom: 20px;
 }
+.promotion {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #f4f8fc;
+}
+.promotion_headline {
+  font-size: 24px;
+}
+.promotion h3 {
+  font-family: "Ubuntu Regular", sans-serif;
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+.promotion .action {
+  margin-top: 60px;
+}
+.promotion .hightlight {
+  padding-bottom: 3px;
+}

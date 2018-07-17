@@ -480,6 +480,62 @@ Template Name:acf live chat home
 
         endif;
     ?>
+    <?php
+        // check if the flexible content field has rows of data
+        if( have_rows('page_flexible_content') ):
+
+            // loop through the rows of data
+        while ( have_rows('page_flexible_content') ) : the_row();
+                
+            // check current row layout
+            if( get_row_layout() == 'promotion_group' ):
+                
+                $headline = get_sub_field('headline');
+                $slogan = get_sub_field('slogan');
+                $description = get_sub_field('description');
+                $promotion_cta = get_sub_field('promotion_cta');
+                $bg_image = get_sub_field('bg_image');
+
+                echo '<div class="c-content-box c-size-md promotion" style="background-image: url(' . $bg_image['url'] . ')">';
+                echo '<div class="container">';
+                echo '<div class="row">';
+                echo '<div class="col-sm-6">';
+
+                if ($promotion_headline):
+                    echo '<div class="promotion_headline">' .
+                            $promotion_headline .
+                        '</div>';
+                endif;
+                if ($slogan):
+                    echo '<h3>' .
+                            $slogan .
+                        '</h3>';
+                endif;
+                if ($description):
+                    echo '<p>' .
+                            $description .
+                        '</p>';
+                endif;
+                if ($calltoaction_link):
+                    echo  '<div class="action">
+                            <a href="' . $calltoaction_link['url'] . '" target="' . $calltoaction_link['target'] . '" class="btn btn-xlg c-theme-btn">' . $calltoaction_link['title'] . '</a>' .
+                        '</div>';
+                endif;
+                
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            endif;    
+
+        endwhile;
+
+        else :
+
+        // no layouts found
+
+        endif;
+    ?>
 </div>
 
 <?php get_footer(); ?>
