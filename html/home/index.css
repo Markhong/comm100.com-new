@@ -8,9 +8,6 @@
     opacity: 1;
     visibility: inherit;
 }
-.padding-lg {
-    padding: 220px 0 80px;
-}
 .btn-link--green {
     background: #afdd09;
 }
@@ -57,15 +54,18 @@
     -o-filter: grayscale(1);
     filter: grayscale(1);
 }
-/* .c-quote:before {
+.c-quote {
+    font-size: 30px; 
+}
+.c-quote:before {
     content: ' ';
     display: inline-block;
     background: url(../../images/12.png) no-repeat;
     width: 131px;
     height: 77px;
-    position: relative;
-    left: -61px;
-    top: 15px;
+    position: absolute;
+    left: 0;
+    top: -50px;
 }
 .c-quote:after {
     content: '';
@@ -73,12 +73,9 @@
     background: url(../../images/13.png) no-repeat;
     width: 131px;
     height: 77px;
-    position: relative;
-    left: 61px;
-    top: 0;
-} */
-.c-quote {
-    background: url(../../images/12.png) no-repeat; 
+    position: absolute;
+    bottom: 0;
+    right: -50px;
 }
 .highlight {
     border-bottom-style: solid;
