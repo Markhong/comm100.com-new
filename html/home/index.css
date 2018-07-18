@@ -54,34 +54,7 @@
     -o-filter: grayscale(1);
     filter: grayscale(1);
 }
-.c-quote {
-    font-size: 30px;
-    position: relative;
-    margin-top: 30px;
-}
-.c-quote:before {
-    content: ' ';
-    display: inline-block;
-    background: url(../../images/12.png) no-repeat;
-    width: 131px;
-    height: 77px;
-    position: absolute;
-    left: -50px;
-    top: -50px;
-}
-.c-quote:after {
-    content: '';
-    display: inline-block;
-    background: url(../../images/13.png) no-repeat;
-    width: 131px;
-    height: 77px;
-    position: absolute;
-    bottom: 50px;
-    right: -50px;
-}
-.c-quote__signature {
-    margin-top: 10px;
-}
+
 .highlight {
     border-bottom-style: solid;
     border-bottom-width: 0.2em;
@@ -89,15 +62,7 @@
 .highlight--blue {
     border-bottom-color: #3dc4ff;
 }
-.c-quote__name {
-    font-size: 24px;
-    font-family: "Ubuntu Bold", sans-serif;
-}
-.c-quote__link {
-    font-size: 20px;
-    font-family: "Ubuntu Regular", sans-serif;
-    text-align: right;
-}
+
 .card-item--hover .product-item__tag {
     color: #ffffff;
 }

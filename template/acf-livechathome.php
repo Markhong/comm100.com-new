@@ -600,7 +600,7 @@ Template Name:acf live chat home
                                         '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
                                     '</div>' .
                                     '<div class="img-text-card__text">' .
-                                        '<h3 class="hightlight hightlight--lightBlue">' . $headline . '</h3>' .
+                                        $headline . 
                                         '<p>' . $body . '</p>' . 
                                         '<div class="img-text-card__link">' . $linkcontent . '</div>' .
                                     '</div>' .
@@ -707,6 +707,237 @@ Template Name:acf live chat home
 
                 endif;
 
+               
+            endif;    
+
+        endwhile;
+
+        else :
+
+        // no layouts found
+
+        endif;
+    ?>
+    <?php
+        // check if the flexible content field has rows of data
+        if( have_rows('page_flexible_content') ):
+
+            // loop through the rows of data
+        while ( have_rows('page_flexible_content') ) : the_row();
+                
+            // check current row layout
+            if( get_row_layout() == 'one_column_group' ):
+                
+                $headicon = get_sub_field('headicon');
+                $headline = get_sub_field('headline');
+                $body = get_sub_field('body');
+                $cta = get_sub_field('cta');
+                
+
+                echo '<div class="c-content-box c-size-md">';
+                echo '<div class="container">';
+                echo '<div class="row">';
+                echo '<div class="col-sm-12 c-center">';
+
+                if ($headicon):
+                    echo '<div class="header_icon">' .
+                            '<img src="' . $headicon['url'] . '" alt="' . $headicon['alt'] . '" width="64" height="64" />' . 
+                        '</div>';
+                endif;
+                if ($headline):
+                    echo '<h3>' .
+                            $headline .
+                        '</h3>';
+                endif;
+                if ($body):
+                    echo '<p>' .
+                            $body .
+                        '</p>';
+                endif;
+                if ($cta):
+                    while ( have_rows('cta') ) : the_row();
+                        $cta_link_type = get_sub_field('cta_link_type');
+                        $cta_link = get_sub_field('cta_link');
+                        
+                        if ($cta_link):
+                            switch ($cta_link_type) {
+                                case 'green' :
+                                        echo '<a class="c-margin-t-30 btn btn-xlg btn-link--green" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $cta_link['title'] .
+                                            '</a>';
+                                        break;
+                                case 'blue' :
+                                        echo '<a class="c-margin-t-30 btn btn-xlg c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $cta_link['title'] .
+                                            '</a>';
+                                        break;
+                                case 'white' :
+                                        echo '<a class="c-margin-t-30 btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $cta_link['title'] .
+                                            '</a>';
+                                        break;
+                                case 'link' :
+                                        echo '<div class="c-margin-t-30"><a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $cta_link['title'] .
+                                            '</a></div>';
+                                        break;
+                                default: break;
+                            }
+                        endif;
+                    endwhile;
+                    
+                    
+                endif;
+                
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            endif;    
+
+        endwhile;
+
+        else :
+
+        // no layouts found
+
+        endif;
+    ?>
+    <?php
+        // check if the flexible content field has rows of data
+        if( have_rows('modules') ):
+
+            // loop through the rows of data
+        while ( have_rows('modules') ) : the_row();
+                
+            // check current row layout
+            if( get_row_layout() == '2-column' ):
+                $rows = get_sub_field('columns');
+                $row_count = count($rows);
+                $row_index = 0;
+                // check if the nested repeater field has rows of data
+                if( have_rows('columns') ):
+                    
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                        // loop through the rows of data
+                    $push = '';
+                    while ( have_rows('columns') ) : the_row();
+                        $row_index++;
+                        if ($row_index == $row_count):
+                            $push = 'col-sm-push-2';
+                        endif;
+                        $headline = get_sub_field('headline');
+                        $body = get_sub_field('body');
+                        $icon = get_sub_field('icon');
+                        $cta = get_sub_field('cta');
+                        
+                        $linkcontent = '';
+
+                        if ($cta):
+                            while ( have_rows('cta') ) : the_row();
+                                $cta_link_type = get_sub_field('cta_link_type');
+                                $cta_link = get_sub_field('cta_link');
+                                if ($cta_link):
+                                    switch ($cta_link_type) {
+                                        case 'green' :
+                                                $linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'blue' :
+                                                $linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'white' :
+                                                $linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'link' :
+                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        default: break;
+                                    }
+                                endif;
+                            endwhile;
+                        endif;
+
+                        echo    '<div class="col-sm-5 ' . $push . '">' .
+                                    '<div class="header_icon">' .
+                                        '<img src="' . $icon['url'] . '" alt="' . $icon['alt'] . '" width="64" height="64" />' .
+                                        '<h3>' . $headline . '</h3>' .
+                                        '<p>' . $body . '</p>' . 
+                                        '<div class="c-margin-t-30">' . $linkcontent . '</div>' .
+                                    '</div>' .
+                                '</div>';
+                    endwhile;
+
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+
+                endif;
+
+               
+            endif;    
+
+        endwhile;
+
+        else :
+
+        // no layouts found
+
+        endif;
+    ?>
+    <?php
+        // check if the flexible content field has rows of data
+        if( have_rows('modules') ):
+
+            // loop through the rows of data
+        while ( have_rows('modules') ) : the_row();
+                
+            // check current row layout
+            if( get_row_layout() == 'testimonial' ):
+                
+                $quote = get_sub_field('quote');
+                $signature = get_sub_field('signature');
+                $story_link = get_sub_field('story_link');
+                $background_color = get_sub_field('background_color');
+                
+
+                echo '<div class="c-content-box c-size-md c-content-box--' . $background_color . ' ">';
+                echo '<div class="container">';
+                echo '<div class="row">';
+                echo '<div class="col-sm-10 col-sm-push-1 c-quote">';
+
+                if ($quote):
+                    echo '<div class="c-quote__text">' .
+                            $quote . 
+                        '</div>';
+                endif;
+                if ($signature):
+                    echo '<div class="c-quote__signature">' .
+                            $signature .
+                        '</h3>';
+                endif;
+                if ($story_link):
+                    echo '<div class="c-quote__link">' .
+                            '<a href="' . $story_link['url'] . '" target="' . $story_link['target'] . '">' .
+                                $story_link['title'] .
+                            '</a>' .
+                        '</div>';
+                endif;
+                
+                
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
                
             endif;    
 

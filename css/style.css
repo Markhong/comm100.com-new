@@ -15289,6 +15289,10 @@ img {
     padding: 40px 0;
   }
 }
+.c-content-box--lightblue {
+  background-color: #3dc4ff;
+  color: #fff;
+}
 .c-content-line-icon {
   display: inline-block;
   width: 60px;
@@ -19426,4 +19430,47 @@ button.btn-video-close span {
 }
 .img-text-column--right .img-text-column__img {
   text-align: right;
+}
+.c-quote {
+    font-size: 30px;
+    position: relative;
+    margin-top: 30px;
+    text-align: center;
+}
+.c-quote:before {
+    content: ' ';
+    display: inline-block;
+    background: url(https://www.comm100.com/wp-content/uploads/images/quote-left.png) no-repeat;
+    width: 131px;
+    height: 77px;
+    position: absolute;
+    left: -50px;
+    top: -50px;
+}
+.c-quote:after {
+    content: '';
+    display: inline-block;
+    background: url(https://www.comm100.com/wp-content/uploads/images/quote-right.png) no-repeat;
+    width: 131px;
+    height: 77px;
+    position: absolute;
+    bottom: 50px;
+    right: -50px;
+}
+.c-quote__signature {
+    margin-top: 10px;
+}
+.c-quote__name {
+  font-size: 24px;
+  font-family: "Ubuntu Bold", sans-serif;
+}
+.c-quote__link {
+  font-size: 20px;
+  font-family: "Ubuntu Regular", sans-serif;
+  text-align: right;
+}
+
+.c-content-box--lightblue .c-quote__link a {
+  color: #fff;
+  border-bottom-color: #fff;
 }
