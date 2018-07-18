@@ -255,18 +255,18 @@ Template Name:acf live chat home
                                                         '</a>';
                                                     break;
                                             case 'blue' :
-                                                    echo '<a class="header_cta_link btn btn-xlg c-theme-btn">' .
-                                                            $header_description .
+                                                    echo '<a class="header_cta_link btn btn-xlg c-theme-btn" href="' . $header_cta_link['url'] . '" target="' . $header_cta_link['target'] . '">' .
+                                                            $header_cta_link['title'] .
                                                         '</a>';
                                                     break;
                                             case 'white' :
-                                                    echo '<a class="header_cta_link btn btn-xlg c-btn-border-2x c-theme-btn">' .
-                                                            $header_description .
+                                                    echo '<a class="header_cta_link btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $header_cta_link['url'] . '" target="' . $header_cta_link['target'] . '">' .
+                                                            $header_cta_link['title'] .
                                                         '</a>';
                                                     break;
                                             case 'link' :
-                                                    echo '<a class="header_cta_link">' .
-                                                            $header_description .
+                                                    echo '<a class="header_cta_link" href="' . $header_cta_link['url'] . '" target="' . $header_cta_link['target'] . '">' .
+                                                            $header_cta_link['title'] .
                                                         '</a>';
                                                     break;
                                             default: break;
@@ -526,6 +526,188 @@ Template Name:acf live chat home
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
+            endif;    
+
+        endwhile;
+
+        else :
+
+        // no layouts found
+
+        endif;
+    ?>
+    <?php
+        // check if the flexible content field has rows of data
+        if( have_rows('page_flexible_content') ):
+
+            // loop through the rows of data
+        while ( have_rows('page_flexible_content') ) : the_row();
+                
+            // check current row layout
+            if( get_row_layout() == 'image_text_card' ):
+                
+                // check if the nested repeater field has rows of data
+                if( have_rows('image_text_card_repeater') ):
+                    
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="col-sm-12">';         
+                        // loop through the rows of data
+                    while ( have_rows('image_text_card_repeater') ) : the_row();
+
+                        $headline = get_sub_field('headline');
+                        $body = get_sub_field('body');
+                        $image = get_sub_field('image');
+                        $image_position = get_sub_field('image_position');
+                        $cta = get_sub_field('cta');
+                        $linkcontent = '';
+
+                        if ($cta):
+                            while ( have_rows('cta') ) : the_row();
+                                $cta_link_type = get_sub_field('cta_link_type');
+                                $cta_link = get_sub_field('cta_link');
+                                if ($cta_link):
+                                    switch ($cta_link_type) {
+                                        case 'green' :
+                                                $linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'blue' :
+                                                $linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'white' :
+                                                $linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'link' :
+                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        default: break;
+                                    }
+                                endif;
+                            endwhile;
+                        endif;
+
+                        echo    '<div class="img-text-card img-text-card--' . $image_position . ' clearfix">' .
+                                    '<div class="img-text-card__img">' .
+                                        '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
+                                    '</div>' .
+                                    '<div class="img-text-card__text">' .
+                                        '<h3 class="hightlight hightlight--lightBlue">' . $headline . '</h3>' .
+                                        '<p>' . $body . '</p>' . 
+                                        '<div class="img-text-card__link">' . $linkcontent . '</div>' .
+                                    '</div>' .
+                                '</div>';
+                    endwhile;
+
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+
+                endif;
+
+               
+            endif;    
+
+        endwhile;
+
+        else :
+
+        // no layouts found
+
+        endif;
+    ?>
+    <?php
+        // check if the flexible content field has rows of data
+        if( have_rows('page_flexible_content') ):
+
+            // loop through the rows of data
+        while ( have_rows('page_flexible_content') ) : the_row();
+                
+            // check current row layout
+            if( get_row_layout() == 'image_text_column' ):
+                
+                // check if the nested repeater field has rows of data
+                if( have_rows('image_text_column_repeater') ):
+                    
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                        // loop through the rows of data
+                    while ( have_rows('image_text_column_repeater') ) : the_row();
+
+                        $headline = get_sub_field('headline');
+                        $body = get_sub_field('body');
+                        $image = get_sub_field('image');
+                        $image_position = get_sub_field('image_position');
+                        $cta = get_sub_field('cta');
+                        $pull6 = '';
+                        $push6 = '';
+                        if ($image_position == 'right') :
+                            $pull6 = 'col-sm-pull-6';
+                            $push6 = 'col-sm-push-6';
+                        endif;
+                        $linkcontent = '';
+
+                        if ($cta):
+                            while ( have_rows('cta') ) : the_row();
+                                $cta_link_type = get_sub_field('cta_link_type');
+                                $cta_link = get_sub_field('cta_link');
+                                if ($cta_link):
+                                    switch ($cta_link_type) {
+                                        case 'green' :
+                                                $linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'blue' :
+                                                $linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'white' :
+                                                $linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'link' :
+                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        default: break;
+                                    }
+                                endif;
+                            endwhile;
+                        endif;
+
+                        echo    '<div class="img-text-column img-text-column--' . $image_position . ' clearfix">' .
+                                    '<div class="col-sm-6 ' . $push6 . ' img-text-column__img">' .
+                                        '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
+                                    '</div>' .
+                                    '<div class="col-sm-6 ' . $pull6 . ' img-text-column__text">' .
+                                        '<h3 class="hightlight hightlight--lightBlue">' . $headline . '</h3>' .
+                                        '<p>' . $body . '</p>' . 
+                                        '<div class="img-text-column__link">' . $linkcontent . '</div>' .
+                                    '</div>' .
+                                '</div>';
+                    endwhile;
+
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+
+                endif;
+
+               
             endif;    
 
         endwhile;

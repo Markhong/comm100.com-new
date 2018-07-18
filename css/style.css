@@ -19382,7 +19382,8 @@ button.btn-video-close span {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
 }
-.img-text-card h3 {
+.img-text-card h3,
+.img-text-column h3 {
   display: inline-block;
   font-size: 24px;
   margin-bottom: 30px;
@@ -19404,7 +19405,8 @@ button.btn-video-close span {
   padding: 50px;
   
 }
-.img-text-card__link {
+.img-text-card__link,
+.img-text-column__link {
   margin-top: 35px;
 }
 .img-text-card--left .img-text-card__img {
@@ -19418,4 +19420,10 @@ button.btn-video-close span {
 }
 .img-text-card--right .img-text-card__text {
   margin-left: 0;
+}
+.img-text-column {
+  margin-bottom: 100px;
+}
+.img-text-column--right .img-text-column__img {
+  text-align: right;
 }
