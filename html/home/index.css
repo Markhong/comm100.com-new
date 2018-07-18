@@ -91,3 +91,54 @@
 .promotion .btn {
     margin-top: 50px;
 }
+.column-item {
+    padding: 40px;
+    border-right: 3px solid rgba(94, 109, 121, .1);
+    font-size: 20px;
+    text-align: center;
+    flex: 1;
+}
+/* .column-item:after {
+    content: "";
+    border-right: 3px solid rgba(94, 109, 121, .1);
+} */
+.column-item:last-child {
+    border-right: none;
+}
+.column-item__title {
+    line-height: 36px;
+    font-family: "Ubuntu Regular", sans-serif;
+}
+.column-item .desc {
+    margin-top: 30px;
+    line-height: 30px;
+    margin-bottom: 0;
+}
+.column-item img {
+    height: 120px;
+    padding-bottom: 40px;
+}
+.column-group {
+    display: flex;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+}
+.column-group.feature {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Ubuntu Regular", sans-serif;
+}
+.feature .column-item {
+    width: 50%;
+    padding: 40px 60px;
+    border-right: none;
+    float: left;
+}
+.feature .column-item__title {
+    border-bottom: 3px solid #9fdd09;
+}
+.column-item__link {
+    margin-top: 50px;
+}
