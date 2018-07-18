@@ -1,59 +1,3 @@
-.banner {
-    background-color: rgba(0, 0, 0, 0);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    width: 100%;
-    height: 540px;
-    opacity: 1;
-    visibility: inherit;
-}
-.btn-link--green {
-    background: #afdd09;
-}
-.owl-wrapper {
-    -webkit-transform: translate3d(0,0,0);
-    -moz-transform: translate3d(0,0,0);
-    -ms-transform: translate3d(0,0,0);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden
-}
-.owl-wrapper {
-    width: 2280px;
-    left: 0px;
-    display: block;
-    transition: all 1000ms ease;
-    transform: translate3d(0px, 0px, 0px);
-}
-
-.owl-theme .owl-controls {
-    margin-top: 10px;
-    text-align: center
-}
-.owl-theme .owl-controls .owl-buttons div {
-    font-size: 12px;
-    display: inline-block;
-    zoom:1;margin: 5px;
-    padding: 3px 10px;
-    opacity: .5;
-    color: #fff;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-    background: #869791;
-    filter: Alpha(Opacity=50)
-}
-.owl-item {
-    float: left;
-}
-.grayscale {
-    -webkit-filter: grayscale(1);
-    -moz-filter: grayscale(1);
-    -ms-filter: grayscale(1);
-    -o-filter: grayscale(1);
-    filter: grayscale(1);
-}
 .c-quote {
     font-size: 30px;
     position: relative;
@@ -82,13 +26,6 @@
 .c-quote__signature {
     margin-top: 10px;
 }
-.highlight {
-    border-bottom-style: solid;
-    border-bottom-width: 0.2em;
-}
-.highlight--blue {
-    border-bottom-color: #3dc4ff;
-}
 .c-quote__name {
     font-size: 24px;
     font-family: "Ubuntu Bold", sans-serif;
@@ -98,82 +35,57 @@
     font-family: "Ubuntu Regular", sans-serif;
     text-align: right;
 }
-.card-item--hover .product-item__tag {
-    color: #ffffff;
-}
-.c-banner__slogan {
-    font-size: 48px;
-    line-height: 1.25;
-}
-.banner .btn {
-    margin-top: 20px;
-}
-.card-item__link {
-    font-size: 20px;
-    font-family: "Ubuntu Regular", sans-serif;
-}
-.c-green-btn.btn {
-    color: #fff;
-    border-color: #aedd09;
-    background: #aedd09;
-}
-.c-green-btn.btn:active,
-.c-green-btn.btn:hover {
-    color: #fff;
-    border-color: #beef11;
-    background: #beef11;
-}
-.promotion .btn {
-    margin-top: 50px;
-}
-.column-item {
-    padding: 40px;
-    border-right: 3px solid rgba(94, 109, 121, .1);
-    font-size: 20px;
-    text-align: center;
-    flex: 1;
-}
-/* .column-item:after {
-    content: "";
-    border-right: 3px solid rgba(94, 109, 121, .1);
-} */
-.column-item:last-child {
-    border-right: none;
-}
-.column-item__title {
-    line-height: 36px;
-    font-family: "Ubuntu Regular", sans-serif;
-}
-.column-item .desc {
-    margin-top: 30px;
-    line-height: 30px;
-    margin-bottom: 0;
-}
-.column-item img {
-    height: 120px;
-    padding-bottom: 40px;
-}
-.column-group {
+
+.three-column {
     display: flex;
     -webkit-display: flex;
     -moz-display: flex;
     -ms-display: flex;
 }
-.column-group.feature {
-    display: block;
-    font-size: 20px;
+.three-column__item {
+    padding: 40px;
+    border-right: 3px solid rgba(94, 109, 121, .1);
+    flex: 1;
     text-align: center;
+}
+.three-column__item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 30px;
+}
+.three-column__item:last-child {
+    border-right: none;
+}
+.three-column__title {
+    line-height: 36px;
     font-family: "Ubuntu Regular", sans-serif;
 }
-.feature .column-item {
+.three-column__desc {
+    margin: 30px auto 0;
+    line-height: 30px;
+}
+.feature-column {
+    font-size: 20px;
+    text-align: center;
+}
+.feature-column__item {
     width: 50%;
     padding: 40px 60px;
     border-right: none;
     float: left;
 }
-.feature .column-item__title {
-    border-bottom: 3px solid #9fdd09;
+.feature-column__item img {
+    margin-bottom: 40px;
 }
-.column-item__link {
+.feature-column__title {
+    display: inline-block;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.feature-column__desc {
+    margin: 30px auto 0;
+    line-height: 30px;
+}
+.feature-column__link {
     margin-top: 50px;
 }

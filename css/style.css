@@ -3791,9 +3791,10 @@ h6 {
   color: #3f444a;
 }
 h5 {
-  font-size: 14px;
+  font-size: 24px;
   margin: 7px 0;
-  color: #3f444a;
+  color: #606c78;
+  font-family: "Ubuntu Regular", sans-serif;
 }
 h4 {
   font-size: 16px;
@@ -3819,6 +3820,10 @@ h1 {
   text-align: center;
 }
 p {
+  font-family: "Ubuntu Light", sans-serif;
+  font-size: 22px;
+  line-height: 1.454545em;
+  color: #606c78;
   margin: 0 0 10px;
 }
 small {
@@ -12231,16 +12236,14 @@ label {
 }
 .c-btn-green {
   color: #fff;
-  border-width: 1px;
-  border-color: #329fd9;
-  border-color: #329fd9;
-  background: #329fd9;
+  border-color: #aedd09;
+  background: #aedd09;
 }
 .c-btn-green:active,
 .c-btn-green:hover {
   color: #fff;
-  border-color: #0d92d8;
-  background: #0d92d8;
+  border-color: #beef11;
+  background: #beef11;
 }
 .c-btn-green:active {
   background-image: none;
@@ -17805,17 +17808,17 @@ img {
   text-align: left;
 }
 .grayscale {
-  -webkit-filter: grayscale(0);
-  -moz-filter: grayscale(0);
-  -ms-filter: grayscale(0);
-  -o-filter: grayscale(0);
-  filter: grayscale(0);
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  -ms-filter: grayscale(1);
+  -o-filter: grayscale(1);
+  filter: grayscale(1);
 }
 .grayscale:hover {
   -webkit-filter: grayscale(0) !important;
   -moz-filter: grayscale(0) !important;
   -ms-filter: grayscale(0) !important;
-  -o-filter: grayscale(100%) !important;
+  -o-filter: grayscale(0) !important;
   filter: grayscale(0) !important;
 }
 .c-ulnormal {
@@ -19225,18 +19228,17 @@ button.btn-video-close span {
 .card-item h3 {
   display: inline-block;
 }
-.hightlight {
+.highlight {
   border-bottom-style: solid;
   border-bottom-width: 0.2em;
-  padding-bottom: 20px;
 }
-.hightlight--blue {
+.highlight--blue {
   border-bottom-color: #38a3da;
 }
-.hightlight--lightBlue {
+.highlight--lightBlue {
   border-bottom-color: #0094d4;
 }
-.hightlight--green {
+.highlight--green {
   border-bottom-color: #afdd09;
 }
 .card-item__subtitle {
@@ -19246,6 +19248,8 @@ button.btn-video-close span {
 }
 .card-item__link {
   margin-top: 60px;
+  font-size: 20px;
+  font-family: "Ubuntu Regular", sans-serif;
 }
 
 .card-item--hover {
@@ -19268,7 +19272,7 @@ button.btn-video-close span {
   color: #fff;
   border-bottom-color: #fff;
 }
-.card-item--hover .hightlight {
+.card-item--hover .highlight {
   border-bottom-color: #fff;
 }
 .btn-link-group {
@@ -19355,6 +19359,13 @@ button.btn-video-close span {
 .banner_icon, .header_icon {
   margin-bottom: 20px;
 }
+.c-banner__slogan {
+  font-size: 48px;
+  line-height: 1.25;
+}
+.banner .btn {
+  margin-top: 20px;
+}
 .promotion {
   background-repeat: no-repeat;
   background-size: cover;
@@ -19372,8 +19383,11 @@ button.btn-video-close span {
 .promotion .action {
   margin-top: 60px;
 }
-.promotion .hightlight {
+.promotion .highlight {
   padding-bottom: 3px;
+}
+.promotion .btn {
+    margin-top: 50px;
 }
 .img-text-card {
   position: relative;
