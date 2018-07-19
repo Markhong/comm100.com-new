@@ -19346,12 +19346,19 @@ button.btn-video-close span {
 .btn-link-group {
   text-align: center;
 }
+.btn-link-group--normal .btn-link {
+  width: 256px;
+}
+.btn-link-group--long .btn-link {
+  width: 380px;
+}
 .btn-link {
   position: relative;
   display: inline-block;
   margin-right: 15px;
   margin-bottom: 30px;
-  line-height: 80px;
+  height: 77px;
+  line-height: 77px;
   padding-left: 30px;
   padding-right: 30px;
   color: #0094d4;
@@ -19465,8 +19472,8 @@ button.btn-video-close span {
 .img-text-card h3,
 .img-text-column h3 {
   display: inline-block;
-  font-size: 24px;
   margin-bottom: 30px;
+  padding-bottom: 12px;
 }
 .img-text-card__img,
 .img-text-card__text {
@@ -19596,10 +19603,6 @@ button.btn-video-close span {
   line-height: 36px;
   font-family: "Ubuntu Regular", sans-serif;
 }
-.three-column__desc {
-  margin: 30px auto 0;
-  line-height: 30px;
-}
 .feature-column {
   font-size: 20px;
   text-align: center;
@@ -19618,7 +19621,10 @@ button.btn-video-close span {
   margin: 0 auto;
   padding-bottom: 10px;
 }
-.feature-column__desc {
+.three-column__desc,
+.three-column p,
+.feature-column__desc,
+.feature-column__item p {
   margin: 30px auto 0;
   line-height: 30px;
 }
@@ -19636,7 +19642,10 @@ button.btn-video-close span {
       width: 100%;
       padding: 10px 15px;
   }
-  .feature-column__desc {
+  .three-column__desc,
+  .three-column p,
+  .feature-column__desc,
+  .feature-column__item p {
       margin-bottom: 30px;
   }
   .feature-column__link {
