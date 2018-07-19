@@ -1,27 +1,22 @@
-.c-quote {
-    font-size: 30px;
-    position: relative;
-    margin-top: 30px;
-}
 .c-quote:before {
-    content: ' ';
+    /* content: ' ';
     display: inline-block;
-    background: url(../../images/12.png) no-repeat;
     width: 131px;
     height: 77px;
     position: absolute;
     left: -50px;
-    top: -50px;
+    top: -50px; */
+    background: url(../../images/quote-left.png) no-repeat;
 }
 .c-quote:after {
-    content: '';
+    /* content: '';
     display: inline-block;
-    background: url(../../images/13.png) no-repeat;
     width: 131px;
     height: 77px;
     position: absolute;
     bottom: 50px;
-    right: -50px;
+    right: -50px; */
+    background: url(../../images/quote-right.png) no-repeat;
 }
 .c-quote__signature {
     margin-top: 10px;
@@ -88,4 +83,22 @@
 }
 .feature-column__link {
     margin-top: 50px;
+}
+@media screen and (max-width: 767px) {
+    .three-column {
+        display: block;
+    }
+    .three-column__item {
+        border-right: none;
+    }
+    .feature-column__item {
+        width: 100%;
+        padding: 10px 15px;
+    }
+    .feature-column__desc {
+        margin-bottom: 30px;
+    }
+    .feature-column__link {
+        margin-top: 10px;
+    }
 }
