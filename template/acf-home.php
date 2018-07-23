@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name:acf live chat home
+Template Name:acf Home
 */
 ?>
 <?php get_header(); ?>
@@ -266,7 +266,7 @@ Template Name:acf live chat home
             endif;    
 
             // check current row layout
-            if( get_row_layout() == 'feature' ):
+            if( get_row_layout() == '2-column_for_feature_left_image' ):
                 $rows = get_sub_field('repeater_feature');
                 $row_count = count($rows);
                 echo '<div class="c-content-box">';
@@ -420,7 +420,7 @@ Template Name:acf live chat home
                     $style_bg = 'style="background-image: url(' . $calltoaction_bg['url'] . ')"';
                 endif;
 
-                echo '<div class="c-content-box c-size-md" ' . $style_bg . '>';
+                echo '<div class="c-content-box c-size-md c-content-box--bg" ' . $style_bg . '>';
                 echo '<div class="container">';
                 echo '<div class="row">';
                 echo '<div class="col-sm-12 callToAction callToAction--' . $calltoaction_type . '">';
@@ -521,7 +521,7 @@ Template Name:acf live chat home
                     $style_bg = 'style="background-image: url(' . $bg_image['url'] . ')"';
                 endif;
 
-                echo '<div class="c-content-box c-size-md promotion"' . $style_bg . '>';
+                echo '<div class="c-content-box c-content-box--bg c-size-xlg promotion"' . $style_bg . '>';
                 echo '<div class="container">';
                 echo '<div class="row">';
                 echo '<div class="col-sm-6">';
@@ -737,6 +737,7 @@ Template Name:acf live chat home
             // check current row layout
             if( get_row_layout() == '1-column' ):
                 
+                $headimage = get_sub_field('image');
                 $headicon = get_sub_field('icon');
                 $headline = get_sub_field('title');
                 $body = get_sub_field('description');
@@ -747,6 +748,10 @@ Template Name:acf live chat home
                 echo '<div class="container">';
                 echo '<div class="row">';
                 echo '<div class="col-sm-12 c-center">';
+
+                if ($headimage):
+                    echo '<img src="' . $headimage['url'] . '" alt="' . $headimage['alt'] . '"/>';
+                endif;
 
                 if ($headicon):
                     echo '<div class="header_icon">' .

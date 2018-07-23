@@ -12606,14 +12606,6 @@ label {
   background-color: #eee;
 }
 
-a {
-  
-}
-
-img {
-  
-}
-
 @-webkit-viewport {
   width: device-width;
 }
@@ -15304,6 +15296,9 @@ img {
 .c-content-box.c-size-lg {
   padding: 80px 0;
 }
+.c-content-box.c-size-xlg {
+  padding: 120px 0;
+}
 .c-content-box.c-no-bottom-padding {
   padding-bottom: 0 !important;
 }
@@ -15320,7 +15315,8 @@ img {
   .c-content-box.c-size-md {
     padding: 30px 0;
   }
-  .c-content-box.c-size-lg {
+  .c-content-box.c-size-lg,
+  .c-content-box.c-size-xlg {
     padding: 40px 0;
   }
 }
@@ -15328,6 +15324,12 @@ img {
   background-color: #3dc4ff;
   color: #fff;
 }
+.c-content-box--bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .c-content-line-icon {
   display: inline-block;
   width: 60px;
@@ -19414,6 +19416,7 @@ button.btn-video-close span {
   -ms-display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 500px;
 }
 
 .banner--left .banner_icon,
@@ -19561,11 +19564,9 @@ button.btn-video-close span {
 }
 .c-quote__signature {
     margin-top: 10px;
+    font-size: 24px;
 }
-.c-quote__name {
-  font-size: 24px;
-  font-family: "Ubuntu Bold", sans-serif;
-}
+
 .c-quote__link {
   font-size: 20px;
   font-family: "Ubuntu Regular", sans-serif;
