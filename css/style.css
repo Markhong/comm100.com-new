@@ -12605,14 +12605,6 @@ label {
   background-color: #eee;
 }
 
-a {
-  
-}
-
-img {
-  
-}
-
 @-webkit-viewport {
   width: device-width;
 }
@@ -15303,6 +15295,9 @@ img {
 .c-content-box.c-size-lg {
   padding: 80px 0;
 }
+.c-content-box.c-size-xlg {
+  padding: 120px 0;
+}
 .c-content-box.c-no-bottom-padding {
   padding-bottom: 0 !important;
 }
@@ -15319,7 +15314,8 @@ img {
   .c-content-box.c-size-md {
     padding: 30px 0;
   }
-  .c-content-box.c-size-lg {
+  .c-content-box.c-size-lg,
+  .c-content-box.c-size-xlg {
     padding: 40px 0;
   }
 }
@@ -15327,6 +15323,12 @@ img {
   background-color: #3dc4ff;
   color: #fff;
 }
+.c-content-box--bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .c-content-line-icon {
   display: inline-block;
   width: 60px;
@@ -19487,12 +19489,19 @@ button.btn-video-close span {
 .btn-link-group {
   text-align: center;
 }
+.btn-link-group--normal .btn-link {
+  width: 256px;
+}
+.btn-link-group--long .btn-link {
+  width: 380px;
+}
 .btn-link {
   position: relative;
   display: inline-block;
   margin-right: 15px;
   margin-bottom: 30px;
-  line-height: 80px;
+  height: 77px;
+  line-height: 77px;
   padding-left: 30px;
   padding-right: 30px;
   color: #0094d4;
@@ -19548,6 +19557,7 @@ button.btn-video-close span {
   -ms-display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 500px;
 }
 
 .banner--left .banner_icon,
@@ -19606,8 +19616,8 @@ button.btn-video-close span {
 .img-text-card h3,
 .img-text-column h3 {
   display: inline-block;
-  font-size: 24px;
   margin-bottom: 30px;
+  padding-bottom: 12px;
 }
 .img-text-card__img,
 .img-text-card__text {
@@ -19695,11 +19705,9 @@ button.btn-video-close span {
 }
 .c-quote__signature {
     margin-top: 10px;
+    font-size: 24px;
 }
-.c-quote__name {
-  font-size: 24px;
-  font-family: "Ubuntu Bold", sans-serif;
-}
+
 .c-quote__link {
   font-size: 20px;
   font-family: "Ubuntu Regular", sans-serif;
@@ -19737,10 +19745,6 @@ button.btn-video-close span {
   line-height: 36px;
   font-family: "Ubuntu Regular", sans-serif;
 }
-.three-column__desc {
-  margin: 30px auto 0;
-  line-height: 30px;
-}
 .feature-column {
   font-size: 20px;
   text-align: center;
@@ -19759,7 +19763,10 @@ button.btn-video-close span {
   margin: 0 auto;
   padding-bottom: 10px;
 }
-.feature-column__desc {
+.three-column__desc,
+.three-column p,
+.feature-column__desc,
+.feature-column__item p {
   margin: 30px auto 0;
   line-height: 30px;
 }
@@ -19777,7 +19784,10 @@ button.btn-video-close span {
       width: 100%;
       padding: 10px 15px;
   }
-  .feature-column__desc {
+  .three-column__desc,
+  .three-column p,
+  .feature-column__desc,
+  .feature-column__item p {
       margin-bottom: 30px;
   }
   .feature-column__link {
