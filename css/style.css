@@ -3730,7 +3730,7 @@ a:active,
 a:focus,
 a:hover {
   color: #00567c;
-  border-bottom: 1px solid #00567c;
+  border-bottom-color: #00567c;
   text-decoration: none;
   outline: 0 !important;
 }
@@ -12274,8 +12274,8 @@ label {
 .c-btn-green:active,
 .c-btn-green:hover {
   color: #fff;
-  border-color: #beef11;
-  background: #beef11;
+  border-color: #9fca08;
+  background: #9fca08;
 }
 .c-btn-green:active {
   background-image: none;
@@ -12283,9 +12283,8 @@ label {
 .c-btn-blue {
   color: #fff;
   border-width: 1px;
-  border-color: #3498db;
-  border-color: #3498db;
-  background: #3498db;
+  border-color: #0094d4;
+  background: #0094d4;
 }
 .c-btn-blue:active,
 .c-btn-blue:hover {
@@ -18948,7 +18947,6 @@ button.btn-video-close span {
     height: 48px;
     width: 48px;
     font-size: 18px;
-    font-family: "Ubuntu Bold";
 }
 .product-item__tag--small {
     line-height: 36px;
@@ -18957,13 +18955,15 @@ button.btn-video-close span {
     font-size: 15px;
 }
 .product-item__tag--large {
-  line-height: 2.667em;
-  height: 2.667em;
-  width: 2.667em;
-  font-size: 24px;
+  line-height: 2.09375em;
+  height: 2.09375em;
+  width: 2.09375em;
+  font-size: 32px;
+  font-family: "Ubuntu Bold";
 }
 .product-item__tagBlue {
     color: #38a3da;
+    background-color: #f4f8fc;
 }
 .product-item__tagLightBlue {
     color: #0094d4;
@@ -19086,7 +19086,7 @@ button.btn-video-close span {
     background-color: #dcdcdc;
 }
 .pricing {
-  margin-top: 80px;
+  margin-top: 50px;
 }
 .pricing__item {
   position: relative;
@@ -19099,20 +19099,6 @@ button.btn-video-close span {
   padding: 40px;
   margin-right: 15px;
   cursor: pointer;
-}
-.pricing__item--active {
-  box-shadow: none;
-  cursor: default;
-}
-.pricing__item--active:after {
-  content: '';
-  position: absolute;
-  left:0;
-  display: block;
-  width: 100%;
-  height: 120px;
-  bottom: -120px;
-  background: #f4f7fc;
 }
 .pricing__item:last-child {
   margin-right: 0;
@@ -19132,27 +19118,26 @@ button.btn-video-close span {
 .pricing__item .pricing__link {
   margin-top: 60px;
 }
-.pricing__item--hover:not(.pricing__item--active) {
-  background: #38a3da;
+.pricing__item:hover:not(.pricing__item--active) {
   color: #fff;
 }
-.pricing__item:nth-child(1).pricing__item--hover:not(.pricing__item--active) {
-  background: #38a3da;
-}
-.pricing__item:nth-child(2).pricing__item--hover:not(.pricing__item--active) {
+.pricing__item:nth-child(1):hover:not(.pricing__item--active) {
   background: #0094d4;
 }
-.pricing__item:nth-child(3).pricing__item--hover:not(.pricing__item--active) {
-  background: #afdd09;
+.pricing__item:nth-child(2):hover:not(.pricing__item--active) {
+  background: #3dc4ff;
 }
-.pricing__item--hover:not(.pricing__item--active) .product-item__tag {
+.pricing__item:nth-child(3):hover:not(.pricing__item--active) {
+  background: #9fdd09;
+}
+.pricing__item:hover:not(.pricing__item--active) .product-item__tag {
   border-color: #fff;
   color: #fff;
 }
-.pricing__item--hover:not(.pricing__item--active) h3 {
+.pricing__item:hover:not(.pricing__item--active) h3 {
   color: #fff;
 }
-.pricing__item--hover:not(.pricing__item--active) a {
+.pricing__item:hover:not(.pricing__item--active) a {
   color: #fff;
   border-bottom-color: #fff;
 }
@@ -19165,43 +19150,149 @@ button.btn-video-close span {
     margin-top: auto;
   }
 }
+.pricingDetails-wrap {
+  display: none;
+}
+.pricingIndex {
+  height: 200px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.pricingIndex_item {
+  width: calc(33.333333% - 10px);
+  float: left;
+  background: #f4f8fc;
+  box-shadow: 1px 1px 3px rgba(69, 69, 69, .3);
+  padding: 40px 0 15px;
+  margin-right: 15px;
+  border-radius: 6px;
+  text-align: center;
+  position: relative;
+}
+.pricingIndex_item:last-child {
+  margin-right: 0;
+}
+.pricingIndex_item .product-item__tag {
+  margin: 0 auto;
+}
+.pricingIndex_item h3 {
+  font-family: "Ubuntu Bold";
+  font-size: 30px;
+  margin: 30px 0 25px;
+  color: #606c78;
+}
+.pricing__item--active {
+  box-shadow: none;
+  cursor: default;
+}
 .pricingDetails {
-  margin-top: 60px;
+  margin-top: 40px;
   padding-top: 60px;
   padding-bottom: 60px;
   background: #f4f7fc;
+  font-family: "Ubuntu Regular", sans-serif;
+}
+.pricingIndex_item.pricing__item--active:before,
+.pricingIndex_item.pricing__item--active:after {
+  position: absolute;
+  top: calc(100% - 20px);
+  width: 0;
+  height: 0;
+  content: " ";
+  border: solid transparent;
+}
+.pricingIndex_item.pricing__item--active:before {
+  margin-left: -25px;
+  border-width: 25px;
+}
+.pricingIndex_item.pricing__item--active:after {
+  margin-left: -25px;
+  border-width: 25px;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #f4f7fc;
+}
+.pricingIndex_item:nth-child(1).pricing__item--active,
+.pricingIndex_item:nth-child(1):hover:not(.pricing__item--active) {
+  background: #0094d4;
+}
+.pricingIndex_item:nth-child(2).pricing__item--active,
+.pricingIndex_item:nth-child(2):hover:not(.pricing__item--active) {
+  background: #3dc4ff;
+}
+.pricingIndex_item:nth-child(3).pricing__item--active,
+.pricingIndex_item:nth-child(3):hover:not(.pricing__item--active) {
+  background: #9fdd09;
+}
+.pricingIndex_item.pricing__item--active .product-item__tagLightBlue,
+.pricingIndex_item:hover:not(.pricing__item--active) .product-item__tagLightBlue {
+  border-color: #0094d4;
+  background-color: #fff;
+}
+.pricingIndex_item.pricing__item--active .product-item__tagBrightBlue,
+.pricingIndex_item:hover:not(.pricing__item--active) .product-item__tagBrightBlue {
+  border-color: #3dc4ff;
+  background-color: #fff;
+}
+.pricingIndex_item.pricing__item--active .product-item__tagGreen,
+.pricingIndex_item:hover:not(.pricing__item--active) .product-item__tagGreen {
+  border-color: #afdd09;
+  background-color: #fff;
+}
+.pricing__item,
+.pricing__item h3,
+.pricing__item a,
+.pricingIndex_item,
+.pricingIndex_item h3,
+.product-item__tag,
+.pricingIndex_item .product-item__tagBlue {
+  -webkit-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  -ms-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+}
+
+.pricingIndex_item.pricing__item--active h3,
+.pricingIndex_item:hover:not(.pricing__item--active) h3 {
+  color: #fff;
 }
 .pricingDetails__col {
   background: #f4f7fc;
+  font-size: 16px;
 }
 .pricingDetails__col:first-child {
   padding-left: 0;
 }
-.pricingDetails__col:last-child {
+.pricingDetails__col:nth-child(3) {
   padding-right: 0;
 }
 .pricingDetails__title {
   color: #fff;
-  font-size: 26px;
+  font-size: 22px;
   text-align: center;
   height: 60px;
   line-height: 60px;
 }
 .pricingDetails--lc .pricingDetails__title {
-  background: #38a3da
+  background: #0094d4;
+}
+.pricingDetails--mc .pricingDetails__title {
+  background: #3dc4ff;
+}
+.pricingDetails--ai .pricingDetails__title {
+  background: #afdd09;
 }
 .pricingDetails__price {
   margin: 30px auto 0;
   width: 155px;
 }
-.pricingDetails__col:last-child .pricingDetails__price {
+.pricingDetails__col:nth-child(3) .pricingDetails__price {
   height: 57px;
   line-height: 57px;
 }
 .pricingDetails__priceNum {
   font-size: 40px;
 }
-.pricingDetails__col:last-child .pricingDetails__priceNum {
+.pricingDetails__priceQuote {
   font-size: 22px;
 }
 .pricingDetails__priceUnit {
@@ -19209,24 +19300,24 @@ button.btn-video-close span {
   font-size: 13px;
   float: right;
   margin-top: 12px;
+  font-family: "Ubuntu Light", sans-serif;
 }
 .pricingDetails__featurelist {
   padding-left: 60px;
-  padding-right: 60px;
-  line-height: 35px;
+  padding-right: 40px;
+  line-height: 26px;
   margin-top: 30px;
-  height: 245px;
+  position: relative;
 }
 .pricingDetails__featurelist li:before {
   content: '';
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border-radius: 100%;
   background: #5c6873;
-  margin-right: 40px;
-  display: block;
-  float: left;
-  margin-top: 16px;
+  position: absolute;
+  left: 40px;
+  margin-top: 12px;
 }
 .pricingDetails__action {
   margin-top: 80px;
@@ -19234,13 +19325,26 @@ button.btn-video-close span {
   text-align: center;
 }
 .pricingDetails__plusTitle {
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 40px;
+  padding-right: 40px;
   margin-top: 60px;
 }
 .pricingDetails__moreLink {
   text-align: center;
-  margin-top: 80px;
+}
+.pricingDetails__moreLink a {
+  font-size: 16px;
+  color: rgba(94, 109, 121, 0.7);
+  border-bottom: none;
+}
+.pricingDetails__moreLink a:hover {
+  border-bottom: 1px solid rgba(94, 109, 121, 0.7);
+}
+.pricingDetails__moreLink a:before {
+  content: "";
+}
+.pricingDetails__moreLink a:after {
+  content: " +";
 }
 @media screen and (max-width: 767px) {
   .pricingDetails__featurelist,
@@ -19251,6 +19355,43 @@ button.btn-video-close span {
   .pricingDetails__featurelist li:before {
     margin-right: 20px;
   }
+}
+.question-item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e2e1;
+}
+.question-item__title:hover {
+  cursor: pointer;
+}
+.question-item__title:before,
+.question-item__title:after {
+  content: '';
+  position: absolute;
+  right: 30px;
+  width: 16px;
+  height: 4px;
+  background: #3dc4ff;
+  margin-top: 16px;
+}
+.question-item__title:before {
+  transform: rotateZ(-90deg);
+  transform-origin: center center;
+  -webkit-transition: transform .2s ease-out;
+  -moz-transition: transform 0.2s ease-out;
+  -ms-transition: transform 0.2s ease-out;
+  -o-transition: transform 0.2s ease-out;
+}
+.selected .question-item__title:before {
+  transform: rotateZ(0);
+}
+.question-item__content {
+  margin-top: 20px;
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: "Ubuntu Regular", sans-serif;
+  color: rgba(96, 108, 120, 0.6);
+  display: none;
 }
 
 .card {
@@ -19355,11 +19496,10 @@ button.btn-video-close span {
   padding-left: 30px;
   padding-right: 30px;
   color: #0094d4;
-  background: #f4f7fc;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 100px;
+  background: #f4f8fc;
+  box-shadow: 0px 3px 4.7px 0.3px rgba(0, 86, 124, 0.27);
+  border-radius: 35px;
   border-bottom: none;
-  font-family: "Ubuntu Regular", sans-serif;
   text-align: left;
 }
 .btn-link--medium {
@@ -19377,7 +19517,8 @@ button.btn-video-close span {
   line-height: 1;
 }
 .btn-link:hover {
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+  color: #0094d4;
+  box-shadow: 0px 7px 4.7px 0.3px rgba(0, 86, 124, 0.27);
   transition: box-shadow 200ms ease-in-out;
   border-bottom: none;
 }
