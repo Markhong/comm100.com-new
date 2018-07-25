@@ -20064,7 +20064,7 @@ button.btn-video-close span {
 }
 .storyCard-item {
   width: calc(33.333333% - 4px);
-  height: 540px;
+  height: 480px;
   float: left;
   position: relative;
   padding: 0 3px;
@@ -20126,5 +20126,20 @@ button.btn-video-close span {
   .storyCard-item.CTA {
     width: 100%;
     padding: 0;
+  }
+  .storyCard-item:last-child {  
+    margin-bottom: 0;
+  }
+}
+.logo-group-title {
+  font-size: 40px;
+  text-align: center;
+}
+.logo-group img{
+  float: left;
+}
+@media screen and (max-width: 767px) {
+  .logo-group img{
+    width: 50%;
   }
 }
