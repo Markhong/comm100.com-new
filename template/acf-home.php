@@ -336,7 +336,7 @@ Template Name:acf Home
                                                     '</a>';
                                                 break;
                                         case 'link' :
-                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                         $cta_link['title'] .
                                                     '</a>';
                                                 break;
@@ -349,10 +349,10 @@ Template Name:acf Home
                         endif;
 
                         echo    '<div class="card-item card-item--' . $card_themecolor . '" data-link="' . $card_link['url'] . '">' .
-                                    '<div><img src="' . $card_img['url'] . '" alt="' . $card_img['alt'] . '" width="105" height="105" /></div>' .
+                                    '<div><img src="' . $card_img['url'] . '" alt="' . $card_img['alt'] . '" width="70" height="70" /></div>' .
                                     '<h3 class="hightlight hightlight--' . $card_themecolor . '">' . $card_title . '</h3>' .
                                     '<div class="card-item__subtitle">' . $card_subtitle . '</div>' .
-                                    '<p>' . $card_description . '</p>' .
+                                    $card_description .
                                     '<div class="card-item__link">' . $linkcontent . '</div>' . 
                                 '</div>';
                     endwhile;
@@ -458,7 +458,7 @@ Template Name:acf Home
                                             '</a>';
                                         break;
                                 case 'link' :
-                                        echo '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                        echo '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                 $cta_link['title'] .
                                             '</a>';
                                         break;
@@ -493,7 +493,7 @@ Template Name:acf Home
                         $logo_image = get_sub_field('logo_image');
 
                         echo    '<div class="item">' .
-                                    '<img src="' . $logo_image['url'] . '" alt="' . $logo_image['alt'] . '" width="180" height="140" />' .
+                                    '<img class="c-img-pos grayscale" src="' . $logo_image['url'] . '" alt="' . $logo_image['alt'] . '" width="180" height="140" />' .
                                 '</div>';
                     endwhile;
 
@@ -563,7 +563,7 @@ Template Name:acf Home
                                             '</a>';
                                         break;
                                 case 'link' :
-                                        echo '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                        echo '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                 $cta_link['title'] .
                                             '</a>';
                                         break;
@@ -624,7 +624,7 @@ Template Name:acf Home
                                                     '</a>';
                                                 break;
                                         case 'link' :
-                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                         $cta_link['title'] .
                                                     '</a>';
                                                 break;
@@ -703,7 +703,7 @@ Template Name:acf Home
                                                     '</a>';
                                                 break;
                                         case 'link' :
-                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                         $cta_link['title'] .
                                                     '</a>';
                                                 break;
@@ -789,7 +789,7 @@ Template Name:acf Home
                                             '</a>';
                                         break;
                                 case 'link' :
-                                        echo '<div class="c-margin-t-30"><a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                        echo '<div class="c-margin-t-30"><a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                 $cta_link['title'] .
                                             '</a></div>';
                                         break;
@@ -854,7 +854,7 @@ Template Name:acf Home
                                                     '</a>';
                                                 break;
                                         case 'link' :
-                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                         $cta_link['title'] .
                                                     '</a>';
                                                 break;
@@ -909,7 +909,7 @@ Template Name:acf Home
                 endif;
                 if ($story_link):
                     echo '<div class="c-quote__link">' .
-                            '<a href="' . $story_link['url'] . '" target="' . $story_link['target'] . '">' .
+                            '<a class="c-redirectLink" href="' . $story_link['url'] . '" target="' . $story_link['target'] . '">' .
                                 $story_link['title'] .
                             '</a>' .
                         '</div>';
@@ -965,7 +965,7 @@ Template Name:acf Home
                                                     '</a>';
                                                 break;
                                         case 'link' :
-                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                         $cta_link['title'] .
                                                     '</a>';
                                                 break;
@@ -1054,7 +1054,7 @@ Template Name:acf Home
                                                 '</a>';
                                             break;
                                     case 'link' :
-                                            $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                            $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                     $cta_link['title'] .
                                                 '</a>';
                                             break;

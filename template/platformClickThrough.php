@@ -361,7 +361,7 @@ Template Name:Platform Click Through
                                                     '</a>';
                                                 break;
                                         case 'link' :
-                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                         $cta_link['title'] .
                                                     '</a>';
                                                 break;
@@ -483,7 +483,7 @@ Template Name:Platform Click Through
                                             '</a>';
                                         break;
                                 case 'link' :
-                                        echo '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                        echo '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                 $cta_link['title'] .
                                             '</a>';
                                         break;
@@ -588,7 +588,7 @@ Template Name:Platform Click Through
                                             '</a>';
                                         break;
                                 case 'link' :
-                                        echo '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                        echo '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                 $cta_link['title'] .
                                             '</a>';
                                         break;
@@ -649,7 +649,7 @@ Template Name:Platform Click Through
                                                     '</a>';
                                                 break;
                                         case 'link' :
-                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                         $cta_link['title'] .
                                                     '</a>';
                                                 break;
@@ -728,7 +728,7 @@ Template Name:Platform Click Through
                                                     '</a>';
                                                 break;
                                         case 'link' :
-                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                         $cta_link['title'] .
                                                     '</a>';
                                                 break;
@@ -814,7 +814,7 @@ Template Name:Platform Click Through
                                             '</a>';
                                         break;
                                 case 'link' :
-                                        echo '<div class="c-margin-t-30"><a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                        echo '<div class="c-margin-t-30"><a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                 $cta_link['title'] .
                                             '</a></div>';
                                         break;
@@ -879,7 +879,7 @@ Template Name:Platform Click Through
                                                     '</a>';
                                                 break;
                                         case 'link' :
-                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                         $cta_link['title'] .
                                                     '</a>';
                                                 break;
@@ -934,7 +934,7 @@ Template Name:Platform Click Through
                 endif;
                 if ($story_link):
                     echo '<div class="c-quote__link">' .
-                            '<a href="' . $story_link['url'] . '" target="' . $story_link['target'] . '">' .
+                            '<a class="c-redirectLink" href="' . $story_link['url'] . '" target="' . $story_link['target'] . '">' .
                                 $story_link['title'] .
                             '</a>' .
                         '</div>';
@@ -990,7 +990,7 @@ Template Name:Platform Click Through
                                                     '</a>';
                                                 break;
                                         case 'link' :
-                                                $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                         $cta_link['title'] .
                                                     '</a>';
                                                 break;
@@ -1079,7 +1079,7 @@ Template Name:Platform Click Through
                                                 '</a>';
                                             break;
                                     case 'link' :
-                                            $linkcontent = '<a href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                            $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
                                                     $cta_link['title'] .
                                                 '</a>';
                                             break;
