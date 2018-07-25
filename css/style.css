@@ -3772,7 +3772,7 @@ h6 {
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
-  color: inherit;
+  color: #606c78;
 }
 h1,
 h2,
@@ -3798,30 +3798,36 @@ h5 {
   font-family: "Ubuntu Regular", sans-serif;
 }
 h4 {
-  font-size: 16px;
+  font-size: 26px;
+  line-height: 34px;
   margin: 8px 0;
-  color: #3f444a;
+  color: #606c78;
+  font-family: "Ubuntu Bold", sans-serif;
 }
 h3 {
   font-size: 32px;
   margin: 10px 0 20px;
-  color: #3f444a;
+  color: #606c78;
   font-family: "Ubuntu Regular", sans-serif;
 }
 h2 {
-  font-size: 20px;
+  font-size: 40px;
   margin: 10px 0;
-  color: #3f444a;
+  color: #606c78;
+  font-family: "Ubuntu Light", sans-serif;
 }
 h1 {
   font-family: "Ubuntu Bold", sans-serif;
   font-size: 28px;
   margin: 0 0 10px;
-  color: #3f444a;
   text-align: center;
 }
 p {
   margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 32px;
+  font-family: "Ubuntu Light", sans-serif;
+  color: #606c78;
 }
 small {
   font-size: 85%;
@@ -19587,14 +19593,14 @@ button.btn-video-close span {
   border-bottom-width: 0.2em;
 }
 .highlight--blue {
-  border-bottom-color: #38a3da;
+  border-bottom-color: #0094d4;
 }
 .highlight--light_blue,
 .highlight--lightBlue {
-  border-bottom-color: #0094d4;
+  border-bottom-color: #3dc4ff;
 }
 .highlight--green {
-  border-bottom-color: #afdd09;
+  border-bottom-color: #9fdd09;
 }
 .card-item__subtitle {
   margin-top: 5px;
@@ -19819,36 +19825,41 @@ button.btn-video-close span {
     margin-top: 30px;
     text-align: center;
 }
-.c-quote:before {
-    content: ' ';
-    display: inline-block;
-    background: url(https://www.comm100.com/wp-content/uploads/images/quote-left.png) no-repeat;
-    width: 131px;
-    height: 77px;
-    position: absolute;
-    left: -50px;
-    top: -50px;
+.c-quote__content {
+  position: relative;
 }
-.c-quote:after {
-    content: '';
-    display: inline-block;
-    background: url(https://www.comm100.com/wp-content/uploads/images/quote-right.png) no-repeat;
-    width: 131px;
-    height: 77px;
-    position: absolute;
-    bottom: 50px;
-    right: -50px;
+.c-quote__content:before {
+  content: ' ';
+  display: inline-block;
+  background: url(https://www.comm100.com/wp-content/uploads/images/quote-left.png) no-repeat;
+  width: 124px;
+  height: 74px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -25%);
+}
+.c-quote__content:after {
+  content: ' ';
+  display: inline-block;
+  background: url(https://www.comm100.com/wp-content/uploads/images/quote-right.png) no-repeat;
+  width: 124px;
+  height: 74px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(50%, 25%);
 }
 @media screen and (max-width: 767px) {
-  .c-quote:before {
-    left: 0;
+  .c-quote__content:before {
+    transform: translate(0, 0);
   }
-  .c-quote:after {
-    right: 0;
+  .c-quote__content:after {
+    transform: translate(0, 0);
   }
 }
 .c-quote__signature {
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 24px;
 }
 
@@ -19936,5 +19947,201 @@ button.btn-video-close span {
   }
   .feature-column__link {
       margin-top: 10px;
+  }
+}
+
+.secondary-page h1 {
+  font-size: 24px;
+  font-family: "Ubuntu Bold", sans-serif;
+  line-height: 1.25em;
+  text-align: center;
+}
+.secondary-page h2 {
+  font-size: 36px;
+  font-family: "Ubuntu Light", sans-serif;
+  line-height: 1.277778em;
+  color: #0091d1;
+}
+.secondary-page h3 {
+  font-size: 28px;
+  font-family: "Ubuntu Regular", sans-serif;
+  line-height: 1.285714em;
+}
+.secondary-page h4 {
+  font-size: 20px;
+  font-family: "Ubuntu Regular", sans-serif;
+  line-height: 1.4em;
+}
+.customerstory-header {
+  background: #f4f8fc;
+  padding: 30px 90px 40px 0;
+  margin-top: 60px;
+  display: inline-block;
+  position: relative;
+}
+.customerstory-header:before {
+  background: #f4f8fc;
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+}
+@media screen and (max-width: 767px) {
+  .customerstory-header {
+    padding: 30px 15px;
+  }
+  .customerstory-header h2 {
+    font-size: 24px;
+  }
+  .customerstory-header br {
+    display: none;
+  }
+  .customerstory-header:before {
+    width: 0;
+  }
+}
+.customerProfile {
+  display: flex;
+  padding-bottom: 80px;
+  margin-bottom: 80px;
+  border-bottom: 3px solid rgba(94, 109, 121, .1);
+}
+.customerProfile__col h3 {
+  display: inline-block;
+}
+.customerProfile img {
+  margin-top: 30px;
+}
+.customerProfile__col {
+  padding: 0 60px;
+}
+.customerProfile__col:first-child {
+  padding-left: 0;
+}
+.customerProfile__col:last-child {
+  padding-right: 0;
+}
+.customerProfile-info {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+.customerProfile-info:last-child {
+  margin-bottom: 0;
+}
+.customerProfile-info__value {
+  font-family: "Ubuntu Bold", sans-serif;
+}
+.customerArticle .c-quote {
+  margin: 60px 120px;
+}
+.c-quote--gray {
+  background-color: #f4f8fc;
+  padding: 60px 100px;
+}
+.customerArticle-intro {
+  line-height: 42px;
+}
+.customerArticle p {
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 767px) {
+  .customerProfile {
+    display: block;
+  }
+  .customerProfile__col {
+    padding: 0;
+  }
+  .customerArticle .c-quote {
+    padding: 15px;
+    margin: 0 0 30px;
+  }
+}
+.storyCard-title {
+  font-size: 40px;
+}
+.storyCard-list {
+  margin-top: 60px;
+}
+.storyCard-item {
+  width: calc(33.333333% - 4px);
+  height: 480px;
+  float: left;
+  position: relative;
+  padding: 0 3px;
+  margin-bottom: 60px;
+}
+.storyCard-item:nth-child(3n) {
+  padding-right: 0;
+}
+.storyCard-item:nth-child(3n+1) {
+  padding-left: 0;
+}
+.storyCard-item:nth-child(3n+1).CTA {
+  margin-right: 3px;
+}
+.storyCard-item:nth-child(3n).CTA {
+  margin-left: 3px;
+}
+.storyCard-item-title {
+  font-size: 26px;
+  font-family: "Ubuntu Bold", sans-serif;
+  margin-top: 10px;
+}
+.storyCard-item-subtitle {
+  font-size: 16px;
+  font-family: "Ubuntu Bold", sans-serif;
+}
+.storyCard-item p {
+  margin-top: 30px;
+}
+.storyCard-item-link {
+  position: absolute;
+  bottom: 0;
+}
+.storyCard-item.CTA {
+  background-color: #f4f8fc;
+  border-radius: 20px;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: calc(33.333333% - 7px);
+}
+.storyCard-item-CTA-title {
+  font-size: 16px;
+  font-family: "Ubuntu Bold", sans-serif;
+}
+.storyCard-item.CTA p {
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 10px;
+}
+.storyCard-item-CTA-link {
+  margin-top: 40px;
+}
+@media screen and (max-width: 767px) {
+  .storyCard-item,
+  .storyCard-item.CTA {
+    width: 100%;
+    padding: 0;
+  }
+  .storyCard-item:last-child {  
+    margin-bottom: 0;
+  }
+}
+.logo-group-title {
+  font-size: 40px;
+  text-align: center;
+}
+.logo-group img{
+  float: left;
+}
+@media screen and (max-width: 767px) {
+  .logo-group img{
+    width: 50%;
   }
 }
