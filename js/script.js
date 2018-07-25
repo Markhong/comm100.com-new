@@ -1473,25 +1473,37 @@ $(document).ready(function() {
 		callPlayer('videoContainer','stopVideo');
 	});
 
+	function pricingItemClick(index) {
+		$('.pricing__item').removeClass('pricing__item--active');
+		$('.pricing__item').eq(index).addClass('pricing__item--active');
+		$('.pricingIndex_item').removeClass('pricing__item--active');
+		$('.pricingIndex_item').eq(index).addClass('pricing__item--active');
+		$('.pricingDetails').hide();
+		$('.pricingDetails').eq(index).show();
+	}
 	var pricingItem = document.querySelectorAll('.pricing__item');
-	pricingItem.forEach(function(item) {
-		item.addEventListener('mouseover', function() {
-			this.classList.value.indexOf('pricing__item--active') < 0 && this.classList.add('pricing__item--hover');
-		});
-		item.addEventListener('mouseout', function() {
-			this.classList.value.indexOf('pricing__item--active') < 0 && this.classList.remove('pricing__item--hover');
-		})
+	pricingItem.forEach(function(item, index) {
 		item.addEventListener('click', function() {
-			$(this).siblings('.pricing__item--active').removeClass('pricing__item--active');
-			this.classList.value.indexOf('pricing__item--active') < 0 && this.classList.add('pricing__item--active');
-			var target = this.getAttribute('data-target');
+			$('.pricingIndex').slideDown(400);
+			$('.pricingDetails-wrap').slideDown(400);
+			pricingItemClick(index);
 			$('html, body').animate({
-				scrollTop: $(target).offset().top - 100
-			}, 400)
+				scrollTop: $('.pricingIndex').offset().top - 100
+			}, 400);
 		})
-	})
+	});
+	var pricingIndex = document.querySelectorAll('.pricingIndex_item');
+	pricingIndex.forEach(function(item, index) {
+		item.addEventListener('click', function() {
+			pricingItemClick(index);
+		});
+	});
 
-	
+	$('.question-item__title').on('click', function() {
+		$(this).parent().toggleClass('selected');	
+		$(this).siblings().slideToggle(200, function() {
+		});
+	});
 });
 
 window.onload = function() {
