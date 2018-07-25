@@ -3702,7 +3702,7 @@ body {
   font-weight: 300;
   margin: 0 !important;
   padding: 0 !important;
-  color: #606c78;
+  color: #5e6d79;
   line-height: 1.42857143;
 }
 button,
@@ -12570,7 +12570,7 @@ label {
   border-radius: 44px;
 }
 .socicon-btn:hover {
-  transition: background, color 0.3s;
+  transition: color 0.3s;
 }
 .nav-bar {
   margin-bottom: 0;
@@ -19579,7 +19579,8 @@ button.btn-video-close span {
 }
 .card-item h3 {
   display: inline-block;
-  margin-top: 40px;
+  margin-top: 20px;
+  padding-bottom: 15px;
 }
 .highlight {
   border-bottom-style: solid;
@@ -19588,6 +19589,7 @@ button.btn-video-close span {
 .highlight--blue {
   border-bottom-color: #38a3da;
 }
+.highlight--light_blue,
 .highlight--lightBlue {
   border-bottom-color: #0094d4;
 }
@@ -19595,7 +19597,7 @@ button.btn-video-close span {
   border-bottom-color: #afdd09;
 }
 .card-item__subtitle {
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 30px;
   font-family: "Ubuntu Regular", sans-serif;
 }

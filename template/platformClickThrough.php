@@ -4,129 +4,7 @@ Template Name:Platform Click Through
 */
 ?>
 <?php get_header(); ?>
-  <div class="c-topbar c-navbar">
-        <div class="container">
-            <div class="c-brand">
-                  <button class="c-search-toggler" type="button">
-                    <i class="fa fa-search"></i>
-                  </button>
-                  <button class="c-hor-nav-toggler" type="button" data-target=".c-top-menu">
-                    <span class="c-line"></span>
-                    <span class="c-line"></span>
-                    <span class="c-line"></span>
-                  </button>
-                </div>
-            <!-- BEGIN: QUICK SEARCH -->
-            <form class="c-quick-search" action="https://www.comm100.com/search/">
-                <input type="text" name="q" placeholder="Search Comm100.com..." value="" class="form-control" autocomplete="off">
-                <span class="c-theme-link">&times;</span>
-            </form>
-            <!-- END: QUICK SEARCH -->
-           
-            <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
-            <?php
-              $defaults = array(
-                  'theme_location'  => 'primary',
-                  'menu'            => '',
-                  'container'       => 'nav',
-                  'container_class' => 'c-top-menu c-mega-menu c-pull-right c-mega-menu-light c-mega-menu-dark-mobile c-theme c-fonts-uppercase',
-                  'container_id'    => '',
-                  'menu_class'      => 'nav navbar-nav c-theme-nav',
-                  'menu_id'         => '',
-                  'echo'            => true,
-                  'fallback_cb'     => 'wp_page_menu',
-                  'before'          => '',
-                  'after'           => '',
-                  'link_before'     => '',
-                  'link_after'      => '',
-                  'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                  'depth'           => 0,
-                  'walker'          => ''
-                );
-                wp_nav_menu( $defaults );
-            ?>
-            <!-- END: INLINE NAV -->
-        </div>
-    </div>
-  <div class="c-navbar c-mainbar">
-    <div class="container">
-          <!-- BEGIN: BRAND -->
-        <div class="c-navbar-wrapper clearfix">
-            <div class="c-brand c-pull-left">
-                
-                  <a href="https://www.comm100.com/livechat/" class="c-logo">
-                    <span class="c-logo-img"><img src="https://www.comm100.com/wp-content/uploads/images/logo-comm100.svg" alt="Comm100" class="c-desktop-logo"/></span>
-                  </a>
-                  
-                
-                <button class="c-hor-nav-toggler" type="button" data-target=".c-top2-menu">
-                    <span class="c-line"></span>
-                    <span class="c-line"></span>
-                    <span class="c-line"></span>
-                </button>
-                
-            </div>
-            <!-- END: BRAND -->
-            
-            <!-- BEGIN: HOR NAV -->
-            <!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU -->
-            <!-- BEGIN: MEGA MENU -->
-            
-            <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
-            <?php
-              $defaults = array(
-                  'theme_location'  => 'livechat',
-                  'menu'            => '',
-                  'container'       => 'nav',
-                  'container_class' => 'c-top2-menu c-mega-menu c-pull-right c-mega-menu-light c-mega-menu-dark-mobile c-theme',
-                  'container_id'    => '',
-                  'menu_class'      => 'nav navbar-nav c-theme-nav',
-                  'menu_id'         => '',
-                  'echo'            => true,
-                  'fallback_cb'     => 'wp_page_menu',
-                  'before'          => '',
-                  'after'           => '',
-                  'link_before'     => '',
-                  'link_after'      => '',
-                  'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                  'depth'           => 0,
-                  'walker'          => ''
-                );
-                wp_nav_menu( $defaults );
-            ?>
 
-          <!-- END: MEGA MENU -->
-          <!-- END: LAYOUT/HEADERS/MEGA-MENU -->
-          <!-- END: HOR NAV -->
-        </div>
-        <div class="c-navbar-resource visible-md">
-            <div class="container">
-                <?php
-                    $defaults = array(
-                        'theme_location'  => 'primarytop3',
-                        'menu'            => '',
-                        'container'       => 'nav',
-                        'container_class' => '',
-                        'container_id'    => '',
-                        'menu_class'      => 'clearfix',
-                        'menu_id'         => '',
-                        'echo'            => true,
-                        'fallback_cb'     => 'wp_page_menu',
-                        'before'          => '',
-                        'after'           => '',
-                        'link_before'     => '',
-                        'link_after'      => '',
-                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                        'depth'           => 0,
-                        'walker'          => ''
-                    );
-                    wp_nav_menu( $defaults );
-                ?>
-            </div>
-        </div>
-    </div>
-  </div>
-</header>
 <div class="c-layout-page c-layout-page-fixed">
     
 
@@ -284,6 +162,26 @@ Template Name:Platform Click Through
                     
                     
                 endif;
+
+                $rows = get_sub_field('repeater_feature');
+                $row_count = count($rows);
+                echo '<div class="row">';
+                foreach ($rows as $row) {
+                    $featureImage = $row['feature_image'];
+                    $featureDescription = $row['feature_description'];
+                    echo '<div class="col-sm-' . strval(12/$row_count) . '">' .
+                        '<div class="c-content-feature-2 c-option-2 c-theme-bg-parent-hover">' .
+                            '<div class="c-icon-wrapper">' . 
+                                '<span aria-hidden="true">' .
+                                    '<img src="' . $featureImage['url'] . '" alt="' . $featureImage['alt'] . '" width="50" height="50">' .
+                                '</span>' .
+                            '</div>' .
+                            '<p>' . $featureDescription . '</p>' .
+                        '</div>' .
+                    '</div>';
+                }
+                echo '</div>';
+
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
@@ -338,7 +236,7 @@ Template Name:Platform Click Through
                         $card_description = get_sub_field('description');
                         $cta = get_sub_field('cta');
                         $linkcontent='';
-                        if ($banner_cta):
+                        if ($cta):
 
                             while ( have_rows('cta') ) : the_row();
                                 $cta_link_type = get_sub_field('cta_link_type');
@@ -373,11 +271,11 @@ Template Name:Platform Click Through
                             
                         endif;
 
-                        echo    '<div class="card-item card-item--' . $card_themecolor . '" data-link="' . $card_link['url'] . '">' .
+                        echo    '<div class="card-item card-item--' . $card_themecolor . '" data-link="' . $cta_link['url'] . '">' .
                                     '<div><img src="' . $card_img['url'] . '" alt="' . $card_img['alt'] . '" width="105" height="105" /></div>' .
-                                    '<h3 class="hightlight hightlight--' . $card_themecolor . '">' . $card_title . '</h3>' .
+                                    '<h3 class="highlight highlight--' . $card_themecolor . '">' . $card_title . '</h3>' .
                                     '<div class="card-item__subtitle">' . $card_subtitle . '</div>' .
-                                    '<p>' . $card_description . '</p>' .
+                                    $card_description .
                                     '<div class="card-item__link">' . $linkcontent . '</div>' . 
                                 '</div>';
                     endwhile;
