@@ -4,6 +4,7 @@ Template Name:acf Home
 */
 ?>
 <?php get_header(); ?>
+</header>
   
 <div class="c-layout-page c-layout-page-fixed">
     
@@ -542,7 +543,7 @@ Template Name:acf Home
                                         '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
                                     '</div>' .
                                     '<div class="img-text-card__text">' .
-                                        '<div class="highlight highlight--lightBlue">' . $headline . '</div>' .
+                                        '<h3 class="highlight highlight--lightBlue">' . $headline . '</h3>' .
                                         '<p>' . $body . '</p>' . 
                                         '<div class="img-text-card__link">' . $linkcontent . '</div>' .
                                     '</div>' .
@@ -614,6 +615,9 @@ Template Name:acf Home
                                     }
                                 endif;
                             endwhile;
+                            if ($linkcontent !== ''):
+                                $linkcontent = '<div class="img-text-column__link"> ' . $linkcontent . ' </div>';
+                            endif;
                         endif;
 
                         echo    '<div class="img-text-column img-text-column--' . $image_position . ' clearfix">' .
@@ -623,7 +627,7 @@ Template Name:acf Home
                                     '<div class="col-sm-6 ' . $pull6 . ' img-text-column__text">' .
                                         '<h3 class="highlight highlight--lightBlue">' . $headline . '</h3>' .
                                         $body .
-                                        '<div class="img-text-column__link">' . $linkcontent . '</div>' .
+                                        $linkcontent .
                                     '</div>' .
                                 '</div>';
                     endwhile;
@@ -965,8 +969,11 @@ Template Name:acf Home
                                 }
                             endif;
                         endwhile;
+                        if ($linkcontent !== ''):
+                            $linkcontent = '<div class="feature-column__link"> ' . $linkcontent . ' </div>';
+                        endif;
                     endif;
-                    echo '<div class="clear"></div><div class="feature-column__link">' . $linkcontent . '</div>';
+                    echo '<div class="clear"></div>' . $linkcontent;
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';

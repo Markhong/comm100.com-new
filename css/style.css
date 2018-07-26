@@ -931,6 +931,9 @@
 .icon-users:before {
   content: "\e001";
 }
+.icon-call-end {
+  transform: rotate(-90deg);
+}
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -3824,10 +3827,6 @@ h1 {
 }
 p {
   margin: 0 0 10px;
-  font-size: 22px;
-  line-height: 32px;
-  font-family: "Ubuntu Light", sans-serif;
-  color: #606c78;
 }
 small {
   font-size: 85%;
@@ -5180,7 +5179,8 @@ fieldset[disabled] a.btn {
   width: device-width;
 }
 .visible-sm,
-.visible-xs {
+.visible-xs,
+.visible-md {
   display: none !important;
 }
 @media (max-width: 767px) {
@@ -5201,6 +5201,11 @@ fieldset[disabled] a.btn {
 @media (min-width: 768px) and (max-width: 991px) {
   .hidden-sm {
     display: none !important;
+  }
+}
+@media screen and (min-width: 992px) {
+  .visible-md {
+      display:block!important
   }
 }
 .tooltip {
@@ -12562,7 +12567,7 @@ label {
   padding-top: 11px;
   transition: background, color 0.3s;
   text-align: center;
-  color: #3f444a;
+  color: #bcbcbc;
   border: 1px solid #eee;
   -webkit-font-smoothing: antialiased;
 }
@@ -13292,6 +13297,13 @@ label {
 .c-layout-header-fullscreen .c-layout-page-fixed {
   margin-top: 130px;
 }
+.c-layout-header-fullscreen .primary-page,
+.c-layout-header-fullscreen .secondary-page {
+  margin-top: 200px;
+}
+.c-layout-header .c-mainbar {
+  margin-bottom: 23px;
+}
 @media (max-width: 991px) {
   .c-layout-header-fixed .c-layout-page {
     margin-top: 120px;
@@ -13310,6 +13322,7 @@ label {
     float: none !important;
     margin: 5px 15px 5px 15px;
   }
+
   .c-layout-header .c-mainbar .c-brand {
     display: block;
     float: none !important;
@@ -14123,7 +14136,7 @@ label {
   .c-layout-header.c-layout-header-2 {
     border-bottom: 0;
     background: #fff;
-    padding-bottom: 23px;
+    /* padding-bottom: 23px; */
     border-bottom: 1px solid #ececec;
   }
   .c-layout-header.c-layout-header-2
@@ -14216,7 +14229,7 @@ label {
     background: #fff;
     box-shadow: none;
     padding-top: 18px;
-    padding-bottom: 18px;
+    /* padding-bottom: 18px; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   }
   .c-page-on-scroll
@@ -15323,6 +15336,9 @@ label {
 .c-content-box--lightblue {
   background-color: #3dc4ff;
   color: #fff;
+}
+.c-content-box--grey {
+  background-color: #f4f8fc;
 }
 .c-content-box--bg {
   background-repeat: no-repeat;
@@ -17962,20 +17978,26 @@ label {
   background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-ai.svg);
 }
 .menu-uc {
-  background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-ai.svg);
+  padding-top: 0;
+  /* background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-ai.svg); */
 }
 .menu-industry {
-  background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-ai.svg);
+  padding-top: 0;
+  /* background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-ai.svg); */
 }
 .menu-about {
-  background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-ai.svg);
+  padding-top: 0;
+  /* background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-ai.svg); */
 }
 .menu-press {
-  background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-ai.svg);
+  padding-top: 0;
+  /* background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-ai.svg); */
 }
 .menu-partners {
-  background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-ai.svg);
+  padding-top: 0;
+  /* background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-ai.svg); */
 }
+
 .menu-product .dropdown-menu {
   display: block;
   position: static;
@@ -18000,6 +18022,51 @@ label {
     padding-bottom: 12px;
     padding-left: 0;
   }
+}
+.c-layout-header .c-navbar .c-mega-menu > .nav.navbar-nav > li .dropdown-menu > li.menu-uc > a,
+.c-layout-header .c-navbar .c-mega-menu > .nav.navbar-nav > li .dropdown-menu > li.menu-industry > a,
+.c-layout-header .c-navbar .c-mega-menu > .nav.navbar-nav > li .dropdown-menu > li.menu-about > a,
+.c-layout-header .c-navbar .c-mega-menu > .nav.navbar-nav > li .dropdown-menu > li.menu-press > a,
+.c-layout-header .c-navbar .c-mega-menu > .nav.navbar-nav > li .dropdown-menu > li.menu-partners > a {
+  margin-top: 0;
+}
+.c-navbar--secondary {
+  background: #f7f7f7;
+  height: 70px;
+  line-height: 70px;
+  margin-top: 13px;
+}
+.c-navbar--secondary ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.c-navbar--secondary li {
+  float: right;
+  margin-left: 30px;
+}
+.c-navbar--secondary li.menu-item--home {
+  margin-left: 0;
+  float: left;
+}
+.c-navbar--secondary li.menu-item--home a {
+  font-size: 19px;
+  font-family: "Ubuntu Regular", sans-serif;
+  color: #606c78;
+}
+.c-navbar--secondary li.current_page_item:not(.menu-item--home) a {
+  font-family: "Ubuntu Bold", sans-serif;
+  border-bottom: 3px solid #339ed9;
+  padding-bottom: 3px;
+}
+.c-navbar--secondary li a {
+  color: rgba(96, 108, 120, 0.7);
+  font-size: 17px;
+  display: block;
+  height: 70px;
+  line-height: 70px;
+}
+.c-navbar--secondary li a:hover {
+  color: #00567c;
 }
 .c-theme-color,
 .c-theme-font {
@@ -19088,7 +19155,7 @@ button.btn-video-close span {
   background-repeat: no-repeat;
   background-size: 36px;
 }
-.menu-item--other .menu-item--an {
+/* .menu-item--other .menu-item--an {
   background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-lc.svg);
 }
 .menu-item--other .menu-item--in {
@@ -19099,10 +19166,11 @@ button.btn-video-close span {
 }
 .menu-item--other .menu-item--re {
   background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-lc.svg);
-}
-.menu-item--other .dropdown-menu > li > a {
-  padding-left: 45px;
-  line-height: 36px;
+} */
+.c-layout-header .c-navbar .c-mega-menu.c-mega-menu-light > .nav.navbar-nav li.menu-item--other .dropdown-menu > li > a {
+  color: #5e6d79;
+  font-size: 18px;
+  font-family: "Ubuntu Bold";
 }
 @media screen and (min-width: 768px) {
     .menu-item--other {
@@ -19176,9 +19244,10 @@ button.btn-video-close span {
     color:#606060;
     font-weight: 700;
     border-bottom: 1px solid #cfcfcf;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
     width: 115px;
+    font-size: 16px;
     font-family: "Ubuntu Bold", sans-serif;
 }
 .footer__link {
@@ -19222,6 +19291,19 @@ button.btn-video-close span {
 .footer__trustby span:last-child {
   margin-right: 0;
 }
+
+@media screen and (min-width: 991px) {
+  .footer__trustby span {
+    margin-right: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__trustby span {
+    margin-right: 100px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .footer__trustby span {
     display: inline-block;
@@ -19231,9 +19313,9 @@ button.btn-video-close span {
 .footer__links--joindemo .c-link {
   border-bottom: 2px solid #339ed8;
 }
-.socicon .socicon-btn {
+/* .socicon .socicon-btn {
     background-color: #dcdcdc;
-}
+} */
 .pricing {
   margin-top: 50px;
 }
@@ -19590,7 +19672,10 @@ button.btn-video-close span {
 }
 .highlight {
   border-bottom-style: solid;
-  border-bottom-width: 0.2em;
+  border-bottom-width: 3px;
+}
+h3.highlight {
+  border-bottom-width: 5px;
 }
 .highlight--blue {
   border-bottom-color: #0094d4;
@@ -19666,14 +19751,34 @@ button.btn-video-close span {
   height: 80px;
 }
 
-.btn-link:after {
-  content: '+';
+.btn-link:after,
+.btn-link:before {
+  content: '';
   position: absolute;
-  right: 30px;
-  top: 10px;
-  color: #afdd09;
-  font-size: 50px;
-  line-height: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+.btn-link:after {
+  right: 9px;
+  top: 30px;
+  z-index: 8;
+  border-width: 12px;
+  border-left-color: #afdd09;
+  border-bottom-width: 10px;
+  border-top-width: 10px;
+}
+.btn-link:before {
+  right: 16px;
+  top: 32px;
+  z-index: 9;
+  border-width: 10px;
+  border-left-color: #f4f8fc;
+  border-bottom-width: 8px;
+  border-top-width: 8px;
 }
 .btn-link:hover {
   color: #0094d4;
@@ -19713,7 +19818,10 @@ button.btn-video-close span {
 .banner--left .banner_icon,
 .banner--left h1,
 .banner--left .subtitle {
-  text-align: left;
+  text-align: left!important;
+}
+.secondary-page .subtitle {
+  color: #0094d4;
 }
 .banner--center .banner_icon,
 .banner--center h1,
@@ -19803,6 +19911,10 @@ button.btn-video-close span {
   margin-left: 0;
 }
 .img-text-column {
+  display: flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  align-items: flex-end;
   margin-bottom: 100px;
 }
 .img-text-column--right .img-text-column__img {
@@ -19906,7 +20018,7 @@ button.btn-video-close span {
 }
 .feature-column__item {
   width: 50%;
-  padding: 40px 60px;
+  padding: 0px 60px 40px;
   border-right: none;
   float: left;
 }
@@ -19955,6 +20067,15 @@ button.btn-video-close span {
   font-family: "Ubuntu Bold", sans-serif;
   line-height: 1.25em;
   text-align: center;
+}
+.secondary-page .banner h1 {
+  font-family: "Ubuntu Regular", sans-serif;
+}
+.secondary-page .banner .subtitle {
+  font-family: "Ubuntu Regular", sans-serif;
+  color: #0094d4;
+  font-size: 36px;
+  line-height: 1.3333333;
 }
 .secondary-page h2 {
   font-size: 36px;
@@ -20093,8 +20214,11 @@ button.btn-video-close span {
   font-size: 16px;
   font-family: "Ubuntu Bold", sans-serif;
 }
+.storyCard-item:not(.CTA) img {
+  width: 100%;
+}
 .storyCard-item p {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .storyCard-item-link {
   position: absolute;
@@ -20137,8 +20261,8 @@ button.btn-video-close span {
   font-size: 40px;
   text-align: center;
 }
-.logo-group img{
-  float: left;
+.logo-group {
+  text-align: center;
 }
 @media screen and (max-width: 767px) {
   .logo-group img{

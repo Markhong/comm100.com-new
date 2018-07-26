@@ -4,8 +4,34 @@ Template Name:Solution Click Through
 */
 ?>
 <?php get_header(); ?>
+<div class="c-navbar--secondary visible-md">
+        <div class="container">
+            <?php
+            $defaults = array(
+                'theme_location'  => 'solution',
+                'menu'            => '',
+                'container'       => 'nav',
+                'container_class' => '',
+                'container_id'    => '',
+                'menu_class'      => 'clearfix',
+                'menu_id'         => '',
+                'echo'            => true,
+                'fallback_cb'     => 'wp_page_menu',
+                'before'          => '',
+                'after'           => '',
+                'link_before'     => '',
+                'link_after'      => '',
+                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'depth'           => 0,
+                'walker'          => ''
+                );
+                wp_nav_menu( $defaults );
+            ?>
+        </div>
+    </div>
+</header>
 
-<div class="c-layout-page c-layout-page-fixed">
+<div class="c-layout-page c-layout-page-fixed primary-page">
     
 
     <?php
@@ -542,7 +568,7 @@ Template Name:Solution Click Through
                                         '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
                                     '</div>' .
                                     '<div class="img-text-card__text">' .
-                                        '<div class="highlight highlight--lightBlue">' . $headline . '</div>' .
+                                        '<h3 class="highlight highlight--lightBlue">' . $headline . '</h3>' .
                                         '<p>' . $body . '</p>' . 
                                         '<div class="img-text-card__link">' . $linkcontent . '</div>' .
                                     '</div>' .
@@ -614,6 +640,9 @@ Template Name:Solution Click Through
                                     }
                                 endif;
                             endwhile;
+                            if ($linkcontent !== ''):
+                                $linkcontent = '<div class="img-text-column__link"> ' . $linkcontent . ' </div>';
+                            endif;
                         endif;
 
                         echo    '<div class="img-text-column img-text-column--' . $image_position . ' clearfix">' .
@@ -623,7 +652,7 @@ Template Name:Solution Click Through
                                     '<div class="col-sm-6 ' . $pull6 . ' img-text-column__text">' .
                                         '<h3 class="highlight highlight--lightBlue">' . $headline . '</h3>' .
                                         $body .
-                                        '<div class="img-text-column__link">' . $linkcontent . '</div>' .
+                                        $linkcontent .
                                     '</div>' .
                                 '</div>';
                     endwhile;
@@ -965,8 +994,11 @@ Template Name:Solution Click Through
                                 }
                             endif;
                         endwhile;
+                        if ($linkcontent !== ''):
+                            $linkcontent = '<div class="feature-column__link"> ' . $linkcontent . ' </div>';
+                        endif;
                     endif;
-                    echo '<div class="clear"></div><div class="feature-column__link">' . $linkcontent . '</div>';
+                    echo '<div class="clear"></div>' . $linkcontent;
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';
@@ -976,6 +1008,31 @@ Template Name:Solution Click Through
 
                
             endif;    
+
+            // check current row layout
+            if( get_row_layout() == 'line' ):
+                
+                $height = get_sub_field('height');
+                $color = get_sub_field('color');
+                
+
+                echo '<div class="c-content-box">';
+                echo '<div class="container">';
+                echo '<div class="row">';
+                echo '<div class="col-sm-12">';
+
+                if ($quote):
+                    echo '<hr style="border-top-color: ' . $color . '; border-top-width: ' . $height . 'px " />';
+                endif;
+                
+                
+                
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+               
+            endif;   
         endwhile;
 
         else :
