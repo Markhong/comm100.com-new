@@ -4,104 +4,8 @@ Template Name:acf Home
 */
 ?>
 <?php get_header(); ?>
-  <div class="c-topbar c-navbar">
-        <div class="container">
-            <div class="c-brand">
-                  <button class="c-search-toggler" type="button">
-                    <i class="fa fa-search"></i>
-                  </button>
-                  <button class="c-hor-nav-toggler" type="button" data-target=".c-top-menu">
-                    <span class="c-line"></span>
-                    <span class="c-line"></span>
-                    <span class="c-line"></span>
-                  </button>
-                </div>
-            <!-- BEGIN: QUICK SEARCH -->
-            <form class="c-quick-search" action="https://www.comm100.com/search/">
-                <input type="text" name="q" placeholder="Search Comm100.com..." value="" class="form-control" autocomplete="off">
-                <span class="c-theme-link">&times;</span>
-            </form>
-            <!-- END: QUICK SEARCH -->
-           
-            <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
-            <?php
-              $defaults = array(
-                  'theme_location'  => 'primary',
-                  'menu'            => '',
-                  'container'       => 'nav',
-                  'container_class' => 'c-top-menu c-mega-menu c-pull-right c-mega-menu-light c-mega-menu-dark-mobile c-theme c-fonts-uppercase',
-                  'container_id'    => '',
-                  'menu_class'      => 'nav navbar-nav c-theme-nav',
-                  'menu_id'         => '',
-                  'echo'            => true,
-                  'fallback_cb'     => 'wp_page_menu',
-                  'before'          => '',
-                  'after'           => '',
-                  'link_before'     => '',
-                  'link_after'      => '',
-                  'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                  'depth'           => 0,
-                  'walker'          => ''
-                );
-                wp_nav_menu( $defaults );
-            ?>
-            <!-- END: INLINE NAV -->
-        </div>
-    </div>
-  <div class="c-navbar c-mainbar">
-    <div class="container">
-          <!-- BEGIN: BRAND -->
-        <div class="c-navbar-wrapper clearfix">
-            <div class="c-brand c-pull-left">
-                
-                  <a href="https://www.comm100.com/livechat/" class="c-logo">
-                    <span class="c-logo-img"><img src="https://www.comm100.com/wp-content/uploads/images/logo-comm100.svg" alt="Comm100" class="c-desktop-logo"/></span>
-                  </a>
-                  
-                
-                <button class="c-hor-nav-toggler" type="button" data-target=".c-top2-menu">
-                    <span class="c-line"></span>
-                    <span class="c-line"></span>
-                    <span class="c-line"></span>
-                </button>
-                
-            </div>
-            <!-- END: BRAND -->
-            
-            <!-- BEGIN: HOR NAV -->
-            <!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU -->
-            <!-- BEGIN: MEGA MENU -->
-            
-            <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
-            <?php
-              $defaults = array(
-                  'theme_location'  => 'livechat',
-                  'menu'            => '',
-                  'container'       => 'nav',
-                  'container_class' => 'c-top2-menu c-mega-menu c-pull-right c-mega-menu-light c-mega-menu-dark-mobile c-theme',
-                  'container_id'    => '',
-                  'menu_class'      => 'nav navbar-nav c-theme-nav',
-                  'menu_id'         => '',
-                  'echo'            => true,
-                  'fallback_cb'     => 'wp_page_menu',
-                  'before'          => '',
-                  'after'           => '',
-                  'link_before'     => '',
-                  'link_after'      => '',
-                  'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                  'depth'           => 0,
-                  'walker'          => ''
-                );
-                wp_nav_menu( $defaults );
-            ?>
-
-          <!-- END: MEGA MENU -->
-          <!-- END: LAYOUT/HEADERS/MEGA-MENU -->
-          <!-- END: HOR NAV -->
-        </div>
-    </div>
-  </div>
 </header>
+  
 <div class="c-layout-page c-layout-page-fixed">
     
 
@@ -313,7 +217,7 @@ Template Name:acf Home
                         $card_description = get_sub_field('description');
                         $cta = get_sub_field('cta');
                         $linkcontent='';
-                        if ($banner_cta):
+                        if ($cta):
 
                             while ( have_rows('cta') ) : the_row();
                                 $cta_link_type = get_sub_field('cta_link_type');
@@ -348,9 +252,9 @@ Template Name:acf Home
                             
                         endif;
 
-                        echo    '<div class="card-item card-item--' . $card_themecolor . '" data-link="' . $card_link['url'] . '">' .
+                        echo    '<div class="card-item card-item--' . $card_themecolor . '" data-link="' . $cta_link['url'] . '">' .
                                     '<div><img src="' . $card_img['url'] . '" alt="' . $card_img['alt'] . '" width="70" height="70" /></div>' .
-                                    '<h3 class="hightlight hightlight--' . $card_themecolor . '">' . $card_title . '</h3>' .
+                                    '<h3 class="highlight highlight--' . $card_themecolor . '">' . $card_title . '</h3>' .
                                     '<div class="card-item__subtitle">' . $card_subtitle . '</div>' .
                                     $card_description .
                                     '<div class="card-item__link">' . $linkcontent . '</div>' . 
@@ -639,7 +543,7 @@ Template Name:acf Home
                                         '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
                                     '</div>' .
                                     '<div class="img-text-card__text">' .
-                                        '<div class="highlight highlight--lightBlue">' . $headline . '</div>' .
+                                        '<h3 class="highlight highlight--lightBlue">' . $headline . '</h3>' .
                                         '<p>' . $body . '</p>' . 
                                         '<div class="img-text-card__link">' . $linkcontent . '</div>' .
                                     '</div>' .
@@ -711,6 +615,9 @@ Template Name:acf Home
                                     }
                                 endif;
                             endwhile;
+                            if ($linkcontent !== ''):
+                                $linkcontent = '<div class="img-text-column__link"> ' . $linkcontent . ' </div>';
+                            endif;
                         endif;
 
                         echo    '<div class="img-text-column img-text-column--' . $image_position . ' clearfix">' .
@@ -720,7 +627,7 @@ Template Name:acf Home
                                     '<div class="col-sm-6 ' . $pull6 . ' img-text-column__text">' .
                                         '<h3 class="highlight highlight--lightBlue">' . $headline . '</h3>' .
                                         $body .
-                                        '<div class="img-text-column__link">' . $linkcontent . '</div>' .
+                                        $linkcontent .
                                     '</div>' .
                                 '</div>';
                     endwhile;
@@ -1062,8 +969,11 @@ Template Name:acf Home
                                 }
                             endif;
                         endwhile;
+                        if ($linkcontent !== ''):
+                            $linkcontent = '<div class="feature-column__link"> ' . $linkcontent . ' </div>';
+                        endif;
                     endif;
-                    echo '<div class="clear"></div><div class="feature-column__link">' . $linkcontent . '</div>';
+                    echo '<div class="clear"></div>' . $linkcontent;
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';
