@@ -3823,7 +3823,7 @@ h1 {
   font-family: "Ubuntu Bold", sans-serif;
   font-size: 28px;
   margin: 0 0 10px;
-  text-align: center;
+  /* text-align: center; */
 }
 p {
   margin: 0 0 10px;
@@ -17955,7 +17955,7 @@ label {
 .c-theme-nav li.c-active {
   color: #329fd9 !important;
 }
-.c-theme-nav li.c-active > a:not(.btn) {
+.c-theme-nav li.c-active:not(.menu-item-btn) > a:not(.btn) {
   color: #329fd9 !important;
 }
 .c-theme-ul > li:active > a:not(.btn),
@@ -19826,7 +19826,8 @@ h3.highlight {
 .banner--center .banner_icon,
 .banner--center h1,
 .banner--center .subtitle,
-.header--center .header_icon {
+.header--center .header_icon,
+.header--center h1 {
   text-align: center;
 }
 .banner--right .banner_icon,
