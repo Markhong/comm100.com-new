@@ -20503,7 +20503,7 @@ h3.highlight {
 @media screen and (max-width: 767px) {
   .bio {
     margin-left: 0;
-    padding: 30px;
+    padding: 30px 30px 60px;
   }
   .bio .avatar {
     position: relative;
@@ -20512,6 +20512,9 @@ h3.highlight {
   }
   .bio-content {
     padding-top: 20px;
+  }
+  .bio-signature {
+    bottom: 30px;
   }
 }
 .img-text-vertical {
