@@ -169,6 +169,46 @@ Template Name:acf Home
                 echo '</div>';
             endif;    
 
+            if( get_row_layout() == 'hero_banner_form' ):
+                    
+                $header_headline = get_sub_field('h1_title');
+                $header_slogan = get_sub_field('subtitle');
+                $header_background_image = get_sub_field('background_image');
+                $header_form_code = get_sub_field('form_code');
+
+                $style_bg = '';
+                if ($header_background_image):
+                    $style_bg = 'style="background-image: url(' . $header_background_image['url'] . ')"';
+                endif;
+
+
+                echo '<div class="c-content-box c-size-lg banner banner--requestdemo"' . $style_bg . '>';
+                echo '<div class="container header">';
+                echo '<div class="row">';
+                echo '<div class="col-sm-12 request-demo">';
+
+                
+                if ($header_headline):
+                    echo '<h1>' .
+                            $header_headline .
+                        '</h1>';
+                endif;
+                if ($header_slogan):
+                    echo '<h2>' .
+                            $header_slogan .
+                        '</h2>';
+                endif;
+                if ($header_form_code):
+                    echo '<div class="row"><div class="col-sm-5">' . $header_form_code . '</div></div>';
+                        
+                endif;
+                
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            endif;
+
             // check current row layout
             if( get_row_layout() == '2-column_for_feature_left_image' ):
                 $rows = get_sub_field('repeater_feature');

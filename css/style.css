@@ -63,6 +63,26 @@
   font-weight: 300;
   font-style: italic;
 }
+@font-face {
+  font-family: 'Ubuntu Medium';
+  src: url('./font/Ubuntu-Medium.eot');
+  src: url('./font/Ubuntu-Medium.eot?#iefix') format('embedded-opentype'),
+      url('./font/Ubuntu-Medium.woff') format('woff'),
+      url('./font/Ubuntu-Medium.ttf') format('truetype'),
+      url('./font/Ubuntu-Medium.svg#Ubuntu-Medium') format('svg');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Ubuntu Medium Italic';
+  src: url('./font/Ubuntu-MediumItalic.eot');
+  src: url('./font/Ubuntu-MediumItalic.eot?#iefix') format('embedded-opentype'),
+      url('./font/Ubuntu-MediumItalic.woff') format('woff'),
+      url('./font/Ubuntu-MediumItalic.ttf') format('truetype'),
+      url('./font/Ubuntu-MediumItalic.svg#Ubuntu-MediumItalic') format('svg');
+  font-weight: 300;
+  font-style: italic;
+}
 
 
 @font-face {
@@ -3719,15 +3739,12 @@ textarea {
 a {
   text-decoration: none;
   color: #3dc4ff;
-  padding-bottom: 2px;
-  border-bottom: 1px solid #3dc4ff;
-  -webkit-transition: back 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   outline: 0 !important;
-  font-family: "Ubuntu Regular", sans-serif;
-  font-size: 20px;
+  
 }
 a:active,
 a:focus,
@@ -3736,6 +3753,12 @@ a:hover {
   border-bottom-color: #00567c;
   text-decoration: none;
   outline: 0 !important;
+}
+a.c-redirectLink {
+  font-family: "Ubuntu Regular", sans-serif;
+  font-size: 20px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #3dc4ff;
 }
 a.c-redirectLink::before {
   content: '+';
@@ -3827,8 +3850,6 @@ h1 {
 }
 p {
   margin: 0 0 10px;
-  font-size: 22px;
-  line-height: 32px;
 }
 small {
   font-size: 85%;
@@ -11674,11 +11695,7 @@ img.tp-slider-alternative-image {
   text-align: center;
   color: #666464;
 }
-.cbp-l-grid-projects-title {
-  font: 700 14px/21px "Open Sans", sans-serif;
-  margin-top: 10px;
-  color: #474747;
-}
+
 .cbp-l-grid-projects-desc {
   font: 400 12px/18px "Open Sans", sans-serif;
   margin-top: 5px;
@@ -12493,11 +12510,11 @@ label {
   background: #f6f7f8;
 }
 .cbp-l-grid-projects-title {
-  font-family: "Ubuntu Regular", sans-serif;
+  font-family: "Ubuntu Bold", sans-serif;
   font-size: 18px;
-  font-weight: 600;
   white-space: normal;
   color: #3f444a;
+  margin-top: 10px;
 }
 .cbp-l-grid-projects-desc {
   font-family: "Ubuntu Regular", sans-serif;
@@ -12834,11 +12851,11 @@ label {
 }
 .c-font-sbold {
   font-family: "Ubuntu Bold", sans-serif !important;
-  font-weight: 500 !important;
+  font-weight: 700 !important;
 }
 .c-font-bold {
   font-family: "Ubuntu Bold", sans-serif !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
 }
 .c-font-bolder {
   font-family: "Ubuntu Bold", sans-serif !important;
@@ -12924,6 +12941,9 @@ label {
 }
 .c-font-34 {
   font-size: 34px;
+}
+.c-font-36 {
+  font-size: 36px!important;
 }
 .c-font-40 {
   font-size: 40px;
@@ -15575,6 +15595,7 @@ label {
   font-weight: 400;
   display: block;
   padding-left: 67px;
+  font-size: 17px;
 }
 .c-content-ver-nav.c-sidebar .c-content-title-1:first-child {
   margin-top: 0 !important;
@@ -15594,7 +15615,7 @@ label {
   float: left;
   width: 12px;
   height: 12px;
-  margin: 2px 5px 0 0;
+  margin: 9px 5px 0 0;
   content: "\f105";
   color: #329fd9;
 }
@@ -15602,6 +15623,7 @@ label {
   font-family: "Ubuntu Regular", sans-serif;
   font-weight: 400;
   color: #329fd9;
+  font-size: 17px;
 }
 @-webkit-keyframes growCircle {
   0%,
@@ -16125,6 +16147,7 @@ label {
 .c-content-blog-post-1 .c-panel {
   padding: 5px 10px;
   border: 1px solid #eee;
+  font-size: 15px;
 }
 .c-content-blog-post-1 .c-panel:after {
   display: table;
@@ -16282,7 +16305,6 @@ label {
 .c-content-feature-2 .c-title {
   font-family: "Ubuntu Regular", sans-serif;
   font-size: 20px;
-  font-weight: 500;
   margin-top: 0;
   color: #3f444a;
 }
@@ -16296,6 +16318,7 @@ label {
 }
 .c-content-feature-2.c-option-2 {
   padding: 20px 0;
+  text-align: left;
 }
 .c-content-feature-2.c-option-2 .c-icon-wrapper {
   /* padding: 15px; */
@@ -16803,6 +16826,7 @@ label {
 .c-content-tab-1 .nav.tabs-right > li > a {
   border: 0;
   border-left: 3px solid transparent;
+  padding-left: 10px;
 }
 .c-content-tab-1 .nav.tabs-right > li.active,
 .c-content-tab-1 .nav.tabs-right > li:active,
@@ -18060,8 +18084,16 @@ label {
 }
 .c-navbar--secondary li.current_page_item:not(.menu-item--home) a {
   font-family: "Ubuntu Bold", sans-serif;
-  border-bottom: 3px solid #339ed9;
-  padding-bottom: 3px;
+  position: relative;
+}
+.c-navbar--secondary li.current_page_item:not(.menu-item--home) a:before {
+  content: '';
+  height: 3px;
+  background: #339ed8;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 18px;
 }
 .c-navbar--secondary li a {
   color: rgba(96, 108, 120, 0.7);
@@ -19529,7 +19561,7 @@ h3.highlight {
 }
 
 .callToAction .btn {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .callToAction--freetrial .subtitle {
@@ -19548,6 +19580,9 @@ h3.highlight {
   justify-content: center;
   height: 500px;
 }
+.banner--requestdemo {
+  height: auto;
+}
 
 .banner--left .banner_icon,
 .banner--left h1,
@@ -19560,6 +19595,7 @@ h3.highlight {
 .banner--center .banner_icon,
 .banner--center h1,
 .banner--center .subtitle,
+.header--center,
 .header--center .header_icon,
 .header--center h1 {
   text-align: center;
@@ -19864,6 +19900,14 @@ h3.highlight {
     width: 0;
   }
 }
+.callToAction--requestdemo h3 {
+  font-family: "Ubuntu Bold", sans-serif;
+  margin-bottom: 5px;  
+}
+
+.callToAction .subtitle {
+  color: #5e6d79;
+}
 .customerProfile {
   display: flex;
   padding-bottom: 80px;
@@ -20036,6 +20080,9 @@ h3.highlight {
   font-family: "Ubuntu Regular", sans-serif;
   line-height: 1.333333em;
 }
+.primary-page .banner {
+  height: 400px;
+}
 .contact-wrap {
   margin-bottom: 80px;
 }
@@ -20043,8 +20090,9 @@ h3.highlight {
   float: left;
   margin-right: 80px;
 }
-.primary-page h3.contact-title {
+.primary-page h5.contact-title {
   font-size: 18px;
+  font-family: "Ubuntu Bold", sans-serif !important;
   padding-bottom: 15px;
   border-bottom: 1px solid #0094d4;
   display: inline-block;
@@ -20059,6 +20107,9 @@ h3.highlight {
   position: absolute;
   bottom: -60px;
   right: -60px;
+}
+.contact-item:first-child {
+  float: none;
 }
 @media screen and (max-width: 767px) {
   .img-right-bottom {
@@ -20078,6 +20129,7 @@ h3.highlight {
   }
   .contact-item {
     margin-right: 70px;
+    margin-bottom: 80px;
   }
 }
 .img-text-quote {
@@ -20206,7 +20258,6 @@ h3.highlight {
   padding: 60px 50px 60px 250px;
   background-color: #f4f8fc;
   border-radius: 40px;
-  min-height: 500px;
 }
 .avatar {
   border-radius: 100%;
@@ -20226,8 +20277,7 @@ h3.highlight {
   font-size: 22px;
   line-height: 34px;
   opacity: .7;
-  position: absolute;
-  bottom: 60px;
+  margin-top: 40px;
 }
 @media screen and (max-width: 767px) {
   .bio {
@@ -20246,23 +20296,28 @@ h3.highlight {
     bottom: 30px;
   }
 }
-.img-text-vertical {
-  text-align: left;
-  padding-top: 60px;
-}
+
 .img-text-vertical img {
   width: 540px;
   height: 430px;
   background-color: #f4f8fc;
 }
 .img-text-vertical h3 {
-  padding-top: 100px;
+  margin-top: 0;
+  padding-top: 90px;
 }
 @media screen and (max-width: 767px) {
   .img-text-vertical img {
     width: 100%;
     height: auto;
   }
+}
+.aboutus-benefits > h5,
+.aboutus-benefits > p {
+  text-align: center;
+}
+.aboutus-benefits > p {
+  margin-bottom: 60px;
 }
 .user-review {
   text-align: center;
@@ -20280,19 +20335,19 @@ h3.highlight {
   float: right;
 }
 
-.join-team h1 {
+.header__withBanner h1 {
   font-size: 24px;
   font-family: "Ubuntu Regular", sans-serif;
 }
-.join-team h2 {
+.header__withBanner h2 {
   font-size: 36px;
   font-family: "Ubuntu Regular", sans-serif;
   color: #0094d4;
+  margin-bottom: 20px;
 }
-.join-team p {
+.header__withBanner p {
   font-size: 26px;
   line-height: 42px;
-  padding-top: 20px;
 }
 .icon-text-list {
   display: flex;
@@ -20321,6 +20376,13 @@ h3.highlight {
 }
 .team-photo img{
   max-height: 340px;
+  float: left;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  width: calc(33.333333% - 12px);
+}
+.team-photo img:nth-child(3n) {
+  margin-right: 0;
 }
 .open-opportunity {
   padding-top: 60px;
