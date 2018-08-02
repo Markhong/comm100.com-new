@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name:Platform Click Through
+Template Name:Platform AI Click Through
 */
 ?>
 <?php get_header(); ?>
@@ -8,7 +8,7 @@ Template Name:Platform Click Through
         <div class="container">
             <?php
             $defaults = array(
-                'theme_location'  => 'platfrom',
+                'theme_location'  => 'platformAI',
                 'menu'            => '',
                 'container'       => 'nav',
                 'container_class' => '',

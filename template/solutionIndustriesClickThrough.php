@@ -1,14 +1,14 @@
 <?php
 /*
-Template Name:Solution Landing
+Template Name:Solution Industries Click Through
 */
 ?>
 <?php get_header(); ?>
-<div class="c-navbar--secondary visible-md">
+    <div class="c-navbar--secondary visible-md">
         <div class="container">
             <?php
             $defaults = array(
-                'theme_location'  => 'solution',
+                'theme_location'  => 'solutionIndustry',
                 'menu'            => '',
                 'container'       => 'nav',
                 'container_class' => '',
@@ -31,7 +31,7 @@ Template Name:Solution Landing
     </div>
 </header>
 
-<div class="c-layout-page c-layout-page-fixed secondary-page">
+<div class="c-layout-page c-layout-page-fixed primary-page">
     
 
     <?php

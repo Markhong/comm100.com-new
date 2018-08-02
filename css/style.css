@@ -20617,6 +20617,7 @@ h3.highlight {
   line-height: 26px;
   margin-top: 30px;
   position: relative;
+  font-size: 18px;
 }
 .threeTab__Detail--contentList li:before {
   content: '';
@@ -20628,6 +20629,9 @@ h3.highlight {
   left: 40px;
   margin-top: 12px;
 }
+.threeTab__Detail--contentList li {
+  margin-bottom: 12px;
+}
 .threeTab__Detail--action {
   margin-top: 80px;
   margin-bottom: 80px;
@@ -20637,6 +20641,8 @@ h3.highlight {
   padding-left: 40px;
   padding-right: 40px;
   margin-top: 60px;
+  font-size: 22px;
+
 }
 .threeTab__Detail--bottomLink {
   text-align: center;

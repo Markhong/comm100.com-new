@@ -16,7 +16,7 @@
   display: none;
   color: #555 !important;
 }
-.col-sm-push-3 .mktoForm,
+.mktoForm,
 .request-demo .mktoForm {
   color: #555 !important;
   width: 100% !important;
@@ -109,7 +109,7 @@
   font-weight: 300;
 }
 
-.col-sm-push-3 .mktoFieldDescriptor .mktoFormCol,
+.mktoFieldDescriptor .mktoFormCol,
 .request-demo .mktoFieldDescriptor .mktoFormCol {
   width: 100% !important;
 }
@@ -127,7 +127,7 @@
   .mktoInvalid {
   width: 100% !important;
 }
-.col-sm-push-3 .mktoFieldWrap .mktoRequiredField,
+.mktoFieldWrap .mktoRequiredField,
 .request-demo .mktoFieldWrap .mktoRequiredField {
   width: 100% !important;
 }
@@ -144,7 +144,7 @@
   margin-bottom: 15px !important;
 }
 
-.col-sm-push-3 .mktoForm .mktoFormCol,
+.mktoForm .mktoFormCol,
 .request-demo .mktoForm .mktoFormCol {
   margin-bottom: 15px !important;
   width: 100% !important;
@@ -174,7 +174,7 @@
 .mktoForm .mktoOffset {
   display: none;
 }
-.col-sm-push-3 .mktoForm .mktoFieldWrap,
+.mktoForm .mktoFieldWrap,
 .request-demo .mktoForm .mktoFieldWrap {
   float: none;
   width: 100% !important;
