@@ -10,6 +10,369 @@ Template Name:acf Home
     
 
     <?php
+
+        if( have_rows('tabs') ):
+
+            // loop through the rows of data
+            while ( have_rows('tabs') ) : the_row();
+                $header_headline = get_sub_field('h1_title');
+                $header_slogan = get_sub_field('subtitle');
+
+                // check if the nested repeater field has rows of data
+                if( have_rows('tab_content') ):
+                    
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+
+                    echo '<div class="col-sm-12 c-center">' .
+                            '<h1>' . $header_headline . '</h1>' .
+                            '<h2>' .
+                                $header_slogan .
+                            '</h2>' .
+                        '</div>';
+
+                    echo '<div class="col-sm-12">';
+                    echo '<div class="threeTab__Index--Wrap clearfix" data-wheel="true">';
+                        // loop through the rows of data
+                    
+                    while ( have_rows('tab_content') ) : the_row();
+                        
+                        $color = get_sub_field('color');
+                        $tag = get_sub_field('tag');
+                        $headline = get_sub_field('headline');
+                        $body = get_sub_field('body');
+                        $link = get_sub_field('link');
+
+                        echo    '<div class="threeTab__Index">' .
+                                    '<div class="product-item__tag product-item__tag--large product-item__tag' . $color . '">' . $tag . '</div>' .
+                                    '<h3>' . $headline . '</h3>' .
+                                    '<div class="threeTab__Index--desc">' .
+                                        '<p class="product-item__desc"> ' . $body . ' </p>' .
+                                        '<div class="threeTab__Index--link">' .
+                                            '<a class="c-redirectLink" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+                                                $link['title'] .
+                                            '</a>' .
+                                        '</div>' .
+                                    '</div>' .
+                                '</div>';
+                                
+                    endwhile;
+
+                    echo '</div>';
+                    echo '<div class="threeTab__Detail-wrap">';
+
+                    // pricing live chat details
+                    echo '<div class="threeTab__Detail clearfix">';
+                    while ( have_rows('pricing_details_live_chat') ) : the_row();
+                        
+                        $title = get_sub_field('title');
+                        $if_show_price = get_sub_field('if_show_price');
+                        $price = get_sub_field('price');
+                        $request_quote = get_sub_field('request_quote');
+                        $feature_list_title = get_sub_field('feature_list_title');
+                        
+                        $priceContent = '<span class="threeTab__Detail--priceQuote"><strong>' . $request_quote . '</strong></span>';
+                        if ($if_show_price):
+                            while ( have_rows('price') ) : the_row();
+                                $price_number = get_sub_field('price_number');
+                                $price_unit = get_sub_field('price_unit');
+                                $priceContent = '<span class="threeTab__Detail--priceNum"><strong>$' . $price_number . '</strong></span>' .
+                                '<span class="threeTab__Detail--priceUnit">' . $price_unit . '</span>';
+                            endwhile;
+                            
+                        endif;
+
+                        $li_feature_list = '';
+                        while ( have_rows('feature_list') ) : the_row();
+                            $feature_point = get_sub_field('feature_point');
+                            
+                            $li_feature_list .= '<li>' . $feature_point . '</li>';
+                        endwhile;
+
+
+                        $cta = get_sub_field('cta');
+                        $linkcontent = '';
+
+                        if ($cta):
+                            while ( have_rows('cta') ) : the_row();
+                                $cta_link_type = get_sub_field('cta_link_type');
+                                $cta_link = get_sub_field('cta_link');
+                                if ($cta_link):
+                                    switch ($cta_link_type) {
+                                        case 'green' :
+                                                $linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'blue' :
+                                                $linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'white' :
+                                                $linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'link' :
+                                                $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        default: break;
+                                    }
+                                endif;
+                            endwhile;
+                            if ($linkcontent !== ''):
+                                $linkcontent = '<div class="threeTab__Detail--action"> ' . $linkcontent . ' </div>';
+                            endif;
+                        endif;
+
+                        echo    '<div class="col-sm-4 threeTab__Detail--col">' .
+                                    '<div class="threeTab__Detail--title">' . $title . '</div>' .
+                                    '<div class="threeTab__Detail--price">' . $priceContent . '</div>' .
+                                    '<p class="threeTab__Detail--subTitle">' . $feature_list_title . '</p>' .
+                                    '<ul class="threeTab__Detail--contentList">' .
+                                        $li_feature_list .
+                                    '</ul>' .
+                                    $linkcontent .
+                                '</div>';
+                                
+                    endwhile;
+                    $pricing_details_live_chat_bottom_link = get_sub_field('pricing_details_live_chat_bottom_link');
+                    if ($pricing_details_live_chat_bottom_link):
+                        echo '<div class="clear"></div>' . 
+                            '<div class="threeTab__Detail--bottomLink">' .
+                                '<a href="' . $pricing_details_live_chat_bottom_link['url'] . '" target="' . $pricing_details_live_chat_bottom_link['target'] . '">' .
+                                    $pricing_details_live_chat_bottom_link['title'] .
+                                '</a>' .
+                            '</div>';
+                    endif;
+                    echo '</div>';
+                    // end pricing live chat details
+
+                    // pricing multichannel details
+                    while ( have_rows('pricing_details_multichannel') ) : the_row();
+                        
+                        $pricing_details_multichannel_title = get_sub_field('title');
+
+                        $columnFirst = '';
+                        while ( have_rows('column_first') ) : the_row();
+                            $title = get_sub_field('title');
+                            $feature_list = '';
+                            while ( have_rows('feature_list') ) : the_row();
+                                $feature_list .= '<li>' . get_sub_field('feature_point') . '</li>';
+                            endwhile;
+                            $columnFirst = '<div class="col-sm-4 threeTab__Detail--col">' .
+                                            '<p class="threeTab__Detail--subTitle">' . $title . '</p>' .
+                                            '<ul class="threeTab__Detail--contentList">' .
+                                                $feature_list .
+                                            '</ul>' .
+                                        '</div>';
+                        endwhile;
+
+                        $columnSecond = '';
+                        while ( have_rows('column_second') ) : the_row();
+                            $title = get_sub_field('title');
+                            $feature_list = '';
+                            while ( have_rows('feature_list') ) : the_row();
+                                $feature_list .= '<li>' . get_sub_field('feature_point') . '</li>';
+                            endwhile;
+                            $columnSecond = '<div class="col-sm-4 threeTab__Detail--col">' .
+                                            '<p class="threeTab__Detail--subTitle">' . $title . '</p>' .
+                                            '<ul class="threeTab__Detail--contentList">' .
+                                                $feature_list .
+                                            '</ul>' .
+                                        '</div>';
+                        endwhile;
+
+                        $columnThird = '';
+                        while ( have_rows('column_third') ) : the_row();
+                            $price_number = get_sub_field('price_number');
+                            $price_unit = get_sub_field('price_unit');
+
+                            $cta = get_sub_field('cta');
+                            $linkcontent='';
+                            if ($cta):
+                                while ( have_rows('cta') ) : the_row();
+                                    $cta_link_type = get_sub_field('cta_link_type');
+                                    $cta_link = get_sub_field('cta_link');
+                                    if ($cta_link):
+                                        switch ($cta_link_type) {
+                                            case 'green' :
+                                                    $linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'blue' :
+                                                    $linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'white' :
+                                                    $linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'link' :
+                                                    $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            default: break;
+                                        }
+                                    endif;
+                                endwhile;
+                            endif;
+                            
+                            $columnThird = '<div class="col-sm-4 threeTab__Detail--col">' .
+                                                '<div class="threeTab__Detail--price">' .
+                                                    '<span class="threeTab__Detail--priceNum"><strong>$' . $price_number . '</strong></span>' .
+                                                    '<span class="threeTab__Detail--priceUnit">' . $price_unit . '</span>' .
+                                                '</div>' .
+                                                '<div class="threeTab__Detail--action">' .
+                                                    $linkcontent .
+                                                '</div>' .
+                                            '</div>';
+                        endwhile;
+
+                        echo    '<div class="threeTab__Detail clearfix">' .
+                                    '<div class="threeTab__Detail--col">' . 
+                                        '<div class="threeTab__Detail--title">' .
+                                            $pricing_details_multichannel_title . 
+                                        '</div>' .
+                                    '</div>' .
+                                    $columnFirst .
+                                    $columnSecond .
+                                    $columnThird .
+                                '</div>';
+                                
+                    endwhile;
+                    // end pricing multichannel details
+
+
+                    // pricing AI details
+                    while ( have_rows('pricing_details_ai') ) : the_row();
+                        
+                        $pricing_details_ai_title = get_sub_field('title');
+
+                        $columnFirst = '';
+                        while ( have_rows('column_first') ) : the_row();
+                            $title = get_sub_field('title');
+                            $feature_list = '';
+                            while ( have_rows('feature_list') ) : the_row();
+                                $feature_list .= '<li>' . get_sub_field('feature_point') . '</li>';
+                            endwhile;
+                            $columnFirst = '<div class="col-sm-4 threeTab__Detail--col">' .
+                                            '<p class="threeTab__Detail--subTitle">' . $title . '</p>' .
+                                            '<ul class="threeTab__Detail--contentList">' .
+                                                $feature_list .
+                                            '</ul>' .
+                                        '</div>';
+                        endwhile;
+
+                        $columnSecond = '';
+                        while ( have_rows('column_second') ) : the_row();
+                            $title_01 = get_sub_field('title_01');
+                            $feature_list_01 = '';
+                            while ( have_rows('feature_list_01') ) : the_row();
+                                $feature_list_01 .= '<li>' . get_sub_field('feature_point') . '</li>';
+                            endwhile;
+
+                            $title_02 = get_sub_field('title_02');
+                            $feature_list_02 = '';
+                            while ( have_rows('feature_list_02') ) : the_row();
+                                $feature_list_02 .= '<li>' . get_sub_field('feature_point') . '</li>';
+                            endwhile;
+
+                            $columnSecond = '<div class="col-sm-4 threeTab__Detail--col">' .
+                                            '<p class="threeTab__Detail--subTitle">' . $title_01 . '</p>' .
+                                            '<ul class="threeTab__Detail--contentList">' .
+                                                $feature_list_01 .
+                                            '</ul>' .
+                                            '<p class="threeTab__Detail--subTitle">' . $title_02 . '</p>' .
+                                            '<ul class="threeTab__Detail--contentList">' .
+                                                $feature_list_02 .
+                                            '</ul>' .
+                                        '</div>';
+                        endwhile;
+
+                        $columnThird = '';
+                        while ( have_rows('column_third') ) : the_row();
+                            $price = get_sub_field('price');
+
+                            $cta = get_sub_field('cta');
+                            $linkcontent='';
+                            if ($cta):
+                                while ( have_rows('cta') ) : the_row();
+                                    $cta_link_type = get_sub_field('cta_link_type');
+                                    $cta_link = get_sub_field('cta_link');
+                                    if ($cta_link):
+                                        switch ($cta_link_type) {
+                                            case 'green' :
+                                                    $linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'blue' :
+                                                    $linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'white' :
+                                                    $linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'link' :
+                                                    $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            default: break;
+                                        }
+                                    endif;
+                                endwhile;
+                            endif;
+                            
+                            $columnThird = '<div class="col-sm-4 threeTab__Detail--col">' .
+                                                '<div class="threeTab__Detail--price">' .
+                                                    '<span class="threeTab__Detail--priceQuote"><strong>' . $price . '</strong></span>' .
+                                                '</div>' .
+                                                '<div class="threeTab__Detail--action">' .
+                                                    $linkcontent .
+                                                '</div>' .
+                                            '</div>';
+                        endwhile;
+
+                        echo    '<div class="threeTab__Detail clearfix">' .
+                                    '<div class="threeTab__Detail--col">' . 
+                                        '<div class="threeTab__Detail--title">' .
+                                            $pricing_details_ai_title . 
+                                        '</div>' .
+                                    '</div>' .
+                                    $columnFirst .
+                                    $columnSecond .
+                                    $columnThird .
+                                '</div>';
+                                
+                    endwhile;
+                    // end pricing AI details
+                    
+
+                    echo '</div>';
+                    
+                    
+                    
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+
+                endif;
+            endwhile;
+        endif;
         // check if the flexible content field has rows of data
         if( have_rows('modules') ):
 
@@ -969,7 +1332,7 @@ Template Name:acf Home
 
                         echo    '<div class="feature-column__item">' .
                                     '<div><img src="' . $icon['url'] . '" alt="' . $icon['alt'] . '" width="80" height="80" /></div>' .
-                                    '<h5 class="feature-column__title highlight highlight--' . $color . '">' . $headline . '</h3>' .
+                                    '<h5 class="feature-column__title highlight highlight--' . $color . '">' . $headline . '</h5>' .
                                     $body . 
                                     $linkcontent .
                                 '</div>';
@@ -1022,7 +1385,510 @@ Template Name:acf Home
                 endif;
 
                
-            endif;    
+            endif;   
+
+
+            // check current row layout
+            if( get_row_layout() == 'pricing' ):
+
+                $header_headline = get_sub_field('h1_title');
+                $header_slogan = get_sub_field('subtitle');
+
+                // check if the nested repeater field has rows of data
+                if( have_rows('pricing_tab') ):
+                    
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+
+                    echo '<div class="col-sm-12 c-center">' .
+                            '<h1>' . $header_headline . '</h1>' .
+                            '<h2>' .
+                                $header_slogan .
+                            '</h2>' .
+                        '</div>';
+
+                    echo '<div class="col-sm-12">';
+                    echo '<div class="threeTab__Index--Wrap clearfix" data-wheel="true">';
+                        // loop through the rows of data
+                    
+                    while ( have_rows('pricing_tab') ) : the_row();
+                        
+                        $color = get_sub_field('color');
+                        $tag = get_sub_field('tag');
+                        $headline = get_sub_field('headline');
+                        $body = get_sub_field('body');
+                        $link = get_sub_field('link');
+
+                        echo    '<div class="threeTab__Index">' .
+                                    '<div class="product-item__tag product-item__tag--large product-item__tag' . $color . '">' . $tag . '</div>' .
+                                    '<h3>' . $headline . '</h3>' .
+                                    '<div class="threeTab__Index--desc">' .
+                                        '<p class="product-item__desc"> ' . $body . ' </p>' .
+                                        '<div class="threeTab__Index--link">' .
+                                            '<a class="c-redirectLink" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+                                                $link['title'] .
+                                            '</a>' .
+                                        '</div>' .
+                                    '</div>' .
+                                '</div>';
+                                
+                    endwhile;
+
+                    echo '</div>';
+                    echo '<div class="threeTab__Detail-wrap">';
+
+                    // pricing live chat details
+                    echo '<div class="threeTab__Detail clearfix">';
+                    while ( have_rows('pricing_details_live_chat') ) : the_row();
+                        
+                        $title = get_sub_field('title');
+                        $if_show_price = get_sub_field('if_show_price');
+                        $price = get_sub_field('price');
+                        $request_quote = get_sub_field('request_quote');
+                        $feature_list_title = get_sub_field('feature_list_title');
+                        
+                        $priceContent = '<span class="threeTab__Detail--priceQuote"><strong>' . $request_quote . '</strong></span>';
+                        if ($if_show_price):
+                            while ( have_rows('price') ) : the_row();
+                                $price_number = get_sub_field('price_number');
+                                $price_unit = get_sub_field('price_unit');
+                                $priceContent = '<span class="threeTab__Detail--priceNum"><strong>$' . $price_number . '</strong></span>' .
+                                '<span class="threeTab__Detail--priceUnit">' . $price_unit . '</span>';
+                            endwhile;
+                            
+                        endif;
+
+                        $li_feature_list = '';
+                        while ( have_rows('feature_list') ) : the_row();
+                            $feature_point = get_sub_field('feature_point');
+                            
+                            $li_feature_list .= '<li>' . $feature_point . '</li>';
+                        endwhile;
+
+
+                        $cta = get_sub_field('cta');
+                        $linkcontent = '';
+
+                        if ($cta):
+                            while ( have_rows('cta') ) : the_row();
+                                $cta_link_type = get_sub_field('cta_link_type');
+                                $cta_link = get_sub_field('cta_link');
+                                if ($cta_link):
+                                    switch ($cta_link_type) {
+                                        case 'green' :
+                                                $linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'blue' :
+                                                $linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'white' :
+                                                $linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        case 'link' :
+                                                $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                        $cta_link['title'] .
+                                                    '</a>';
+                                                break;
+                                        default: break;
+                                    }
+                                endif;
+                            endwhile;
+                            if ($linkcontent !== ''):
+                                $linkcontent = '<div class="threeTab__Detail--action"> ' . $linkcontent . ' </div>';
+                            endif;
+                        endif;
+
+                        echo    '<div class="col-sm-4 threeTab__Detail--col">' .
+                                    '<div class="threeTab__Detail--title">' . $title . '</div>' .
+                                    '<div class="threeTab__Detail--price">' . $priceContent . '</div>' .
+                                    '<p class="threeTab__Detail--subTitle">' . $feature_list_title . '</p>' .
+                                    '<ul class="threeTab__Detail--contentList">' .
+                                        $li_feature_list .
+                                    '</ul>' .
+                                    $linkcontent .
+                                '</div>';
+                                
+                    endwhile;
+                    $pricing_details_live_chat_bottom_link = get_sub_field('pricing_details_live_chat_bottom_link');
+                    if ($pricing_details_live_chat_bottom_link):
+                        echo '<div class="clear"></div>' . 
+                             '<div class="threeTab__Detail--bottomLink">' .
+                                '<a href="' . $pricing_details_live_chat_bottom_link['url'] . '" target="' . $pricing_details_live_chat_bottom_link['target'] . '">' .
+                                    $pricing_details_live_chat_bottom_link['title'] .
+                                '</a>' .
+                            '</div>';
+                    endif;
+                    echo '</div>';
+                    // end pricing live chat details
+
+                    // pricing multichannel details
+                    while ( have_rows('pricing_details_multichannel') ) : the_row();
+                        
+                        $pricing_details_multichannel_title = get_sub_field('title');
+
+                        $columnFirst = '';
+                        while ( have_rows('column_first') ) : the_row();
+                            $title = get_sub_field('title');
+                            $feature_list = '';
+                            while ( have_rows('feature_list') ) : the_row();
+                                $feature_list .= '<li>' . get_sub_field('feature_point') . '</li>';
+                            endwhile;
+                            $columnFirst = '<div class="col-sm-4 threeTab__Detail--col">' .
+                                            '<p class="threeTab__Detail--subTitle">' . $title . '</p>' .
+                                            '<ul class="threeTab__Detail--contentList">' .
+                                                $feature_list .
+                                            '</ul>' .
+                                        '</div>';
+                        endwhile;
+
+                        $columnSecond = '';
+                        while ( have_rows('column_second') ) : the_row();
+                            $title = get_sub_field('title');
+                            $feature_list = '';
+                            while ( have_rows('feature_list') ) : the_row();
+                                $feature_list .= '<li>' . get_sub_field('feature_point') . '</li>';
+                            endwhile;
+                            $columnSecond = '<div class="col-sm-4 threeTab__Detail--col">' .
+                                            '<p class="threeTab__Detail--subTitle">' . $title . '</p>' .
+                                            '<ul class="threeTab__Detail--contentList">' .
+                                                $feature_list .
+                                            '</ul>' .
+                                        '</div>';
+                        endwhile;
+
+                        $columnThird = '';
+                        while ( have_rows('column_third') ) : the_row();
+                            $price_number = get_sub_field('price_number');
+                            $price_unit = get_sub_field('price_unit');
+
+                            $cta = get_sub_field('cta');
+                            $linkcontent='';
+                            if ($cta):
+                                while ( have_rows('cta') ) : the_row();
+                                    $cta_link_type = get_sub_field('cta_link_type');
+                                    $cta_link = get_sub_field('cta_link');
+                                    if ($cta_link):
+                                        switch ($cta_link_type) {
+                                            case 'green' :
+                                                    $linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'blue' :
+                                                    $linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'white' :
+                                                    $linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'link' :
+                                                    $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            default: break;
+                                        }
+                                    endif;
+                                endwhile;
+                            endif;
+                            
+                            $columnThird = '<div class="col-sm-4 threeTab__Detail--col">' .
+                                                '<div class="threeTab__Detail--price">' .
+                                                    '<span class="threeTab__Detail--priceNum"><strong>$' . $price_number . '</strong></span>' .
+                                                    '<span class="threeTab__Detail--priceUnit">' . $price_unit . '</span>' .
+                                                '</div>' .
+                                                '<div class="threeTab__Detail--action">' .
+                                                    $linkcontent .
+                                                '</div>' .
+                                            '</div>';
+                        endwhile;
+
+                        echo    '<div class="threeTab__Detail clearfix">' .
+                                    '<div class="threeTab__Detail--col">' . 
+                                        '<div class="threeTab__Detail--title">' .
+                                            $pricing_details_multichannel_title . 
+                                        '</div>' .
+                                    '</div>' .
+                                    $columnFirst .
+                                    $columnSecond .
+                                    $columnThird .
+                                '</div>';
+                                
+                    endwhile;
+                    // end pricing multichannel details
+
+
+                    // pricing AI details
+                    while ( have_rows('pricing_details_ai') ) : the_row();
+                        
+                        $pricing_details_ai_title = get_sub_field('title');
+
+                        $columnFirst = '';
+                        while ( have_rows('column_first') ) : the_row();
+                            $title = get_sub_field('title');
+                            $feature_list = '';
+                            while ( have_rows('feature_list') ) : the_row();
+                                $feature_list .= '<li>' . get_sub_field('feature_point') . '</li>';
+                            endwhile;
+                            $columnFirst = '<div class="col-sm-4 threeTab__Detail--col">' .
+                                            '<p class="threeTab__Detail--subTitle">' . $title . '</p>' .
+                                            '<ul class="threeTab__Detail--contentList">' .
+                                                $feature_list .
+                                            '</ul>' .
+                                        '</div>';
+                        endwhile;
+
+                        $columnSecond = '';
+                        while ( have_rows('column_second') ) : the_row();
+                            $title_01 = get_sub_field('title_01');
+                            $feature_list_01 = '';
+                            while ( have_rows('feature_list_01') ) : the_row();
+                                $feature_list_01 .= '<li>' . get_sub_field('feature_point') . '</li>';
+                            endwhile;
+
+                            $title_02 = get_sub_field('title_02');
+                            $feature_list_02 = '';
+                            while ( have_rows('feature_list_02') ) : the_row();
+                                $feature_list_02 .= '<li>' . get_sub_field('feature_point') . '</li>';
+                            endwhile;
+
+                            $columnSecond = '<div class="col-sm-4 threeTab__Detail--col">' .
+                                            '<p class="threeTab__Detail--subTitle">' . $title_01 . '</p>' .
+                                            '<ul class="threeTab__Detail--contentList">' .
+                                                $feature_list_01 .
+                                            '</ul>' .
+                                            '<p class="threeTab__Detail--subTitle">' . $title_02 . '</p>' .
+                                            '<ul class="threeTab__Detail--contentList">' .
+                                                $feature_list_02 .
+                                            '</ul>' .
+                                        '</div>';
+                        endwhile;
+
+                        $columnThird = '';
+                        while ( have_rows('column_third') ) : the_row();
+                            $price = get_sub_field('price');
+
+                            $cta = get_sub_field('cta');
+                            $linkcontent='';
+                            if ($cta):
+                                while ( have_rows('cta') ) : the_row();
+                                    $cta_link_type = get_sub_field('cta_link_type');
+                                    $cta_link = get_sub_field('cta_link');
+                                    if ($cta_link):
+                                        switch ($cta_link_type) {
+                                            case 'green' :
+                                                    $linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'blue' :
+                                                    $linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'white' :
+                                                    $linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            case 'link' :
+                                                    $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                            $cta_link['title'] .
+                                                        '</a>';
+                                                    break;
+                                            default: break;
+                                        }
+                                    endif;
+                                endwhile;
+                            endif;
+                            
+                            $columnThird = '<div class="col-sm-4 threeTab__Detail--col">' .
+                                                '<div class="threeTab__Detail--price">' .
+                                                    '<span class="threeTab__Detail--priceQuote"><strong>' . $price . '</strong></span>' .
+                                                '</div>' .
+                                                '<div class="threeTab__Detail--action">' .
+                                                    $linkcontent .
+                                                '</div>' .
+                                            '</div>';
+                        endwhile;
+
+                        echo    '<div class="threeTab__Detail clearfix">' .
+                                    '<div class="threeTab__Detail--col">' . 
+                                        '<div class="threeTab__Detail--title">' .
+                                            $pricing_details_ai_title . 
+                                        '</div>' .
+                                    '</div>' .
+                                    $columnFirst .
+                                    $columnSecond .
+                                    $columnThird .
+                                '</div>';
+                                
+                    endwhile;
+                    // end pricing AI details
+                    
+
+                    echo '</div>';
+                    
+                    
+                    
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+
+                endif;
+
+               
+            endif;  
+            
+            
+            // check current row layout
+            if( get_row_layout() == 'feature_list' ):
+                if( have_rows('feature_list_repeater') ):
+                
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="col-sm-12">';
+                    while ( have_rows('feature_list_repeater') ) : the_row();
+                        $feature_list_header = get_sub_field('feature_list_header');
+                        if ($feature_list_header):
+                            echo '<div class="featurelist-header-container">';
+                            echo '<div class="featurelist-header clearfix">';
+                            while ( have_rows('feature_list_header') ) : the_row();
+                                $feature_list_header_feature_name = get_sub_field('feature_list_header_feature_name');
+                                if ($feature_list_header_feature_name):
+                                    echo '<span class="featurelist-content">' . $feature_list_header_feature_name . '</span>';
+                                endif;
+
+                                $feature_list_header_plan = get_sub_field('feature_list_header_plan');
+                                if ( have_rows('feature_list_header_plan') ):
+                                    while ( have_rows('columns') ) : the_row();
+                                        $plan_name = get_sub_field('plan_name');
+                                        echo '<span class="featurelist-plan">' . $plan_name . '</span>';
+                                    endwhile;
+                                endif;
+                            endwhile;
+                            echo '</div>';
+                            echo '</div>';
+                        endif;
+
+                        $feature_list_content = get_sub_field('feature_list_content');
+                        if( have_rows('feature_list_content') ):
+                            echo '<div class="featurelist clearfix">';
+                            while ( have_rows('feature_list_content') ) : the_row();
+                                echo '<ul class="clearfix">';
+                                $feature_list_content_feature = get_sub_field('feature_list_content_feature');
+                                if ($feature_list_content_feature):
+                                    while ( have_rows('feature_list_content_feature') ) : the_row();
+                                        $if_link = get_sub_field('if_link');
+                                        $name_link = get_sub_field('name_link');
+                                        $name_text = get_sub_field('name_text');
+                                        $featurename = '';
+                                        if ($if_link):
+                                            $featurename = '<a href="' . $name_link['url'] . '" target="' . $name_link['target'] . '">' . $name_link['title'] . '</a>';
+                                        else:
+                                            $featurename = $name_text;
+                                        endif;
+                                        
+                                        $tooltip = get_sub_field('tooltip');
+                                        echo '<li class="option-title tooltips" data-placement="right" title="" data-original-title="' . $tooltip . '">' .
+                                                $featurename .
+                                            '</li>';
+                                    endwhile;
+                                endif;
+
+                                $featurecontentTeam = '&nbsp;';
+                                $featurecontentBusiness = '&nbsp;';
+                                $featurecontentEnt = '&nbsp;';
+                                $if_show_tick = get_sub_field('if_show_tick');
+                                if ($if_show_tick):
+                                    $feature_list_content_if_team_have = get_sub_field('feature_list_content_if_team_have');
+                                    $feature_list_content_if_business_have = get_sub_field('feature_list_content_if_business_have');
+                                    $feature_list_content_if_ent_have = get_sub_field('feature_list_content_if_ent_have');
+                                    
+                                    if ($feature_list_content_if_team_have):
+                                        $featurecontentTeam = '<i class="fa fa-check c-font-20"></i>';
+                                    endif;
+                                    if ($feature_list_content_if_business_have):
+                                        $featurecontentBusiness = '<i class="fa fa-check c-font-20"></i>';
+                                    endif;
+                                    if ($feature_list_content_if_ent_have):
+                                        $featurecontentEnt = '<i class="fa fa-check c-font-20"></i>';
+                                    endif;
+                                else:
+                                    $featurecontentTeam = get_sub_field('feature_list_content_for_team') == '' ? '&nbsp;' : get_sub_field('feature_list_content_for_team');
+                                    $featurecontentBusiness = get_sub_field('feature_list_content_for_business') == '' ? '&nbsp;' : get_sub_field('feature_list_content_for_business');
+                                    $featurecontentEnt = get_sub_field('feature_list_content_for_ent') == '' ? '&nbsp;' : get_sub_field('feature_list_content_for_ent');
+                                endif;
+                                
+
+                                echo '<li>' . $featurecontentTeam . '</li>';
+                                echo '<li>' . $featurecontentBusiness . '</li>';
+                                echo '<li>' . $featurecontentEnt . '</li>';
+
+                                echo '</ul>';
+                            endwhile;
+                            echo '</div>';
+                        endif;
+                        
+                    endwhile;
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                endif;
+            endif;  
+
+            // check current row layout
+            if( get_row_layout() == 'frequent_questions' ):
+                
+                $title = get_sub_field('title');
+                // check if the nested repeater field has rows of data
+                if( have_rows('questions') ):
+                    
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="col-sm-12">';
+                        // loop through the rows of data
+                   
+                    echo '<h3 class="c-center">' . $title . '</h3>';
+                    echo '<div class="questions">';
+                    
+                    while ( have_rows('questions') ) : the_row();
+                        
+                        $question_title = get_sub_field('question_title');
+                        $question_content = get_sub_field('question_content');
+
+                        
+
+                        echo    '<div class="question-item">' .
+                                    '<div class="question-item__title">' . $question_title . '</div>' .
+                                    '<div class="question-item__content">' . $question_content . '</div>' .
+                                '</div>';
+                    endwhile;
+
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+
+                endif;
+
+               
+            endif;  
         endwhile;
 
         else :
@@ -1030,6 +1896,8 @@ Template Name:acf Home
         // no layouts found
 
         endif;
+
+        
     ?>
                 
 </div>

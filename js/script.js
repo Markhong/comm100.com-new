@@ -1473,95 +1473,7 @@ $(document).ready(function() {
 		callPlayer('videoContainer','stopVideo');
 	});
 
-	var tabIndexWrap = document.querySelector('.threeTab__Index--Wrap');
-	if (tabIndexWrap && tabIndexWrap.getAttribute('data-wheel') === 'true') {
-		var scrolling = false;
-		function disableMouseWheel () {
-			scrolling = true;
-		}
-		function enableMouseWheel() {
-			scrolling = false;
-		}
-
-		function handle(delta) {
-			if (delta < 0) {
-				if (Math.floor($('.threeTab__Index--Wrap').offset().top - $(window).scrollTop()) > $('.c-layout-header').outerHeight()) {
-					disableMouseWheel();
-					$('html, body').animate({
-						scrollTop: $('.threeTab__Index--Wrap').offset().top - $('.c-layout-header').outerHeight()
-					}, 400, function() {	
-						tabIndexSlideUpOrDown(true);
-					});
-				}
-			} else {
-				if ($('.threeTab__Index--Wrap').offset().top - $(window).scrollTop() > $('.c-layout-header').outerHeight()) {
-					tabIndexSlideUpOrDown(false);
-				}
-			}
-		}
-
-		function wheelEvent(event) {
-			if(scrolling) return;
-			var delta = 0;
-			event = event || window.event;
-			if (event.wheelDelta) {
-				delta = event.wheelDelta/120;
-			} else if (event.detail) {
-				delta = -event.detail/3;
-			}
-			if (delta)
-				handle(delta);
-		}
-		if (window.addEventListener) {
-			window.addEventListener('mousewheel', wheelEvent, false);
-		}
-		var isFirefox = typeof InstallTrigger !== 'undefined';
-		if (isFirefox) {
-			window.addEventListener('DOMMouseScroll', wheelEvent, false);
-		}
-	}
-
-	function selectTab(index) {
-		$('.threeTab__Index').removeClass('selected').eq(index).addClass('selected');
-		$('.threeTab__Detail').hide();
-		$('.threeTab__Detail').eq(index).show();
-	}
-
-	function tabIndexSlideUpOrDown(isUp) {
-		if (isUp) {
-			$('.threeTab__Index--Wrap .threeTab__Index--desc').slideUp(400, function() {
-				enableMouseWheel();
-			});
-			return;
-		}	
-		$('.threeTab__Index--Wrap .threeTab__Index--desc').slideDown(400, function() {
-				enableMouseWheel();
-		});
-	}
 	
-	var tabIndexItems = document.querySelectorAll('.threeTab__Index');
-	var tabIndexItemsArray = Array.prototype.slice.call(tabIndexItems);
-	tabIndexItemsArray.forEach(function(item, index) {
-		item.addEventListener('click', function() {
-			tabIndexSlideUpOrDown(true);
-			selectTab(index);
-			$('html, body').animate({
-				scrollTop: $('.threeTab__Index--Wrap').offset().top - $('.c-layout-header').outerHeight()
-			}, 400);
-		});
-	});
-	selectTab(0);
-	setTimeout(function() {
-		if (Math.floor($('.threeTab__Index--Wrap').offset().top) - $(window).scrollTop() === $('.c-layout-header').outerHeight()) {		
-				tabIndexSlideUpOrDown(true);
-		}
-	}, 100);
-
-	$('.question-item__title').on('click', function() {
-		$(this).parent().toggleClass('selected');	
-		$(this).siblings().slideToggle(200, function() {
-		});
-	});
 });
 
 window.onload = function() {
@@ -1578,5 +1490,100 @@ window.onload = function() {
 				window.location.href = this.getAttribute('data-link');
 			})
 		})
+	}());
+
+	(function(){
+		var tabIndexWrap = document.querySelector('.threeTab__Index--Wrap');
+		if (tabIndexWrap && tabIndexWrap.getAttribute('data-wheel') === 'true') {
+			var scrolling = false;
+			function disableMouseWheel () {
+				scrolling = true;
+			}
+			function enableMouseWheel() {
+				scrolling = false;
+			}
+
+			function handle(delta) {
+				if (delta < 0) {
+					if (Math.floor($('.threeTab__Index--Wrap').offset().top - $(window).scrollTop()) > $('.c-layout-header').outerHeight()) {
+						disableMouseWheel();
+						$('html, body').animate({
+							scrollTop: $('.threeTab__Index--Wrap').offset().top - $('.c-layout-header').outerHeight()
+						}, 400, function() {	
+							tabIndexSlideUpOrDown(true);
+						});
+					}
+				} else {
+					if ($('.threeTab__Index--Wrap').offset().top - $(window).scrollTop() > $('.c-layout-header').outerHeight()) {
+						tabIndexSlideUpOrDown(false);
+					}
+				}
+			}
+
+			function wheelEvent(event) {
+				if(scrolling) return;
+				var delta = 0;
+				event = event || window.event;
+				if (event.wheelDelta) {
+					delta = event.wheelDelta/120;
+				} else if (event.detail) {
+					delta = -event.detail/3;
+				}
+				if (delta)
+					handle(delta);
+			}
+			if (window.addEventListener) {
+				window.addEventListener('mousewheel', wheelEvent, false);
+			}
+			var isFirefox = typeof InstallTrigger !== 'undefined';
+			if (isFirefox) {
+				window.addEventListener('DOMMouseScroll', wheelEvent, false);
+			}
+
+			function tabIndexSlideUpOrDown(isUp) {
+				if (isUp) {
+					$('.threeTab__Index--Wrap .threeTab__Index--desc').slideUp(400, function() {
+						 enableMouseWheel();
+					});
+					return;
+				}	
+				$('.threeTab__Index--Wrap .threeTab__Index--desc').slideDown(400, function() {
+						enableMouseWheel();
+				});
+			}
+		}
+
+		function selectTab(index) {
+			$('.threeTab__Index').removeClass('selected').eq(index).addClass('selected');
+			$('.threeTab__Detail').hide();
+			$('.threeTab__Detail').eq(index).show();
+		}
+
+		
+		
+		var tabIndexItems = document.querySelectorAll('.threeTab__Index');
+		var tabIndexItemsArray = Array.prototype.slice.call(tabIndexItems);
+		tabIndexItemsArray.forEach(function(item, index) {
+			item.addEventListener('click', function() {
+				tabIndexSlideUpOrDown && tabIndexSlideUpOrDown(true);
+				selectTab(index);
+				$('html, body').animate({
+					scrollTop: $('.threeTab__Index--Wrap').offset().top - $('.c-layout-header').outerHeight()
+				}, 400);
+			});
+		});
+		selectTab(0);
+		setTimeout(function() {
+			if (Math.floor($('.threeTab__Index--Wrap').offset().top) - $(window).scrollTop() === $('.c-layout-header').outerHeight()) {		
+				tabIndexSlideUpOrDown && tabIndexSlideUpOrDown(true);
+			}
+		}, 100);
+
+		$('.question-item__title').on('click', function() {
+			$(this).parent().toggleClass('selected');	
+			$(this).siblings().slideToggle(200, function() {
+			});
+		});
+
 	}());
 }
