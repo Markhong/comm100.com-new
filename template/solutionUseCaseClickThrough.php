@@ -1,14 +1,14 @@
 <?php
 /*
-Template Name:Solution Click Through
+Template Name:Solution Use Case Click Through
 */
 ?>
 <?php get_header(); ?>
-<div class="c-navbar--secondary visible-md">
+    <div class="c-navbar--secondary visible-md">
         <div class="container">
             <?php
             $defaults = array(
-                'theme_location'  => 'solution',
+                'theme_location'  => 'solutionUseCase',
                 'menu'            => '',
                 'container'       => 'nav',
                 'container_class' => '',

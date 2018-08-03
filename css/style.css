@@ -20646,9 +20646,12 @@ h3.highlight {
   margin-top: 30px;
   position: relative;
   font-size: 18px;
+<<<<<<< HEAD
 }
 .threeTab__Detail--contentList li {
   margin-bottom: 12px;
+=======
+>>>>>>> 1a59c630bc70de501fe9bce37317f9941ed3200f
 }
 .threeTab__Detail--contentList li:before {
   content: '';
@@ -20660,6 +20663,9 @@ h3.highlight {
   left: 40px;
   margin-top: 12px;
 }
+.threeTab__Detail--contentList li {
+  margin-bottom: 12px;
+}
 .threeTab__Detail--action {
   margin-top: 80px;
   margin-bottom: 80px;
@@ -20670,6 +20676,10 @@ h3.highlight {
   padding-right: 40px;
   margin-top: 60px;
   font-size: 22px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1a59c630bc70de501fe9bce37317f9941ed3200f
 }
 .threeTab__Detail--bottomLink {
   text-align: center;

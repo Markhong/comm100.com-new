@@ -1,14 +1,14 @@
 <?php
 /*
-Template Name:Platform Landing
+Template Name:Platform Multichannel Click Through
 */
 ?>
 <?php get_header(); ?>
-<div class="c-navbar--secondary visible-md">
+    <div class="c-navbar--secondary visible-md">
         <div class="container">
             <?php
             $defaults = array(
-                'theme_location'  => 'platfrom',
+                'theme_location'  => 'platformMultichannel',
                 'menu'            => '',
                 'container'       => 'nav',
                 'container_class' => '',
@@ -31,7 +31,7 @@ Template Name:Platform Landing
     </div>
 </header>
 
-<div class="c-layout-page c-layout-page-fixed secondary-page">
+<div class="c-layout-page c-layout-page-fixed primary-page">
     
 
     <?php
@@ -188,6 +188,26 @@ Template Name:Platform Landing
                     
                     
                 endif;
+
+                $rows = get_sub_field('repeater_feature');
+                $row_count = count($rows);
+                echo '<div class="row">';
+                foreach ($rows as $row) {
+                    $featureImage = $row['feature_image'];
+                    $featureDescription = $row['feature_description'];
+                    echo '<div class="col-sm-' . strval(12/$row_count) . '">' .
+                        '<div class="c-content-feature-2 c-option-2 c-theme-bg-parent-hover">' .
+                            '<div class="c-icon-wrapper">' . 
+                                '<span aria-hidden="true">' .
+                                    '<img src="' . $featureImage['url'] . '" alt="' . $featureImage['alt'] . '" width="50" height="50">' .
+                                '</span>' .
+                            '</div>' .
+                            '<p>' . $featureDescription . '</p>' .
+                        '</div>' .
+                    '</div>';
+                }
+                echo '</div>';
+
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
@@ -640,7 +660,6 @@ Template Name:Platform Landing
                                     }
                                 endif;
                             endwhile;
-                            
                             if ($linkcontent !== ''):
                                 $linkcontent = '<div class="img-text-column__link"> ' . $linkcontent . ' </div>';
                             endif;
@@ -1033,7 +1052,7 @@ Template Name:Platform Landing
                 echo '</div>';
                 echo '</div>';
                
-            endif;   
+            endif;    
         endwhile;
 
         else :
