@@ -18013,13 +18013,13 @@ label {
   padding-top: 48px;
 }
 .menu-lc {
-  background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-lc.svg);
+  background-image: url(https://www.comm100.com/wp-content/uploads/images/Home-LC-Icon.svg?v=20180803);
 }
 .menu-multichannel {
-  background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-mc.svg);
+  background-image: url(https://www.comm100.com/wp-content/uploads/images/Home-MC-Icon.svg?v=20180803);
 }
 .menu-ai {
-  background-image: url(https://www.comm100.com/wp-content/uploads/images/icon-ai.svg);
+  background-image: url(https://www.comm100.com/wp-content/uploads/images/Home-AI-Icon.svg?v=20180803);
 }
 .menu-uc {
   padding-top: 0;
@@ -19436,6 +19436,10 @@ button.btn-video-close span {
   padding: 40px;
   margin-right: 15px;
   cursor: pointer;
+}
+.card-item img {
+  width: 105px;
+  height: 105px;
 }
 .card-item:last-child {
   margin-right: 0;
