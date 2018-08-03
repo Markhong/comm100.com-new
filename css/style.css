@@ -3721,7 +3721,7 @@ html {
 }
 body {
   font-family: "Ubuntu Light", sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 300;
   margin: 0 !important;
   padding: 0 !important;
@@ -3758,7 +3758,10 @@ a.c-redirectLink {
   font-family: "Ubuntu Regular", sans-serif;
   font-size: 20px;
   padding-bottom: 2px;
-  border-bottom: 1px solid #3dc4ff;
+  border-bottom: 2px solid #3dc4ff;
+}
+a.c-redirectLink:hover {
+  border-bottom: 2px solid #00567c;
 }
 a.c-redirectLink::before {
   content: '+';
@@ -12227,8 +12230,8 @@ label {
 }
 .btn.btn-xlg {
   font-family: "Ubuntu Bold", sans-serif !important;
-  font-size: 20px;
-  padding: 12px 44px 10px 44px !important;
+  font-size: 22px;
+  padding: 17px 44px 15px 44px !important;
 }
 .btn.c-btn-border-2x {
   padding: 6px 20px 4px 20px;
@@ -18173,28 +18176,29 @@ fieldset[disabled] .c-theme-btn.btn:active,
 fieldset[disabled] .c-theme-btn.btn:hover,
 fieldset[disabled] .c-theme-btn.btn:not(.btn-no-focus).focus,
 fieldset[disabled] .c-theme-btn.btn:not(.btn-no-focus):focus {
-  border-color: #329fd9;
-  background: #329fd9;
+  border-color: #0094d4;
+  background: #0094d4;
 }
 .c-theme-btn.c-btn-border-2x {
-  color: #329fd9;
-  border-width: 3px;
-  border-color: #329fd9;
+  color: #0094d4;
+  border-width: 1px;
+  border-color: #0094d4;
   background: 0;
   border-radius: 10px;
+  box-shadow: 0px 0px 0px 3px #0094d4 inset;
 }
 .c-theme-btn.c-btn-border-2x:active,
 .c-theme-btn.c-btn-border-2x:hover {
   color: #fff;
-  border-color: #329fd9;
-  background: #329fd9;
+  border-color: #0094d4;
+  background: #0094d4;
 }
 .c-theme-btn.c-btn-border-2x:active {
   background-image: none;
 }
 .c-theme.form-control:active,
 .c-theme.form-control:focus {
-  border-color: #329fd9 !important;
+  border-color: #0094d4 !important;
 }
 .c-content-line-icon.c-theme {
   background-image: url(https://www.comm100.com/wp-content/themes/comm100/assets/plugins/content/line-icons/default.png);
@@ -19481,13 +19485,14 @@ h3.highlight {
   border-radius: 8px;
 }
 .card-item.card-item--blue.card-item--hover {
-  background: #38a3da;
-}
-.card-item.card-item--lightBlue.card-item--hover {
   background: #0094d4;
 }
+.card-item.card-item--lightBlue.card-item--hover,
+.card-item.card-item--light_blue.card-item--hover {
+  background: #3dc4ff;
+}
 .card-item.card-item--green.card-item--hover {
-  background: #afdd09;
+  background: #9fdd09;
 }
 .card-item--hover h3 {
   color: #fff;
@@ -19495,6 +19500,27 @@ h3.highlight {
 .card-item--hover a {
   color: #fff;
   border-bottom-color: #fff;
+}
+.card-item--hover a.c-redirectLink:hover {
+  border-bottom-color: #fff;
+}
+.card-item--hover .product-item__tag {
+  background: #fff;
+}
+.card-item--hover .product-item__tagLightBlue {
+  border-color: #0094d4;
+}
+.card-item--hover .product-item__tagBrightBlue {
+  border-color: #3dc4ff;
+}
+.card-item--hover .product-item__tagGreen {
+  border-color: #9fdd09;
+}
+.card-item--hover {
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -ms-transition: all .2s ease-in;
+  -o-transition: all .2s ease-out;
 }
 .card-item--hover .highlight {
   border-bottom-color: #fff;
@@ -19523,6 +19549,8 @@ h3.highlight {
   border-radius: 35px;
   border-bottom: none;
   text-align: left;
+  font-family: "Ubuntu Regular", sans-serif;
+  font-size: 20px;
 }
 .btn-link--medium {
   width: 270px;
@@ -19565,8 +19593,15 @@ h3.highlight {
   border-bottom: none;
 }
 .btn-link--green {
-  background: #afdd09;
+  background: #aedd09;
   color: #fff;
+}
+.btn-link--green.btn:active,
+.btn-link--green.btn:hover,
+.btn-link--green.btn:active {
+  color: #fff;
+  border-color: #9fca08;
+  background: #9fca08;
 }
 .callToAction {
   text-align: center;
@@ -20614,6 +20649,12 @@ h3.highlight {
   margin-top: 30px;
   position: relative;
   font-size: 18px;
+<<<<<<< HEAD
+}
+.threeTab__Detail--contentList li {
+  margin-bottom: 12px;
+=======
+>>>>>>> 1a59c630bc70de501fe9bce37317f9941ed3200f
 }
 .threeTab__Detail--contentList li:before {
   content: '';
@@ -20638,7 +20679,10 @@ h3.highlight {
   padding-right: 40px;
   margin-top: 60px;
   font-size: 22px;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 1a59c630bc70de501fe9bce37317f9941ed3200f
 }
 .threeTab__Detail--bottomLink {
   text-align: center;
