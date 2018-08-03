@@ -25,4 +25,4 @@
             </div>
         </section>
     </div>
-<?php get_footer('home'); ?>
+<?php get_footer(); ?>
