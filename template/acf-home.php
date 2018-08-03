@@ -645,6 +645,8 @@ Template Name:acf Home
                 $rows = get_sub_field('cards');
                 $row_count = count($rows);
 
+                $headline = get_sub_field('headline');
+
                 // check if the nested repeater field has rows of data
                 if( have_rows('cards') ):
                     echo '<div class="c-content-box">';
@@ -652,6 +654,8 @@ Template Name:acf Home
                     echo '<div class="row">';
                     echo '<div class="col-sm-12 card card-col-' . $row_count . '">';
 
+                    
+                    echo '<h3>' . $headline . '</h3>';
                         // loop through the rows of data
                     while ( have_rows('cards') ) : the_row();
 

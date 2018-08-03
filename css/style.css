@@ -12226,7 +12226,9 @@ label {
   padding: 9px 20px 7px 20px;
 }
 .btn.btn-lg {
-  padding: 11px 26px 9px 26px;
+  font-family: "Ubuntu Bold", sans-serif !important;
+  font-size: 22px;
+  padding: 17px 44px 15px 44px !important;
 }
 .btn.btn-xlg {
   font-family: "Ubuntu Bold", sans-serif !important;
@@ -19419,7 +19421,12 @@ button.btn-video-close span {
 .card {
   margin-bottom: 30px;
 }
-
+.card h3 {
+  text-align: center;
+  font-size: 34px;
+  color: #5e6d79;
+  margin-bottom: 50px;
+}
 .card-item {
   position: relative;
   float: left;
