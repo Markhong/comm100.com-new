@@ -19615,7 +19615,7 @@ h3.highlight {
 }
 .btn-link--green.btn:active,
 .btn-link--green.btn:hover,
-.btn-link--green.btn:active {
+.btn-link--green.btn:focus {
   color: #fff;
   border-color: #9fca08;
   background: #9fca08;
