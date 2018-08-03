@@ -1798,7 +1798,7 @@ Template Name:acf Home
             if( get_row_layout() == 'feature_list' ):
                 if( have_rows('feature_list_repeater') ):
                 
-                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="c-content-box">';
                     echo '<div class="container">';
                     echo '<div class="row">';
                     echo '<div class="col-sm-12">';

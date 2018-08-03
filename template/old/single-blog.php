@@ -105,4 +105,4 @@ Template Name Posts:Blog Template
 </div>      
             
 
-<?php get_footer('blog'); ?>
+<?php get_footer(); ?>
