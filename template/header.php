@@ -57,7 +57,7 @@
     <!--<link href="<?php bloginfo('template_url');?>/assets/base/css/style.min.css?ver=1.0.3" id="style_components" rel="stylesheet"
         type="text/css" />-->
 
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?ver=1.0.57" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?ver=1.0.107" type="text/css" media="screen, projection" />
     
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="<?php bloginfo('template_url');?>/assets/favicon.ico" />
@@ -135,7 +135,7 @@
         <div class="c-navbar-wrapper clearfix">
             <div class="c-brand c-pull-left">
                 
-                  <a href="https://www.comm100.com/livechat/" class="c-logo">
+                  <a href="https://www.comm100.com/" class="c-logo">
                     <span class="c-logo-img"><img src="https://www.comm100.com/wp-content/uploads/images/logo-comm100.svg" alt="Comm100" class="c-desktop-logo"/></span>
                   </a>
                   

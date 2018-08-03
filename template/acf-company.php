@@ -876,11 +876,13 @@ Template Name:acf Company
                                 endif;
         
                                 echo    '<div class="threeTab__Detail clearfix">' .
-                                            
+                                            $tabMobileAI . 
+                                            '<div class="threeTab__Detail--col-wrap clearfix">' .
+                                                
                                                 '<div class="threeTab__Detail--title">' . $title . '</div>' .
                                                 '<div class="threeTab__Detail--summary">' . $description . '</div>' .
                                                 $featurelist_wrap .
-                                         
+                                            '</div>' . 
                                         '</div>';
                                 
                             endwhile;

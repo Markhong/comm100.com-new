@@ -11697,7 +11697,6 @@ img.tp-slider-alternative-image {
 }
 
 .cbp-l-grid-projects-desc {
-  font: 400 12px/18px "Open Sans", sans-serif;
   margin-top: 5px;
   color: #888;
 }
@@ -12518,7 +12517,7 @@ label {
 }
 .cbp-l-grid-projects-desc {
   font-family: "Ubuntu Regular", sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   white-space: normal;
   color: #7a838e;
 }
@@ -19477,6 +19476,10 @@ h3.highlight {
   background: #38a3da;
   color: #fff;
 }
+.card-item--hover img {
+  background: #fff;
+  border-radius: 8px;
+}
 .card-item.card-item--blue.card-item--hover {
   background: #38a3da;
 }
@@ -20791,4 +20794,20 @@ h3.highlight {
   .threeTab__Detail--summary {
     padding: 15px;
   }
+}
+.c-quick-search {
+  margin-top: 35px;
+  width: 170px;
+  position: relative;
+}
+.c-quick-search .fa-search {
+  color: #d0d7de;
+  font-size: 18px;
+  position: absolute;
+  left: 15px;
+  top: 8px;
+}
+.form-search {
+  border-radius: 10px;
+  padding-left: 40px;
 }

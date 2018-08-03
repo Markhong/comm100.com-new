@@ -124,6 +124,10 @@
                             <a href="#">Contact us</a>
                         </li>
                     </ul>
+                    <form class="c-quick-search" action="https://www.comm100.com/search/">
+                        <i class="fa fa-search"></i>
+                        <input type="text" name="q" placeholder="" value="" class="form-control form-search" autocomplete="off">
+                    </form>
                 </div>
             </div>
             
@@ -147,7 +151,7 @@
                 </span>
                 <span id="truste">
                     <a href="//privacy.truste.com/privacy-seal/validation?rid=75257e22-f2a1-46d8-9653-38277e4a9cd2" target="_blank">
-                        <img style="border: none; filter: grayscale(1); opacity: 0.65" src="//privacy-policy.truste.com/privacy-seal/seal?rid=75257e22-f2a1-46d8-9653-38277e4a9cd2" alt="TRUSTe" width="111" height="38"></a>
+                        <img style="border: none; filter: grayscale(1); opacity: 0.35" src="//privacy-policy.truste.com/privacy-seal/seal?rid=75257e22-f2a1-46d8-9653-38277e4a9cd2" alt="TRUSTe" width="111" height="38"></a>
                 </span>
                 <!-- <span>
                     <a title="Click for the Business Review of Comm100 Network Corporation, a Computer Software Publishers &amp; Developers in Vancouver BC" href="//www.bbb.org/mbc/business-reviews/computer-software-publishers-and-developers/comm100-network-corporation-in-vancouver-bc-1264631#sealclick" target="_blank">
@@ -196,7 +200,7 @@
 <script src="<?php bloginfo('template_url');?>/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php bloginfo('template_url');?>/assets/plugins/jquery.easing.min.js?v=2.0.1" type="text/javascript"></script>
 <script src="<?php bloginfo('template_url');?>/assets/base/js/plugins.min.js?v=1.0.0" type="text/javascript"></script>
-<script src="<?php bloginfo('template_url');?>/assets/base/js/script.min.js?v=1.0.26" type="text/javascript"></script>
+<script src="<?php bloginfo('template_url');?>/assets/base/js/script.js?v=1.0.30" type="text/javascript"></script>
 
 <!-- END: THEME SCRIPTS -->
 

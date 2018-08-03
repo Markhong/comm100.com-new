@@ -35,7 +35,9 @@ Template Name:acf Home
                     echo '<div class="col-sm-12">';
                     echo '<div class="threeTab__Index--Wrap clearfix" data-wheel="true">';
                         // loop through the rows of data
-                    
+                    $tabMobileLC = '';
+                    $tabMobileMC = '';
+                    $tabMobileAI = '';
                     while ( have_rows('tab_content') ) : the_row();
                         
                         $color = get_sub_field('color');
@@ -43,6 +45,34 @@ Template Name:acf Home
                         $headline = get_sub_field('headline');
                         $body = get_sub_field('body');
                         $link = get_sub_field('link');
+
+                        if ( $tag == 'LC' ):
+                            $tabMobileLC = '<div class="threeTab__Index--mobile">' .
+                                        '<div class="product-item__tag product-item__tag--large product-item__tag' . $color . '">' . $tag . '</div>' .
+                                        '<h3>' . $headline . '</h3>' .
+                                        '<div class="threeTab__Index--desc">' .
+                                            '<p class="product-item__desc"> ' . $body . ' </p>' .
+                                        '</div>' .
+                                    '</div>';
+                        endif;
+                        if ( $tag == 'MC' ):
+                            $tabMobileMC = '<div class="threeTab__Index--mobile">' .
+                                        '<div class="product-item__tag product-item__tag--large product-item__tag' . $color . '">' . $tag . '</div>' .
+                                        '<h3>' . $headline . '</h3>' .
+                                        '<div class="threeTab__Index--desc">' .
+                                            '<p class="product-item__desc"> ' . $body . ' </p>' .
+                                        '</div>' .
+                                    '</div>';
+                        endif;
+                        if ( $tag == 'AI' ):
+                            $tabMobileAI = '<div class="threeTab__Index--mobile">' .
+                                        '<div class="product-item__tag product-item__tag--large product-item__tag' . $color . '">' . $tag . '</div>' .
+                                        '<h3>' . $headline . '</h3>' .
+                                        '<div class="threeTab__Index--desc">' .
+                                            '<p class="product-item__desc"> ' . $body . ' </p>' .
+                                        '</div>' .
+                                    '</div>';
+                        endif;
 
                         echo    '<div class="threeTab__Index">' .
                                     '<div class="product-item__tag product-item__tag--large product-item__tag' . $color . '">' . $tag . '</div>' .
@@ -64,6 +94,9 @@ Template Name:acf Home
 
                     // pricing live chat details
                     echo '<div class="threeTab__Detail clearfix">';
+                    
+                    echo $tabMobileLC;
+                    echo '<div class="threeTab__Detail--col-wrap clearfix">';
                     while ( have_rows('pricing_details_live_chat') ) : the_row();
                         
                         $title = get_sub_field('title');
@@ -140,6 +173,8 @@ Template Name:acf Home
                                 '</div>';
                                 
                     endwhile;
+                    
+
                     $pricing_details_live_chat_bottom_link = get_sub_field('pricing_details_live_chat_bottom_link');
                     if ($pricing_details_live_chat_bottom_link):
                         echo '<div class="clear"></div>' . 
@@ -149,6 +184,7 @@ Template Name:acf Home
                                 '</a>' .
                             '</div>';
                     endif;
+                    echo '</div>';
                     echo '</div>';
                     // end pricing live chat details
 
@@ -238,14 +274,17 @@ Template Name:acf Home
                         endwhile;
 
                         echo    '<div class="threeTab__Detail clearfix">' .
-                                    '<div class="threeTab__Detail--col">' . 
-                                        '<div class="threeTab__Detail--title">' .
-                                            $pricing_details_multichannel_title . 
+                                    $tabMobileMC .
+                                    '<div class="threeTab__Detail--col-wrap clearfix">' . 
+                                        '<div class="threeTab__Detail--col">' . 
+                                            '<div class="threeTab__Detail--title">' .
+                                                $pricing_details_multichannel_title . 
+                                            '</div>' .
                                         '</div>' .
+                                        $columnFirst .
+                                        $columnSecond .
+                                        $columnThird .
                                     '</div>' .
-                                    $columnFirst .
-                                    $columnSecond .
-                                    $columnThird .
                                 '</div>';
                                 
                     endwhile;
@@ -347,14 +386,17 @@ Template Name:acf Home
                         endwhile;
 
                         echo    '<div class="threeTab__Detail clearfix">' .
-                                    '<div class="threeTab__Detail--col">' . 
-                                        '<div class="threeTab__Detail--title">' .
-                                            $pricing_details_ai_title . 
+                                    $tabMobileMC .
+                                    '<div class="threeTab__Detail--col-wrap clearfix">' . 
+                                        '<div class="threeTab__Detail--col">' . 
+                                            '<div class="threeTab__Detail--title">' .
+                                                $pricing_details_ai_title . 
+                                            '</div>' .
                                         '</div>' .
+                                        $columnFirst .
+                                        $columnSecond .
+                                        $columnThird .
                                     '</div>' .
-                                    $columnFirst .
-                                    $columnSecond .
-                                    $columnThird .
                                 '</div>';
                                 
                     endwhile;
@@ -1208,7 +1250,7 @@ Template Name:acf Home
                 echo '<div class="col-sm-10 col-sm-push-1 c-quote">';
 
                 if ($quote):
-                    echo '<div class="c-quote__text">' .
+                    echo '<div class="c-quote__content">' .
                             $quote . 
                         '</div>';
                 endif;
