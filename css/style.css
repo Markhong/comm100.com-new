@@ -18168,10 +18168,11 @@ label {
   border-radius: 10px;
 }
 .c-theme-btn.btn:active,
-.c-theme-btn.btn:hover {
+.c-theme-btn.btn:hover,
+.c-theme-btn.btn:focus {
   color: #fff;
-  border-color: #0d92d8;
-  background: #0d92d8;
+  border-color: #00567c;
+  background: #00567c;
 }
 .c-theme-btn.btn:active {
   background-image: none;
@@ -18206,7 +18207,8 @@ fieldset[disabled] .c-theme-btn.btn:not(.btn-no-focus):focus {
   box-shadow: 0px 0px 0px 3px #0094d4 inset;
 }
 .c-theme-btn.c-btn-border-2x:active,
-.c-theme-btn.c-btn-border-2x:hover {
+.c-theme-btn.c-btn-border-2x:hover,
+.c-theme-btn.c-btn-border-2x:focus {
   color: #fff;
   border-color: #0094d4;
   background: #0094d4;
