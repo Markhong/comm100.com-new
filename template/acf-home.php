@@ -664,6 +664,13 @@ Template Name:acf Home
                         $card_title = get_sub_field('title');
                         $card_subtitle = get_sub_field('subtitle');
                         $card_description = get_sub_field('description');
+
+                        $card_subtitle_wrap = '';
+                        if ($card_subtitle):
+                            $card_subtitle_wrap = '<div class="card-item__subtitle">' . $card_subtitle . '</div>';
+                        endif;
+
+
                         $cta = get_sub_field('cta');
                         $linkcontent='';
                         if ($cta):
@@ -704,7 +711,7 @@ Template Name:acf Home
                         echo    '<div class="card-item card-item--' . $card_themecolor . '" data-link="' . $cta_link['url'] . '">' .
                                     '<div><img src="' . $card_img['url'] . '" alt="' . $card_img['alt'] . '" width="70" height="70" /></div>' .
                                     '<h3 class="highlight highlight--' . $card_themecolor . '">' . $card_title . '</h3>' .
-                                    '<div class="card-item__subtitle">' . $card_subtitle . '</div>' .
+                                    $card_subtitle_wrap .
                                     $card_description .
                                     '<div class="card-item__link">' . $linkcontent . '</div>' . 
                                 '</div>';

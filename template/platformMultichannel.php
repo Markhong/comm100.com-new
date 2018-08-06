@@ -831,7 +831,7 @@ Template Name:Platform Multichannel
                 echo '<div class="col-sm-10 col-sm-push-1 c-quote">';
 
                 if ($quote):
-                    echo '<div class="c-quote__text">' .
+                    echo '<div class="c-quote__content">' .
                             $quote . 
                         '</div>';
                 endif;

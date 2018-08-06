@@ -20709,10 +20709,21 @@ h3.highlight {
 }
 .threeTab__Detail--action {
   margin-bottom: 80px;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  
+}
+@media screen and (min-width: 768px) {
+  .threeTab__Detail--action {
+    text-align: center;
+    margin-top: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .threeTab__Detail--action {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .threeTab__Detail--subTitle {
   padding-left: 40px;
