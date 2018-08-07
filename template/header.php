@@ -57,7 +57,7 @@
     <!--<link href="<?php bloginfo('template_url');?>/assets/base/css/style.min.css?ver=1.0.3" id="style_components" rel="stylesheet"
         type="text/css" />-->
 
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?ver=1.0.107" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?ver=1.0.118" type="text/css" media="screen, projection" />
     
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="<?php bloginfo('template_url');?>/assets/favicon.ico" />
@@ -87,21 +87,21 @@
         data-minimize-offset="130">
         <div class="c-topbar c-navbar">
         <div class="container">
-            <div class="c-brand">
-                  <button class="c-search-toggler" type="button">
-                    <i class="fa fa-search"></i>
-                  </button>
-                  <button class="c-hor-nav-toggler" type="button" data-target=".c-top-menu">
-                    <span class="c-line"></span>
-                    <span class="c-line"></span>
-                    <span class="c-line"></span>
-                  </button>
-                </div>
+            <!-- <div class="c-brand">
+                <button class="c-search-toggler" type="button">
+                <i class="fa fa-search"></i>
+                </button>
+                <button class="c-hor-nav-toggler" type="button" data-target=".c-top-menu">
+                <span class="c-line"></span>
+                <span class="c-line"></span>
+                <span class="c-line"></span>
+                </button>
+            </div> -->
             <!-- BEGIN: QUICK SEARCH -->
-            <form class="c-quick-search" action="https://www.comm100.com/search/">
+            <!-- <form class="c-quick-search" action="https://www.comm100.com/search/">
                 <input type="text" name="q" placeholder="Search Comm100.com..." value="" class="form-control" autocomplete="off">
                 <span class="c-theme-link">&times;</span>
-            </form>
+            </form> -->
             <!-- END: QUICK SEARCH -->
            
             <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->

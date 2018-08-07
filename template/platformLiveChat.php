@@ -54,7 +54,7 @@ Template Name:Platform Live Chat
                 endif;
                 $banner_cta = get_sub_field('cta');
 
-                echo '<div class="c-content-box c-size-md banner banner--' . $banner_align . '"'  . $style_bg . '>';
+                echo '<div class="c-content-box c-size-lg banner banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
                 echo '<div class="col-sm-12">';
 
@@ -651,7 +651,7 @@ Template Name:Platform Live Chat
                                         '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
                                     '</div>' .
                                     '<div class="col-sm-6 ' . $pull6 . ' img-text-column__text">' .
-                                        '<h3 class="highlight highlight--lightBlue">' . $headline . '</h3>' .
+                                        '<h3>' . $headline . '</h3>' .
                                         $body .
                                         $linkcontent .
                                     '</div>' .
@@ -680,7 +680,7 @@ Template Name:Platform Live Chat
                 echo '<div class="c-content-box c-size-md">';
                 echo '<div class="container">';
                 echo '<div class="row">';
-                echo '<div class="col-sm-12 c-center">';
+                echo '<div class="col-sm-10 col-sm-push-1 c-center">';
 
                 if ($headimage):
                     echo '<img src="' . $headimage['url'] . '" alt="' . $headimage['alt'] . '"/>';
@@ -825,7 +825,7 @@ Template Name:Platform Live Chat
                 $background_color = get_sub_field('background_color');
                 
 
-                echo '<div class="c-content-box c-size-md c-content-box--' . $background_color . ' ">';
+                echo '<div class="c-content-box c-size-xlg c-content-box--' . $background_color . ' ">';
                 echo '<div class="container">';
                 echo '<div class="row">';
                 echo '<div class="col-sm-10 col-sm-push-1 c-quote">';
@@ -936,7 +936,7 @@ Template Name:Platform Live Chat
                 // check if the nested repeater field has rows of data
                 if( have_rows('column') ):
                     
-                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="c-content-box c-size-sm">';
                     echo '<div class="container">';
                     echo '<div class="row">';
                     echo '<div class="col-sm-12 feature-column">';

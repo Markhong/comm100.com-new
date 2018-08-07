@@ -32,7 +32,7 @@ Template Name:acf Home
                             '</h2>' .
                         '</div>';
 
-                    echo '<div class="col-sm-12">';
+                    echo '<div class="col-sm-12 pricing">';
                     echo '<div class="threeTab__Index--Wrap clearfix" data-wheel="true">';
                         // loop through the rows of data
                     $tabMobileLC = '';
@@ -276,11 +276,11 @@ Template Name:acf Home
                         echo    '<div class="threeTab__Detail clearfix">' .
                                     $tabMobileMC .
                                     '<div class="threeTab__Detail--col-wrap clearfix">' . 
-                                        '<div class="threeTab__Detail--col">' . 
-                                            '<div class="threeTab__Detail--title">' .
-                                                $pricing_details_multichannel_title . 
-                                            '</div>' .
+                                        
+                                        '<div class="threeTab__Detail--title">' .
+                                            $pricing_details_multichannel_title . 
                                         '</div>' .
+                                       
                                         $columnFirst .
                                         $columnSecond .
                                         $columnThird .
@@ -386,13 +386,13 @@ Template Name:acf Home
                         endwhile;
 
                         echo    '<div class="threeTab__Detail clearfix">' .
-                                    $tabMobileMC .
+                                    $tabMobileAI .
                                     '<div class="threeTab__Detail--col-wrap clearfix">' . 
-                                        '<div class="threeTab__Detail--col">' . 
-                                            '<div class="threeTab__Detail--title">' .
-                                                $pricing_details_ai_title . 
-                                            '</div>' .
+                                        
+                                        '<div class="threeTab__Detail--title">' .
+                                            $pricing_details_ai_title . 
                                         '</div>' .
+                                        
                                         $columnFirst .
                                         $columnSecond .
                                         $columnThird .
@@ -434,7 +434,7 @@ Template Name:acf Home
                 endif;
                 $banner_cta = get_sub_field('cta');
 
-                echo '<div class="c-content-box c-size-md banner banner--' . $banner_align . '"'  . $style_bg . '>';
+                echo '<div class="c-content-box c-size-lg c-margin-b-30 banner banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
                 echo '<div class="col-sm-12">';
 
@@ -649,7 +649,7 @@ Template Name:acf Home
 
                 // check if the nested repeater field has rows of data
                 if( have_rows('cards') ):
-                    echo '<div class="c-content-box">';
+                    echo '<div class="c-content-box c-size-md c-padding-t-0">';
                     echo '<div class="container">';
                     echo '<div class="row">';
                     echo '<div class="col-sm-12 card card-col-' . $row_count . '">';
@@ -708,9 +708,9 @@ Template Name:acf Home
                             
                         endif;
 
-                        echo    '<div class="card-item card-item--' . $card_themecolor . '" data-link="' . $cta_link['url'] . '">' .
-                                    '<div><img src="' . $card_img['url'] . '" alt="' . $card_img['alt'] . '" width="70" height="70" /></div>' .
-                                    '<h3 class="highlight highlight--' . $card_themecolor . '">' . $card_title . '</h3>' .
+                        echo    '<div class="card-item card-item--platform card-item--' . $card_themecolor . '" data-link="' . $cta_link['url'] . '">' .
+                                    '<div class="card__icon-wrap"><img src="' . $card_img['url'] . '" alt="' . $card_img['alt'] . '" class="card__icon--small" width="70" height="70" /></div>' .
+                                    '<h3>' . $card_title . '</h3>' .
                                     $card_subtitle_wrap .
                                     $card_description .
                                     '<div class="card-item__link">' . $linkcontent . '</div>' . 
@@ -1105,12 +1105,13 @@ Template Name:acf Home
                 $headline = get_sub_field('title');
                 $body = get_sub_field('description');
                 $cta = get_sub_field('cta');
+                $btn_group = get_sub_field('btn_group');
                 
 
                 echo '<div class="c-content-box c-size-md">';
                 echo '<div class="container">';
                 echo '<div class="row">';
-                echo '<div class="col-sm-12 c-center">';
+                echo '<div class="col-sm-10 col-sm-push-1 c-center">';
 
                 if ($headimage):
                     echo '<img src="' . $headimage['url'] . '" alt="' . $headimage['alt'] . '"/>';
@@ -1164,6 +1165,30 @@ Template Name:acf Home
                     
                 endif;
                 
+                if ($btn_group):
+                    while ( have_rows('btn_group') ) : the_row();
+                        $type = get_sub_field('type');
+                        // check if the nested repeater field has rows of data
+                        if( have_rows('btn_repeater') ):
+                            
+                            echo '<div class="btn-link-group c-margin-t-60 btn-link-group--' . $type . '">';
+        
+                                // loop through the rows of data
+                            while ( have_rows('btn_repeater') ) : the_row();
+        
+                                $btn_link = get_sub_field('button');
+        
+                                echo  '<a href="' . $btn_link['url'] . '" target="' . $btn_link['target'] . '" class="btn-link">' . $btn_link['title'] . '</a>';
+        
+                            endwhile;
+        
+                            echo '</div>';
+        
+                        endif;
+                    endwhile;
+                endif;
+                
+
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
@@ -1192,6 +1217,13 @@ Template Name:acf Home
                         $body = get_sub_field('body');
                         $icon = get_sub_field('icon');
                         $cta = get_sub_field('cta');
+
+                        $headerIcon = '';
+                        if ($icon):
+                            $headerIcon = '<div class="header_icon">' .
+                                            '<img src="' . $icon['url'] . '" alt="' . $icon['alt'] . '" width="64" height="64" />' .
+                                        '</div>';
+                        endif;
                         
                         $linkcontent = '';
 
@@ -1228,9 +1260,7 @@ Template Name:acf Home
                         endif;
 
                         echo    '<div class="col-sm-5 ' . $push . '">' .
-                                    '<div class="header_icon">' .
-                                        '<img src="' . $icon['url'] . '" alt="' . $icon['alt'] . '" width="64" height="64" />' .
-                                    '</div>' .
+                                    $headerIcon .
                                     '<h3>' . $headline . '</h3>' .
                                     $body . 
                                     '<div class="c-margin-t-30">' . $linkcontent . '</div>' .
@@ -1255,7 +1285,7 @@ Template Name:acf Home
                 $background_color = get_sub_field('background_color');
                 
 
-                echo '<div class="c-content-box c-size-md c-content-box--' . $background_color . ' ">';
+                echo '<div class="c-content-box c-size-xlg c-content-box--' . $background_color . ' ">';
                 echo '<div class="container">';
                 echo '<div class="row">';
                 echo '<div class="col-sm-10 col-sm-push-1 c-quote">';
@@ -1667,11 +1697,11 @@ Template Name:acf Home
                         endwhile;
 
                         echo    '<div class="threeTab__Detail clearfix">' .
-                                    '<div class="threeTab__Detail--col">' . 
-                                        '<div class="threeTab__Detail--title">' .
-                                            $pricing_details_multichannel_title . 
-                                        '</div>' .
+                                    
+                                    '<div class="threeTab__Detail--title">' .
+                                        $pricing_details_multichannel_title . 
                                     '</div>' .
+                                    
                                     $columnFirst .
                                     $columnSecond .
                                     $columnThird .
@@ -1776,11 +1806,11 @@ Template Name:acf Home
                         endwhile;
 
                         echo    '<div class="threeTab__Detail clearfix">' .
-                                    '<div class="threeTab__Detail--col">' . 
-                                        '<div class="threeTab__Detail--title">' .
-                                            $pricing_details_ai_title . 
-                                        '</div>' .
+                                   
+                                    '<div class="threeTab__Detail--title">' .
+                                        $pricing_details_ai_title . 
                                     '</div>' .
+                                   
                                     $columnFirst .
                                     $columnSecond .
                                     $columnThird .
@@ -1826,7 +1856,7 @@ Template Name:acf Home
 
                                 $feature_list_header_plan = get_sub_field('feature_list_header_plan');
                                 if ( have_rows('feature_list_header_plan') ):
-                                    while ( have_rows('columns') ) : the_row();
+                                    while ( have_rows('feature_list_header_plan') ) : the_row();
                                         $plan_name = get_sub_field('plan_name');
                                         echo '<span class="featurelist-plan">' . $plan_name . '</span>';
                                     endwhile;
