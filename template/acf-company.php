@@ -117,7 +117,7 @@ Template Name:acf Company
                         
                 endif;
                 if ($header_image):
-                    echo '<img class="img-right-bottom" src="' . $header_image['url'] . '" alt="' . $header_image['alt'] . '" width="" height="">';
+                    echo '<img class="img-right-bottom hidden-xs" src="' . $header_image['url'] . '" alt="' . $header_image['alt'] . '" width="" height="">';
                 endif;
                 
                 
@@ -579,7 +579,9 @@ Template Name:acf Company
                         $icon = get_sub_field('icon');
 
                         echo    '<div class="icon-text-item">' .
-                                    '<img src="' . $icon['url'] . '" alt="' . $icon['alt'] . '" width="60" height="60" />' .
+                                    '<div class="icon-text-item__img">' .
+                                        '<img src="' . $icon['url'] . '" alt="' . $icon['alt'] . '" width="60" height="60" />' .
+                                    '</div>' .
                                     '<div class="icon-text-item__title">' . $title . '</div>' .
                                     $body . 
                                 '</div>';
@@ -643,7 +645,11 @@ Template Name:acf Company
                         $department = get_sub_field('department');
 
                         echo    '<div class="open-opportunity">' .
-                                    '<h4 class="job-title">' . $job_title . '</h4>' .
+                                    '<h4 class="job-title">' .
+                                        '<a href="' . $job_title['url'] . '" target="' . $job_title['target'] . '">' .
+                                            $job_title['title'] .
+                                        '</a>' .
+                                    '</h4>' .
                                     '<div class="department">' . $department . '</div>' .
                                 '</div>';
                     endwhile;
@@ -782,7 +788,7 @@ Template Name:acf Company
                             echo '<div class="container">';
                             echo '<div class="row">';
         
-                            echo '<div class="col-sm-12 c-center">' .
+                            echo '<div class="col-sm-12 threeTab__head c-center">' .
                                     '<h1>' . $header_headline . '</h1>' .
                                     '<h2>' .
                                         $header_slogan .
@@ -927,6 +933,90 @@ Template Name:acf Company
                         '</div>' .
                     '</div>';
 
+            endif;
+
+            // check current row layout
+            if( get_row_layout() == '2-column_for_feature' ):
+                $color = get_sub_field('color');                                
+                // check if the nested repeater field has rows of data
+                if( have_rows('column') ):
+                    
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="col-sm-12 feature-column">';
+                        // loop through the rows of data
+                    
+                    $index = 0;
+                    while ( have_rows('column') ) : the_row();
+                        $index ++;    
+                        $headline = get_sub_field('headline');
+                        $body = get_sub_field('body');
+                        $icon = get_sub_field('icon');
+                        
+
+                        if ($linkcontent !== ''):
+                            $linkcontent = '<div class="c-margin-t-30">' . $linkcontent . '</div>';
+                        endif;
+
+                        echo    '<div class="feature-column__item">' .
+                                    '<div><img src="' . $icon['url'] . '" alt="' . $icon['alt'] . '" width="80" height="80" /></div>' .
+                                    '<h5 class="feature-column__title highlight highlight--' . $color . '">' . $headline . '</h3>' .
+                                    $body . 
+                                    $linkcontent .
+                                '</div>';
+                        
+                        if ($index % 2 == 0 ):
+                            echo '<div class="clear"></div>';
+                        endif;
+                    endwhile;
+
+                    $cta = get_sub_field('cta');
+                        $linkcontent = '';
+
+                    if ($cta):
+                        while ( have_rows('cta') ) : the_row();
+                            $cta_link_type = get_sub_field('cta_link_type');
+                            $cta_link = get_sub_field('cta_link');
+                            if ($cta_link):
+                                switch ($cta_link_type) {
+                                    case 'green' :
+                                            $linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                    $cta_link['title'] .
+                                                '</a>';
+                                            break;
+                                    case 'blue' :
+                                            $linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                    $cta_link['title'] .
+                                                '</a>';
+                                            break;
+                                    case 'white' :
+                                            $linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                    $cta_link['title'] .
+                                                '</a>';
+                                            break;
+                                    case 'link' :
+                                            $linkcontent = '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+                                                    $cta_link['title'] .
+                                                '</a>';
+                                            break;
+                                    default: break;
+                                }
+                            endif;
+                        endwhile;
+                        if ($linkcontent !== ''):
+                            $linkcontent = '<div class="feature-column__link"> ' . $linkcontent . ' </div>';
+                        endif;
+                    endif;
+                    echo $linkcontent;
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+
+                endif;
+
+               
             endif;
                 
         endwhile;

@@ -116,7 +116,7 @@
                         <li>
                             <i class="icon-envelope"></i> 
                             <a href="mailto:sales@comm100.com">
-                                <span class="c-theme-color">sales@comm100.com</span>
+                                sales@comm100.com
                             </a>
                         </li>
                         <li>

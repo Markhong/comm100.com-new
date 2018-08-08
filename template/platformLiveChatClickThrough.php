@@ -35,6 +35,7 @@ Template Name:Platform Live Chat Click Through
     
 
     <?php
+        $cardindex = 0;
         // check if the flexible content field has rows of data
         if( have_rows('modules') ):
 
@@ -54,7 +55,7 @@ Template Name:Platform Live Chat Click Through
                 endif;
                 $banner_cta = get_sub_field('cta');
 
-                echo '<div class="c-content-box c-size-md banner banner--' . $banner_align . '"'  . $style_bg . '>';
+                echo '<div class="c-content-box c-size-lg banner banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
                 echo '<div class="col-sm-12">';
 
@@ -240,6 +241,7 @@ Template Name:Platform Live Chat Click Through
                 echo '</div>';
             endif;   
 
+            
             // check current row layout
             if( get_row_layout() == 'card' ):
                 $rows = get_sub_field('cards');
@@ -252,11 +254,13 @@ Template Name:Platform Live Chat Click Through
                     echo '<div class="row">';
                     echo '<div class="col-sm-12 card card-col-' . $row_count . '">';
 
+                    
                         // loop through the rows of data
                     while ( have_rows('cards') ) : the_row();
 
                         $card_themecolor = get_sub_field('color');
                         $card_img = get_sub_field('icon');
+                        $card_icon_for_mobile = get_sub_field('icon_for_mobile');
                         $card_title = get_sub_field('title');
                         $card_subtitle = get_sub_field('subtitle');
                         $card_description = get_sub_field('description');
@@ -297,8 +301,29 @@ Template Name:Platform Live Chat Click Through
                             
                         endif;
 
-                        echo    '<div class="card-item card-item--' . $card_themecolor . '" data-link="' . $cta_link['url'] . '">' .
-                                    '<div><img src="' . $card_img['url'] . '" alt="' . $card_img['alt'] . '" width="105" height="105" /></div>' .
+                        $cardindex ++;
+                        $style_card_img = '';
+                        if ($card_img):
+                            $style_card_img = '<style type="text/css">' .
+                                                        '.card-item__icon' . $cardindex . ' {' .
+                                                            'background-image: url(' . $card_img['url'] . ')' .
+                                                        '}' .
+                                                    '</style>';
+                        endif;
+
+                        $style_card_img_hover = '';
+                        if ($card_icon_for_mobile):
+                            $style_card_img_hover = '<style type="text/css">' .
+                                                        '.card-item--hover .card-item__icon' . $cardindex . ' {' .
+                                                            'background-image: url(' . $card_icon_for_mobile['url'] . ')' .
+                                                        '}' .
+                                                    '</style>';
+                        endif;
+
+                        echo    $style_card_img .
+                                $style_card_img_hover .
+                                '<div class="card-item card-item--' . $card_themecolor . '" data-link="' . $cta_link['url'] . '">' .
+                                    '<div class="card-item__icon card-item__icon' . $cardindex . '"></div>' .
                                     '<h3 class="highlight highlight--' . $card_themecolor . '">' . $card_title . '</h3>' .
                                     '<div class="card-item__subtitle">' . $card_subtitle . '</div>' .
                                     $card_description .
@@ -699,7 +724,7 @@ Template Name:Platform Live Chat Click Through
                 echo '<div class="c-content-box c-size-md">';
                 echo '<div class="container">';
                 echo '<div class="row">';
-                echo '<div class="col-sm-12 c-center">';
+                echo '<div class="col-sm-10 col-sm-push-1 c-center">';
 
                 if ($headimage):
                     echo '<img src="' . $headimage['url'] . '" alt="' . $headimage['alt'] . '"/>';
@@ -844,13 +869,13 @@ Template Name:Platform Live Chat Click Through
                 $background_color = get_sub_field('background_color');
                 
 
-                echo '<div class="c-content-box c-size-md c-content-box--' . $background_color . ' ">';
+                echo '<div class="c-content-box c-size-xlg c-content-box--' . $background_color . ' ">';
                 echo '<div class="container">';
                 echo '<div class="row">';
                 echo '<div class="col-sm-10 col-sm-push-1 c-quote">';
 
                 if ($quote):
-                    echo '<div class="c-quote__text">' .
+                    echo '<div class="c-quote__content">' .
                             $quote . 
                         '</div>';
                 endif;

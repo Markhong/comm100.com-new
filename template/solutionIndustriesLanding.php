@@ -54,7 +54,7 @@ Template Name:Solution Industries Landing
                 endif;
                 $banner_cta = get_sub_field('cta');
 
-                echo '<div class="c-content-box c-size-md banner banner--' . $banner_align . '"'  . $style_bg . '>';
+                echo '<div class="c-content-box c-size-lg banner banner--sm banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
                 echo '<div class="col-sm-12">';
 
@@ -517,7 +517,7 @@ Template Name:Solution Industries Landing
                 // check if the nested repeater field has rows of data
                 if( have_rows('image_text_card_repeater') ):
                     
-                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="c-content-box">';
                     echo '<div class="container">';
                     echo '<div class="row">';
                     echo '<div class="col-sm-12">';         
@@ -569,7 +569,7 @@ Template Name:Solution Industries Landing
                                     '</div>' .
                                     '<div class="img-text-card__text">' .
                                         '<h3 class="highlight highlight--lightBlue">' . $headline . '</h3>' .
-                                        '<p>' . $body . '</p>' . 
+                                        $body . 
                                         '<div class="img-text-card__link">' . $linkcontent . '</div>' .
                                     '</div>' .
                                 '</div>';
@@ -679,7 +679,7 @@ Template Name:Solution Industries Landing
                 echo '<div class="c-content-box c-size-md">';
                 echo '<div class="container">';
                 echo '<div class="row">';
-                echo '<div class="col-sm-12 c-center">';
+                echo '<div class="col-sm-10 col-sm-push-1 c-center">';
 
                 if ($headimage):
                     echo '<img src="' . $headimage['url'] . '" alt="' . $headimage['alt'] . '"/>';
@@ -824,13 +824,13 @@ Template Name:Solution Industries Landing
                 $background_color = get_sub_field('background_color');
                 
 
-                echo '<div class="c-content-box c-size-md c-content-box--' . $background_color . ' ">';
+                echo '<div class="c-content-box c-size-xlg c-content-box--' . $background_color . ' ">';
                 echo '<div class="container">';
                 echo '<div class="row">';
                 echo '<div class="col-sm-10 col-sm-push-1 c-quote">';
 
                 if ($quote):
-                    echo '<div class="c-quote__text">' .
+                    echo '<div class="c-quote__content">' .
                             $quote . 
                         '</div>';
                 endif;

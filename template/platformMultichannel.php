@@ -54,7 +54,7 @@ Template Name:Platform Multichannel
                 endif;
                 $banner_cta = get_sub_field('cta');
 
-                echo '<div class="c-content-box c-size-md banner banner--' . $banner_align . '"'  . $style_bg . '>';
+                echo '<div class="c-content-box c-size-lg banner banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
                 echo '<div class="col-sm-12">';
 
@@ -680,7 +680,7 @@ Template Name:Platform Multichannel
                 echo '<div class="c-content-box c-size-md">';
                 echo '<div class="container">';
                 echo '<div class="row">';
-                echo '<div class="col-sm-12 c-center">';
+                echo '<div class="col-sm-10 col-sm-push-1 c-center">';
 
                 if ($headimage):
                     echo '<img src="' . $headimage['url'] . '" alt="' . $headimage['alt'] . '"/>';
@@ -825,13 +825,13 @@ Template Name:Platform Multichannel
                 $background_color = get_sub_field('background_color');
                 
 
-                echo '<div class="c-content-box c-size-md c-content-box--' . $background_color . ' ">';
+                echo '<div class="c-content-box c-size-xlg c-content-box--' . $background_color . ' ">';
                 echo '<div class="container">';
                 echo '<div class="row">';
                 echo '<div class="col-sm-10 col-sm-push-1 c-quote">';
 
                 if ($quote):
-                    echo '<div class="c-quote__text">' .
+                    echo '<div class="c-quote__content">' .
                             $quote . 
                         '</div>';
                 endif;

@@ -1,37 +1,12 @@
 <?php
 /*
-Template Name:Solution Use Case Landing
+Template Name:Platform Others
 */
 ?>
 <?php get_header(); ?>
-<div class="c-navbar--secondary visible-md">
-        <div class="container">
-            <?php
-            $defaults = array(
-                'theme_location'  => 'solutionUseCase',
-                'menu'            => '',
-                'container'       => 'nav',
-                'container_class' => '',
-                'container_id'    => '',
-                'menu_class'      => 'clearfix',
-                'menu_id'         => '',
-                'echo'            => true,
-                'fallback_cb'     => 'wp_page_menu',
-                'before'          => '',
-                'after'           => '',
-                'link_before'     => '',
-                'link_after'      => '',
-                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                'depth'           => 0,
-                'walker'          => ''
-                );
-                wp_nav_menu( $defaults );
-            ?>
-        </div>
-    </div>
 </header>
 
-<div class="c-layout-page c-layout-page-fixed secondary-page">
+<div class="c-layout-page c-layout-page-fixed secondary-page secondary-page--others">
     
 
     <?php
@@ -54,7 +29,7 @@ Template Name:Solution Use Case Landing
                 endif;
                 $banner_cta = get_sub_field('cta');
 
-                echo '<div class="c-content-box c-size-lg banner banner--sm banner--' . $banner_align . '"'  . $style_bg . '>';
+                echo '<div class="c-content-box c-size-lg banner banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
                 echo '<div class="col-sm-12">';
 
@@ -517,7 +492,7 @@ Template Name:Solution Use Case Landing
                 // check if the nested repeater field has rows of data
                 if( have_rows('image_text_card_repeater') ):
                     
-                    echo '<div class="c-content-box">';
+                    echo '<div class="c-content-box c-size-md">';
                     echo '<div class="container">';
                     echo '<div class="row">';
                     echo '<div class="col-sm-12">';         
@@ -569,7 +544,7 @@ Template Name:Solution Use Case Landing
                                     '</div>' .
                                     '<div class="img-text-card__text">' .
                                         '<h3 class="highlight highlight--lightBlue">' . $headline . '</h3>' .
-                                        $body . 
+                                        '<p>' . $body . '</p>' . 
                                         '<div class="img-text-card__link">' . $linkcontent . '</div>' .
                                     '</div>' .
                                 '</div>';
@@ -640,6 +615,7 @@ Template Name:Solution Use Case Landing
                                     }
                                 endif;
                             endwhile;
+                            
                             if ($linkcontent !== ''):
                                 $linkcontent = '<div class="img-text-column__link"> ' . $linkcontent . ' </div>';
                             endif;
@@ -650,7 +626,7 @@ Template Name:Solution Use Case Landing
                                         '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
                                     '</div>' .
                                     '<div class="col-sm-6 ' . $pull6 . ' img-text-column__text">' .
-                                        '<h3 class="highlight highlight--lightBlue">' . $headline . '</h3>' .
+                                        '<h3>' . $headline . '</h3>' .
                                         $body .
                                         $linkcontent .
                                     '</div>' .
@@ -935,7 +911,7 @@ Template Name:Solution Use Case Landing
                 // check if the nested repeater field has rows of data
                 if( have_rows('column') ):
                     
-                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="c-content-box c-size-sm">';
                     echo '<div class="container">';
                     echo '<div class="row">';
                     echo '<div class="col-sm-12 feature-column">';
