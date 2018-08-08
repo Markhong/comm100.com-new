@@ -511,8 +511,8 @@ Template Name:Solution Use Case Click Through
                 echo '</div>';
             endif;    
 
-            // check current row layout
-            if( get_row_layout() == 'image-text_card' ):
+             // check current row layout
+             if( get_row_layout() == 'image-text_card' ):
                 
                 // check if the nested repeater field has rows of data
                 if( have_rows('image_text_card_repeater') ):
@@ -528,8 +528,11 @@ Template Name:Solution Use Case Click Through
                         $body = get_sub_field('description');
                         $image = get_sub_field('image');
                         $image_position = get_sub_field('image_position');
+                        $color = get_sub_field('color');
                         $cta = get_sub_field('cta');
                         $linkcontent = '';
+
+                        $cta_link = '';
 
                         if ($cta):
                             while ( have_rows('cta') ) : the_row();
@@ -563,12 +566,12 @@ Template Name:Solution Use Case Click Through
                             endwhile;
                         endif;
 
-                        echo    '<div class="img-text-card img-text-card--' . $image_position . ' clearfix">' .
+                        echo    '<div class="img-text-card img-text-card--' . $color . ' img-text-card--' . $image_position . ' clearfix" data-link="' . $cta_link['url'] . '">' .
                                     '<div class="img-text-card__img">' .
                                         '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
                                     '</div>' .
                                     '<div class="img-text-card__text">' .
-                                        '<h3 class="highlight highlight--lightBlue">' . $headline . '</h3>' .
+                                        '<h3 class="highlight highlight--' . $color . '">' . $headline . '</h3>' .
                                         $body . 
                                         '<div class="img-text-card__link">' . $linkcontent . '</div>' .
                                     '</div>' .
@@ -583,7 +586,7 @@ Template Name:Solution Use Case Click Through
                 endif;
 
                
-            endif;    
+            endif;     
 
             // check current row layout
             if( get_row_layout() == 'image-text' ):

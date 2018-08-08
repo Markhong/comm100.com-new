@@ -830,7 +830,9 @@ Template Name:acf Company
                                     
                                     while ( have_rows('content') ) : the_row();
                                         $sub_title = get_sub_field('sub_title');
+                                        $icon = get_sub_field('icon');
                                         $featurelist_wrap .= '<div class="col-sm-6 threeTab__Detail--col">';
+                                        $featurelist_wrap .= '<i class="icon-' . $icon . '"></i>';
                                         $featurelist_wrap .= '<p class="threeTab__Detail--subTitle">' . $sub_title . '</p>';
                                         $featurelist_wrap .= '<ul class="threeTab__Detail--contentList">';
                                         // $li_feature_list = '';
