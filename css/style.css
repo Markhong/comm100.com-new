@@ -21145,3 +21145,203 @@ h3.highlight {
   font-family: "Ubuntu Medium", sans-serif;
   padding-bottom: 2px;
 }
+.landingPage-title {
+  position: relative;
+  width: 100%;
+  height: 440px;
+}
+.landingPage-title--col {
+  height: 100%;
+}
+.landingPage-title--text {
+  position: absolute;
+  bottom: 60px;
+}
+.landingPage-title h1 {
+  font-family: "Ubuntu Regular", sans-serif;
+  text-align: left;
+}
+.landingPage-title h2 {
+  font-size: 36px;
+  font-family: "Ubuntu Regular", sans-serif;
+  color: #0091d1;
+}
+.landingPage-title img {
+  position: absolute;
+  right: 0;
+  bottom: -60px;
+  width: 520px;
+}
+.landingPage-summary {
+  font-size: 26px;
+  line-height: 42px;
+  padding-bottom: 25px;
+}
+.social-share h3 {
+  font-size: 22px;
+  font-family: "Ubuntu Bold", sans-serif;
+}
+h3.highlight {
+  padding-bottom: 12px;
+  display: inline-block;
+}
+
+.landingPage-download h3 {
+  display: inline-block;
+  font-family: "Ubuntu Medium", sans-serif;
+}
+.dowload-privacy {
+  padding-top: 30px;
+  font-size: 16px;
+  opacity: .6;
+}
+.dowload-privacy a {
+  color: #606c78;
+  text-decoration: underline;
+}
+@media screen and (max-width: 767px) {
+  .landingPage-title {
+    height: auto;
+  }
+  .landingPage-title--text {
+    position: relative;
+    top: 30px;
+  }
+  .landingPage-title img {
+    position: relative;
+    bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .landingPage-title {
+    height: 360px;
+  }
+  .landingPage-title img {
+    bottom: -30px;
+  }
+}
+.resources-nav {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Ubuntu Regular", sans-serif;
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 40px;
+}
+.resources-nav li {
+  flex: 1;
+  text-align: center;
+}
+.resources-nav li a {
+  color: #5e6d79;
+  cursor: pointer;
+}
+.resources-nav li.active a {
+  padding-bottom: 8px;
+  border-bottom: 3px solid #3dc4ff;
+}
+.resource-promotion {
+  margin-bottom: 80px;
+}
+.resource-promotion .resource-item img {
+  max-height: 320px;
+}
+.resource-item {
+  min-height: 360px;
+  margin-bottom: 20px;
+}
+.resource-item--tag {
+  position: absolute;
+  top: 30px;
+  left: 5px;
+  background-color: #00567c;
+  padding: 8px 30px;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Ubuntu Medium", sans-serif;
+}
+.resource-item--tag:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  border-top: 10px solid #0091d1;
+	border-left: 10px solid transparent;
+}
+.resource-item--category {
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: "Ubuntu Regular", sans-serif;
+  opacity: .7;
+}
+h5.resource-item--title {
+  font-size: 22px;
+  font-family: "Ubuntu Medium", sans-serif;
+  line-height: 30px;
+  margin-top: 20px;
+}
+.resource-item--subTitle {
+  font-size: 18px;
+  font-family: "Ubuntu Medium", sans-serif;
+  line-height: 26px;
+  color: #606c78;
+}
+.resource-item .CTA {
+  background: #f4f8fc;
+  border-radius: 20px;
+  text-align: center;
+  padding: 45px 50px;
+  min-height: 360px;
+}
+.CTA .resource-item--title {
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-family: "Ubuntu Medium", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+}
+.CTA .resource-item--subTitle {
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "Ubuntu Light", sans-serif;
+  margin-bottom: 20px;
+}
+.resource-item .CTA .btn {
+  font-size: 18px;
+  font-family: "Ubuntu Medium", sans-serif;
+  padding: 13px 30px;
+  border-radius: 6px;
+}
+.resource-item .CTA .c-redirectLink {
+  font-size: 18px;
+}
+.pager {
+  padding-top: 90px;
+  font-family: "Ubuntu Regular", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: #5e6d79;
+  text-align: center;
+  user-select: none;
+}
+.pager span {
+  padding: 0 10px;
+  cursor: pointer;
+}
+.pager span.current:hover {
+  cursor: default;
+}
+.pager .current,
+.pager span:hover {
+  color: #0094d4;
+}
+.prev_page.disabled,
+.next_page.disabled {
+  opacity: 0;
+  cursor: default;
+}
+@media screen and (max-width: 767px) {
+  .resource-item {
+    min-height: auto;
+  }
+}
