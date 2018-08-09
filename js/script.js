@@ -1580,6 +1580,18 @@ window.onload = function() {
 				window.location.href = this.getAttribute('data-link');
 			})
 		})
+		var imgTextCardItems = document.querySelectorAll('.img-text-card');
+		imgTextCardItems.forEach(function(item) {
+			item.addEventListener('mouseover', function() {
+				this.classList.add('card-item--hover');
+			});
+			item.addEventListener('mouseout', function() {
+				this.classList.remove('card-item--hover');
+			})
+			item.addEventListener('click', function() {
+				window.location.href = this.getAttribute('data-link');
+			})
+		})
 	}());
 
 	(function(){		

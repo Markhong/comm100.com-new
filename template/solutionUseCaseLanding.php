@@ -422,7 +422,7 @@ Template Name:Solution Use Case Landing
                         $logo_image = get_sub_field('logo_image');
 
                         echo    '<div class="item">' .
-                                    '<img src="' . $logo_image['url'] . '" alt="' . $logo_image['alt'] . '" width="180" height="140" />' .
+                                    '<img class="c-img-pos grayscale" src="' . $logo_image['url'] . '" alt="' . $logo_image['alt'] . '" width="180" height="140" />' .
                                 '</div>';
                     endwhile;
 
