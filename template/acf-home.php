@@ -94,7 +94,6 @@ Template Name:acf Home
 
                     // pricing live chat details
                     echo '<div class="threeTab__Detail clearfix">';
-                    
                     echo $tabMobileLC;
                     echo '<div class="threeTab__Detail--col-wrap clearfix">';
                     while ( have_rows('pricing_details_live_chat') ) : the_row();
@@ -173,17 +172,6 @@ Template Name:acf Home
                                 '</div>';
                                 
                     endwhile;
-                    
-
-                    $pricing_details_live_chat_bottom_link = get_sub_field('pricing_details_live_chat_bottom_link');
-                    if ($pricing_details_live_chat_bottom_link):
-                        echo '<div class="clear"></div>' . 
-                            '<div class="threeTab__Detail--bottomLink">' .
-                                '<a href="' . $pricing_details_live_chat_bottom_link['url'] . '" target="' . $pricing_details_live_chat_bottom_link['target'] . '">' .
-                                    $pricing_details_live_chat_bottom_link['title'] .
-                                '</a>' .
-                            '</div>';
-                    endif;
                     echo '</div>';
                     echo '</div>';
                     // end pricing live chat details
@@ -405,7 +393,14 @@ Template Name:acf Home
 
                     echo '</div>';
                     
-                    
+                    $pricing_details_bottom_link = get_sub_field('pricing_details_bottom_link');
+                    if ($pricing_details_bottom_link):
+                        echo '<div class="threeTab__Detail--bottomLink">' .
+                                '<a href="' . $pricing_details_bottom_link['url'] . '" target="' . $pricing_details_bottom_link['target'] . '">' .
+                                    $pricing_details_bottom_link['title'] .
+                                '</a>' .
+                            '</div>';
+                    endif;
                     
                     echo '</div>';
                     echo '</div>';
@@ -1602,15 +1597,7 @@ Template Name:acf Home
                                 '</div>';
                                 
                     endwhile;
-                    $pricing_details_live_chat_bottom_link = get_sub_field('pricing_details_live_chat_bottom_link');
-                    if ($pricing_details_live_chat_bottom_link):
-                        echo '<div class="clear"></div>' . 
-                             '<div class="threeTab__Detail--bottomLink">' .
-                                '<a href="' . $pricing_details_live_chat_bottom_link['url'] . '" target="' . $pricing_details_live_chat_bottom_link['target'] . '">' .
-                                    $pricing_details_live_chat_bottom_link['title'] .
-                                '</a>' .
-                            '</div>';
-                    endif;
+                    
                     echo '</div>';
                     // end pricing live chat details
 
@@ -1825,7 +1812,14 @@ Template Name:acf Home
 
                     echo '</div>';
                     
-                    
+                    $pricing_details_bottom_link = get_sub_field('pricing_details_bottom_link');
+                    if ($pricing_details_bottom_link):
+                        echo '<div class="threeTab__Detail--bottomLink">' .
+                                '<a href="' . $pricing_details_bottom_link['url'] . '" target="' . $pricing_details_bottom_link['target'] . '">' .
+                                    $pricing_details_bottom_link['title'] .
+                                '</a>' .
+                            '</div>';
+                    endif;
                     
                     echo '</div>';
                     echo '</div>';

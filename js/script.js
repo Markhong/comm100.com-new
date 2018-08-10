@@ -1597,7 +1597,7 @@ window.onload = function() {
 	(function(){		
 		var isMobile = window.mobilecheck();
 		if (!isMobile) {
-			var headerHeight = $('.c-layout-header').outerHeight() - $('.c-layout-header .c-topbar.c-navbar').outerHeight() + 18;
+			var headerHeight = $('.c-layout-header').outerHeight() - $('.c-layout-header .c-topbar.c-navbar').outerHeight();
 			var tabIndexWrap = document.querySelector('.threeTab__Index--Wrap');
 			if (!isMobile && tabIndexWrap && tabIndexWrap.getAttribute('data-wheel') === 'true') {
 				var scrolling = false;
@@ -1610,7 +1610,7 @@ window.onload = function() {
 
 				function handle(delta) {
 					if (delta < 0) {
-						if (Math.floor($('.threeTab__Index--Wrap').offset().top - $(window).scrollTop()) > headerHeight) {
+						if ($(window).scrollTop() < ($('.threeTab__Index--Wrap').offset().top - headerHeight)) {
 							disableMouseWheel();
 							$('html, body').animate({
 								scrollTop: $('.threeTab__Index--Wrap').offset().top - headerHeight
@@ -1619,7 +1619,7 @@ window.onload = function() {
 							});
 						}
 					} else {
-						if ($('.threeTab__Index--Wrap').offset().top - $(window).scrollTop() > headerHeight) {
+						if ($(window).scrollTop() < ($('.threeTab__Index--Wrap').offset().top - headerHeight)) {
 							tabIndexSlideUpOrDown(false);
 						}
 					}
@@ -1629,17 +1629,17 @@ window.onload = function() {
 					if(scrolling) return;
 					var delta = 0;
 					event = event || window.event;
-					if (event.wheelDelta) {
-						delta = event.wheelDelta/120;
-					} else if (event.detail) {
-						delta = -event.detail/3;
-					}
-					if (delta)
-						handle(delta);
+					// if (event.wheelDelta) {
+					// 	delta = event.wheelDelta/120;
+					// } else if (event.detail) {
+					// 	delta = -event.detail/3;
+					// }
+					delta = event.wheelDelta ? event.wheelDelta/120 : -(event.detail || 0)/3;
+					delta && handle(delta);
 				}
-				if (window.addEventListener) {
-					window.addEventListener('mousewheel', wheelEvent, false);
-				}
+				
+				window.addEventListener('mousewheel', wheelEvent, false);
+				
 				var isFirefox = typeof InstallTrigger !== 'undefined';
 				if (isFirefox) {
 					window.addEventListener('DOMMouseScroll', wheelEvent, false);
