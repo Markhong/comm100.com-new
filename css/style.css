@@ -19535,12 +19535,12 @@ button.btn-video-close span {
   cursor: pointer;
 }
 .card-item img {
-  width: 85px;
-  height: 85px;
+  width: 60px;
+  height: 60px;
 }
 .card-item__icon {
-  width: 85px;
-  height: 85px;
+  width: 60px;
+  height: 60px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -20145,6 +20145,7 @@ h3.highlight {
   margin-top: 60px;
   display: inline-block;
   position: relative;
+  bottom: 35px;
 }
 .customerstory-header:before {
   background: #f4f8fc;
