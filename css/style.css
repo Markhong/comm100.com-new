@@ -20790,6 +20790,20 @@ h3.highlight {
   padding-top: 30px;
   /* padding-bottom: 40px; */
 }
+@media screen and (min-width: 768px) {
+  .ai-logo-wrap {
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .ai-logo-wrap {
+    background: #f4f7fc;
+    padding-top: 30px;
+    text-align: center;
+  }
+}
 .threeTab__Index:nth-child(1).selected,
 .threeTab__Index:nth-child(1):hover:not(.selected) {
   background: #0094d4;

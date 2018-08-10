@@ -56,7 +56,7 @@ Template Name:Solution Use Case Click Through
 
                 echo '<div class="c-content-box c-size-lg banner banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
-                echo '<div class="col-sm-12">';
+                echo '<div class="col-sm-6">';
 
                 if ($banner_icon):
                     echo '<div class="banner_icon">' .
