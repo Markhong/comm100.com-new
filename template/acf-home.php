@@ -283,6 +283,14 @@ Template Name:acf Home
                     while ( have_rows('pricing_details_ai') ) : the_row();
                         
                         $pricing_details_ai_title = get_sub_field('title');
+                        $ai_logo = get_sub_field('ai_logo');
+
+                        $ai_logo_content = '';
+                        if ($ai_logo):
+                            $ai_logo_content = '<div class="ai-logo-wrap">' .
+                                                '<img src="' . $ai_logo['url'] . '" alt="' . $ai_logo['alt'] . '" width="276" height="209" />' . 
+                                            '</div>';
+                        endif;
 
                         $columnFirst = '';
                         while ( have_rows('column_first') ) : the_row();
@@ -385,6 +393,7 @@ Template Name:acf Home
                                         $columnSecond .
                                         $columnThird .
                                     '</div>' .
+                                    $ai_logo_content .
                                 '</div>';
                                 
                     endwhile;
@@ -431,7 +440,7 @@ Template Name:acf Home
 
                 echo '<div class="c-content-box c-size-lg c-margin-b-30 banner banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
-                echo '<div class="col-sm-12">';
+                echo '<div class="col-sm-6">';
 
                 if ($banner_icon):
                     echo '<div class="banner_icon">' .

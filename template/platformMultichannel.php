@@ -57,7 +57,7 @@ Template Name:Platform Multichannel
 
                 echo '<div class="c-content-box c-size-lg banner banner--' . $banner_size . ' banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
-                echo '<div class="col-sm-12">';
+                echo '<div class="col-sm-6">';
 
                 if ($banner_icon):
                     echo '<div class="banner_icon">' .
@@ -652,7 +652,7 @@ Template Name:Platform Multichannel
                                         '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
                                     '</div>' .
                                     '<div class="col-sm-6 ' . $pull6 . ' img-text-column__text">' .
-                                        '<h3 class="highlight highlight--lightBlue">' . $headline . '</h3>' .
+                                        '<h3>' . $headline . '</h3>' .
                                         $body .
                                         $linkcontent .
                                     '</div>' .
