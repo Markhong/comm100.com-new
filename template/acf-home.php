@@ -425,6 +425,7 @@ Template Name:acf Home
             // loop through the rows of data
         while ( have_rows('modules') ) : the_row();
             if( get_row_layout() == 'hero_banner' ):
+                $banner_size = get_sub_field('size');
                 $banner_align = get_sub_field('align');
                 $banner_icon = get_sub_field('icon');
                 // $page_tag = get_sub_field('page_tag');
@@ -438,7 +439,7 @@ Template Name:acf Home
                 endif;
                 $banner_cta = get_sub_field('cta');
 
-                echo '<div class="c-content-box c-size-lg c-margin-b-30 banner banner--' . $banner_align . '"'  . $style_bg . '>';
+                echo '<div class="c-content-box c-size-lg c-margin-b-30 banner banner--' . $banner_size . ' banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
                 echo '<div class="col-sm-6">';
 
