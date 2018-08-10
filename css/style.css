@@ -19519,6 +19519,7 @@ button.btn-video-close span {
   margin-bottom: 30px;
 }
 .card h3 {
+  text-align: center;
   font-size: 34px;
   color: #5e6d79;
   margin-bottom: 54px;
@@ -19532,6 +19533,9 @@ button.btn-video-close span {
   padding: 45px 60px 60px;
   margin-right: 15px;
   cursor: pointer;
+}
+.card .card-item h3 {
+  text-align: left;
 }
 .card-item img {
   width: 60px;
