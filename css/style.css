@@ -13345,6 +13345,7 @@ label {
 
 .c-layout-header .c-mainbar {
   margin-bottom: 23px;
+  margin-top: 18px;
 }
 @media (max-width: 991px) {
   .c-layout-header .c-mainbar {
@@ -13440,7 +13441,7 @@ label {
 }
 @media (min-width: 1200px) {
   .c-layout-header .c-navbar .c-top-menu > .nav.navbar-nav > li > .c-link {
-    padding: 16px 20px 16px 20px !important;
+    padding: 16px 20px 0 20px !important;
   }
 }
 @media (min-width: 992px) {
@@ -14288,7 +14289,6 @@ label {
     border-bottom: 0;
     background: #fff;
     box-shadow: none;
-    padding-top: 18px;
     /* padding-bottom: 18px; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   }
@@ -18323,7 +18323,7 @@ fieldset[disabled] .c-theme-btn.btn:not(.btn-no-focus):focus {
 .c-content-list-1 a,
 .c-content-title-1 a,
 .featurelist a {
-  color: #3f444a;
+  color: #5e6d79;
 }
 .c-content-list-1 a {
   font-size: 20px;
@@ -20789,7 +20789,7 @@ h3.highlight {
 .threeTab__Detail--col-wrap {
   background-color: #f4f7fc;
   padding-top: 30px;
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
 }
 .threeTab__Index:nth-child(1).selected,
 .threeTab__Index:nth-child(1):hover:not(.selected) {
@@ -20885,9 +20885,10 @@ h3.highlight {
   font-size: 50px;
 
 }
+
 @media screen and (min-width: 1200px) {
   .pricing .threeTab__Detail:nth-child(1) .threeTab__Detail--col {
-    height: 725px;
+    height: 665px;
   }
 }
 .threeTab__Detail--col:nth-child(3) .threeTab__Detail--price { 
@@ -20941,7 +20942,7 @@ h3.highlight {
   margin-bottom: 12px;
 }
 .threeTab__Detail--action {
-  margin-bottom: 80px;
+  /* margin-bottom: 80px; */
   margin-top: 30px;
   text-align: center;
 }
@@ -20972,6 +20973,9 @@ h3.highlight {
 }
 .threeTab__Detail--bottomLink {
   text-align: center;
+  background-color: #f4f7fc;
+  padding-bottom: 60px;
+  padding-top: 60px;
 }
 .threeTab__Detail--bottomLink a {
 	font-size: 16px;

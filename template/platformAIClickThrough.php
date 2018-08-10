@@ -258,6 +258,7 @@ Template Name:Platform AI Click Through
 
                         $card_themecolor = get_sub_field('color');
                         $card_img = get_sub_field('icon');
+                        $card_icon_for_mobile = get_sub_field('icon_for_mobile');
                         $card_title = get_sub_field('title');
                         $card_subtitle = get_sub_field('subtitle');
                         $card_description = get_sub_field('description');
