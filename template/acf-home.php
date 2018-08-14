@@ -441,7 +441,7 @@ Template Name:acf Home
 
                 echo '<div class="c-content-box c-size-lg c-margin-b-30 banner banner--' . $banner_size . ' banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
-                echo '<div class="col-sm-6">';
+                echo '<div class="col-sm-7">';
 
                 if ($banner_icon):
                     echo '<div class="banner_icon">' .

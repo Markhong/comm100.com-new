@@ -57,7 +57,7 @@ Template Name:Platform AI
 
                 echo '<div class="c-content-box c-size-lg banner banner--' . $banner_size . ' banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
-                echo '<div class="col-sm-6">';
+                echo '<div class="col-sm-7">';
 
                 if ($banner_icon):
                     echo '<div class="banner_icon">' .
@@ -1023,7 +1023,7 @@ Template Name:Platform AI
                 echo '<div class="row">';
                 echo '<div class="col-sm-12">';
 
-                if ($quote):
+                if ($height):
                     echo '<hr style="border-top-color: ' . $color . '; border-top-width: ' . $height . 'px " />';
                 endif;
                 
