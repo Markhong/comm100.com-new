@@ -12576,7 +12576,8 @@ label {
 }
 @media (max-width: 767px) {
   .owl-theme:not(.owl-single):not(.owl-bordered) {
-    width: calc(100% + 20px);
+    /* width: calc(100% + 20px); */
+    width: 100%;
     margin-left: -10px;
   }
   .owl-theme:not(.owl-single):not(.owl-bordered) .owl-wrapper .owl-item {
