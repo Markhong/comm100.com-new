@@ -1382,7 +1382,7 @@ Template Name:acf Home
                             endif;
 
                             echo    '<div class="feature-column__item">' .
-                                        '<div><img src="' . $icon['url'] . '" alt="' . $icon['alt'] . '" width="80" height="80" /></div>' .
+                                        '<div><img src="' . $icon['url'] . '" alt="' . $icon['alt'] . '" width="60" height="60" /></div>' .
                                         '<h5 class="feature-column__title highlight highlight--' . $color . '">' . $headline . '</h5>' .
                                         $body . 
                                         $linkcontent .

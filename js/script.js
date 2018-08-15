@@ -365,12 +365,24 @@ var LayoutHeaderCart = function() {
 }();
 var LayoutHeader = function() {
 	var f = parseInt($(".c-layout-header").attr("data-minimize-offset") > 0 ? parseInt($(".c-layout-header").attr("data-minimize-offset")) : 0);
+	var prevScrollTop = 0;
+	var currentScrollTop = 0;
+	var $body = $("body");
 	var d = function() {
-		if ($(window).scrollTop() > f) {
-			$("body").addClass("c-page-on-scroll");
+		currentScrollTop = $(window).scrollTop();
+
+		if (currentScrollTop > f) {
+			$body.addClass("c-page-on-scroll");
 		} else {
-			$("body").removeClass("c-page-on-scroll");
+			$body.removeClass("c-page-on-scroll");
 		}
+
+		if(prevScrollTop < currentScrollTop && currentScrollTop > f) {
+			$body.addClass("c-page-scrollUp");
+		} else if (prevScrollTop > currentScrollTop && currentScrollTop > f) {
+			$body.removeClass("c-page-scrollUp");
+		}
+		prevScrollTop = currentScrollTop;
 	};
 	var e = function() {
 		$(".c-layout-header .c-topbar-toggler").on("click", function(a) {
