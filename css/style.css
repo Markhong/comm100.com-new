@@ -13360,8 +13360,10 @@ label {
     margin-bottom: 0;
     margin-top: 0;
   }
-  .c-layout-header-fixed .c-layout-page {
-    margin-top: 120px;
+  .c-layout-header-fixed .c-layout-page,
+  .c-layout-header-fullscreen .primary-page,
+  .c-layout-header-fullscreen .secondary-page:not(.secondary-page--others) {
+    margin-top: 108px;
   }
   .c-layout-header {
     margin: 0;
@@ -13975,8 +13977,9 @@ label {
 .c-layout-header .c-topbar .c-top-menu.c-pull-right {
   float: right;
 }
-.c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-topbar {
-  display: none;
+.c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-topbar,
+.c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-navbar--secondary {
+  display: none!important;
   transition: all 0.2s;
 }
 @media (max-width: 991px) {
@@ -17209,11 +17212,11 @@ label {
   padding-left: 20px;
   text-align: left;
 }
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   .featurelist-header .featurelist-content {
     width: 100%;
   }
-}
+} */
 .featurelist-header .featurelist-plan {
   width: 18%;
 }
@@ -17343,7 +17346,7 @@ label {
     margin-left: 0;
   }
   .featurelist-header {
-    font-size: 15px;
+    font-size: 14px;
   }
   .featurelist-header span {
     display: table-cell;
@@ -19551,7 +19554,16 @@ button.btn-video-close span {
   }
 }
 .card {
+  display: flex;
   margin-bottom: 30px;
+}
+.card--block {
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  .card {
+    display: block;
+  }
 }
 .card h3 {
   text-align: center;
@@ -19565,7 +19577,7 @@ button.btn-video-close span {
   background: #f4f7fc;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  padding: 45px 60px 60px;
+  padding: 45px 60px 120px;
   margin-right: 15px;
   cursor: pointer;
 }
@@ -19619,7 +19631,7 @@ button.btn-video-close span {
   padding-bottom: 25px;
 }
 .card-item--platform {
-  padding: 40px;
+  padding: 40px 40px 120px;
 }
 .card-item--platform h3 {
   margin-bottom: 20px;
@@ -19649,6 +19661,8 @@ h3.highlight {
   font-family: "Ubuntu Regular", sans-serif;
 }
 .card-item__link {
+  position: absolute;
+  bottom: 60px;
   margin-top: 60px;
   font-size: 20px;
   font-family: "Ubuntu Regular", sans-serif;
@@ -19825,9 +19839,7 @@ h3.highlight {
   background-size: cover;
   background-position: center center;
   display: flex;
-  -webkit-display: flex;
-  -moz-display: flex;
-  -ms-display: flex;
+  display: -webkit-flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 500px;
@@ -20070,9 +20082,7 @@ h3.highlight {
 
 .three-column {
   display: flex;
-  -webkit-display: flex;
-  -moz-display: flex;
-  -ms-display: flex;
+  display: -webkit-flex;
 }
 .three-column__item {
   padding: 40px;
@@ -20437,6 +20447,11 @@ h3.highlight {
   }
   .contact-item {
     margin-right: 70px;
+    margin-bottom: 80px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact--reachus h3 {
     margin-bottom: 80px;
   }
 }
@@ -20919,6 +20934,8 @@ h3.highlight {
   text-align: center;
   margin: 30px auto 0;
   width: 250px;
+  line-height: 57px;
+  height: 57px;
 }
 .threeTab__Detail--col {
   background: #f4f7fc;
@@ -20938,6 +20955,9 @@ h3.highlight {
   .pricing .threeTab__Detail:nth-child(1) .threeTab__Detail--col {
     height: 665px;
   }
+  .pricing .threeTab__Detail:nth-child(2) .threeTab__Detail--col {
+    height: 765px;
+  }
 }
 .threeTab__Detail--col:nth-child(3) .threeTab__Detail--price { 
   height: 57px;
@@ -20948,6 +20968,7 @@ h3.highlight {
 }
 .threeTab__Detail--priceQuote {
   font-size: 22px;
+  line-height: 1.42857143;
 }
 .threeTab__Detail--priceUnit {
   text-transform: uppercase;
@@ -20957,6 +20978,7 @@ h3.highlight {
   text-align: left;
   margin-left: 10px;
   font-family: "Ubuntu Light", sans-serif;
+  line-height: 1.42857143;
 }
 .threeTab__Detail--contentList {
   padding-left: 75px;
@@ -20995,12 +21017,14 @@ h3.highlight {
   text-align: center;
 }
 @media screen and (max-width: 1199px) {
-  .pricing .threeTab__Detail:nth-child(1) .threeTab__Detail--action {
+  .pricing .threeTab__Detail:nth-child(1) .threeTab__Detail--action,
+  .pricing .threeTab__Detail:nth-child(2) .threeTab__Detail--action {
     margin-top: 60px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .pricing .threeTab__Detail:nth-child(1) .threeTab__Detail--action {
+  .pricing .threeTab__Detail:nth-child(1) .threeTab__Detail--action,
+  .pricing .threeTab__Detail:nth-child(2) .threeTab__Detail--action {
     position: absolute;
     bottom: 0;
     left: 50%;

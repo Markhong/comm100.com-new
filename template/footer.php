@@ -238,7 +238,7 @@ var Comm100API=Comm100API||{};(function(t){function e(e){var a=document.createEl
         });
     </script>
     <!-- END: THEME SCRIPTS -->
-
+    <?php wp_footer(); ?>
 
 </body>
 </html>

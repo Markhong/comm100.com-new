@@ -667,12 +667,12 @@ Template Name:acf Company
 
                 echo '<div class="c-content-box c-size-md">';
                 echo '<div class="container">';
-                echo '<div class="row">';
+                echo '<div class="row contact--reachus">';
 
                 $headline = get_sub_field('headline');
                 $image = get_sub_field('image');
                 
-                echo '<h3 class="c-font-36 c-font-center c-margin-b-80">' . $headline . '</h3>';
+                echo '<h3 class="c-font-36 c-font-center">' . $headline . '</h3>';
 
                 if ($image):
                     echo '<div class="col-sm-5">' . '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="445" height="390" />' . '</div>';
