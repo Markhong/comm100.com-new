@@ -20258,6 +20258,8 @@ h3.highlight {
 .customerProfile-info {
   font-size: 24px;
   margin-bottom: 40px;
+  width: 50%;
+  float: left;
 }
 .customerProfile-info:last-child {
   margin-bottom: 0;
@@ -20278,12 +20280,22 @@ h3.highlight {
 .customerArticle p {
   margin-bottom: 30px;
 }
+.customerArticle-CTA {
+  text-align: center;
+  margin-top: 50px;
+}
 @media screen and (max-width: 767px) {
   .customerProfile {
     display: block;
   }
   .customerProfile__col {
     padding: 0;
+  }
+  .customerProfile-info {
+    width: 100%;
+  }
+  .customerProfile-info:first-child {
+    margin-top: 40px;
   }
   .customerArticle .c-quote {
     padding: 15px;
