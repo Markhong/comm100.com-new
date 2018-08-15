@@ -57,7 +57,7 @@ Template Name:Platform Multichannel Click Through
 
                 echo '<div class="c-content-box c-size-lg banner banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
-                echo '<div class="col-sm-6">';
+                echo '<div class="col-sm-7">';
 
                 if ($banner_icon):
                     echo '<div class="banner_icon">' .

@@ -1521,15 +1521,16 @@ var Pager = (function() {
 	}
 
 	function renderPager() {
-		$('.pager').empty();
-		$('.pager').append('<span class="prev_page">&lt;</span>');
+		var pagerWrap = document.createElement('div');
+		pagerWrap.className = 'pager';
+		$(pagerWrap).append('<span class="prev_page"><i class="fa fa-angle-left"></i></span>');
 
 		for(var i=1; i<=totalPages; ++i) {
-			$('.pager').append('<span class="page_index">' + i + '</span>');
+			$(pagerWrap).append('<span class="page_index">' + i + '</span>');
 		}
 		
-		$('.pager').append('<span class="next_page">&gt;</span>');
-		$('.pager').show();
+		$(pagerWrap).append('<span class="next_page"><i class="fa fa-angle-right"></i></span>');
+		document.querySelector('.resource-list').parentNode.insertBefore(pagerWrap, document.querySelector('.resource-list').nextSibling)
 	}
 
 	function bindEvents() {

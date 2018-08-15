@@ -57,7 +57,7 @@ Template Name:Platform Live Chat Click Through
 
                 echo '<div class="c-content-box c-size-lg banner banner--' . $banner_align . '"'  . $style_bg . '>';
                 echo '<div class="container">';
-                echo '<div class="col-sm-6">';
+                echo '<div class="col-sm-7">';
 
                 if ($banner_icon):
                     echo '<div class="banner_icon">' .
@@ -192,11 +192,13 @@ Template Name:Platform Live Chat Click Through
 
                 $rows = get_sub_field('repeater_feature');
                 $row_count = count($rows);
+                $row_index = 0;
                 echo '<div class="row">';
                 foreach ($rows as $row) {
+                    $row_index++;
                     $featureImage = $row['feature_image'];
                     $featureDescription = $row['feature_description'];
-                    echo '<div class="col-sm-' . strval(12/$row_count) . '">' .
+                    echo '<div class="col-sm-5 ' . ($row_index == 1 ? 'col-sm-push-1' : 'col-sm-push-2') . '">' .
                         '<div class="c-content-feature-2 c-option-2 c-theme-bg-parent-hover">' .
                             '<div class="c-icon-wrapper">' . 
                                 '<span aria-hidden="true">' .
