@@ -19628,12 +19628,14 @@ button.btn-video-close span {
   width: calc(33.333333% - 10px);
 }
 @media screen and (max-width: 767px) {
+  .card-item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .card-col-2 .card-item,
   .card-col-3 .card-item {
     width: 100%;
     margin-top: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
   }
   .card-col-2 .card-item:first-child,
   .card-col-3 .card-item:first-child {
@@ -19871,6 +19873,11 @@ h3.highlight {
   justify-content: flex-end;
   height: 450px;
 }
+@media screen and (max-width: 767px) {
+  .banner {
+    background-position: left center;
+  }
+}
 .banner--sm {
   height: 320px;
 }
@@ -19899,7 +19906,8 @@ h3.highlight {
   font-family: "Ubuntu Regular", sans-serif;
 }
 .secondary-page .header .desc {
-  font-size: 26px;
+  font-size: 22px;
+  line-height: 34px;
 }
 .secondary-page .header .desc p {
   margin-bottom: 30px;

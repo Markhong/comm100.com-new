@@ -1612,7 +1612,7 @@ window.onload = function() {
 		if (!isMobile) {
 			var headerHeight = $('.c-layout-header').outerHeight() - $('.c-layout-header .c-topbar.c-navbar').outerHeight();
 			var tabIndexWrap = document.querySelector('.threeTab__Index--Wrap');
-			if (!isMobile && tabIndexWrap && tabIndexWrap.getAttribute('data-wheel') === 'true') {
+			if (tabIndexWrap && tabIndexWrap.getAttribute('data-wheel') === 'true') {
 				var scrolling = false;
 				function disableMouseWheel () {
 					scrolling = true;
@@ -1689,11 +1689,13 @@ window.onload = function() {
 				});
 			});
 			selectTab(0);
-			setTimeout(function() {
-				if (Math.floor($('.threeTab__Index--Wrap').offset().top) - $(window).scrollTop() === $('.c-layout-header').outerHeight()) {		
-					tabIndexSlideUpOrDown && tabIndexSlideUpOrDown(true);
-				}
-			}, 100);
+			if (tabIndexWrap) {
+				setTimeout(function() {
+					if (Math.floor($('.threeTab__Index--Wrap').offset().top) - $(window).scrollTop() === $('.c-layout-header').outerHeight()) {		
+						tabIndexSlideUpOrDown && tabIndexSlideUpOrDown(true);
+					}
+				}, 100);
+			}
 		} else {
 			$('.threeTab__Index--Wrap').hide();
 			$('.threeTab__Index--mobile').show();
@@ -1705,7 +1707,7 @@ window.onload = function() {
 			});
 		});
 
-		if (!window.mobilecheck() && $('.pager')) {
+		if (!window.mobilecheck() && $('.pager').length > 0) {
 			Pager.init($('.resource-list'), 6);
 		}
 	}());
