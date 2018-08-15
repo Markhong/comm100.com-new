@@ -13348,7 +13348,7 @@ label {
 }
 .c-layout-header-fullscreen .primary-page,
 .c-layout-header-fullscreen .secondary-page:not(.secondary-page--others) {
-  margin-top: 200px;
+  margin-top: 192px;
 }
 
 .c-layout-header .c-mainbar {
@@ -13977,10 +13977,14 @@ label {
 .c-layout-header .c-topbar .c-top-menu.c-pull-right {
   float: right;
 }
-.c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-topbar,
-.c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-navbar--secondary {
+.c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-topbar {
   display: none!important;
   transition: all 0.2s;
+}
+.c-page-scrollUp.c-layout-header-fixed .c-layout-header .c-navbar--secondary {
+  -webkit-transform: translate3d(0,-100%,0);
+  transform: translate3d(0,-100%,0);
+  
 }
 @media (max-width: 991px) {
   .c-layout-header .c-topbar {
@@ -18173,6 +18177,10 @@ label {
   height: 70px;
   line-height: 70px;
   margin-top: 13px;
+  -webkit-transition: -webkit-transform .5s linear;
+  transition: -webkit-transform .5s linear;
+  transition: transform .5s linear;
+  transition: transform .5s linear,-webkit-transform .5s linear;
 }
 .c-navbar--secondary ul {
   padding-left: 0;
