@@ -320,6 +320,7 @@ var LayoutBrand = function() {
 	return {
 		init: function() {
 			$("body").on("click", ".c-hor-nav-toggler", function() {
+				$(this).toggleClass('c-hor-nav-toggler--opened');
 				var b = $(this).data("target");
 				if ($(b).hasClass("c-shown")) {
 					$(b).removeClass("c-shown");
