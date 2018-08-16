@@ -1046,7 +1046,7 @@ Template Name:Solution Industries Click Through
                 echo '<div class="row">';
                 echo '<div class="col-sm-12">';
 
-                if ($quote):
+                if ($height):
                     echo '<hr style="border-top-color: ' . $color . '; border-top-width: ' . $height . 'px " />';
                 endif;
                 

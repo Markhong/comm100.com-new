@@ -2,13 +2,21 @@
 
 
 //dequeue css from plugins
-add_action( 'wp_dequeue_scripts', 'mytheme_dequeue_css_from_plugins' );
-// add_action('admin_footer', 'mytheme_dequeue_css_from_plugins', 100);
-function mytheme_dequeue_css_from_plugins()  {
-    // wp_dequeue_style( 'kbe_theme_style' );
-    wp_deregister_style( 'kbe_theme_style' ); 
+function mytheme_dequeue_css_from_plugins() {
     wp_dequeue_style( 'kbe_theme_style' );
+    wp_deregister_style( 'kbe_theme_style' );
+
+    wp_dequeue_style( 'authorsure' );
+    wp_deregister_style( 'authorsure' );
 }
+add_action( 'wp_print_scripts', 'mytheme_dequeue_css_from_plugins' );
+
+//Dequeue JavaScripts
+// function project_dequeue_unnecessary_scripts() {
+//     wp_dequeue_script( 'kbe_live_search' );
+//     wp_deregister_script( 'kbe_live_search' );
+// }
+// add_action( 'wp_print_scripts', 'project_dequeue_unnecessary_scripts' );
 
 
 function add_menuclass($ulclass) {

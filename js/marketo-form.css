@@ -72,17 +72,17 @@
   background-image: none !important;
   text-shadow: none !important;
   font-family: 'Ubuntu Bold',sans-serif;
-  font-size: 20px !important;
+  font-size: 18px !important;
   font-weight: 400;
-  padding: 12px 44px 10px 44px !important;
+  padding: 15px 40px !important;
   width: auto;
-  height: 65px;
+  /* height: 65px; */
   border-radius: 10px;
 }
-.request-demo .mktoForm .mktoButtonWrap.mktoBlueBox .mktoButton {
-  padding: 5px 44px !important;
+/* .request-demo .mktoForm .mktoButtonWrap.mktoBlueBox .mktoButton { */
+  /* padding: 15px 40px !important; */
   /* height: auto; */
-}
+/* } */
 .mktoButton {
   font-size: 20px;
   font-weight: 400;

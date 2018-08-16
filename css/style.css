@@ -20884,10 +20884,13 @@ h5.feature-column__title {
 }
 @media screen and (min-width: 1200px) {
   .contact-form {
-    padding: 0 90px;
+    padding-right: 90px;
   }
 }
-
+.form-note, .form-note p {
+  font-size: 14px!important;
+  color: rgba(96, 108, 120, 0.5);
+}
 
 .threeTab__Index--Wrap {
   margin-bottom: 30px;
