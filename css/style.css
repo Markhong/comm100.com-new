@@ -20905,6 +20905,12 @@ h5.three-column__title {
   padding: 40px 60px 0;
   font-size: 22px;
 }
+.threeTab__Detail--note {
+  color: #b0b0b0;
+  font-size: 14px;
+  margin-top: 60px;
+  margin-left: 40px;
+}
 .threeTab__Detail--col-wrap {
   background-color: #f4f7fc;
   padding-top: 30px;
@@ -21026,7 +21032,7 @@ h5.three-column__title {
     height: 815px;
   }
   .pricing .threeTab__Detail:nth-child(2) .threeTab__Detail--col {
-    height: 765px;
+    height: 435px;
   }
 }
 .threeTab__Detail--col:nth-child(3) .threeTab__Detail--price { 

@@ -1,30 +1,14 @@
 <?php
 
 
-if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
-	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Header Settings',
-		'menu_title'	=> 'Header',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Footer Settings',
-		'menu_title'	=> 'Footer',
-		'parent_slug'	=> 'theme-general-settings',
-	));
-	
+//dequeue css from plugins
+add_action( 'wp_dequeue_scripts', 'mytheme_dequeue_css_from_plugins' );
+// add_action('admin_footer', 'mytheme_dequeue_css_from_plugins', 100);
+function mytheme_dequeue_css_from_plugins()  {
+    // wp_dequeue_style( 'kbe_theme_style' );
+    wp_deregister_style( 'kbe_theme_style' ); 
+    wp_dequeue_style( 'kbe_theme_style' );
 }
-
 
 
 function add_menuclass($ulclass) {
