@@ -51,14 +51,26 @@
         //map your results from REST call to the corresponding field name on the form
         GetFieldsAndValuesToPrefill(form);
         form.onValidate(function(){
+            var formtype = form.vals().formtype;
             var email = form.vals().Email;
+            var requestUrl = '';
+            switch (formtype) {
+                case 'partner':
+                case 'contact':
+                    requestUrl = window.location.href;
+                    break;
+                case 'requstdemo':
+                    requestUrl = document.referrer;
+                    break;
+                default: break;
+            }
             if(email){
-                if(!isEmailGood(email)) {
+                if(formtype !== 'contact' && !isEmailGood(email)) {
                     form.submitable(false);
                     var emailElem = form.getFormElem().find("#Email");
                     form.showErrorMessage("Must be Business email.", emailElem);
                 }else{
-                    $("input[name='Request_URL__c']")[0].value = document.referrer;
+                    $("input[name='Request_URL__c']")[0].value = requestUrl;
                     AddFieldsAndVaulesStringToCookie(form);
                     form.submitable(true);
                 }

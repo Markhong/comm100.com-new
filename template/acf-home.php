@@ -548,6 +548,7 @@ Template Name:acf Home
                     $header_slogan = get_sub_field('subtitle');
                     $header_background_image = get_sub_field('background_image');
                     $header_form_code = get_sub_field('form_code');
+                    $form_note = get_sub_field('form_note');
 
                     $style_bg = '';
                     if ($header_background_image):
@@ -572,7 +573,12 @@ Template Name:acf Home
                             '</h2>';
                     endif;
                     if ($header_form_code):
-                        echo '<div class="row"><div class="col-sm-5">' . $header_form_code . '</div></div>';
+                        echo '<div class="row">' . 
+                                '<div class="col-sm-5">' . 
+                                    $header_form_code . 
+                                    '<div class="form-note">' . $form_note . '</div>'. 
+                                '</div>'. 
+                            '</div>';
                             
                     endif;
                     

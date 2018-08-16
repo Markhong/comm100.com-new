@@ -92,7 +92,7 @@ Template Name:acf Company
                 $header_image = get_sub_field('image');
                 $header_background_color = get_sub_field('background_color');
                 $header_form_code = get_sub_field('form_code');
-
+                $form_note = get_sub_field('form_note');
                
 
 
@@ -113,7 +113,10 @@ Template Name:acf Company
                         '</h2>';
                 endif;
                 if ($header_form_code):
-                    echo '<div class="col-sm-6 col-sm-push-3">' . $header_form_code . '</div>';
+                    echo '<div class="col-sm-6 col-sm-push-3">' .
+                            $header_form_code . 
+                            '<div class="form-note">' . $form_note . '</div>'. 
+                        '</div>';
                         
                 endif;
                 if ($header_image):
@@ -920,15 +923,19 @@ Template Name:acf Company
                 $image = get_sub_field('image');
                 $title = get_sub_field('title');
                 $contact_form = get_sub_field('contact_form');
+                $form_note = get_sub_field('form_note');
 
                 echo '<div class="c-content-box c-size-md">' .
                         '<div class="container">' .
                             '<div class="row">' .
-                                '<div class="col-sm-12 partner-contact">' .
-                                    '<img class="avatar" src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="380" height="380" />' .
-                                    '<div class="contact-form">' .
-                                        '<h3 class="highlight highlight--blue">' . $title . '</h3>' .
-                                        $contact_form .
+                                '<div partner-contact">' .
+                                    '<div class="col-sm-5"><img class="avatar" src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="380" height="380" /></div>' .
+                                    '<div class="col-sm-7">' .
+                                        '<div class="contact-form">' .
+                                            '<h3 class="highlight highlight--blue">' . $title . '</h3>' .
+                                            $contact_form .
+                                            '<div class="form-note">' . $form_note . '</div>'. 
+                                        '</div>' .
                                     '</div>' .
                                 '</div>' .
                             '</div>' .

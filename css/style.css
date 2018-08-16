@@ -19633,6 +19633,14 @@ button.btn-video-close span {
 .card-col-3 .card-item {
   width: calc(33.333333% - 10px);
 }
+.card-item--platform {
+  padding: 40px 40px 120px;
+}
+.card-item--platform h3 {
+  margin-bottom: 20px;
+  margin-top: 35px;
+  padding-bottom: 0;
+}
 @media screen and (max-width: 767px) {
   .card-item {
     padding-left: 20px;
@@ -19657,14 +19665,7 @@ button.btn-video-close span {
   margin-bottom: 20px;
   padding-bottom: 25px;
 }
-.card-item--platform {
-  padding: 40px 40px 120px;
-}
-.card-item--platform h3 {
-  margin-bottom: 20px;
-  margin-top: 35px;
-  padding-bottom: 0;
-}
+
 .highlight {
   border-bottom-style: solid;
   border-bottom-width: 3px;
@@ -19949,6 +19950,11 @@ h3.highlight {
   background-size: cover;
   background-position: center center;
   background-color: #f4f8fc;
+}
+@media screen and (max-width: 767px) {
+  .promotion {
+    background-position: left center;
+  }
 }
 .promotion_headline {
   font-size: 24px;
@@ -20827,10 +20833,13 @@ h5.three-column__title {
 }
 @media screen and (min-width: 1200px) {
   .contact-form {
-    padding: 0 90px;
+    padding-right: 90px;
   }
 }
-
+.form-note, .form-note p {
+  font-size: 14px!important;
+  color: rgba(96, 108, 120, 0.5);
+}
 
 .threeTab__Index--Wrap {
   margin-bottom: 30px;
