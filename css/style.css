@@ -12921,10 +12921,10 @@ label {
   font-family: "Ubuntu Light", sans-serif !important;
   font-weight: 300 !important;
 }
-.c-font-slim {
+/* .c-font-slim {
   font-family: "Ubuntu Regular", sans-serif !important;
   font-weight: 400 !important;
-}
+} */
 .c-font-sbold {
   font-family: "Ubuntu Bold", sans-serif !important;
   font-weight: 700 !important;
@@ -12933,10 +12933,10 @@ label {
   font-family: "Ubuntu Bold", sans-serif !important;
   font-weight: 700 !important;
 }
-.c-font-bolder {
+/* .c-font-bolder {
   font-family: "Ubuntu Bold", sans-serif !important;
   font-weight: 700 !important;
-}
+} */
 .c-font-uppercase {
   text-transform: uppercase;
 }
@@ -16289,7 +16289,7 @@ label {
   font-size: 20px;
   font-weight: 300;
   margin: 0 0 30px 0;
-  color: #333;
+  /* color: #333; */
   line-height: 30px;
 }
 .c-content-blog-post-1 .c-panel {
@@ -17910,26 +17910,26 @@ label {
 /* .c-article {
   font-family: "Ubuntu Regular", sans-serif;
 } */
-.c-article h4,
+/* .c-article h4,
 .c-article h5,
 .c-article h6 {
   color: #333;
-}
+} */
 .c-article h4 {
-  font-family: "Ubuntu Bold", sans-serif;
+  font-family: "Ubuntu Regular", sans-serif;
   font-size: 30px;
   margin-top: 50px;
   margin-bottom: 25px;
 }
 .c-article h5 {
-  font-family: "Ubuntu Bold", sans-serif;
+  /* font-family: "Ubuntu Bold", sans-serif; */
   font-size: 25px;
   margin-top: 35px;
   margin-bottom: 15px;
   margin-left: 20px;
 }
 .c-article h6 {
-  font-family: "Ubuntu Bold", sans-serif;
+  /* font-family: "Ubuntu Bold", sans-serif; */
   font-size: 20px;
   margin-top: 25px;
   margin-bottom: 15px;
@@ -18021,7 +18021,7 @@ label {
 .c-article table {
   font-size: 20px !important;
   margin-bottom: 40px;
-  font-family: "Ubuntu Regular", sans-serif !important;
+  /* font-family: "Ubuntu Regular", sans-serif !important; */
   font-weight: 400 !important;
 }
 .c-article .btn {
@@ -20998,7 +20998,7 @@ h5.feature-column__title {
 .threeTab__Detail--col-wrap {
   background-color: #f4f7fc;
   padding-top: 30px;
-  /* padding-bottom: 40px; */
+  padding-bottom: 40px;
 }
 @media screen and (min-width: 768px) {
   .ai-logo-wrap {
@@ -21207,7 +21207,7 @@ h5.feature-column__title {
   text-align: center;
   background-color: #f4f7fc;
   padding-bottom: 60px;
-  padding-top: 60px;
+  padding-top: 20px;
 }
 .threeTab__Detail--bottomLink a {
 	font-size: 16px;
@@ -21244,7 +21244,7 @@ h5.feature-column__title {
 .threeTab__Index.selected:before,
 .threeTab__Index.selected:after {
   position: absolute;
-  top: calc(100% - 20px);
+  bottom: -30px;
   width: 0;
   height: 0;
   content: " ";
