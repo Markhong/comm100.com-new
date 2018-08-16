@@ -13353,12 +13353,15 @@ label {
 }
 
 .c-layout-header .c-mainbar {
-  margin-bottom: 23px;
+  padding-bottom: 23px;
   margin-top: 18px;
+  z-index: 9;
+  position: relative;
+  background: #fff;
 }
 @media (max-width: 991px) {
   .c-layout-header .c-mainbar {
-    margin-bottom: 0;
+    padding-bottom: 0;
     margin-top: 0;
   }
   .c-layout-header-fixed .c-layout-page,
@@ -14317,6 +14320,7 @@ label {
     box-shadow: none;
     /* padding-bottom: 18px; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    height: 95px;
   }
   .c-page-on-scroll
     .c-layout-header.c-layout-header-2
@@ -18173,10 +18177,12 @@ label {
   margin-top: 0;
 }
 .c-navbar--secondary {
+  position: relative;
+  z-index: 8;
   background: #f7f7f7;
   height: 60px;
   line-height: 60px;
-  margin-top: 13px;
+  /* margin-top: 13px; */
   -webkit-transition: -webkit-transform .5s linear;
   transition: -webkit-transform .5s linear;
   transition: transform .5s linear;
@@ -20907,6 +20913,12 @@ h5.three-column__title {
   padding: 40px 60px 0;
   font-size: 22px;
 }
+.threeTab__Detail--note {
+  color: #b0b0b0;
+  font-size: 14px;
+  margin-top: 60px;
+  margin-left: 40px;
+}
 .threeTab__Detail--col-wrap {
   background-color: #f4f7fc;
   padding-top: 30px;
@@ -21025,10 +21037,10 @@ h5.three-column__title {
 
 @media screen and (min-width: 1200px) {
   .pricing .threeTab__Detail:nth-child(1) .threeTab__Detail--col {
-    height: 665px;
+    height: 815px;
   }
   .pricing .threeTab__Detail:nth-child(2) .threeTab__Detail--col {
-    height: 765px;
+    height: 435px;
   }
 }
 .threeTab__Detail--col:nth-child(3) .threeTab__Detail--price { 

@@ -180,6 +180,7 @@ Template Name:acf Home
                     echo '<div class="threeTab__Detail clearfix">';
                     echo $tabMobileMC;
                     echo '<div class="threeTab__Detail--col-wrap clearfix">';
+                    $pricing_details_multichannel_note = get_sub_field('pricing_details_multichannel_note');
                     while ( have_rows('pricing_details_multichannel') ) : the_row();
                         
                         $title = get_sub_field('title');
@@ -260,6 +261,8 @@ Template Name:acf Home
                                 '</div>';
                                 
                     endwhile;
+                    echo '<div class="clear"></div>'.
+                          '<div class="threeTab__Detail--note">' . $pricing_details_multichannel_note . '</div>';
                     echo '</div>';
                     echo '</div>';
                     // end pricing multichannel details
