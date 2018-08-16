@@ -4095,6 +4095,57 @@ pre {
   .col-sm-12:first-child {
     margin-top: 0;
   }
+  .col-lg-1,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-md-1,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-sm-1,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-xs-1,
+  .col-xs-10,
+  .col-xs-11,
+  .col-xs-12,
+  .col-xs-2,
+  .col-xs-3,
+  .col-xs-4,
+  .col-xs-5,
+  .col-xs-6,
+  .col-xs-7,
+  .col-xs-8,
+  .col-xs-9 {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
 }
 .col-xs-1,
 .col-xs-10,
@@ -19432,10 +19483,6 @@ button.btn-video-close span {
   .footer__links {
     margin-bottom: 30px;
   }
-  .footer .col-sm-12 {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
 }
 
 .footer__heading {
@@ -19633,6 +19680,14 @@ button.btn-video-close span {
 .card-col-3 .card-item {
   width: calc(33.333333% - 10px);
 }
+.card-item--platform {
+  padding: 40px 40px 120px;
+}
+.card-item--platform h3 {
+  margin-bottom: 20px;
+  margin-top: 35px;
+  padding-bottom: 0;
+}
 @media screen and (max-width: 767px) {
   .card-item {
     padding-left: 20px;
@@ -19656,14 +19711,6 @@ button.btn-video-close span {
   margin-top: 20px;
   margin-bottom: 20px;
   padding-bottom: 25px;
-}
-.card-item--platform {
-  padding: 40px 40px 120px;
-}
-.card-item--platform h3 {
-  margin-bottom: 20px;
-  margin-top: 35px;
-  padding-bottom: 0;
 }
 .highlight {
   border-bottom-style: solid;
@@ -19897,7 +19944,8 @@ h3.highlight {
   text-align: left!important;
 }
 .primary-page .header p:not(.subtitle) {
-  font-size: 26px;
+  font-size: 24px;
+  line-height: 38px;
 }
 .primary-page .header .desc p {
   font-size: 20px;
@@ -19950,6 +19998,11 @@ h3.highlight {
   background-position: center center;
   background-color: #f4f8fc;
 }
+@media screen and (max-width: 767px) {
+  .promotion {
+    background-position: left center;
+  }
+}
 .promotion_headline {
   font-size: 24px;
   font-family: "Ubuntu Regular", sans-serif;
@@ -19968,12 +20021,6 @@ h3.highlight {
 }
 .promotion p {
   font-size: 20px;
-}
-@media screen and (max-width: 767px) {
-  .promotion .col-sm-6 {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
 }
 .img-text-card {
   position: relative;
@@ -20054,10 +20101,8 @@ h3.highlight {
   }
   .img-text-column__text {
     margin-top: 100px;
-    padding-left: 30px;
-    padding-right: 30px;
   }
-  .img-text-card__img, .img-text-card__text {
+  .img-text-card__img .img-text-card__text {
     width: 100%;    
     padding-left: 20px;
     padding-right: 20px;
@@ -20188,6 +20233,9 @@ h5.three-column__title {
   margin: 0 auto;
   padding-bottom: 10px;
 }
+h5.feature-column__title {
+  font-size: 28px !important;
+}
 .three-column__desc,
 .three-column p,
 .feature-column__desc,
@@ -20208,7 +20256,7 @@ h5.three-column__title {
   }
   .feature-column__item {
       width: 100%;
-      padding: 10px 15px;
+      padding: 10px 0;
   }
   .three-column__desc,
   .three-column p,
@@ -20462,7 +20510,7 @@ h5.three-column__title {
   text-align: center;
 }
 .primary-page h3 {
-  font-size: 26px;
+  font-size: 24px;
   font-family: "Ubuntu Medium", sans-serif;
   line-height: 1.285714em;
 }
@@ -20546,9 +20594,15 @@ h5.three-column__title {
   font-style: italic;
 }
 .simple-quote__content {
-  font-family: 'Ubuntu Regular Italic', sans-serif;
+  font-family: 'Ubuntu Light Italic', sans-serif;
   font-style: italic;
-  font-size: 28px;
+  font-size: 26px;
+  line-height: 38px;
+}
+@media screen and (max-width: 767px) {
+  .simple-quote {
+    margin-bottom: 50px;
+  }
 }
 .simple-img {
   /* background-color: #f4f8fc; */
@@ -20662,6 +20716,9 @@ h5.three-column__title {
   border-radius: 40px;
   color: rgba(94, 109, 121, 0.7);
 }
+.bio p {
+  line-height: 30px;
+}
 .avatar {
   border-radius: 100%;
   height: 380px;
@@ -20681,14 +20738,14 @@ h5.three-column__title {
 }
 .bio-signature {
   font-family: "Ubuntu Regular", sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 34px;
   margin-top: 40px;
 }
 @media screen and (max-width: 767px) {
   .bio {
     margin-left: 0;
-    padding: 30px 30px 60px;
+    padding: 30px 20px 60px;
   }
   .avatar {
     position: relative;
@@ -20743,12 +20800,12 @@ h5.three-column__title {
 
 .header__withBanner h1,
 .threeTab__head h1 {
-  font-size: 24px;
+  font-size: 22px;
   font-family: "Ubuntu Regular", sans-serif;
 }
 .header__withBanner h2,
 .threeTab__head h2 {
-  font-size: 36px;
+  font-size: 34px;
   font-family: "Ubuntu Regular", sans-serif;
   color: #0094d4;
   margin-bottom: 20px;
@@ -20857,7 +20914,7 @@ h5.three-column__title {
 }
 .threeTab__Index h3 {
   font-family: "Ubuntu Bold";
-  font-size: 30px;
+  font-size: 26px;
   margin: 30px 0 0;
 }
 .threeTab__Index .product-item__desc {
@@ -20911,7 +20968,7 @@ h5.three-column__title {
 .threeTab__Detail--summary {
   font-family: "Ubuntu Light", sans-serif;
   padding: 40px 60px 0;
-  font-size: 22px;
+  font-size: 20px;
 }
 .threeTab__Detail--note {
   color: #b0b0b0;
@@ -21119,7 +21176,7 @@ h5.three-column__title {
 .threeTab__Detail--subTitle {
   padding-left: 40px;
   padding-right: 40px;
-  font-size: 22px;
+  font-size: 20px;
   color: rgba(96,108,120,0.7);
 }
 .pricing .threeTab__Detail--subTitle {

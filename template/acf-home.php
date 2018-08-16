@@ -404,6 +404,7 @@ Template Name:acf Home
 
                     echo '<div class="c-content-box c-size-lg c-margin-b-30 banner banner--' . $banner_size . ' banner--' . $banner_align . '"'  . $style_bg . '>';
                     echo '<div class="container">';
+                    echo '<div class="row">';
                     echo '<div class="col-sm-7">';
 
                     if ($banner_icon):
@@ -461,6 +462,7 @@ Template Name:acf Home
                         
                         
                     endif;
+                    echo '</div>';
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';
