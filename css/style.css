@@ -20407,9 +20407,10 @@ h5.feature-column__title {
   background-color: #f4f8fc;
 }
 .customerArticle-intro {
-  line-height: 42px;
+  line-height: 38px;
+  margin-bottom: 40px;
 }
-.customerArticle p {
+.customerArticle > p {
   margin-bottom: 30px;
 }
 .customerArticle-CTA {
