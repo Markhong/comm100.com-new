@@ -1508,11 +1508,10 @@ var Pager = (function() {
 		totalNum = container.children().length;
 		totalPages = Math.ceil(totalNum / pageSize);		
 		
-		if (totalPages === 1) {
-			$('.pager').hide();
-			return;
+		if (totalPages > 1) {
+			renderPager();
 		}
-		renderPager();
+		
 		bindEvents();
 		setCurrentPage();
 	}
@@ -1710,7 +1709,7 @@ window.onload = function() {
 			});
 		});
 
-		if (!window.mobilecheck() && $('.pager').length > 0) {
+		if (!window.mobilecheck()) {
 			Pager.init($('.resource-list'), 6);
 		}
 	}());

@@ -21567,8 +21567,8 @@ h5.resource-item--title {
   min-height: 360px;
 }
 .CTA .resource-item--title {
-  margin-top: 25px;
-  margin-bottom: 20px;
+  /* margin-top: 25px; */
+  /* margin-bottom: 20px; */
   font-family: "Ubuntu Medium", sans-serif;
   font-size: 18px;
   line-height: 24px;

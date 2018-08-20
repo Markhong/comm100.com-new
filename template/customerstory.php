@@ -42,7 +42,7 @@ Template Name:customerstory
 				endif;
 
 				if( get_row_layout() == 'company_profile' ):
-					$company_name = get_sub_field('title');
+					$company_name = get_sub_field('name');
 					$logo = get_sub_field('logo');
 					$details = get_sub_field('details_repeater');
 
