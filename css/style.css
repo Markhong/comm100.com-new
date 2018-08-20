@@ -12312,7 +12312,7 @@ label {
 }
 .btn.c-btn-border-2x.btn-lg {
   padding: 17px 44px 15px 44px;
-  font-size: 22px;
+  font-size: 18px;
 }
 .btn.c-btn-border-2x.c-btn-uppercase {
   padding: 6px 20px 4px 20px;
@@ -17813,10 +17813,24 @@ label {
 .videocontainer {
   padding-bottom: 40.5%;
 }
+@media screen and (max-width: 767px) {
+  .videocontainer {
+    padding-bottom: 0;
+  }
+}
 .videocontent {
   position: absolute;
   width: 100%;
-  height: 100%;
+}
+@media screen and (min-width: 768px) {
+  .videocontent {
+    height: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .videocontent {
+    position: static;
+  }
 }
 .code {
   display: inline-block;
@@ -19766,6 +19780,9 @@ h3.highlight {
   background: #38a3da;
   color: #fff;
 }
+.card-item--hover a {
+  border-bottom: 2px solid #fff;
+}
 /* .card-item--hover img {
   background: #fff;
   border-radius: 8px;
@@ -20044,6 +20061,7 @@ h3.highlight {
 }
 .img-text-card {
   position: relative;
+  height: 454px;
   margin-bottom: 30px;
   background: #f4f7fc;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -20746,6 +20764,9 @@ h5.feature-column__title {
   height: 380px;
   width: 380px;
   box-shadow: 0px 3px 4.7px 0.3px rgba(0, 86, 124, 0.27);
+}
+.bio .avatar {
+  box-shadow: none;
 }
 @media screen and (min-width: 768px) {
   .bio .avatar {
