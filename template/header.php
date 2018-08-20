@@ -67,7 +67,13 @@
     <script src="https://cdn.optimizely.com/js/9295172620.js"></script>
     
     <?php wp_head(); ?>
-   
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MHPR23J');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <!-- END HEAD -->
 
@@ -75,7 +81,10 @@
 <!--[if lte IE 8]>
             <span class="ie7note">You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade your browser</a> to improve your experience.</span>
     <![endif]-->   
-
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHPR23J"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 <!-- <div class="notify hidden-xs">
   <a href="https://www.comm100.com/livechat/resources/live-chat-buyers-guide.aspx">
     <span class="new">New</span>

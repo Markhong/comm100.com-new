@@ -273,6 +273,7 @@ Template Name:acf Home
                         
                         $pricing_details_ai_title = get_sub_field('title');
                         $ai_logo = get_sub_field('ai_logo');
+                        $feature_list_title = get_sub_field('feature_list_title');
 
                         $ai_logo_content = '';
                         if ($ai_logo):
@@ -289,6 +290,7 @@ Template Name:acf Home
                                 $feature_list .= '<li>' . get_sub_field('feature_point') . '</li>';
                             endwhile;
                             $columnFirst = '<div class="col-sm-8 threeTab__Detail--col">' .
+                                            '<p class="threeTab__Detail--subTitle">' . $feature_list_title . '</p>' .
                                             '<ul class="threeTab__Detail--contentList">' .
                                                 $feature_list .
                                             '</ul>' .
@@ -402,7 +404,7 @@ Template Name:acf Home
                     endif;
                     $banner_cta = get_sub_field('cta');
 
-                    echo '<div class="c-content-box c-size-lg c-margin-b-30 banner banner--' . $banner_size . ' banner--' . $banner_align . '"'  . $style_bg . '>';
+                    echo '<div class="c-content-box c-size-lg c-margin-b-30 banner banner--' . $banner_size . ' banner--' . $banner_align . '" '  . $style_bg . '>';
                     echo '<div class="container">';
                     echo '<div class="row">';
                     echo '<div class="col-sm-7">';

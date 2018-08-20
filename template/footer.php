@@ -175,13 +175,13 @@
             </div>
             <div class="col-sm-10 col-sm-push-1 c-margin-t-40 clearfix">
                 <p class="c-copyright c-float-l">Copyright &copy; <script>document.write((new Date()).getFullYear());</script> Comm100 Network Corporation. 
-                    <span>All Rights Reserved.
+                    All Rights Reserved.
                 </p>
                 <p class="c-copyright c-float-r">
                     <a href="/sitemap_index.xml" title="Live Chat Site Map">Site Map</a> | 
                     <a href="/privacy/" title="Live Chat Privacy Policy">Privacy Policy</a> | 
                     <a href="/privacy/anti-spam-policy.aspx">Anti-Spam Policy</a> | 
-                    <a href="/eula/">EULA</a></span>
+                    <a href="/eula/">EULA</a>
                 </p>
             </div>
             
@@ -214,7 +214,7 @@
 <script src="<?php bloginfo('template_url');?>/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php bloginfo('template_url');?>/assets/plugins/jquery.easing.min.js?v=2.0.1" type="text/javascript"></script>
 <script src="<?php bloginfo('template_url');?>/assets/base/js/plugins.min.js?v=1.0.0" type="text/javascript"></script>
-<script src="<?php bloginfo('template_url');?>/assets/base/js/script.js?v=1.0.30" type="text/javascript"></script>
+<script src="<?php bloginfo('template_url');?>/assets/base/js/script.min.js?v=1.0.30" type="text/javascript"></script>
 
 <!-- END: THEME SCRIPTS -->
 
