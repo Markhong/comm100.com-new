@@ -1,10 +1,10 @@
 <?php
 /*
-Template Name:acf Home
+Template Name:Landing no menu
 */
 ?>
-<?php get_header(); ?>
-</header>
+<?php get_header('no-menu'); ?>
+
   
 <div class="c-layout-page c-layout-page-fixed">
     
@@ -2013,8 +2013,8 @@ Template Name:acf Home
                     echo '</div>';
                     echo '</div>';
                 
-                endif;    
-
+                endif;   
+                
                 // check current row layout
                 if( get_row_layout() == 'leads_form' ):
                     $title = get_sub_field('title');

@@ -369,10 +369,11 @@ var LayoutHeader = function() {
 	var prevScrollTop = 0;
 	var currentScrollTop = 0;
 	var $body = $("body");
+	var mainBarOffsetTop = $('.c-mainbar').offset().top;
 	var d = function() {
 		currentScrollTop = $(window).scrollTop();
 
-		if (currentScrollTop > f) {
+		if (currentScrollTop >= mainBarOffsetTop) {
 			$body.addClass("c-page-on-scroll");
 		} else {
 			$body.removeClass("c-page-on-scroll");
@@ -1069,15 +1070,15 @@ $(document).ready(function() {
 			tourscroll.init();
 		}, 3000);
 	}
-	// if(getCookies('ifshownotify') === null || getCookies('ifshownotify') !== '0'){
-	// 	$('.notify').show();
-	// 	$('.c-layout-header-fixed .c-layout-header').css('top', '50px');
-	// }
-	// $(".notify .close").on('click', function(){
-	// 	$('.notify').hide();
-	// 	$('.c-layout-header-fixed .c-layout-header').css('top', '0');
-	// 	setCookies("ifshownotify", 0, 1);
-	// });
+	if(getCookies('ifshownotify') === null || getCookies('ifshownotify') !== '0'){
+		$('.notify').show();
+		// $('.c-layout-header-fixed .c-layout-header').css('top', '50px');
+	}
+	$(".notify .close").on('click', function(){
+		$('.notify').hide();
+		// $('.c-layout-header-fixed .c-layout-header').css('top', '0');
+		setCookies("ifshownotify", 0, 30);
+	});
 	$(".achat").click(function() {
 		var a = 110;
 		if (screen.height < 800) {

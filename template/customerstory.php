@@ -6,7 +6,7 @@ Template Name:customerstory
 <?php get_header(); ?>
 </header>
   
-<div class="c-layout-page c-layout-page-fixed secondary-page">
+<div class="c-layout-page c-layout-page-fixed">
 
     <?php
         // check if the flexible content field has rows of data
@@ -46,7 +46,7 @@ Template Name:customerstory
 					$logo = get_sub_field('logo');
 					$details = get_sub_field('details_repeater');
 
-					echo '<div class="c-content-box c-size-md">';
+					echo '<div class="c-content-box c-size-md c-padding-b-0">';
 					echo '<div class="container">';
 					echo '<div class="row">';
 					echo '<div class="col-sm-12">';
@@ -196,18 +196,22 @@ Template Name:customerstory
 				if ( get_row_layout() == 'customers_list' ):
 					$title = get_sub_field('title');
 					$sub_title = get_sub_field('sub_title');
+					$title_align = get_sub_field('title_align');
 
 					echo '<div class="c-content-box c-size-md">';
 					echo '<div class="container">';
 					echo '<div class="row">';
-					echo '<div class="col-sm-12">';
-					if ($sub_title):
-						echo '<h1>' . $sub_title . '</h1>';
+					echo '<div class="col-sm-12 storyCard">';
+					echo '<div class="c-' . $title_align . '">';
+					if ($title):
+						echo '<h1>' . $title . '</h1>';
 					endif;
 
-					if ($title):
-						echo '<h2>' . $title . '</h2>';
+					if ($sub_title):
+						echo '<h2>' . $sub_title . '</h2>';
 					endif;
+					echo '</div>';
+					
 
 					if ( get_sub_field('customer_list') ):
 						echo '<div class="storyCard-list">';
@@ -216,30 +220,52 @@ Template Name:customerstory
 
 							$type = get_sub_field('type');
 							$link = get_sub_field('link');
+							$link_type = get_sub_field('link_type');
 							$image = get_sub_field('image');
 							$title = get_sub_field('title');
 							$subtitle = get_sub_field('sub_title');
 							$description = get_sub_field('description');
 							
 							if ($type == 'calltoaction'):
+								$linkcontent='';
+								if ($link):
+									switch ($link_type) {
+										case 'green' :
+												$linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+														$link['title'] .
+													'</a>';
+												break;
+										case 'blue' :
+												$linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+														$link['title'] .
+													'</a>';
+												break;
+										case 'white' :
+												$linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+														$link['title'] .
+													'</a>';
+												break;
+										case 'link' :
+												$linkcontent = '<a class="c-redirectLink" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+														$link['title'] .
+													'</a>';
+												break;
+										default: break;
+									}
+								endif;
+
 								echo '<div class="storyCard-item CTA">' .
-										'<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="80" height="80" />' .
+										'<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="120" height="120" />' .
 										'<div class="storyCard-item-CTA-title">' . $title . '</div>';
 								if ($subtitle):
-									echo '<p>' . $subtitle . '</p>' .
-									     '<div class="storyCard-item-CTA-link">' .
-										 '<a href="' . $link['url'] . '" target="' . $link['target'] . '" class="c-redirectLink">' . $link['title'] . '</a>' .
-										 '</div>';
-								else :						
-									echo '<div class="storyCard-item-CTA-link">' .
-										 '<a href="' . $link['url'] . '" target="' . $link['target'] . '" class="btn btn-xlg c-btn-green">' . $link['title'] . '</a>' .
-										 '</div>';
+									echo '<p>' . $subtitle . '</p>';
 								endif;
+								echo '<div class="storyCard-item-CTA-link">' . $linkcontent . '</div>';
 								echo '</div>';
 							else:
 								echo '<div class="storyCard-item">' .
-									 	'<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" />' .
-									 	'<div class="storyCard-item-title">' . $title . '</div>' .
+									 	'<a href="' . $link['url'] . '" target="' . $link['target'] . '"><img src="' . $image['url'] . '" alt="' . $image['alt'] . '" /></a>' .
+									 	'<a href="' . $link['url'] . '" target="' . $link['target'] . '"><div class="storyCard-item-title">' . $title . '</div></a>' .
 									 	'<div class="storyCard-item-subtitle">' . $subtitle . '</div>' .
 									 	'<p>' . $description . '</p>' .
 									 	'<div class="storyCard-item-link">' .
@@ -290,6 +316,99 @@ Template Name:customerstory
 					echo '</div>';
 					echo '</div>';
 				endif;
+
+				// check current row layout
+				if( get_row_layout() == 'line' ):
+                
+					$height = get_sub_field('height');
+					$color = get_sub_field('color');
+	
+					echo '<div class="c-content-box">';
+					echo '<div class="container">';
+					echo '<div class="row">';
+					echo '<div class="col-sm-12">';
+	
+					if ($height):
+						echo '<hr style="border-top-color: ' . $color . '; border-top-width: ' . $height . 'px " />';
+					endif;
+					
+					echo '</div>';
+					echo '</div>';
+					echo '</div>';
+					echo '</div>';
+				   
+				endif;   
+
+				// check current row layout
+				if( get_row_layout() == 'cta' ):
+                
+					$calltoaction_type = get_sub_field('type');
+					$calltoaction_title = get_sub_field('title');
+					$calltoaction_subtitle = get_sub_field('subtitle');
+					$calltoaction_description = get_sub_field('description');
+					$calltoaction_bg = get_sub_field('background_image');
+					$calltoaction_cta = get_sub_field('cta');
+	
+					$style_bg = '';
+					if ($calltoaction_bg):
+						$style_bg = 'style="background-image: url(' . $calltoaction_bg['url'] . ')"';
+					endif;
+	
+					echo '<div class="c-content-box c-size-md c-content-box--bg" ' . $style_bg . '>';
+					echo '<div class="container">';
+					echo '<div class="row">';
+					echo '<div class="col-sm-12 callToAction callToAction--' . $calltoaction_type . '">';
+	
+					if ($calltoaction_title):
+						echo '<h3>' .
+								$calltoaction_title .
+							'</h3>';
+					endif;
+					if ($calltoaction_subtitle):
+						echo '<p class="subtitle">' .
+								$calltoaction_subtitle .
+							'</p>';
+					endif;
+					if ($calltoaction_cta):
+	
+						while ( have_rows('cta') ) : the_row();
+							$cta_link_type = get_sub_field('cta_link_type');
+							$cta_link = get_sub_field('cta_link');
+							if ($cta_link):
+								switch ($cta_link_type) {
+									case 'green' :
+											echo '<a class="btn btn-xlg btn-link--green" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+													$cta_link['title'] .
+												'</a>';
+											break;
+									case 'blue' :
+											echo '<a class="btn btn-xlg c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+													$cta_link['title'] .
+												'</a>';
+											break;
+									case 'white' :
+											echo '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+													$cta_link['title'] .
+												'</a>';
+											break;
+									case 'link' :
+											echo '<a class="c-redirectLink" href="' . $cta_link['url'] . '" target="' . $cta_link['target'] . '">' .
+													$cta_link['title'] .
+												'</a>';
+											break;
+									default: break;
+								}
+							endif;
+						endwhile;
+						
+						
+					endif;
+					
+					echo '</div>';
+					echo '</div>';
+					echo '</div>';
+					echo '</div>';
+				endif;  
 			endwhile;
 		
         else :

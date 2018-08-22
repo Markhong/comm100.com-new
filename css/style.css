@@ -3949,14 +3949,15 @@ pre {
 }
 .notify {
   display: none;
-  position: fixed;
-  top: 0;
+  /* position: fixed;
+  top: 0; */
   width: 100%;
-  z-index: 9995;
-  height: 50px;
-  line-height: 50px;
+  /* z-index: 9995; */
+  height: 40px;
+  line-height: 40px;
   text-align: center;
   background: #2e3336;
+  font-size: 15px;
 }
 @media screen and (max-width: 767px) {
   .notify {
@@ -13305,7 +13306,7 @@ label {
     right: -2px;
   }
   .c-layout-header-fixed .c-layout-header {
-    position: fixed;
+    position: relative;
     z-index: 9995;
     top: 0;
     width: 100%;
@@ -13395,20 +13396,30 @@ label {
     top: 33px;
   }
 }
-.c-layout-header-fullscreen .c-layout-page-fixed {
+/* .c-layout-header-fullscreen .c-layout-page-fixed {
   margin-top: 130px;
-}
-.c-layout-header-fullscreen .primary-page,
+} */
+/* .c-layout-header-fullscreen .primary-page,
 .c-layout-header-fullscreen .secondary-page:not(.secondary-page--others) {
   margin-top: 192px;
-}
+} */
 
 .c-layout-header .c-mainbar {
   padding-bottom: 23px;
-  margin-top: 18px;
+  padding-top: 18px;
   z-index: 9;
   position: relative;
   background: #fff;
+}
+.c-page-on-scroll .c-layout-header .c-mainbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateZ(0);
+}
+.c-page-on-scroll .c-layout-header > div:last-child {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 @media (max-width: 991px) {
   .c-layout-header .c-mainbar {
@@ -14385,7 +14396,7 @@ label {
     background: #fff;
     box-shadow: none;
     /* padding-bottom: 18px; */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); */
     height: 95px;
   }
   .c-page-on-scroll
@@ -18273,6 +18284,12 @@ label {
   transition: transform .5s linear;
   transition: transform .5s linear,-webkit-transform .5s linear;
 }
+.c-page-on-scroll .c-navbar--secondary {
+  position: fixed;
+  left: 0;
+  top: 95px;
+  width: 100%;
+}
 .c-navbar--secondary ul {
   padding-left: 0;
   margin-bottom: 0;
@@ -20226,7 +20243,14 @@ h3.highlight {
   border-bottom-color: #fff;
 }
 
-
+.three-column-title {
+  font-size: 26px;
+  font-family: "Ubuntu Medium", sans-serif;
+  line-height: 1.285714em;
+  color: #5e6d79;
+  text-align: center;
+  margin-bottom: 60px;
+}
 .three-column {
   display: flex;
   display: -webkit-flex;
@@ -20382,8 +20406,8 @@ h5.feature-column__title {
 }
 .customerProfile {
   display: flex;
-  padding-bottom: 80px;
-  margin-bottom: 80px;
+  padding-bottom: 40px;
+  /* margin-bottom: 80px; */
   border-bottom: 3px solid rgba(94, 109, 121, .1);
 }
 .customerProfile__col h3 {
@@ -20421,6 +20445,7 @@ h5.feature-column__title {
   background-color: #f4f8fc;
 }
 .customerArticle-intro {
+  font-size: 24px;
   line-height: 38px;
   margin-bottom: 40px;
 }
@@ -20452,18 +20477,25 @@ h5.feature-column__title {
 .storyCard-title {
   font-size: 40px;
 }
-.storyCard-list {
-  margin-top: 60px;
+.storyCard h2 {
+  font-size: 40px;
+  line-height: 1.25em;
+  color: #606c78;
+  font-family: "Ubuntu Regular", sans-serif;
+  margin-bottom: 50px;
 }
 .storyCard-item {
-  width: calc(33.333333% - 4px);
+  width: calc(33.333333% - 6px);
   height: 480px;
   float: left;
   position: relative;
-  padding: 0 3px;
+  margin-right: 8px;
   margin-bottom: 60px;
 }
-.storyCard-item:nth-child(3n) {
+.storyCard-item:nth-child(3n+3) {
+  margin-right: 0;
+}
+/* .storyCard-item:nth-child(3n) {
   padding-right: 0;
 }
 .storyCard-item:nth-child(3n+1) {
@@ -20474,11 +20506,12 @@ h5.feature-column__title {
 }
 .storyCard-item:nth-child(3n).CTA {
   margin-left: 3px;
-}
+} */
 .storyCard-item-title {
   font-size: 26px;
   font-family: "Ubuntu Bold", sans-serif;
   margin-top: 10px;
+  color: #5e6d79;
 }
 .storyCard-item-subtitle {
   font-size: 16px;
@@ -20503,7 +20536,7 @@ h5.feature-column__title {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  width: calc(33.333333% - 7px);
+  /* width: calc(33.333333% - 7px); */
 }
 .storyCard-item-CTA-title {
   font-size: 16px;
@@ -20513,6 +20546,7 @@ h5.feature-column__title {
   font-size: 18px;
   line-height: 24px;
   margin-top: 10px;
+  margin-bottom: 0;
 }
 .storyCard-item-CTA-link {
   margin-top: 40px;
@@ -21099,6 +21133,9 @@ h5.feature-column__title {
 .threeTab__Detail--col:first-child {
   padding-left: 0;
 }
+.threeTab__Detail--col:last-child {
+  padding-right: 0;
+}
 .threeTab__Detail--col:nth-child(3) {
   padding-right: 0;
 }
@@ -21107,6 +21144,15 @@ h5.feature-column__title {
   font-size: 20px;
   text-align: center;
   padding: 10px 0;
+}
+.threeTab__Detail--title--blue {
+  background: #0094d4!important;
+}
+.threeTab__Detail--title--light_blue {
+  background: #3dc4ff!important;
+}
+.threeTab__Detail--title--green {
+  background: #afdd09!important;
 }
 .threeTab__Detail:nth-child(1) .threeTab__Detail--title {
   background: #0094d4;
@@ -21178,13 +21224,15 @@ h5.feature-column__title {
   font-size: 18px;
   color: rgba(96,108,120,0.7);
 }
-.pricing .threeTab__Detail--contentList {
+.pricing .threeTab__Detail--contentList,
+.comparelist .threeTab__Detail--contentList {
   font-size: 16px;
 }
 .threeTab__Detail--contentList li {
   margin-bottom: 12px;
 }
-.pricing .threeTab__Detail--contentList li {
+.pricing .threeTab__Detail--contentList li,
+.comparelist .threeTab__Detail--contentList li {
   margin-bottom: 0;
 }
 .threeTab__Detail--contentList li:before {
@@ -21227,7 +21275,8 @@ h5.feature-column__title {
   font-size: 20px;
   color: rgba(96,108,120,0.7);
 }
-.pricing .threeTab__Detail--subTitle {
+.pricing .threeTab__Detail--subTitle,
+.comparelist .threeTab__Detail--subTitle {
   font-size: 16px;
   margin-top: 45px;
   
@@ -21390,6 +21439,9 @@ h5.feature-column__title {
     padding: 15px;
   }
 }
+.comparelist h3 {
+  text-align: center;
+}
 .c-quick-search {
   margin-top: 35px;
   width: 170px;
@@ -21409,6 +21461,10 @@ h5.feature-column__title {
 
 .c-layout-page--privacy h2 {
   font-size: 20px; 
+}
+.c-layout-page--privacy h4,
+.c-layout-page--privacy h5 {
+  margin-top: 40px;
 }
 #menu-footer-company li:last-child a {
   border-bottom: 3px solid rgba(0, 148, 212,.5);

@@ -928,16 +928,16 @@ Template Name:acf Company
                 echo '<div class="c-content-box c-size-md">' .
                         '<div class="container">' .
                             '<div class="row">' .
-                                '<div partner-contact">' .
-                                    '<div class="col-sm-5"><img class="avatar" src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="380" height="380" /></div>' .
-                                    '<div class="col-sm-7">' .
-                                        '<div class="contact-form">' .
-                                            '<h3 class="highlight highlight--blue">' . $title . '</h3>' .
-                                            $contact_form .
-                                            '<div class="form-note">' . $form_note . '</div>'. 
-                                        '</div>' .
+                                
+                                '<div class="col-sm-5"><img class="avatar" src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="380" height="380" /></div>' .
+                                '<div class="col-sm-7">' .
+                                    '<div class="contact-form">' .
+                                        '<h3 class="highlight highlight--blue">' . $title . '</h3>' .
+                                        $contact_form .
+                                        '<div class="form-note">' . $form_note . '</div>'. 
                                     '</div>' .
                                 '</div>' .
+                                
                             '</div>' .
                         '</div>' .
                     '</div>';
