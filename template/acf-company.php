@@ -83,7 +83,51 @@ Template Name:acf Company
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
-            endif;      
+            endif;     
+            
+            // check current row layout
+            if( get_row_layout() == 'thank_you_hero_head' ):
+                    
+                $header_headline = get_sub_field('h1_title');
+                $header_slogan = get_sub_field('subtitle');
+                $header_description = get_sub_field('description');
+                $call_to_action = get_sub_field('call_to_action');
+
+                echo '<div class="c-content-box c-size-md">';
+                echo '<div class="container">';
+                echo '<div class="row">';
+                echo '<div class="col-sm-12 thankyou">';
+
+                
+                if ($header_headline):
+                    echo '<h1>' .
+                            $header_headline .
+                        '</h1>';
+                endif;
+                if ($header_slogan):
+                    echo '<h2 class="c-margin-t-20">' .
+                            $header_slogan .
+                        '</h2>';
+                endif;
+                if ($header_description):
+                    echo '<div class="thankyou__desc">' .
+                            $header_description .
+                        '</div>';
+                endif;
+                
+                if ($call_to_action):
+                    echo '<div class="thankyou__calltoaction">' .
+                            '<a class="achat btn btn-xlg btn-link--green" href="' . $call_to_action['url'] . '" target="' . $call_to_action['target'] . '">' .
+                                $call_to_action['title'] .
+                            '</a>';
+                        '</div>';
+                endif;
+
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            endif;
 
             if( get_row_layout() == 'hero_header_form' ):
                     
@@ -835,7 +879,7 @@ Template Name:acf Company
                                         $sub_title = get_sub_field('sub_title');
                                         $icon = get_sub_field('icon');
                                         $featurelist_wrap .= '<div class="col-sm-6 threeTab__Detail--col">';
-                                        $featurelist_wrap .= '<i class="icon-' . $icon . '"></i>';
+                                        $featurelist_wrap .= '<img src="' . $icon['url'] . '" alt="' . $icon['alt'] . '" width="50" height="50" />';
                                         $featurelist_wrap .= '<p class="threeTab__Detail--subTitle">' . $sub_title . '</p>';
                                         $featurelist_wrap .= '<ul class="threeTab__Detail--contentList">';
                                         // $li_feature_list = '';

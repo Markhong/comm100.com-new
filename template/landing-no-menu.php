@@ -2053,8 +2053,24 @@ Template Name:Landing no menu
                         $color = get_sub_field('color');
                         $compare_name = get_sub_field('compare_name');
                         $feature_list_title = get_sub_field('feature_list_title');
+
+                        $if_show_price = get_sub_field('if_show_price');
+                        $request_quote = get_sub_field('request_quote');
+                        
+                        $priceContent = '<span class="threeTab__Detail--priceQuote"><strong>' . $request_quote . '</strong></span>';
+                        if ($if_show_price):
+                            while ( have_rows('price') ) : the_row();
+                                $price_number = get_sub_field('price_number');
+                                $price_unit = get_sub_field('price_unit');
+                                $priceContent = '<span class="threeTab__Detail--priceNum"><strong>$' . $price_number . '</strong></span>' .
+                                '<span class="threeTab__Detail--priceUnit">' . $price_unit . '</span>';
+                            endwhile;
+                            
+                        endif;
+
                         echo '<div class="col-sm-6 threeTab__Detail--col">' .
                             '<div class="threeTab__Detail--title threeTab__Detail--title--' . $color . '">' . $compare_name . '</div>' .
+                            '<div class="threeTab__Detail--price">' . $priceContent . '</div>' .
                             '<p class="threeTab__Detail--subTitle"> ' . $feature_list_title . ' </p>' .
                             '<ul class="threeTab__Detail--contentList">';
                         while ( have_rows('feature_pointer_list') ) : the_row();
@@ -2074,6 +2090,31 @@ Template Name:Landing no menu
                     echo '</div>';
 
                 endif;
+
+                // check current row layout
+                if( get_row_layout() == 'line' ):
+                    
+                    $height = get_sub_field('height');
+                    $color = get_sub_field('color');
+                    
+
+                    echo '<div class="c-content-box">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="col-sm-12">';
+
+                    if ($height):
+                        echo '<hr style="border-top-color: ' . $color . '; border-top-width: ' . $height . 'px " />';
+                    endif;
+                    
+                    
+                    
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                
+                endif;   
             endwhile;
 
         else :

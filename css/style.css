@@ -21185,6 +21185,11 @@ h5.feature-column__title {
   font-size: 50px;
 
 }
+.threeTab__Detail--col img {
+  margin-top: 45px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
 
 @media screen and (min-width: 1200px) {
   .pricing .threeTab__Detail:nth-child(1) .threeTab__Detail--col {
@@ -21458,13 +21463,26 @@ h5.feature-column__title {
   border-radius: 10px;
   padding-left: 40px;
 }
-
+.c-layout-page--privacy h1 {
+  font-size: 36px;
+  margin-bottom: 60px;
+}
 .c-layout-page--privacy h2 {
   font-size: 20px; 
 }
 .c-layout-page--privacy h4,
 .c-layout-page--privacy h5 {
   margin-top: 40px;
+}
+.c-layout-page--privacy h5 {
+  font-family: "Ubuntu Bold", sans-serif;
+}
+.c-layout-page--privacy p {
+  margin: 0px 0 25px;
+  line-height: 32px;
+}
+.c-layout-page--privacy .c-content-list-1 > li {
+  line-height: 32px;
 }
 #menu-footer-company li:last-child a {
   border-bottom: 3px solid rgba(0, 148, 212,.5);
@@ -21483,14 +21501,23 @@ h5.feature-column__title {
   position: absolute;
   bottom: 60px;
 }
-.landingPage-title-wrap h1 {
+.landingPage-title-wrap h2 {
   font-family: "Ubuntu Regular", sans-serif;
   text-align: left;
+  line-height: 1.25em;
+  margin-bottom: 15px;
+  font-size: 24px;
 }
-.landingPage-title-wrap h2 {
+.landingPage-title-wrap h1 {
   font-size: 36px;
   font-family: "Ubuntu Regular", sans-serif;
   color: #0091d1;
+  text-align: left;
+  margin-bottom: 0;
+}
+.landingPage-title-wrap .landingPage-title--text p {
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 .landingPage-title-wrap img {
   position: absolute;
@@ -21576,6 +21603,10 @@ h3.highlight {
 .resource-promotion .resource-item img {
   max-height: 320px;
 }
+.resource-list-title {
+  font-size: 40px;
+  margin-bottom: 45px;
+}
 .resource-item {
   min-height: 365px;
   margin-bottom: 20px;
@@ -21636,15 +21667,16 @@ h5.resource-item--title {
   font-family: "Ubuntu Light", sans-serif;
   margin-bottom: 20px;
 }
-.resource-item .CTA .btn {
+.resource-item .CTA p {
+  margin-bottom: 0;
+  margin-top: 10px;
   font-size: 18px;
-  font-family: "Ubuntu Medium", sans-serif;
-  padding: 13px 30px;
-  border-radius: 6px;
-  margin-top: 40px;
 }
 .resource-item .CTA .c-redirectLink {
   font-size: 18px;
+}
+.resource-item-CTA-link {
+  margin-top: 40px;
 }
 .pager {
   padding-top: 90px;
@@ -21742,4 +21774,16 @@ h2.video-title {
 }
 #layer_googleplus:hover .path--googleplus {
   fill: #0094d4;
+}
+
+.thankyou {
+  text-align: center;
+}
+.thankyou__desc {
+  line-height: 42px;
+  font-size: 26px;
+  margin-top: 40px;
+}
+.thankyou__calltoaction {
+  margin-top: 50px;
 }

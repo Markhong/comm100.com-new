@@ -50,7 +50,51 @@ Template Name:Resources
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';
-                endif;       
+                endif;
+                
+                // check current row layout
+                if( get_row_layout() == 'thank_you_hero_head' ):
+                    
+                    $header_headline = get_sub_field('h1_title');
+                    $header_slogan = get_sub_field('subtitle');
+                    $header_description = get_sub_field('description');
+                    $call_to_action = get_sub_field('call_to_action');
+
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="col-sm-12 thankyou">';
+
+                    
+                    if ($header_headline):
+                        echo '<h1>' .
+                                $header_headline .
+                            '</h1>';
+                    endif;
+                    if ($header_slogan):
+                        echo '<h2 class="c-margin-t-20">' .
+                                $header_slogan .
+                            '</h2>';
+                    endif;
+                    if ($header_description):
+                        echo '<div class="thankyou__desc">' .
+                                $header_description .
+                            '</div>';
+                    endif;
+                    
+                    if ($call_to_action):
+                        echo '<div class="thankyou__calltoaction">' .
+                                '<a class="btn btn-xlg btn-link--green" href="' . $call_to_action['url'] . '" target="' . $call_to_action['target'] . '">' .
+                                    $call_to_action['title'] .
+                                '</a>';
+                            '</div>';
+                    endif;
+
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                endif;
 
                 if( get_row_layout() == 'hero_banner' ):
                     $banner_size = get_sub_field('size');
@@ -197,6 +241,7 @@ Template Name:Resources
 
                             $type = get_sub_field('type');
                             $link = get_sub_field('link');
+                            $link_type = get_sub_field('link_type');
                             $image = get_sub_field('image');
                             $tag = get_sub_field('tag');
                             $category = get_sub_field('category');
@@ -204,14 +249,43 @@ Template Name:Resources
                             $subtitle = get_sub_field('subtitle');
                             
                             if ($type == 'calltoaction'):
+                                $linkcontent='';
+								if ($link):
+									switch ($link_type) {
+										case 'green' :
+												$linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+														$link['title'] .
+													'</a>';
+												break;
+										case 'blue' :
+												$linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+														$link['title'] .
+													'</a>';
+												break;
+										case 'white' :
+												$linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+														$link['title'] .
+													'</a>';
+												break;
+										case 'link' :
+												$linkcontent = '<a class="c-redirectLink" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+														$link['title'] .
+													'</a>';
+												break;
+										default: break;
+									}
+                                endif;
+                                
                                 echo '<div class="resource-item col-sm-4">' .
                                         '<div class="CTA">' . 
                                             '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="120" height="120" />' .
-                                            '<div class="resource-item--title">' . $title . '</div>' .
-                                            // '<div class="resource-item--subTitle">' . $subtitle . '</div>' . 
-                                            '<a href="' . $link['url'] . '" target="' . $link['target'] . '" class="btn btn-link--green">' . $link['title'] . '</a>' .
-                                        '</div>' . 
-                                    '</div>';
+                                            '<div class="resource-item--title">' . $title . '</div>';
+                                if ($subtitle):
+                                    echo $subtitle;
+                                endif;
+                                echo '<div class="resource-item-CTA-link">' . $linkcontent . '</div>';
+                                echo '</div>';
+                                echo '</div>';
                             else:
                                 echo '<div class="resource-item col-sm-4">' .
                                         '<a href="' . $link['url'] . '" target="' . $link['target'] . '">' . 
@@ -1597,6 +1671,146 @@ Template Name:Resources
 
                 
                 endif;  
+
+                // check current row layout
+                if( get_row_layout() == 'resource_hero_banner' ):
+                    
+                    $h1_title = get_sub_field('h1_title');
+                    $h2_title = get_sub_field('h2_title');
+                    $description = get_sub_field('description');
+                    $image = get_sub_field('image');
+                    // check if the nested repeater field has rows of data
+                    
+                        
+                        echo '<div class="c-content-box c-content-box--grey">';
+                        echo '<div class="container">';
+                        echo '<div class="row landingPage-title-wrap">';
+                    
+                        echo '<div class="col-sm-5 col-sm-push-7 landingPage-title--col"><img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" /></div>';
+                        echo '<div class="col-sm-7 col-sm-pull-5 landingPage-title--col">';
+                            echo '<div class="landingPage-title--text">';
+                            echo '<h2>' . $h2_title . '</h2>';
+                            echo '<h1>' . $h1_title . '</h1>';
+                            if ($description):
+                                echo $description;
+                            endif;
+
+                            echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+
+                    
+
+                
+                endif;  
+
+                // check current row layout
+                if( get_row_layout() == 'share_this' ):
+                    
+                    $title = get_sub_field('title');
+                    $share_this_code = get_sub_field('share_this_code');
+                        
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="col-sm-12">';
+                        echo '<div class="social-share">';
+                        echo '<h3>' . $title . '</h3>';
+                        echo $share_this_code;
+                        echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                
+                endif;  
+
+                // check current row layout
+                if( get_row_layout() == 'promotion_list' ):
+                
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="col-sm-12">';
+                    echo '<div class="resource-list-title">' . get_sub_field('title') . '</div>';
+                    // check if the nested repeater field has rows of data
+                    
+                    if( have_rows('resources_list_item') ):
+                    
+                        echo '<div class="resource-list clearfix">';
+                        // loop through the rows of data
+                        while ( have_rows('resources_list_item') ) : the_row();
+
+                            $type = get_sub_field('type');
+                            $link = get_sub_field('link');
+                            $link_type = get_sub_field('link_type');
+                            $image = get_sub_field('image');
+                            $tag = get_sub_field('tag');
+                            $category = get_sub_field('category');
+                            $title = get_sub_field('title');
+                            $subtitle = get_sub_field('subtitle');
+                            
+                            if ($type == 'calltoaction'):
+                                $linkcontent='';
+								if ($link):
+									switch ($link_type) {
+										case 'green' :
+												$linkcontent = '<a class="btn btn-xlg btn-link--green" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+														$link['title'] .
+													'</a>';
+												break;
+										case 'blue' :
+												$linkcontent = '<a class="btn btn-xlg c-theme-btn" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+														$link['title'] .
+													'</a>';
+												break;
+										case 'white' :
+												$linkcontent = '<a class="btn btn-xlg c-btn-border-2x c-theme-btn" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+														$link['title'] .
+													'</a>';
+												break;
+										case 'link' :
+												$linkcontent = '<a class="c-redirectLink" href="' . $link['url'] . '" target="' . $link['target'] . '">' .
+														$link['title'] .
+													'</a>';
+												break;
+										default: break;
+									}
+                                endif;
+                                
+                                echo '<div class="resource-item col-sm-4">' .
+                                        '<div class="CTA">' . 
+                                            '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="120" height="120" />' .
+                                            '<div class="resource-item--title">' . $title . '</div>';
+                                if ($subtitle):
+                                    echo $subtitle;
+                                endif;
+                                echo '<div class="resource-item-CTA-link">' . $linkcontent . '</div>';
+                                echo '</div>';
+                                echo '</div>';
+                            else:
+                                echo '<div class="resource-item col-sm-4">' .
+                                        '<a href="' . $link['url'] . '" target="' . $link['target'] . '">' . 
+                                            '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
+                                            '<div class="resource-item--tag">' . $tag . '</div>' .
+                                            '<div class="resource-item--category">' . $category . '</div>' .
+                                            '<h5 class="resource-item--title">' . $title . '</h5>' .
+                                            '<div class="resource-item--subTitle">' . $subtitle . '</div>' . 
+                                        '</a>' . 
+                                    '</div>';
+                            endif;
+                            
+                        endwhile;
+                        echo '</div>';
+
+                    endif;
+
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+
+                endif;
             endwhile;
 
         else :

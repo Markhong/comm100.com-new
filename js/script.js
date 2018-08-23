@@ -373,7 +373,7 @@ var LayoutHeader = function() {
 	var d = function() {
 		currentScrollTop = $(window).scrollTop();
 
-		if (currentScrollTop >= mainBarOffsetTop) {
+		if (currentScrollTop > mainBarOffsetTop) {
 			$body.addClass("c-page-on-scroll");
 		} else {
 			$body.removeClass("c-page-on-scroll");
