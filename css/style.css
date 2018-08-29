@@ -18189,6 +18189,7 @@ label {
   color: #0094d4 !important;
 }
 .c-layout-header .c-navbar .c-mega-menu > .nav.navbar-nav > li.current-menu-ancestor > .c-link,
+.c-layout-header .c-navbar .c-mega-menu > .nav.navbar-nav > li.current-page-ancestor > .c-link,
 .c-theme-nav li.c-active {
   color: #0094d4 !important;
 }
@@ -20382,11 +20383,18 @@ h5.feature-column__title {
   top: 0;
   left: -100%;
 }
+.customerstory-header h1 {
+  font-size: 36px;
+  line-height: 48px;
+  font-family: "Ubuntu Regular",sans-serif;
+  margin-top: 20px;
+  color: #0091d1;
+}
 @media screen and (max-width: 767px) {
   .customerstory-header {
     padding: 30px 15px;
   }
-  .customerstory-header h2 {
+  .customerstory-header h1 {
     font-size: 24px;
   }
   .customerstory-header br {
@@ -20563,10 +20571,16 @@ h5.feature-column__title {
 }
 .logo-group-title {
   font-size: 40px;
+  margin-bottom: 40px;
   text-align: center;
 }
 .logo-group {
   text-align: center;
+}
+.logo-group img {
+  opacity: 0.7;
+  margin-right: 30px;
+  width: 150px;
 }
 @media screen and (max-width: 767px) {
   .logo-group img{
@@ -21220,6 +21234,15 @@ h5.feature-column__title {
   font-family: "Ubuntu Light", sans-serif;
   line-height: 1.42857143;
 }
+.threeTab__Detail--regularPrice {
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-top: 12px;
+  text-align: right;
+  margin-right: 10px;
+  font-family: "Ubuntu Light", sans-serif;
+  line-height: 1.42857143;
+}
 .threeTab__Detail--contentList {
   padding-left: 75px;
   padding-right: 40px;
@@ -21489,6 +21512,13 @@ h5.feature-column__title {
   font-family: "Ubuntu Medium", sans-serif;
   padding-bottom: 2px;
 }
+.landingPage-content p,
+.landingPage-content img {
+  margin-bottom: 30px;
+}
+.landingPage-content .landingPage-summary p {
+  margin-bottom: 0;
+}
 .landingPage-title-wrap {
   position: relative;
   width: 100%;
@@ -21542,6 +21572,9 @@ h3.highlight {
   display: inline-block;
 }
 
+.landingPage-download {
+  padding-left: 75px;
+}
 .landingPage-download h3 {
   display: inline-block;
   font-family: "Ubuntu Medium", sans-serif;

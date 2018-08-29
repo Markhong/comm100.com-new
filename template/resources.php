@@ -1811,6 +1811,188 @@ Template Name:Resources
                     echo '</div>';
 
                 endif;
+
+                // check current row layout
+                if( get_row_layout() == 'landing_page_not_gated_context' ):
+                    
+                    if( have_rows('context') ):
+                        echo '<div class="c-content-box c-size-md">';
+                        echo '<div class="container">';
+                        echo '<div class="row landingPage">';
+                        // loop through the rows of data
+                        while ( have_rows('context') ) : the_row();
+                            if( get_row_layout() == 'context_summary' ):
+                                echo '<div class="col-sm-12 landingPage-summary">' . get_sub_field('summary') . '</div>';
+                            endif;
+                            if( get_row_layout() == 'context_image' ):
+                                $image = get_sub_field('image');
+                                echo    '<div class="col-sm-6">' . 
+                                            '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
+                                        '</div>';
+                            endif;
+                            
+                            
+                           
+                        endwhile;
+                        echo '<div class="col-sm-6 landingPage-content">';
+                        while ( have_rows('context') ) : the_row();
+                            if( get_row_layout() == 'context_paragraph' ):
+                                echo get_sub_field('paragraph');
+                            endif;
+                            if( get_row_layout() == 'context_button' ):
+                                $button = get_sub_field('button');
+                                echo '<a href="' . $button['url'] . '" target="' . $button['target'] . '" class="btn btn-xlg c-btn-green c-margin-t-20">' . $button['title'] . '</a>';
+                            endif;
+                            if( get_row_layout() == 'context_share_this' ):
+                                while ( have_rows('share_this') ) : the_row();
+                                    $title = get_sub_field('title');
+                                    $sharecode = get_sub_field('share_this_code');
+                                    echo    '<div class="social-share c-margin-t-60">' .
+                                                '<h3>' . $title . '</h3>' .
+                                                $sharecode .
+                                            '</div>';
+                                endwhile;
+                            endif;
+                        endwhile;
+                        echo '</div>';
+                    endif;
+                    
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+
+                endif;
+
+                // check current row layout
+                if( get_row_layout() == 'landing_page_gated_context' ):
+                    
+                    
+                        echo '<div class="c-content-box c-size-md">';
+                        echo '<div class="container">';
+                        echo '<div class="row landingPage">';
+                        echo '<div class="col-sm-8 landingPage-content">';
+                        // loop through the rows of data
+                        echo '<div class="landingPage-summary">' . get_sub_field('summary') . '</div>';
+                        
+                        while ( have_rows('context') ) : the_row();
+                            if( get_row_layout() == 'context_paragraph' ):
+                                echo get_sub_field('paragraph');
+                            endif;
+                            if( get_row_layout() == 'context_image' ):
+                                $image = get_sub_field('image');
+                                echo   '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />';
+                                        
+                            endif;
+                            if( get_row_layout() == 'context_share_this' ):
+                                while ( have_rows('share_this') ) : the_row();
+                                    $title = get_sub_field('title');
+                                    $sharecode = get_sub_field('share_this_code');
+                                    echo    '<div class="social-share c-margin-t-60">' .
+                                                '<h3>' . $title . '</h3>' .
+                                                $sharecode .
+                                            '</div>';
+                                endwhile;
+                            endif;
+                        endwhile;
+                        echo '</div>';
+                        echo '<div class="col-sm-4 landingPage-download">';
+                            echo '<h3 class="highlight highlight--blue">' . get_sub_field('download_title') . '</h3>';
+                            echo get_sub_field('download_form');
+                            echo '<div class="form-note">' . get_sub_field('download_form_note') . '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                    
+                    
+
+                endif;
+
+                // check current row layout
+                if( get_row_layout() == 'line' ):
+                    
+                    $height = get_sub_field('height');
+                    $color = get_sub_field('color');
+                    
+
+                    echo '<div class="c-content-box">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="col-sm-12">';
+
+                    if ($height):
+                        echo '<hr style="border-top-color: ' . $color . '; border-top-width: ' . $height . 'px " />';
+                    endif;
+                    
+                    
+                    
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                
+                endif;   
+
+                // check current row layout
+                if( get_row_layout() == 'webinar_gated_context' ):
+                    
+                    
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row landingPage">';
+
+                    echo '<div class="col-sm-8 landingPage-content">';
+                        // loop through the rows of data
+                        echo '<h3>' . get_sub_field('title') . '</h3>';
+                        echo get_sub_field('paragraph');
+                   
+
+                    if( have_rows('speaker') ):
+                        while ( have_rows('speaker') ) : the_row();
+                        echo '<div class="speakers-container">';
+                            echo '<h3>' . get_sub_field('title') . '</h3>';
+                            if( have_rows('speaker_details') ):
+                                while ( have_rows('speaker_details') ) : the_row();
+                                    $avatar = get_sub_field('avatar');
+                                    echo '<div class="speaker">' .
+                                        '<img class="speaker-avatar" src="' . $avatar['url'] . '" alt="' . $avatar['alt'] . '" width="95" height="95" />' . 
+                                        '<div class="speaker-title">' . get_sub_field('title') . '</div>' .
+                                        '<div class="speaker-profile">' . get_sub_field('profile') . '</div>' .
+                                    '</div>';
+                                endwhile;
+                            endif;
+                        echo '</div>';
+                        endwhile;
+                    endif;
+
+                    while ( have_rows('share_this') ) : the_row();
+                        $title = get_sub_field('title');
+                        $sharecode = get_sub_field('share_this_code');
+                        echo    '<div class="social-share">' .
+                                    '<h3>' . $title . '</h3>' .
+                                    $sharecode .
+                                '</div>';
+                    endwhile;
+                    echo '</div>';
+
+                    if ( have_rows('webinar_form') ):
+                        while ( have_rows('webinar_form') ) : the_row();
+                        echo '<div class="col-sm-4 landingPage-download">';
+                            echo '<h3 class="highlight highlight--blue">' . get_sub_field('title') . '</h3>';
+                            echo get_sub_field('form_code');
+                            echo '<div class="form-note">' . get_sub_field('form_note') . '</div>';
+                        echo '</div>';
+                        endwhile;
+                    endif;
+
+                   
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                
+                
+
+            endif;
             endwhile;
 
         else :

@@ -27,12 +27,12 @@ Template Name:customerstory
 					
 					echo '<div class="c-content-box banner"' . $style_bg . '>';
 					echo '<div class="container">';
-					echo '<div class="customerstory-header">';
+					echo '<div class="col-sm-7 customerstory-header">';
 					if ($customer_name):                    
 						echo '<h5>' . $customer_name . '</h5>';
 					endif;
 					if ($title):
-						echo '<h2>' . $title . '</h2>';
+						echo '<h1>' . $title . '</h1>';
 					endif;
 
 					echo '</div>';

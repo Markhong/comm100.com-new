@@ -65,7 +65,7 @@
                 default: break;
             }
             if(email){
-                if(formtype !== 'contact' && !isEmailGood(email)) {
+                if(formtype !== 'undefined' && formtype !== 'contact' && !isEmailGood(email)) {
                     form.submitable(false);
                     var emailElem = form.getFormElem().find("#Email");
                     form.showErrorMessage("Must be Business email.", emailElem);

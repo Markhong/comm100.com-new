@@ -1381,6 +1381,7 @@ Template Name:acf Home
                 // check current row layout
                 if( get_row_layout() == '2-column_for_feature' ):
                     $color = get_sub_field('color');                                
+                    $title = get_sub_field('title');                                
                     // check if the nested repeater field has rows of data
                     if( have_rows('column') ):
                         
@@ -1389,7 +1390,9 @@ Template Name:acf Home
                         echo '<div class="row">';
                         echo '<div class="col-sm-12 feature-column">';
                             // loop through the rows of data
-                        
+                        if ($title):
+                            echo '<h3>' . $title . '</h3>';
+                        endif;
                         while ( have_rows('column') ) : the_row();
                             
                             $headline = get_sub_field('headline');
@@ -1411,7 +1414,7 @@ Template Name:acf Home
                         endwhile;
 
                         $cta = get_sub_field('cta');
-                            $linkcontent = '';
+                        $linkcontent = '';
 
                         if ($cta):
                             while ( have_rows('cta') ) : the_row();
@@ -2038,6 +2041,32 @@ Template Name:acf Home
                 endif;
 
                 // check current row layout
+                if( get_row_layout() == 'partner_form' ):
+                    $image = get_sub_field('image');
+                    $title = get_sub_field('title');
+                    $contact_form = get_sub_field('contact_form');
+                    $form_note = get_sub_field('form_note');
+
+                    echo '<div class="c-content-box c-size-md">' .
+                            '<div class="container">' .
+                                '<div class="row">' .
+                                    
+                                    '<div class="col-sm-5"><img class="avatar" src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="380" height="380" /></div>' .
+                                    '<div class="col-sm-7">' .
+                                        '<div class="contact-form">' .
+                                            '<h3 class="highlight highlight--blue">' . $title . '</h3>' .
+                                            $contact_form .
+                                            '<div class="form-note">' . $form_note . '</div>'. 
+                                        '</div>' .
+                                    '</div>' .
+                                    
+                                '</div>' .
+                            '</div>' .
+                        '</div>';
+
+                endif;
+
+                // check current row layout
                 if( get_row_layout() == 'compare_list' ):
                     $title = get_sub_field('title');
                     echo '<div class="c-content-box c-size-md">';
@@ -2057,20 +2086,34 @@ Template Name:acf Home
                         $if_show_price = get_sub_field('if_show_price');
                         $request_quote = get_sub_field('request_quote');
                         
-                        $priceContent = '<span class="threeTab__Detail--priceQuote"><strong>' . $request_quote . '</strong></span>';
+                        $priceContent = '';
+                        if ($request_quote):
+                            $priceContent = '<div class="threeTab__Detail--price"><span class="threeTab__Detail--priceQuote"><strong>' . $request_quote . '</strong></span></div>';
+                        endif;
+                        
                         if ($if_show_price):
                             while ( have_rows('price') ) : the_row();
                                 $price_number = get_sub_field('price_number');
                                 $price_unit = get_sub_field('price_unit');
-                                $priceContent = '<span class="threeTab__Detail--priceNum"><strong>$' . $price_number . '</strong></span>' .
-                                '<span class="threeTab__Detail--priceUnit">' . $price_unit . '</span>';
+                                $regular_price = get_sub_field('regular_price');
+                                $regular_price_str = '';
+                                if ( $regular_price ):
+                                    $regular_price_str = '<span class="threeTab__Detail--regularPrice">' . $regular_price . '</span>';
+                                endif;
+                                if ($price_number):
+                                    $priceContent = '<div class="threeTab__Detail--price">' .
+                                            $regular_price_str .
+                                            '<span class="threeTab__Detail--priceNum"><strong>$' . $price_number . '</strong></span>' .
+                                            '<span class="threeTab__Detail--priceUnit">' . $price_unit . '</span>' .
+                                        '</div>';
+                                endif;
                             endwhile;
                             
                         endif;
 
                         echo '<div class="col-sm-6 threeTab__Detail--col">' .
                             '<div class="threeTab__Detail--title threeTab__Detail--title--' . $color . '">' . $compare_name . '</div>' .
-                            '<div class="threeTab__Detail--price">' . $priceContent . '</div>' .
+                            $priceContent .
                             '<p class="threeTab__Detail--subTitle"> ' . $feature_list_title . ' </p>' .
                             '<ul class="threeTab__Detail--contentList">';
                         while ( have_rows('feature_pointer_list') ) : the_row();

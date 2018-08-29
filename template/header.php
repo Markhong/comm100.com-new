@@ -35,6 +35,9 @@
     if (isset($query['utm_term']) && !isset($_COOKIE['utm_term'])) {
         setcookie("utm_term", $query['utm_term'], time()+3600*24*365, "/", ".comm100.com");
     }
+    if (isset($query['utm_content']) && !isset($_COOKIE['utm_content'])) {
+        setcookie("utm_content", $query['utm_content'], time()+3600*24*365, "/", ".comm100.com");
+    }
 ?>
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
@@ -57,7 +60,7 @@
     <!--<link href="<?php bloginfo('template_url');?>/assets/base/css/style.min.css?ver=1.0.3" id="style_components" rel="stylesheet"
         type="text/css" />-->
 
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?ver=1.0.118" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?ver=2.0.5" type="text/css" media="screen, projection" />
     
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="<?php bloginfo('template_url');?>/assets/favicon.ico" />
@@ -68,12 +71,12 @@
     
     <?php wp_head(); ?>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MHPR23J');</script>
-    <!-- End Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MHPR23J');</script>
+<!-- End Google Tag Manager -->
 </head>
 <!-- END HEAD -->
 
@@ -81,17 +84,17 @@
 <!--[if lte IE 8]>
             <span class="ie7note">You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade your browser</a> to improve your experience.</span>
     <![endif]-->   
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHPR23J"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-<!-- <div class="notify hidden-xs">
-  <a href="https://www.comm100.com/livechat/resources/live-chat-buyers-guide.aspx">
-    <span class="new">New</span>
-   [eBook] The Live Chat Buyer’s Guide: What to Look for and How to Ask &gt;&gt;
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHPR23J"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+ <div class="notify hidden-xs">
+  <a href="https://www.comm100.com/privacy/">
+ 
+   We have updated our Privacy Policy. Check it out here &gt;&gt;
   </a>
   <span class="close">&times;</span>
-</div> -->
+</div> 
 <header class="c-layout-header c-layout-header-2 c-header-transparent-dark c-layout-header-dark-mobile"
         data-minimize-offset="130">
         <div class="c-topbar c-navbar">

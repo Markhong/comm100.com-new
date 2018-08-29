@@ -2038,6 +2038,32 @@ Template Name:Landing no menu
                 endif;
 
                 // check current row layout
+                if( get_row_layout() == 'partner_form' ):
+                    $image = get_sub_field('image');
+                    $title = get_sub_field('title');
+                    $contact_form = get_sub_field('contact_form');
+                    $form_note = get_sub_field('form_note');
+
+                    echo '<div class="c-content-box c-size-md">' .
+                            '<div class="container">' .
+                                '<div class="row">' .
+                                    
+                                    '<div class="col-sm-5"><img class="avatar" src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="380" height="380" /></div>' .
+                                    '<div class="col-sm-7">' .
+                                        '<div class="contact-form">' .
+                                            '<h3 class="highlight highlight--blue">' . $title . '</h3>' .
+                                            $contact_form .
+                                            '<div class="form-note">' . $form_note . '</div>'. 
+                                        '</div>' .
+                                    '</div>' .
+                                    
+                                '</div>' .
+                            '</div>' .
+                        '</div>';
+
+                endif;
+
+                // check current row layout
                 if( get_row_layout() == 'compare_list' ):
                     $title = get_sub_field('title');
                     echo '<div class="c-content-box c-size-md">';
