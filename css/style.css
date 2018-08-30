@@ -21741,6 +21741,32 @@ h5.resource-item--title {
     min-height: auto;
   }
 }
+.landingPage__video {
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+.landingPage__video iframe {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .landingPage__video iframe {
+    height: 405px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .landingPage__video iframe {
+    height: 528px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .landingPage__video iframe {
+    height: 635px;
+  }
+}
+.landingPage__downloadWebinar {
+  text-align: center;
+  margin-bottom: 80px;
+}
 .speakers-container {
   margin-top: 60px;
 }
@@ -21819,4 +21845,45 @@ h2.video-title {
 }
 .thankyou__calltoaction {
   margin-top: 50px;
+}
+.resource-header h2 {
+  font-size: 24px;
+  font-family: "Ubuntu Regular", sans-serif;
+}
+.resource-header h1 {
+  font-family: "Ubuntu Regular", sans-serif;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+.resource-header__desc {
+  line-height: 42px;
+  font-size: 26px;
+  margin-bottom: 60px;
+}
+.video-content iframe {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .video-content iframe {
+    height: 335px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .video-content iframe {
+    height: 438px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .video-content iframe {
+    height: 535px;
+  }
+}
+.book-demo h1,
+.book-demo h2 {
+  margin-bottom: 20px;
+}
+.book-demo__desc {
+  font-family: "Ubuntu Regular", sans-serif;
 }

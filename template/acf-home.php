@@ -2158,6 +2158,91 @@ Template Name:acf Home
                     echo '</div>';
                 
                 endif;   
+
+                // check current row layout
+                if( get_row_layout() == 'book_a_demo' ):
+                    
+                    
+
+                    echo '<div class="c-content-box c-size-md c-content-box--grey">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="col-sm-12">';
+
+                    $calendly_content = get_sub_field('calendly_content');
+                    if ($calendly_content):
+                        while ( have_rows('calendly_content') ) : the_row();
+                            $h1_title = get_sub_field('h1_title');
+                            $h2_title = get_sub_field('h2_title');
+                            $description = get_sub_field('description');
+                            $schedule_code = get_sub_field('schedule_code');
+                            echo '<div id="inServiceCountry" class="book-demo" style="display: none">';
+                                if ($h1_title):
+                                    echo '<h1>' .
+                                            $h1_title .
+                                        '</h1>';
+                                endif;
+                                if ($h2_title):
+                                    echo '<h2>' .
+                                            $h2_title .
+                                        '</h2>';
+                                endif;
+                                if ($description):
+                                    echo '<div class="book-demo__desc">' .
+                                            $description .
+                                        '</div>';
+                                endif;
+                                if ($schedule_code):
+                                    echo '<div class="book-demo__calendly">' .
+                                            $schedule_code .
+                                        '</div>';
+                                endif;
+                            echo '</div>';
+                        endwhile;
+                    endif;
+
+                    $normal_content = get_sub_field('normal_content');
+                    if ($normal_content):
+                        while ( have_rows('normal_content') ) : the_row();
+                            $header_headline = get_sub_field('h1_title');
+                            $header_slogan = get_sub_field('subtitle');
+                            $header_description = get_sub_field('description');
+                            $call_to_action = get_sub_field('call_to_action');
+                            echo '<div id="notInServiceCountry" class="thankyou">';
+                                if ($header_headline):
+                                    echo '<h1>' .
+                                            $header_headline .
+                                        '</h1>';
+                                endif;
+                                if ($header_slogan):
+                                    echo '<h2>' .
+                                            $header_slogan .
+                                        '</h2>';
+                                endif;
+                                if ($header_description):
+                                    echo '<div class="thankyou__desc">' .
+                                            $header_description .
+                                        '</div>';
+                                endif;
+                                
+                                if ($call_to_action):
+                                    echo '<div class="thankyou__calltoaction">' .
+                                            '<a class="btn btn-xlg btn-link--green" href="' . $call_to_action['url'] . '" target="' . $call_to_action['target'] . '">' .
+                                                $call_to_action['title'] .
+                                            '</a>';
+                                        '</div>';
+                                endif;
+                            echo '</div>';
+                        endwhile;
+                    endif;
+                    
+                    
+                    
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                endif;  
             endwhile;
 
         else :

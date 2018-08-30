@@ -53,48 +53,48 @@ Template Name:Resources
                 endif;
                 
                 // check current row layout
-                if( get_row_layout() == 'thank_you_hero_head' ):
+                // if( get_row_layout() == 'thank_you_hero_head' ):
                     
-                    $header_headline = get_sub_field('h1_title');
-                    $header_slogan = get_sub_field('subtitle');
-                    $header_description = get_sub_field('description');
-                    $call_to_action = get_sub_field('call_to_action');
+                //     $header_headline = get_sub_field('h1_title');
+                //     $header_slogan = get_sub_field('subtitle');
+                //     $header_description = get_sub_field('description');
+                //     $call_to_action = get_sub_field('call_to_action');
 
-                    echo '<div class="c-content-box c-size-md">';
-                    echo '<div class="container">';
-                    echo '<div class="row">';
-                    echo '<div class="col-sm-12 thankyou">';
+                //     echo '<div class="c-content-box c-size-md">';
+                //     echo '<div class="container">';
+                //     echo '<div class="row">';
+                //     echo '<div class="col-sm-12 thankyou">';
 
                     
-                    if ($header_headline):
-                        echo '<h1>' .
-                                $header_headline .
-                            '</h1>';
-                    endif;
-                    if ($header_slogan):
-                        echo '<h2 class="c-margin-t-20">' .
-                                $header_slogan .
-                            '</h2>';
-                    endif;
-                    if ($header_description):
-                        echo '<div class="thankyou__desc">' .
-                                $header_description .
-                            '</div>';
-                    endif;
+                //     if ($header_headline):
+                //         echo '<h1>' .
+                //                 $header_headline .
+                //             '</h1>';
+                //     endif;
+                //     if ($header_slogan):
+                //         echo '<h2 class="c-margin-t-20">' .
+                //                 $header_slogan .
+                //             '</h2>';
+                //     endif;
+                //     if ($header_description):
+                //         echo '<div class="thankyou__desc">' .
+                //                 $header_description .
+                //             '</div>';
+                //     endif;
                     
-                    if ($call_to_action):
-                        echo '<div class="thankyou__calltoaction">' .
-                                '<a class="btn btn-xlg btn-link--green" href="' . $call_to_action['url'] . '" target="' . $call_to_action['target'] . '">' .
-                                    $call_to_action['title'] .
-                                '</a>';
-                            '</div>';
-                    endif;
+                //     if ($call_to_action):
+                //         echo '<div class="thankyou__calltoaction">' .
+                //                 '<a class="btn btn-xlg btn-link--green" href="' . $call_to_action['url'] . '" target="' . $call_to_action['target'] . '">' .
+                //                     $call_to_action['title'] .
+                //                 '</a>';
+                //             '</div>';
+                //     endif;
 
-                    echo '</div>';
-                    echo '</div>';
-                    echo '</div>';
-                    echo '</div>';
-                endif;
+                //     echo '</div>';
+                //     echo '</div>';
+                //     echo '</div>';
+                //     echo '</div>';
+                // endif;
 
                 if( get_row_layout() == 'hero_banner' ):
                     $banner_size = get_sub_field('size');
@@ -184,6 +184,19 @@ Template Name:Resources
                     echo '<div class="container">';
                     echo '<div class="row">';
                     echo '<div class="col-sm-12">';
+
+                    $header_headline = get_sub_field('h1_title');
+                    $header_slogan = get_sub_field('subtitle');
+                    if ($header_headline):
+                        echo '<h1 class="c-center">' .
+                                $header_headline .
+                            '</h1>';
+                    endif;
+                    if ($header_slogan):
+                        echo '<h2 class="c-margin-t-20 c-margin-b-60">' .
+                                $header_slogan .
+                            '</h2>';
+                    endif;
                     // check if the nested repeater field has rows of data
                     if( have_rows('resources_nav_item') ):
                     
@@ -1992,7 +2005,129 @@ Template Name:Resources
                 
                 
 
-            endif;
+                endif;
+
+                // check current row layout
+                if( get_row_layout() == 'webinar_not_gated_context' ):
+                    
+                    
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row landingPage">';
+
+                    echo '<div class="col-sm-12 landingPage-content">';
+                        // loop through the rows of data
+                        echo '<h3>' . get_sub_field('title') . '</h3>';
+                        echo get_sub_field('paragraph');
+
+                        $video = get_sub_field('video');
+                        if ( $video ):
+                            echo '<div class="landingPage__video">' . get_sub_field('video') . '</div>';
+                        endif;
+
+                        $download_webinar = get_sub_field('download_webinar');
+                        if ( $download_webinar ):
+                            echo '<div class="landingPage__downloadWebinar">' . 
+                                    '<a href="' . $download_webinar['url'] . '" target="' . $download_webinar['target'] . '" class="btn btn-xlg c-theme-btn">' . $download_webinar['title'] . '</a>' . 
+                                '</div>';
+                        endif;
+                        
+
+                    if( have_rows('speaker') ):
+                        while ( have_rows('speaker') ) : the_row();
+                        echo '<div class="speakers-container">';
+                            if( have_rows('speaker_details') ):
+                                while ( have_rows('speaker_details') ) : the_row();
+                                    $avatar = get_sub_field('avatar');
+                                    echo '<div class="speaker">' .
+                                        '<img class="speaker-avatar" src="' . $avatar['url'] . '" alt="' . $avatar['alt'] . '" width="95" height="95" />' . 
+                                        '<div class="speaker-title">' . get_sub_field('title') . '</div>' .
+                                        '<div class="speaker-profile">' . get_sub_field('profile') . '</div>' .
+                                    '</div>';
+                                endwhile;
+                            endif;
+                        echo '</div>';
+                        endwhile;
+                    endif;
+
+                    while ( have_rows('share_this') ) : the_row();
+                        $title = get_sub_field('title');
+                        $sharecode = get_sub_field('share_this_code');
+                        echo    '<div class="social-share">' .
+                                    '<h3>' . $title . '</h3>' .
+                                    $sharecode .
+                                '</div>';
+                    endwhile;
+                    echo '</div>';
+
+                    if ( have_rows('webinar_form') ):
+                        while ( have_rows('webinar_form') ) : the_row();
+                        echo '<div class="col-sm-4 landingPage-download">';
+                            echo '<h3 class="highlight highlight--blue">' . get_sub_field('title') . '</h3>';
+                            echo get_sub_field('form_code');
+                            echo '<div class="form-note">' . get_sub_field('form_note') . '</div>';
+                        echo '</div>';
+                        endwhile;
+                    endif;
+
+                   
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                
+                
+
+                endif;
+
+                // check current row layout
+                if( get_row_layout() == 'video' ):
+                    
+                    $header_headline = get_sub_field('h1_title');
+                    $header_slogan = get_sub_field('h2_subtitle');
+                    $header_description = get_sub_field('description');
+                    $video = get_sub_field('video');
+
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="col-sm-12 resource-header">';
+                        if ($header_slogan):
+                            echo '<h2>' .
+                                    $header_slogan .
+                                '</h2>';
+                        endif;
+                        if ($header_headline):
+                            echo '<h1>' .
+                                    $header_headline .
+                                '</h1>';
+                        endif;
+                    
+                        if ($header_description):
+                            echo '<div class="resource-header__desc">' .
+                                    $header_description .
+                                '</div>';
+                        endif;
+                    echo '</div>';
+
+                    if ( $video ):
+                        echo '<div class="col-sm-push-1 col-sm-10 video-content">' .
+                                $video .
+                            '</div>';
+                    endif;
+
+                    while ( have_rows('share_this') ) : the_row();
+                        $title = get_sub_field('title');
+                        $sharecode = get_sub_field('share_this_code');
+                        echo    '<div class="col-sm-12 social-share">' .
+                                    '<h3>' . $title . '</h3>' .
+                                    $sharecode .
+                                '</div>';
+                    endwhile;
+                    
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                endif;
             endwhile;
 
         else :

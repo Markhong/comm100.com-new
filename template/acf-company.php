@@ -117,7 +117,7 @@ Template Name:acf Company
                 
                 if ($call_to_action):
                     echo '<div class="thankyou__calltoaction">' .
-                            '<a class="achat btn btn-xlg btn-link--green" href="' . $call_to_action['url'] . '" target="' . $call_to_action['target'] . '">' .
+                            '<a class="btn btn-xlg btn-link--green" href="' . $call_to_action['url'] . '" target="' . $call_to_action['target'] . '">' .
                                 $call_to_action['title'] .
                             '</a>';
                         '</div>';
