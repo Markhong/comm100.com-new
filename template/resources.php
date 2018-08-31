@@ -1978,6 +1978,24 @@ Template Name:Resources
                         endwhile;
                     endif;
 
+                    if( have_rows('host') ):
+                        while ( have_rows('host') ) : the_row();
+                        echo '<div class="speakers-container">';
+                            echo '<h3>' . get_sub_field('title') . '</h3>';
+                            if( have_rows('host_details') ):
+                                while ( have_rows('host_details') ) : the_row();
+                                    $avatar = get_sub_field('host_avatar');
+                                    echo '<div class="speaker">' .
+                                        '<img class="speaker-avatar" src="' . $avatar['url'] . '" alt="' . $avatar['alt'] . '" width="95" height="95" />' . 
+                                        '<div class="speaker-title">' . get_sub_field('title') . '</div>' .
+                                        '<div class="speaker-profile">' . get_sub_field('profile') . '</div>' .
+                                    '</div>';
+                                endwhile;
+                            endif;
+                        echo '</div>';
+                        endwhile;
+                    endif;
+
                     while ( have_rows('share_this') ) : the_row();
                         $title = get_sub_field('title');
                         $sharecode = get_sub_field('share_this_code');
@@ -2025,39 +2043,64 @@ Template Name:Resources
                             echo '<div class="landingPage__video">' . get_sub_field('video') . '</div>';
                         endif;
 
+                        $watch_full_video = get_sub_field('watch_full_video');
+                        if ( $watch_full_video ):
+                            echo '<div class="landingPage__watchFullWebinar">' . 
+                                    '<a href="' . $watch_full_video['url'] . '" target="' . $watch_full_video['target'] . '" class="btn btn-xlg c-theme-btn">' . $watch_full_video['title'] . '</a>' . 
+                                '</div>';
+                        endif;
+
                         $download_webinar = get_sub_field('download_webinar');
                         if ( $download_webinar ):
                             echo '<div class="landingPage__downloadWebinar">' . 
                                     '<a href="' . $download_webinar['url'] . '" target="' . $download_webinar['target'] . '" class="btn btn-xlg c-theme-btn">' . $download_webinar['title'] . '</a>' . 
                                 '</div>';
                         endif;
-                        
+                        echo '<div class="clear"></div>';
 
-                    if( have_rows('speaker') ):
-                        while ( have_rows('speaker') ) : the_row();
-                        echo '<div class="speakers-container">';
-                            if( have_rows('speaker_details') ):
-                                while ( have_rows('speaker_details') ) : the_row();
-                                    $avatar = get_sub_field('avatar');
-                                    echo '<div class="speaker">' .
-                                        '<img class="speaker-avatar" src="' . $avatar['url'] . '" alt="' . $avatar['alt'] . '" width="95" height="95" />' . 
-                                        '<div class="speaker-title">' . get_sub_field('title') . '</div>' .
-                                        '<div class="speaker-profile">' . get_sub_field('profile') . '</div>' .
+                        if( have_rows('speaker') ):
+                            while ( have_rows('speaker') ) : the_row();
+                            echo '<div class="speakers-container">';
+                                if( have_rows('speaker_details') ):
+                                    while ( have_rows('speaker_details') ) : the_row();
+                                        $avatar = get_sub_field('host_avatar');
+                                        echo '<div class="speaker">' .
+                                            '<img class="speaker-avatar" src="' . $avatar['url'] . '" alt="' . $avatar['alt'] . '" width="95" height="95" />' . 
+                                            '<div class="speaker-title">' . get_sub_field('title') . '</div>' .
+                                            '<div class="speaker-profile">' . get_sub_field('profile') . '</div>' .
+                                        '</div>';
+                                    endwhile;
+                                endif;
+                            echo '</div>';
+                            endwhile;
+                        endif;
+
+                        if( have_rows('host') ):
+                            while ( have_rows('host') ) : the_row();
+                            echo '<div class="speakers-container">';
+                                echo '<h3>' . get_sub_field('title') . '</h3>';
+                                if( have_rows('host_details') ):
+                                    while ( have_rows('host_details') ) : the_row();
+                                        $avatar = get_sub_field('avatar');
+                                        echo '<div class="speaker">' .
+                                            '<img class="speaker-avatar" src="' . $avatar['url'] . '" alt="' . $avatar['alt'] . '" width="95" height="95" />' . 
+                                            '<div class="speaker-title">' . get_sub_field('title') . '</div>' .
+                                            '<div class="speaker-profile">' . get_sub_field('profile') . '</div>' .
+                                        '</div>';
+                                    endwhile;
+                                endif;
+                            echo '</div>';
+                            endwhile;
+                        endif;
+
+                        while ( have_rows('share_this') ) : the_row();
+                            $title = get_sub_field('title');
+                            $sharecode = get_sub_field('share_this_code');
+                            echo    '<div class="social-share">' .
+                                        '<h3>' . $title . '</h3>' .
+                                        $sharecode .
                                     '</div>';
-                                endwhile;
-                            endif;
-                        echo '</div>';
                         endwhile;
-                    endif;
-
-                    while ( have_rows('share_this') ) : the_row();
-                        $title = get_sub_field('title');
-                        $sharecode = get_sub_field('share_this_code');
-                        echo    '<div class="social-share">' .
-                                    '<h3>' . $title . '</h3>' .
-                                    $sharecode .
-                                '</div>';
-                    endwhile;
                     echo '</div>';
 
                     if ( have_rows('webinar_form') ):
@@ -2163,7 +2206,7 @@ Template Name:Resources
                             endif;
                             if( get_row_layout() == 'image' ):
                                 $if_can_enlarge = get_sub_field('if_can_enlarge');
-                                $image = get_sub_field('image');
+                                $image = get_sub_field('image_content');
                                 $enlarge_content = '';
                                 $image_wrap = '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />';
                                 if ($if_can_enlarge):
@@ -2185,7 +2228,7 @@ Template Name:Resources
                         while ( have_rows('share_this') ) : the_row();
                             $title = get_sub_field('title');
                             $sharecode = get_sub_field('share_this_code');
-                            echo    '<div class="col-sm-12 social-share">' .
+                            echo    '<div class="social-share">' .
                                         '<h3>' . $title . '</h3>' .
                                         $sharecode .
                                     '</div>';
@@ -2193,7 +2236,7 @@ Template Name:Resources
                         while ( have_rows('embed') ) : the_row();
                             $title = get_sub_field('title');
                             $embed_code = get_sub_field('embed_code');
-                            echo    '<div class="col-sm-12 embed">' .
+                            echo    '<div class="embed">' .
                                         '<h3>' . $title . '</h3>' .
                                         '<textarea>' . $embed_code . '</textarea>' .
                                     '</div>';

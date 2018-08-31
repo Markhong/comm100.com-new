@@ -21765,8 +21765,12 @@ h5.resource-item--title {
     height: 635px;
   }
 }
+.landingPage__watchFullWebinar {
+  float: left;
+  margin-bottom: 80px;
+}
 .landingPage__downloadWebinar {
-  text-align: center;
+  float: right;
   margin-bottom: 80px;
 }
 .speakers-container {
