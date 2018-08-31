@@ -18189,7 +18189,7 @@ label {
   color: #0094d4 !important;
 }
 .c-layout-header .c-navbar .c-mega-menu > .nav.navbar-nav > li.current-menu-ancestor > .c-link,
-.c-layout-header .c-navbar .c-mega-menu > .nav.navbar-nav > li.current-page-ancestor > .c-link,
+.c-layout-header .c-navbar .c-mega-menu > .nav.navbar-nav > li.current-page-ancestor:not(.menu-item-btn) > .c-link,
 .c-theme-nav li.c-active {
   color: #0094d4 !important;
 }
@@ -18831,7 +18831,7 @@ fieldset[disabled] .c-theme-btn.btn:not(.btn-no-focus):focus {
 }
 .fancybox-overlay {
   position: absolute;
-  z-index: 8010;
+  z-index: 9999;
   top: 0;
   left: 0;
   display: none;
@@ -21560,10 +21560,12 @@ h5.feature-column__title {
   line-height: 42px;
   padding-bottom: 25px;
 }
-.social-share {
+.social-share,
+.embed {
   margin-top: 60px;
 }
-.social-share h3 {
+.social-share h3,
+.embed h3 {
   font-size: 22px;
   font-family: "Ubuntu Bold", sans-serif;
 }
@@ -21838,6 +21840,9 @@ h2.video-title {
 .thankyou {
   text-align: center;
 }
+.thankyou h2 {
+  margin-top: 20px;
+}
 .thankyou__desc {
   line-height: 42px;
   font-size: 26px;
@@ -21885,5 +21890,37 @@ h2.video-title {
   margin-bottom: 20px;
 }
 .book-demo__desc {
+  margin-bottom: 40px;
   font-family: "Ubuntu Regular", sans-serif;
+}
+
+.infograghic p {
+  margin-bottom: 30px;
+}
+.infograghic strong {
+  font-family: "Ubuntu Medium", sans-serif !important;
+  font-weight: 500;
+}
+.fancybox__enlarge {
+  margin-bottom: 20px;
+}
+.fancybox__enlarge a {
+  color: #5e6d79;
+  font-family: "Ubuntu Regular", sans-serif;
+}
+.fancybox__enlarge a i {
+  transform: rotate(90deg);
+  position: relative;
+  right: 10px;
+  top: 2px;
+  display: inline-block;
+}
+.embed textarea {
+  width: 100%;
+  height: 120px;
+  max-width: 780px;
+  outline: none;
+}
+.book-demo__calendly .container {
+  width: 100%;
 }

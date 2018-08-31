@@ -2193,8 +2193,12 @@ Template Name:acf Home
                                         '</div>';
                                 endif;
                                 if ($schedule_code):
-                                    echo '<div class="book-demo__calendly">' .
-                                            $schedule_code .
+                                    echo '<div class="row">' .
+                                            '<div class="col-sm-push-1 col-sm-10">' .
+                                                '<div class="book-demo__calendly">' .
+                                                    $schedule_code .
+                                                '</div>' .
+                                            '</div>' .
                                         '</div>';
                                 endif;
                             echo '</div>';
@@ -2208,7 +2212,7 @@ Template Name:acf Home
                             $header_slogan = get_sub_field('subtitle');
                             $header_description = get_sub_field('description');
                             $call_to_action = get_sub_field('call_to_action');
-                            echo '<div id="notInServiceCountry" class="thankyou">';
+                            echo '<div id="notInServiceCountry" class="thankyou" style="display: none">';
                                 if ($header_headline):
                                     echo '<h1>' .
                                             $header_headline .

@@ -2128,6 +2128,82 @@ Template Name:Resources
                     echo '</div>';
                     echo '</div>';
                 endif;
+
+                // check current row layout
+                if( get_row_layout() == 'infograghic' ):
+                    
+                    $header_headline = get_sub_field('h1_title');
+                    $header_slogan = get_sub_field('h2_subtitle');
+                    $header_description = get_sub_field('description');
+                    $video = get_sub_field('video');
+
+                    echo '<div class="c-content-box c-size-md">';
+                    echo '<div class="container">';
+                    echo '<div class="row">';
+                    echo '<div class="col-sm-12 resource-header">';
+                        if ($header_slogan):
+                            echo '<h2>' .
+                                    $header_slogan .
+                                '</h2>';
+                        endif;
+                        if ($header_headline):
+                            echo '<h1>' .
+                                    $header_headline .
+                                '</h1>';
+                        endif;
+                    echo '</div>';
+
+                    echo '<div class="col-sm-12 infograghic">';
+                        while ( have_rows('content') ) : the_row();
+                            if( get_row_layout() == 'paragraph' ):
+                                echo get_sub_field('paragraph');
+                            endif;
+                            if( get_row_layout() == 'title' ):
+                                echo '<h3>' . get_sub_field('title') . '</h3>';
+                            endif;
+                            if( get_row_layout() == 'image' ):
+                                $if_can_enlarge = get_sub_field('if_can_enlarge');
+                                $image = get_sub_field('image');
+                                $enlarge_content = '';
+                                $image_wrap = '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />';
+                                if ($if_can_enlarge):
+                                    $enlarge_content = '<div class="c-overlay-content fancybox__enlarge">' .
+                                                            '<a href="' . $image['url'] . '" data-lightbox="fancybox" data-fancybox-group="gallery-1"><i class="icon-magnifier-add"></i>' . get_sub_field('enlarge_text') . '</a>' .
+                                                    '</div>';
+                                    $image_wrap = '<a href="' . $image['url'] . '" data-lightbox="fancybox" data-fancybox-group="gallery-1">' .
+                                                    '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />' .
+                                                '</a>';
+                                endif;
+                                echo '<div class="c-content-overlay c-center">' .   
+                                        $enlarge_content .
+                                        $image_wrap .
+                                    '</div>';
+                                        
+                            endif;
+                        endwhile;
+
+                        while ( have_rows('share_this') ) : the_row();
+                            $title = get_sub_field('title');
+                            $sharecode = get_sub_field('share_this_code');
+                            echo    '<div class="col-sm-12 social-share">' .
+                                        '<h3>' . $title . '</h3>' .
+                                        $sharecode .
+                                    '</div>';
+                        endwhile;
+                        while ( have_rows('embed') ) : the_row();
+                            $title = get_sub_field('title');
+                            $embed_code = get_sub_field('embed_code');
+                            echo    '<div class="col-sm-12 embed">' .
+                                        '<h3>' . $title . '</h3>' .
+                                        '<textarea>' . $embed_code . '</textarea>' .
+                                    '</div>';
+                        endwhile;
+                    echo '</div>';
+
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                endif;
             endwhile;
 
         else :

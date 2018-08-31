@@ -50,6 +50,9 @@
             if (result != null) {
                 if (isServiceCountry(result.substr(0, result.length - 1))) {
                     showInServiceCountry();
+                } else {
+                    $('#inServiceCountry').hide();
+                    $('#notInServiceCountry').show();
                 }
             }
         }

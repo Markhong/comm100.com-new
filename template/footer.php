@@ -1,4 +1,4 @@
-<!-- BEGIN: LAYOUT/FOOTERS/FOOTER-7 -->
+﻿<!-- BEGIN: LAYOUT/FOOTERS/FOOTER-7 -->
 <a name="footer"></a>
 <footer class="footer">
     <div class="container">
@@ -121,7 +121,7 @@
                         </li>
                         <li>
                             <i class="icon-pointer"></i> 
-                            <a href="#">Contact us</a>
+                            <a href="https://www.comm100.com/company/about/contact/">Contact us</a>
                         </li>
                     </ul>
                     <form class="c-quick-search" action="https://www.comm100.com/search/">
@@ -170,7 +170,7 @@
                 <!-- <span>
                     <a title="Click for the Business Review of Comm100 Network Corporation, a Computer Software Publishers &amp; Developers in Vancouver BC" href="//www.bbb.org/mbc/business-reviews/computer-software-publishers-and-developers/comm100-network-corporation-in-vancouver-bc-1264631#sealclick" target="_blank">
                     <img alt="Click for the BBB Business Review of this Computer Software Publishers &amp; Developers in Vancouver BC" style="border: 0;" src="https://www.comm100.com/wp-content/themes/comm100/assets/base/img/content/security/bbb.png?v=201606221634" width="114" height="43"></a></span> -->
-                <span><a href="https://pinpoint.microsoft.com/en-us/companies/4297614086" target="_blank"><img src="https://www.comm100.com/wp-content/uploads/images/Footer-Certificate-MicrosoftGold.svg" alt="Microsoft Partner" width="89" height="41" class="c-sm-margin-t-10"></a></span>
+                <span><img src="https://www.comm100.com/wp-content/uploads/images/Footer-Certificate-MicrosoftGold.svg" alt="Microsoft Partner" width="89" height="41" class="c-sm-margin-t-10"></span>
                 <span><img src="https://www.comm100.com/wp-content/uploads/images/Footer-Certificate-SalesForce.svg" alt="Salesforce Partner" width="133" height="51" class="c-sm-margin-t-10"></span>
             </div>
             <div class="col-sm-10 col-sm-push-1 c-margin-t-40 clearfix">
@@ -180,7 +180,7 @@
                 <p class="c-copyright c-float-r">
                     <a href="/sitemap_index.xml" title="Live Chat Site Map">Site Map</a> | 
                     <a href="/privacy/" title="Live Chat Privacy Policy">Privacy Policy</a> | 
-                    <a href="/privacy/anti-spam-policy.aspx">Anti-Spam Policy</a> | 
+                    <a href="/privacy/anti-spam-policy/">Anti-Spam Policy</a> | 
                     <a href="/eula/">EULA</a>
                 </p>
             </div>
@@ -214,7 +214,7 @@
 <script src="<?php bloginfo('template_url');?>/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php bloginfo('template_url');?>/assets/plugins/jquery.easing.min.js?v=2.0.1" type="text/javascript"></script>
 <script src="<?php bloginfo('template_url');?>/assets/base/js/plugins.min.js?v=1.0.0" type="text/javascript"></script>
-<script src="<?php bloginfo('template_url');?>/assets/base/js/script.min.js?v=1.0.30" type="text/javascript"></script>
+<script src="<?php bloginfo('template_url');?>/assets/base/js/script.min.js?v=1.0.33" type="text/javascript"></script>
 
 <!-- END: THEME SCRIPTS -->
 
