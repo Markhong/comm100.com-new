@@ -60,7 +60,7 @@
     <!--<link href="<?php bloginfo('template_url');?>/assets/base/css/style.min.css?ver=1.0.3" id="style_components" rel="stylesheet"
         type="text/css" />-->
 
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?ver=2.0.7" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?ver=2.0.11" type="text/css" media="screen, projection" />
     
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="<?php bloginfo('template_url');?>/assets/favicon.ico" />
@@ -88,13 +88,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHPR23J"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
- <div class="notify hidden-xs">
+ <!-- <div class="notify hidden-xs">
   <a href="https://www.comm100.com/privacy/">
  
    We have updated our Privacy Policy. Check it out here &gt;&gt;
   </a>
   <span class="close">&times;</span>
-</div> 
+ </div> --> 
 <header class="c-layout-header c-layout-header-2 c-header-transparent-dark c-layout-header-dark-mobile"
         data-minimize-offset="130">
         <div class="c-topbar c-navbar">

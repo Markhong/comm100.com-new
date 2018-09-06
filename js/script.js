@@ -1711,7 +1711,7 @@ window.onload = function() {
 		});
 
 		if (!window.mobilecheck()) {
-			Pager.init($('.resource-list'), 6);
+			Pager.init($('.resource-list'), 12);
 		}
 	}());
 }

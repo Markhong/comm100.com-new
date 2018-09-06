@@ -18458,14 +18458,14 @@ fieldset[disabled] .c-theme-btn.btn:not(.btn-no-focus):focus {
   background: #0094d4;
 }
 .c-content-feature-2 .c-title a,
-.c-content-list-1 a,
+/* .c-content-list-1 a, */
 .c-content-title-1 a,
 .featurelist a {
   color: #5e6d79;
 }
-.c-content-list-1 a {
+/* .c-content-list-1 a {
   font-size: 18px;
-}
+} */
 @media screen and (max-width: 767px) {
   .c-content-title-1 .btn {
     margin-top: 30px;
@@ -20984,6 +20984,10 @@ h5.feature-column__title {
   line-height: 1.42857143!important;
   color: rgba(96, 108, 120, 0.5);
 }
+.form-note a {
+  color: rgba(96,108,120,.5);
+  text-decoration: underline;
+}
 
 .threeTab__Index--Wrap {
   margin-bottom: 30px;
@@ -21643,7 +21647,7 @@ h3.highlight {
   margin-bottom: 45px;
 }
 .resource-item {
-  min-height: 365px;
+  min-height: 395px;
   margin-bottom: 20px;
 }
 .resource-item--tag {

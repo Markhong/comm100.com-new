@@ -1880,7 +1880,7 @@ Template Name:Resources
                 if( get_row_layout() == 'landing_page_gated_context' ):
                     
                     
-                        echo '<div class="c-content-box c-size-md">';
+                        echo '<div class="c-content-box c-size-lg">';
                         echo '<div class="container">';
                         echo '<div class="row landingPage">';
                         echo '<div class="col-sm-8 landingPage-content">';
@@ -1892,7 +1892,7 @@ Template Name:Resources
                                 echo get_sub_field('paragraph');
                             endif;
                             if( get_row_layout() == 'context_image' ):
-                                $image = get_sub_field('image');
+                                $image = get_sub_field('context_image_content');
                                 echo   '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" width="" height="" />';
                                         
                             endif;
@@ -2061,9 +2061,10 @@ Template Name:Resources
                         if( have_rows('speaker') ):
                             while ( have_rows('speaker') ) : the_row();
                             echo '<div class="speakers-container">';
+                                echo '<h3>' . get_sub_field('title') . '</h3>';
                                 if( have_rows('speaker_details') ):
                                     while ( have_rows('speaker_details') ) : the_row();
-                                        $avatar = get_sub_field('host_avatar');
+                                        $avatar = get_sub_field('avatar');
                                         echo '<div class="speaker">' .
                                             '<img class="speaker-avatar" src="' . $avatar['url'] . '" alt="' . $avatar['alt'] . '" width="95" height="95" />' . 
                                             '<div class="speaker-title">' . get_sub_field('title') . '</div>' .
@@ -2081,7 +2082,7 @@ Template Name:Resources
                                 echo '<h3>' . get_sub_field('title') . '</h3>';
                                 if( have_rows('host_details') ):
                                     while ( have_rows('host_details') ) : the_row();
-                                        $avatar = get_sub_field('avatar');
+                                        $avatar = get_sub_field('host_avatar');
                                         echo '<div class="speaker">' .
                                             '<img class="speaker-avatar" src="' . $avatar['url'] . '" alt="' . $avatar['alt'] . '" width="95" height="95" />' . 
                                             '<div class="speaker-title">' . get_sub_field('title') . '</div>' .
