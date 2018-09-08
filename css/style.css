@@ -18463,9 +18463,10 @@ fieldset[disabled] .c-theme-btn.btn:not(.btn-no-focus):focus {
 .featurelist a {
   color: #5e6d79;
 }
-/* .c-content-list-1 a {
+.kb-home .c-content-list-1 a {
   font-size: 18px;
-} */
+  color: #5e6d79;
+}
 @media screen and (max-width: 767px) {
   .c-content-title-1 .btn {
     margin-top: 30px;
@@ -21627,6 +21628,17 @@ h3.highlight {
 .resources-nav li {
   flex: 1;
   text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .resources-nav {
+    flex-wrap: wrap;
+  }
+  .resources-nav li {
+    flex-basis: 100px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-right: 40px;
+  }
 }
 .resources-nav li a {
   color: #5e6d79;
